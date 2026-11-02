@@ -1,0 +1,37 @@
+{
+  "upstream_version": "11.2.0",
+  "legacy_format_source_version": "10.3.4",
+  "legacy_archive_sha256": "fe638107c5f69119156ada2db5a57734385fac3f64430bd7252a00d3ead2ca4b",
+  "files": {
+    "pubspec.yaml": {
+      "upstream_sha256": "c759dcbd1c4ccd4cde81f6548b2f395a418896bb52c6ddd3494970a147645912",
+      "patched_sha256": "e34f08106a1501ccd95a33b194388ef02a32de40fd56209269ec6bade7fd1908",
+      "reason": "Resolve the official v11 package as a local path dependency"
+    },
+    "android/build.gradle": {
+      "upstream_sha256": "0013e75fdbf4ec4c80db514f5d01bd966fdcbbd9f65e115835e184266b2858fb",
+      "patched_sha256": "6a21a76a8f31b44169a55081c934e6537a9a22645b0ed745b001f1680cdd926e",
+      "reason": "Add an isolated self-targeting synthetic migration instrumentation APK and AndroidX test runner"
+    },
+    "android/src/main/java/com/it_nomads/fluttersecurestorage/FlutterSecureStorage.java": {
+      "upstream_sha256": "fe83c8fe978f0bc4e66a8cfe33d020b484683fe837a3e53fd6945a2cba758ed3",
+      "patched_sha256": "ee724728cfeb5581e774be482e140dc11607fbac4007398f6434a4351c22b412",
+      "reason": "Gate v11 initialization on protected legacy migration; durably commit fresh wrapped key and current algorithm markers before accepting writes"
+    },
+    "LICENSE": {
+      "upstream_sha256": "55dafb084270616f95b9bea53654adda8bdcad95c022a83c4cf8769073f829fa",
+      "patched_sha256": "05544112d1a37390c6c4e52118f0f1b17cc78794ca282a87d4a67cbd022956d1",
+      "reason": "Retain BSD and add Apache 2.0 notice/license for legacy ESP wire-format compatibility"
+    },
+    "android/src/main/java/com/it_nomads/fluttersecurestorage/LegacyStorageMigration.java": {
+      "upstream_sha256": null,
+      "patched_sha256": "629f9ebed7de73b042d244198703a633232c8febd308b1200363e84132a9f8b2",
+      "reason": "Read-only legacy wire decoder and ciphertext journal transaction; no matching upstream file"
+    },
+    "android/src/main/java/com/it_nomads/fluttersecurestorage/LegacyMigrationTransaction.java": {
+      "upstream_sha256": null,
+      "patched_sha256": "1e360559477e7227f9b6bb896893a4e016137269e63fd000bfac21c7a3cb2a8c",
+      "reason": "Read-only legacy wire decoder and ciphertext journal transaction; no matching upstream file"
+    }
+  }
+}

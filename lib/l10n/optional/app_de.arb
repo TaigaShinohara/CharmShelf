@@ -1,0 +1,109 @@
+{
+  "@@locale": "de",
+  "appTitle": "Vorlage-App",
+  "homeTitle": "Startseite",
+  "settingsTitle": "Einstellungen",
+  "commonOk": "OK",
+  "commonCancel": "Abbrechen",
+  "commonYes": "Ja",
+  "commonNo": "Nein",
+  "commonRetry": "Erneut versuchen",
+  "commonEmptyTitle": "Keine Elemente",
+  "commonErrorOccurred": "Etwas ist schiefgelaufen",
+  "avatarActionTitle": "Profilfoto",
+  "avatarActionTakePhoto": "Foto aufnehmen",
+  "avatarActionChooseFromLibrary": "Aus Bibliothek wählen",
+  "avatarActionRemove": "Foto entfernen",
+  "avatarTapToChange": "Zum Ändern tippen",
+  "avatarRemoveTitle": "Foto entfernen?",
+  "avatarRemoveMessage": "Dadurch wird Ihr Profilfoto entfernt.",
+  "relativeJustNow": "gerade eben",
+  "relativeMinutesAgo": "{minutes, plural, =1{vor 1 Minute} other{vor {minutes} Minuten}}",
+  "@relativeMinutesAgo": {
+    "placeholders": {
+      "minutes": {
+        "type": "int"
+      }
+    }
+  },
+  "relativeHoursAgo": "{hours, plural, =1{vor 1 Stunde} other{vor {hours} Stunden}}",
+  "@relativeHoursAgo": {
+    "placeholders": {
+      "hours": {
+        "type": "int"
+      }
+    }
+  },
+  "relativeDaysAgo": "{days, plural, =1{vor 1 Tag} other{vor {days} Tagen}}",
+  "@relativeDaysAgo": {
+    "placeholders": {
+      "days": {
+        "type": "int"
+      }
+    }
+  },
+  "relativeYesterdayAt": "Gestern um {time}",
+  "@relativeYesterdayAt": {
+    "placeholders": {
+      "time": {
+        "type": "String"
+      }
+    }
+  },
+  "validationRequired": "Erforderlich",
+  "validationMinLength": "Muss mindestens {min} Zeichen haben",
+  "@validationMinLength": {
+    "placeholders": {
+      "min": {
+        "type": "int"
+      }
+    }
+  },
+  "validationMaxLength": "Darf höchstens {max} Zeichen haben",
+  "@validationMaxLength": {
+    "placeholders": {
+      "max": {
+        "type": "int"
+      }
+    }
+  },
+  "validationInvalidEmail": "Ungültige E-Mail-Adresse",
+  "validationInvalidNumber": "Ungültige Zahl",
+  "validationMinValueInt": "Muss >= {min} sein",
+  "@validationMinValueInt": {
+    "placeholders": {
+      "min": {
+        "type": "int"
+      }
+    }
+  },
+  "validationMaxValueInt": "Muss <= {max} sein",
+  "@validationMaxValueInt": {
+    "placeholders": {
+      "max": {
+        "type": "int"
+      }
+    }
+  },
+  "validationMinValueDouble": "Muss >= {min} sein",
+  "@validationMinValueDouble": {
+    "placeholders": {
+      "min": {
+        "type": "double"
+      }
+    }
+  },
+  "validationMaxValueDouble": "Muss <= {max} sein",
+  "@validationMaxValueDouble": {
+    "placeholders": {
+      "max": {
+        "type": "double"
+      }
+    }
+  },
+  "imageSaveFailed": "Bild konnte nicht gespeichert werden",
+  "imageDeleteFailed": "Bild konnte nicht gelöscht werden",
+  "unsavedDataDialogTitle": "Änderungen verwerfen?",
+  "unsavedDataDialogMessage": "Sie haben ungespeicherte Änderungen. Wenn Sie jetzt gehen, gehen Ihre Änderungen verloren.",
+  "unsavedDataDialogDiscard": "Verwerfen"
+}

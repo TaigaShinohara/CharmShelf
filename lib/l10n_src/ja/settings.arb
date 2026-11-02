@@ -1,0 +1,660 @@
+{
+  "settingsCharmImportDescription": "ファイルやテキストから分類・チャームを追加します",
+  "settingsCharmExport": "チャームの書き出し",
+  "settingsCharmExportDescription": "すべての分類・チャームをJSONファイルに保存します。ファイルへの付与情報は含みません。",
+  "@@locale": "ja",
+  "settingsAdvanced": "詳細設定",
+  "settingsMetadataSummary": "手動の保存・復元",
+  "settingsTitle": "設定",
+  "settingsAppearance": "外観",
+  "settingsViewerSection": "ビューワー",
+  "settingsIconGalleryTitle": "アイコン一覧",
+  "settingsIconGallerySubtitle": "操作に使うアイコンを確認",
+  "settingsIconGalleryHint": "ライブラリ操作の共通アイコン",
+  "settingsTheme": "テーマ",
+  "settingsThemeSystemValue": "自動",
+  "settingsThemeLightValue": "ライト",
+  "settingsThemeDarkValue": "ダーク",
+  "settingsAnimations": "アニメーション",
+  "settingsFeedback": "操作と通知",
+  "settingsHaptics": "操作時の振動",
+  "settingsHapticsSubtitle": "ボタン操作や長押し時の振動フィードバック",
+  "settingsImportNotification": "取り込み通知",
+  "settingsImportNotificationAllowed": "許可済み",
+  "settingsImportNotificationNotAllowed": "未許可",
+  "settingsImportNotificationRestricted": "制限中",
+  "settingsImportNotificationDescription": "取り込みの進捗・完了と、ファイル選択から戻るための通知です。通知なしでも取り込めます。",
+  "settingsImportNotificationDialogTitle": "取り込み通知",
+  "settingsImportNotificationDialogIntro": "ファイル選択時のアプリへの復帰や、取り込み進捗の確認をサポートする通知です。",
+  "settingsImportNotificationFeatureProgressTitle": "取り込み進捗のお知らせ",
+  "settingsImportNotificationFeatureProgressBody": "処理中・完了を通知バーで確認できます。",
+  "settingsImportNotificationFeatureResumeTitle": "アプリへのスムーズな復帰",
+  "settingsImportNotificationFeatureResumeBody": "通知をタップしてCharmShelfへ戻れます。",
+  "settingsImportNotificationNotePrivacy": "広告・不要な通知は送りません。通知は任意です。",
+  "settingsImportNotificationEnable": "通知を許可する",
+  "settingsImportNotificationOpenSettings": "端末の設定を開く",
+  "settingsImportNotificationEnabled": "取り込み通知を許可しました",
+  "settingsImportNotificationDenied": "通知は許可されませんでした。通知なしで取り込みを続けられます。",
+  "settingsImportNotificationSettingsFailed": "端末の設定画面を開けませんでした",
+  "settingsSound": "サウンド",
+  "settingsBackup": "バックアップ",
+  "settingsBackupCreate": "チャームやメモをバックアップ",
+  "settingsBackupCreateSubtitle": "パスワードで保護したファイルを作り、端末の外へ保存します",
+  "settingsBackupRestore": "チャームやメモをバックアップから戻す",
+  "settingsBackupRestoreSubtitle": "現在のデータを残したまま、バックアップの内容を追加します",
+  "settingsBackupRestoreConfirmTitle": "リストアしますか？",
+  "settingsBackupRestoreConfirmMessage": "現在のデータは上書きされます。よろしいですか？",
+  "settingsBackupSaved": "保存完了: {path}",
+  "@settingsBackupSaved": {
+    "placeholders": {
+      "path": {
+        "type": "String"
+      }
+    }
+  },
+  "settingsBackupCreateFailed": "バックアップを作成できませんでした。空き容量と共有先を確認してください。",
+  "settingsBackupFileNotSelected": "ファイルが選択されていません",
+  "settingsBackupRestored": "バックアップの内容を現在のデータへ追加しました。元の画像や動画が開けるか確認してください。",
+  "settingsBackupRestoreFailed": "復元できませんでした。ファイルとパスワードを確認してください。現在のデータは変更されていません。",
+  "settingsBackupInvalidFile": "バックアップファイルの形式が正しくありません",
+  "settingsBackupPasswordRequired": "パスワードを入力してください",
+  "settingsInfo": "情報",
+  "settingsVersion": "バージョン",
+  "settingsDeveloperOptions": "開発者オプション",
+  "settingsModeSection": "動作モード",
+  "settingsModeInternal": "内部モード",
+  "settingsModeExternal": "外部モード",
+  "settingsModeInternalSub": "ファイルをアプリ専用領域へコピーして管理（推奨）",
+  "settingsModeExternalSub": "端末内の既存フォルダを直接参照・管理",
+  "settingsExternalModePreparing": "準備中です",
+  "settingsCommonSection": "アプリ設定",
+  "settingsShowHidden": "隠しファイルを表示",
+  "settingsClearCache": "サムネイルキャッシュの消去",
+  "settingsLanguage": "言語設定",
+  "settingsAppInfo": "アプリ情報",
+  "settingsLanguageSystem": "システム設定",
+  "settingsLanguageJa": "日本語",
+  "settingsLanguageEn": "English",
+  "settingsViewerPageDirection": "ビューワーのページ送り方向",
+  "settingsViewerPageDirectionShort": "ページ送り",
+  "settingsViewerPageDirectionLeftToRight": "左から右（通常）",
+  "settingsViewerPageDirectionRightToLeft": "右から左（漫画）",
+  "settingsTagPresetSection": "チャーム・プリセット",
+  "settingsTagPresetImport": "チャームの読み込み",
+  "settingsTagPresetImportSubtitle": "JSONファイルまたはテキストからチャームを登録します",
+  "settingsTagPresetFileNotSelected": "ファイルが選択されていません",
+  "settingsTagPresetImported": "取り込み完了 (分類: {facetCount}, チャーム: {tagCount})",
+  "@settingsTagPresetImported": {
+    "placeholders": {
+      "facetCount": {
+        "type": "int"
+      },
+      "tagCount": {
+        "type": "int"
+      }
+    }
+  },
+  "settingsTagPresetImportType": "取り込み方法",
+  "settingsTagPresetImportFromFile": "ファイルから読み込む",
+  "settingsTagPresetImportFromText": "テキストから読み込む",
+  "settingsTagPresetImportTextDialogTitle": "JSONを入力",
+  "settingsTagPresetImportTextDialogHint": "ここにJSONを貼り付けてください",
+  "settingsTagPresetImportInvalidJson": "JSONの形式が正しくありません",
+  "settingsTagPresetImportFromTextTitle": "テキストから取り込み",
+  "settingsTagPresetImportTextHint": "[分類名]\nチャーム名\n  子チャーム名\n\nのように入力してください",
+  "settingsTagPresetImportCheck": "チェック",
+  "settingsTagPresetImportExecute": "取り込み実行",
+  "settingsTagPresetImportFormatError": "{line}行目: {error}",
+  "@settingsTagPresetImportFormatError": {
+    "placeholders": {
+      "line": {
+        "type": "int"
+      },
+      "error": {
+        "type": "String"
+      }
+    }
+  },
+  "settingsTagPresetImportErrorNoFacet": "分類が指定されていません（[分類名] の形式で記述してください）",
+  "settingsTagPresetImportErrorEmptyFacet": "分類名が空です",
+  "settingsTagPresetImportErrorInvalidIndent": "インデントが不正です",
+  "settingsLicense": "ライセンス",
+  "settingsLicenseSubtitle": "オープンソースライセンス",
+  "settingsLicenseSemanticLabel": "オープンソースライセンス一覧を開く",
+  "settingsCopyright": "© 2026 Private Shelf Project. CharmShelf のコードには MIT ライセンスが適用されます。各ソフトウェアの条件は以下の一覧をご確認ください。",
+  "settingsDiagnosticsCopy": "診断情報をコピー",
+  "settingsDiagnosticsCopySubtitle": "問い合わせ用の環境情報（不具合対処の際、運営から必要に応じて提供をお願いすることがあります）",
+  "settingsDiagnosticsInfoTitle": "診断情報について",
+  "settingsDiagnosticsInfoDescription": "不具合対処の際、運営から必要に応じて診断情報の提供をお願いすることがあります。そのために使用します。",
+  "settingsDiagnosticsCopied": "診断情報をコピーしました",
+  "settingsDiagnosticsCopyFailed": "診断情報のコピーに失敗しました",
+  "settingsTagPresetImportValidating": "入力内容をチェック中...",
+  "settingsTagPresetImportValid": "入力形式は正常です",
+  "settingsTagPresetImportNoData": "入力データがありません",
+  "settingsTagPresetImportPreview": "プレビュー",
+  "settingsTagPresetImportExample": "例を入力",
+  "settingsAboutApp": "このアプリについて",
+  "settingsPrivacyPolicy": "プライバシーポリシー",
+  "settingsPrivacyPolicySubtitle": "個人情報の取り扱いに関する方針",
+  "settingsTermsOfService": "利用規約",
+  "settingsTermsOfServiceSubtitle": "本アプリの利用に関する規約",
+  "settingsSupport": "サポート",
+  "settingsHelp": "ヘルプ",
+  "settingsHelpSubtitle": "アプリの基本的な使い方や機能の解説",
+  "settingsExternalLegalPage": "外部の法務ページを開く",
+  "settingsExternalLegalPageSubtitle": "Webブラウザで公式の規約・ポリシー・サポート情報を確認",
+  "settingsCollectionAlias": "別名",
+  "settingsCollectionAliasSet": "別名設定済み",
+  "settingsCollectionAliasNotSet": "未設定",
+  "settingsCollectionAliasHint": "別名を入力",
+  "settingsCollectionAliasDescription": "ファイル名の下に表示する名前です。元のファイル名は変更しません。",
+  "settingsCollectionTier": "ティア",
+  "settingsCollectionTierCurrent": "現在のティア: {tier}",
+  "@settingsCollectionTierCurrent": {
+    "placeholders": {
+      "tier": {
+        "type": "String"
+      }
+    }
+  },
+  "settingsCollectionTag": "チャーム",
+  "settingsCollectionTagNotSet": "チャームなし",
+  "settingsCollectionSetupFirst": "セットアップを完了してください",
+  "settingsCollectionFavorite": "お気に入りに追加",
+  "settingsCollectionUnfavorite": "お気に入りから削除",
+  "settingsCollectionNotes": "メモ",
+  "settingsCollectionNotesNotSet": "メモなし",
+  "settingsCollectionNotesHint": "メモを入力",
+  "settingsCollectionSplitSpread": "見開き分割",
+  "settingsCollectionSplitSpreadHint": "2ページを1ページずつ表示",
+  "settingsCollectionCatalogify": "カタログにする",
+  "settingsCollectionCatalogifyHint": "チャームやお気に入りで整理できるようにします。",
+  "settingsCollectionDecatalogify": "カタログを解除",
+  "settingsCollectionDecatalogifyConfirmTitle": "カタログを解除しますか？",
+  "settingsCollectionDecatalogifyConfirmMessage": "このカタログのチャーム・ティア・ピン留め・表紙の設定が外れます。ファイルは削除されません。",
+  "settingsCollectionDecatalogifySuccess": "カタログを解除しました",
+  "settingsCollectionDecatalogifyFailed": "カタログを解除できませんでした",
+  "settingsCollectionCatalogifyConfirmTitle": "カタログにしますか？",
+  "settingsCollectionCatalogifyConfirmMessage": "このフォルダをカタログにしますか？",
+  "settingsCollectionTitle": "カタログ情報",
+  "settingsCollectionType": "タイプ",
+  "settingsCollectionTypeExternal": "外部フォルダ",
+  "settingsCollectionTypeInternal": "内部フォルダ",
+  "settingsCollectionTypeFile": "ファイル",
+  "settingsCollectionCreatedAt": "作成日時",
+  "settingsCollectionUpdatedAt": "更新日時",
+  "settingsCollectionOriginalName": "元の名前",
+  "settingsFileMove": "移動",
+  "settingsFileMoveTitle": "項目の移動",
+  "settingsFileMoveRoot": "ルートへ移動",
+  "settingsFileMoveSuccess": "移動しました",
+  "settingsFileMoveFailed": "移動に失敗しました",
+  "settingsFileMoveTargetTitle": "移動先を選択",
+  "settingsFileMoveCurrentFolder": "現在のフォルダ",
+  "settingsFileDuplicate": "複製",
+  "settingsFileFolderInfo": "フォルダ情報",
+  "settingsFileFileInfo": "ファイル情報",
+  "settingsFileRemoveReference": "参照を削除",
+  "settingsFileRemoveReferenceTitle": "参照の削除",
+  "settingsFileRemoveReferenceMessage": "データベースからこの項目の参照のみを削除します。実ファイルは削除されません。",
+  "settingsFileDeleteConfirmTitle": "ごみ箱へ移動",
+  "settingsFileDeleteConfirmMessage": "ごみ箱を空にするまでは復元できます。",
+  "settingsFileActionRemoveReference": "参照のみ削除",
+  "settingsFileActionDuplicateSuccess": "複製しました",
+  "settingsFileActionDuplicateFailed": "複製に失敗しました",
+  "settingsFileName": "名まえ",
+  "settingsFilePath": "パス",
+  "settingsFileOriginalPath": "元のパス",
+  "settingsFileSize": "サイズ",
+  "settingsFileAddedAt": "追加日時",
+  "settingsFileUpdatedAt": "更新日時",
+  "settingsFileMissingCheckedAt": "未検出チェック日時",
+  "settingsFileNotChecked": "未チェック",
+  "settingsFileSource": "ソース",
+  "settingsFileSourceLocal": "ローカル",
+  "settingsFileSourceExternal": "外部ストレージ",
+  "settingsFileStatus": "ステータス",
+  "settingsFileStatusMissing": "未検出",
+  "settingsFileStatusNormal": "正常",
+  "settingsFileActionShow": "表示",
+  "settingsFileActionHide": "非表示",
+  "settingsFileActionShowSuccess": "表示に設定しました",
+  "settingsFileActionHideSuccess": "非表示に設定しました",
+  "settingsFileActionShowFailed": "変更に失敗しました",
+  "settingsFileActionHideFailed": "変更に失敗しました",
+  "settingsFileActionArchive": "アーカイブ",
+  "settingsFileActionUnarchive": "アーカイブ解除",
+  "settingsFileActionArchiveSuccess": "アーカイブしました",
+  "settingsFileActionUnarchiveSuccess": "解除しました",
+  "settingsFileActionArchiveFailed": "失敗しました",
+  "settingsFileActionUnarchiveFailed": "失敗しました",
+  "settingsFileDeleteSuccess": "ごみ箱へ移動しました",
+  "settingsFileDeleteFailed": "削除に失敗しました",
+  "settingsFileNotAcquired": "取得失敗",
+  "settingsCollectionLastViewedAt": "最終閲覧",
+  "settingsCollectionNoHistory": "履歴なし",
+  "settingsCollectionPinned": "ピン留め済み",
+  "settingsFileRemoveReferenceSuccess": "参照を削除しました",
+  "settingsFileRemoveReferenceCleanupPending": "参照を解除しました。端末側の後片付けは後で自動的に行います",
+  "settingsFileRemoveReferenceFailed": "参照の削除に失敗しました",
+  "settingsCollectionCatalogifyGuideTooltip": "カタログについて",
+  "settingsCollectionCatalogifyGuideTitle": "カタログにする",
+  "settingsCollectionCatalogifyGuideMessage": "カタログは、ひとつのまとまりとして扱うファイルです。フォルダも単体ファイルもカタログにして、チャーム・お気に入り・ティアを設定し、検索や絞り込みで見つけられます。",
+  "settingsCollectionCatalogifyConfirmMessageWithTarget": "この{target}にチャームやお気に入りを設定できるようになります。",
+  "@settingsCollectionCatalogifyConfirmMessageWithTarget": {
+    "placeholders": {
+      "target": {
+        "type": "String"
+      }
+    }
+  },
+  "settingsTagPresetImporting": "取り込み中...",
+  "settingsTagPresetImportConfirmTitle": "チャームの読み込み",
+  "settingsTagPresetImportConfirmMessage": "次の内容を取り込みます。よろしいですか？",
+  "settingsTagPresetImportConfirmFacets": "分類",
+  "settingsTagPresetImportConfirmTags": "チャーム",
+  "settingsTagPresetImportConfirmSummary": "新規 {createCount}・更新 {updateCount}・スキップ {skipCount}",
+  "@settingsTagPresetImportConfirmSummary": {
+    "placeholders": {
+      "createCount": {
+        "type": "int"
+      },
+      "updateCount": {
+        "type": "int"
+      },
+      "skipCount": {
+        "type": "int"
+      }
+    }
+  },
+  "settingsTagPresetOverwriteExisting": "同名チャームの設定を更新する",
+  "settingsTagPresetOverwriteExistingSubtitle": "オフの場合、登録済みの分類とチャームは変更しません",
+  "settingsTagPresetImportCompleted": "取り込み完了（新規 {createCount}・更新 {updateCount}・変更なし {skipCount}）",
+  "@settingsTagPresetImportCompleted": {
+    "placeholders": {
+      "createCount": {
+        "type": "int"
+      },
+      "updateCount": {
+        "type": "int"
+      },
+      "skipCount": {
+        "type": "int"
+      }
+    }
+  },
+  "settingsDataManagementSection": "データ管理",
+  "settingsStorageManagement": "ストレージ管理",
+  "settingsStorageSection": "ストレージ",
+  "settingsStoragePath": "保存場所",
+  "settingsStoragePathDialogMessage": "ファイルと管理情報は、アプリ専用の非公開領域に保存されます。Androidの公開Documents/CharmShelfは、許可した旧データの復元時だけ読み取ります。",
+  "settingsStoragePathDialogMessageIos": "ファイルと管理情報は、iPhone内のアプリ専用領域に保存されます。「ファイル」アプリから直接開くことはできません。端末外へ保存する場合は、共有・書き出し・バックアップを使用してください。",
+  "settingsStoragePathCopy": "パスをコピー",
+  "settingsStoragePathCopied": "アプリ保存領域のパスをクリップボードにコピーしました",
+  "settingsStorageSync": "ライブラリを最適化",
+  "settingsStorageSyncSubtitle": "ファイルの変更を反映",
+  "settingsStorageSyncInfoMessage": "アプリ内に取り込んだファイルをもう一度確認し、追加・更新された項目や見つからなくなった項目をライブラリの表示へ反映します。元のファイルは削除しません。",
+  "settingsBackupGuideTitle": "整理情報を守る",
+  "settingsBackupGuideSubtitle": "使い方を確認して、バックアップの作成または復元を行います",
+  "settingsBackupGuideHeading": "バックアップと復元",
+  "settingsBackupGuideDescription": "チャームやメモなどの整理情報を、パスワード付きのファイルとして保管できます。",
+  "settingsBackupIncludedTitle": "保存されるもの",
+  "settingsBackupIncludedBody": "チャーム、メモ、カタログ名、お気に入り、並び順などの整理情報。",
+  "settingsBackupExcludedTitle": "保存されないもの",
+  "settingsBackupExcludedBody": "画像、動画、音声、PDFなどの元ファイル、ごみ箱の内容、アプリロックや一般設定。元ファイルは別途保管してください。",
+  "settingsBackupCreateFlowTitle": "バックアップを作る",
+  "settingsBackupCreateFlowSubtitle": "整理情報を暗号化し、保存先を選びます",
+  "settingsBackupRestoreFlowTitle": "バックアップから戻す",
+  "settingsBackupRestoreFlowSubtitle": "ファイルの内容を確認してから、現在のデータに追加します",
+  "settingsBackupStepPosition": "{step} / {total}",
+  "@settingsBackupStepPosition": {
+    "placeholders": {
+      "step": {
+        "type": "int"
+      },
+      "total": {
+        "type": "int"
+      }
+    }
+  },
+  "settingsBackupCreateStep1Title": "バックアップできる内容",
+  "settingsBackupCreateStep1Description": "最初に、バックアップに入るものと入らないものを確認します。",
+  "settingsBackupCreateStep1Action": "パスワードを決める",
+  "settingsBackupCreateStep2Title": "バックアップを保護する",
+  "settingsBackupCreateStep2Description": "8文字以上のパスワードを設定します。復元時に必要です。",
+  "settingsBackupCreateStep2Action": "内容を確認する",
+  "settingsBackupPasswordKeepTitle": "パスワードも保管してください",
+  "settingsBackupPasswordKeepBody": "CharmShelfではこのパスワードを確認・再発行できません。忘れない場所に保管してください。",
+  "settingsBackupCreateStep3Title": "保存内容の確認",
+  "settingsBackupCreateStep3Description": "下の整理情報をファイルにして、保存・共有先を選びます。",
+  "settingsBackupCreateStep3Action": "保存・共有先を選ぶ",
+  "settingsBackupCreateSummaryTitle": "保存する整理情報",
+  "settingsBackupCreateSummary": "カタログ {collections}件、項目 {items}件、チャーム {tags}件",
+  "@settingsBackupCreateSummary": {
+    "placeholders": {
+      "collections": {
+        "type": "int"
+      },
+      "items": {
+        "type": "int"
+      },
+      "tags": {
+        "type": "int"
+      }
+    }
+  },
+  "settingsBackupCreateStep4Title": "バックアップを共有しました",
+  "settingsBackupCreateStep4Description": "選んだアプリへバックアップファイルを渡しました。",
+  "settingsBackupCreateStep4UnverifiedDescription": "共有画面へバックアップファイルを渡しました。保存が完了したかは保存先で確認してください。",
+  "settingsBackupCreateStep4CheckTitle": "最後に確認",
+  "settingsBackupCreateStep4CheckBody": "保存先のアプリを開き、tagshelf_metadata から始まるファイルがあることを確認してください。",
+  "settingsBackupShareDismissed": "保存・共有が完了していません。もう一度保存先を選んでください。",
+  "settingsBackupNeedsActionTitle": "保存はまだ完了していません",
+  "settingsBackupErrorTitle": "確認してください",
+  "settingsBackupDoneAction": "完了",
+  "settingsBackupRestoreStep1Title": "バックアップファイルを選ぶ",
+  "settingsBackupRestoreStep1Description": "CharmShelfで作成したバックアップファイルを選んでください。",
+  "settingsBackupRestoreStep1Action": "ファイルを選ぶ",
+  "settingsBackupRestoreNoChangeTitle": "選ぶだけでは変更されません",
+  "settingsBackupRestoreNoChangeBody": "ファイルを選び、内容を確認した後に最終確認があります。",
+  "settingsBackupRestoreInvalidFileMessage": "CharmShelfのバックアップファイルを読み込めませんでした。現在のデータは変更されていません。",
+  "settingsBackupRestoreStep2Title": "パスワードを入力",
+  "settingsBackupRestoreStep2Description": "このバックアップを作ったときのパスワードを入力します。",
+  "settingsBackupRestoreStep2Action": "バックアップの内容を確認する",
+  "settingsBackupSelectedFileTitle": "選択したファイル",
+  "settingsBackupRestorePasswordOrFileError": "パスワードが異なるか、ファイルが壊れている可能性があります。現在のデータは変更されていません。",
+  "settingsBackupRestoreStep3Title": "追加する内容を確認",
+  "settingsBackupRestoreStep3Description": "この画面で確定するまで、現在のデータは変更されません。",
+  "settingsBackupRestoreStep3Action": "現在のデータに追加する",
+  "settingsBackupRestoreCreatedAtTitle": "バックアップ作成日時",
+  "settingsBackupRestoreAppVersionTitle": "作成時のCharmShelfバージョン",
+  "settingsBackupRestoreContentsTitle": "バックアップの内容",
+  "settingsBackupRestoreOverlapTitle": "現在のデータと重なる項目",
+  "settingsBackupRestoreSkippedTitle": "そのままでは戻せない項目",
+  "settingsBackupRestoreSkippedBody": "別の端末のファイルを参照している項目など {count}件は、再度ファイルを追加する必要があります。",
+  "@settingsBackupRestoreSkippedBody": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "settingsBackupRestoreMergeTitle": "現在のデータは残ります",
+  "settingsBackupRestoreMergeBody": "バックアップの内容を追加し、同じ項目の整理情報は更新します。",
+  "settingsBackupRestoreStep4Title": "復元が完了しました",
+  "settingsBackupRestoreStep4Description": "バックアップの整理情報を現在のデータに追加しました。",
+  "settingsBackupRestoreAddedTitle": "追加した内容",
+  "settingsBackupRestoreAddedBody": "カタログ {collections}件、項目 {items}件",
+  "@settingsBackupRestoreAddedBody": {
+    "placeholders": {
+      "collections": {
+        "type": "int"
+      },
+      "items": {
+        "type": "int"
+      }
+    }
+  },
+  "settingsBackupRestoreUpdatedTitle": "更新した内容",
+  "settingsBackupRestoreUpdatedBody": "カタログ {collections}件、項目 {items}件",
+  "@settingsBackupRestoreUpdatedBody": {
+    "placeholders": {
+      "collections": {
+        "type": "int"
+      },
+      "items": {
+        "type": "int"
+      }
+    }
+  },
+  "settingsBackupRestoreCheckFilesTitle": "元ファイルを確認",
+  "settingsBackupRestoreCheckFilesBody": "画像や動画などが開けるか確認してください。開けない項目は、元ファイルを改めて追加してください。",
+  "settingsBackupUnknownValue": "不明",
+  "settingsBackupFilesExcluded": "画像・動画・PDFなどの元ファイルは含まれません。元ファイルは別途書き出して保管してください。",
+  "settingsBackupPasswordTitleCreate": "バックアップを暗号化",
+  "settingsBackupPasswordTitleRestore": "バックアップを復号",
+  "settingsBackupPasswordLabel": "バックアップ用パスワード",
+  "settingsBackupPasswordConfirmLabel": "パスワードを再入力",
+  "settingsBackupPasswordCreateMessage": "8文字以上のパスワードで管理情報を暗号化します。このパスワードは復元できないため、安全な場所に保管してください。元ファイルはバックアップに含まれません。",
+  "settingsBackupPasswordRestoreMessage": "バックアップ作成時のパスワードを入力してください。続けるとファイル選択画面が開きます。",
+  "settingsBackupPasswordTooShort": "8文字以上で入力してください",
+  "settingsBackupPasswordMismatch": "パスワードが一致しません",
+  "settingsBackupShowPassword": "パスワードを表示",
+  "settingsBackupHidePassword": "パスワードを隠す",
+  "settingsBackupCreateAction": "バックアップを作成",
+  "settingsBackupSelectAction": "ファイルを選択",
+  "settingsBackupCreated": "暗号化ファイルを作成しました。共有先に保存され、開けることを確認してください。",
+  "settingsBackupRestorePlanTitle": "バックアップの内容を追加しますか？",
+  "settingsBackupRestorePlanSummary": "現在のデータを残したまま、カタログ {collections}件、項目 {items}件を追加します。",
+  "@settingsBackupRestorePlanSummary": {
+    "placeholders": {
+      "collections": {
+        "type": "int"
+      },
+      "items": {
+        "type": "int"
+      }
+    }
+  },
+  "settingsBackupRestoreConflictSummary": "同じ保存場所を示す別データが {count}件あります。現在のデータと同じ場所はバックアップ内容で更新されます。",
+  "@settingsBackupRestoreConflictSummary": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "settingsBackupRestoreFilesReminder": "元ファイルは復元されません。ファイルがない項目は利用できない状態で表示される場合があります。外部参照は再許可が必要な場合があります。",
+  "settingsBackupRestoreAction": "バックアップから追加",
+  "settingsStorageExportMeta": "設定情報を保存",
+  "settingsStorageExportMetaSubtitle": "チャームや作品設定をアプリ内に保存",
+  "settingsStorageSyncSuccess": "フォルダの同期が完了しました (追加: {added}, 更新: {updated}, 未検出: {missing})",
+  "@settingsStorageSyncSuccess": {
+    "placeholders": {
+      "added": {
+        "type": "int"
+      },
+      "updated": {
+        "type": "int"
+      },
+      "missing": {
+        "type": "int"
+      }
+    }
+  },
+  "settingsStorageExportMetaSuccess": "メタデータを保存しました",
+  "settingsStorageSyncFailed": "フォルダの同期に失敗しました",
+  "settingsStorageExportMetaFailed": "メタデータの書き出しに失敗しました",
+  "settingsStorageExportMetaDialogTitle": "メタデータの書き出しについて",
+  "settingsStorageExportMetaDialogIntro": "現在のチャーム一覧やお気に入り・作品設定などを、同じ端末内にあるアプリの内部保存領域へ保存します。端末外には保存されません。",
+  "settingsStorageExportMetaFeatureTagsTitle": "チャーム・分類情報の保存",
+  "settingsStorageExportMetaFeatureTagsBody": "作成したチャームの一覧、階層関係、カラー設定などの分類情報を丸ごと保存します。",
+  "settingsStorageExportMetaFeatureSettingsTitle": "作品設定・評価の保持",
+  "settingsStorageExportMetaFeatureSettingsBody": "カタログの別名、お気に入り、ティア、メモ、アーカイブ状態などを記録します。",
+  "settingsStorageExportMetaNoteSafe": "実ファイル（画像やPDFなど）は変更せず、設定情報だけをアプリの非公開領域に保存します。",
+  "settingsStorageExportMetaExecute": "書き出しを実行",
+  "settingsStorageImportMeta": "設定情報を復元",
+  "settingsStorageImportMetaSubtitle": "保存済みのチャームや作品設定を反映",
+  "settingsStorageImportMetaConfirmTitle": "メタデータの読み込み",
+  "settingsStorageImportMetaConfirmMessage": "保存されているメタデータからチャームやお気に入り設定を復元・マージします。実行しますか？",
+  "settingsStorageImportMetaDialogTitle": "メタデータの読み込みについて",
+  "settingsStorageImportMetaDialogIntro": "同じ端末内の専用フォルダにある内部保存データ（metadata.json）から、チャームや作品設定を復元・反映します。",
+  "settingsStorageImportMetaFeatureMergeTitle": "既存データとのマージ",
+  "settingsStorageImportMetaFeatureMergeBody": "現在の実ファイルは変更せず、チャームや設定情報を統合・更新します。",
+  "settingsStorageImportMetaFeatureRestoreTitle": "チャーム・カタログ設定の復旧",
+  "settingsStorageImportMetaFeatureRestoreBody": "フォルダ内の各作品に対応するチャーム付けや並び順、評価などの設定を復元します。",
+  "settingsStorageImportMetaNoteSafe": "実ファイル（画像やPDFなど）は削除・上書きせず、設定情報だけを適用します。",
+  "settingsStorageImportMetaExecute": "読み込みを実行",
+  "settingsStorageImportMetaSuccess": "メタデータを復元しました ({count}件)",
+  "@settingsStorageImportMetaSuccess": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "settingsMetadataSection": "チャーム・作品設定の管理",
+  "settingsMetadataSectionBadge": "上級者向け",
+  "settingsMetadataSectionDescription": "設定は自動保存されます。ここではアプリ内の設定情報を手動で保存・復元できます。外部バックアップではありません。",
+  "settingsAdvancedGuideSubtitle": "内容を確認して、設定情報の保存または復元を行います",
+  "settingsAdvancedGuideHeading": "チャーム・作品設定を手動で管理",
+  "settingsAdvancedGuideDescription": "普段は操作しなくても、チャームやお気に入りなどの設定は自動で保存されます。必要なときだけ、同じ端末内に設定情報を保存したり、保存済みの内容を反映したりできます。",
+  "settingsAdvancedAutomaticTitle": "通常は自動保存されます",
+  "settingsAdvancedAutomaticBody": "チャーム、カタログの別名、お気に入り、評価、メモ、並び順などは、変更するたびにアプリが保存します。日常的にこの操作を行う必要はありません。",
+  "settingsAdvancedBackupDifferenceTitle": "バックアップとは異なります",
+  "settingsAdvancedBackupDifferenceBody": "ここで保存する設定情報は、同じ端末のアプリ専用領域に置かれます。画像・動画・PDFなどの元ファイルは含まれず、端末の故障やアプリの削除に備える外部バックアップにもなりません。",
+  "settingsAdvancedExportActionDescription": "現在のチャームや作品設定を、同じ端末内のアプリ専用領域へ保存します",
+  "settingsAdvancedImportActionDescription": "以前この端末内に保存した設定情報を、現在の内容に統合して反映します",
+  "settingsStorageMetaDialogAdvancedNote": "通常は自動管理されるため、この操作は不要です。アプリ内への保存であり、端末外へのバックアップにはなりません。",
+  "settingsStorageImportMetaFailed": "メタデータの読み込みに失敗しました",
+  "settingsStorageImportMetaNotFound": "メタデータファイルが見つかりません",
+  "settingsFolderManagement": "フォルダ管理",
+  "settingsFolderManagementSubtitle": "ライブラリ画面でフォルダ作成や階層管理を行えるようにします",
+  "settingsArchiveSubtitle": "一時的に非表示にしたファイルやフォルダの確認・復元",
+  "settingsTrashSubtitle": "削除したアイテムの確認・復元、または完全削除",
+  "settingsStorageClear": "ストレージを空にする",
+  "settingsStorageClearSubtitle": "アプリ内の私有ファイルとデータベースを消去",
+  "settingsStorageClearDialogTitle1": "ストレージを空にしますか？",
+  "settingsStorageClearDialogIntro1": "アプリ内のファイルと登録データを消去します。外部の元ファイルは削除しません。",
+  "settingsStorageClearFeatureFilesTitle": "アプリ内ファイルの削除",
+  "settingsStorageClearFeatureFilesBody": "アプリ内にコピーした画像・PDF・動画などを削除します。",
+  "settingsStorageClearFeatureDbTitle": "登録データの消去",
+  "settingsStorageClearFeatureDbBody": "カタログ、チャーム、お気に入り、履歴などを消去します。設定は残ります。",
+  "settingsStorageClearNoteWarning": "消去したアプリ内データは元に戻せません。",
+  "settingsStorageClearFinalTitle": "本当にストレージを空にしますか？",
+  "settingsStorageClearFinalMessage": "アプリ内データを消去します。元に戻せません。",
+  "settingsStorageClearFinalExecute": "消去へ進む",
+  "settingsStorageRestoreLegacy": "以前のAndroid版から引っ越す",
+  "settingsStorageRestoreLegacySubtitle": "Documents/CharmShelfに残っているファイルをコピー",
+  "settingsStorageRestoreLegacyInfoMessage": "以前のAndroid版CharmShelfがDocuments/CharmShelfに保存したファイルを、現在のアプリへコピーします。これはバックアップファイルから戻す操作とは別の機能です。Documents/CharmShelfの元ファイルは削除しません。",
+  "settingsStorageClearCountdownTitle": "ストレージ消去の準備中",
+  "settingsStorageClearCountdownSeconds": "{seconds} 秒後に消去を開始します...",
+  "@settingsStorageClearCountdownSeconds": {
+    "placeholders": {
+      "seconds": {
+        "type": "int"
+      }
+    }
+  },
+  "settingsStorageClearCountdownMessage": "今ならまだキャンセルが間に合います！",
+  "settingsStorageClearDeletingTitle": "ストレージ消去を実行中...",
+  "settingsStorageClearDeletingMessage": "ファイルを削除しています。しばらくお待ちください...",
+  "settingsStorageClearCancelNow": "今すぐ中断する",
+  "settingsStorageClearCancelled": "ストレージの消去を中断しました",
+  "settingsStorageClearExecute": "消去する",
+  "settingsStorageClearSuccess": "ストレージを空にしました",
+  "settingsStorageClearFailed": "ストレージの消去に失敗しました",
+  "settingsStorageClearRetryMessage": "消去の後処理がまだ完了していません。安全に完了するまで再試行してください。アプリを終了した場合は、次回起動時に自動で再開します。",
+  "settingsTip": "開発者を応援",
+  "settingsTipSubtitle": "ジュース、コーヒー、ラーメンを一杯おごる",
+  "tipPageTitle": "開発者を応援",
+  "tipPageHeading": "CharmShelfを応援する",
+  "tipPageDescription": "気に入っていただけたら、開発を続けるための一杯をおごってください。応援で機能が解放されることはありません。",
+  "tipJuice": "ジュース一杯",
+  "tipCoffee": "コーヒー一杯",
+  "tipRamen": "ラーメン一杯",
+  "tipConfirmTitle": "応援の確認",
+  "tipConfirmMessage": "{item}（{price}）を購入しますか？",
+  "@tipConfirmMessage": {
+    "placeholders": {
+      "item": {
+        "type": "String"
+      },
+      "price": {
+        "type": "String"
+      }
+    }
+  },
+  "tipConfirmPurchase": "購入へ進む",
+  "tipPurchaseNotice": "応援は何度でも購入できる消耗型の単発購入です。機能の解放や自動更新はありません。消費済みの応援は復元されません。購入履歴・返金の申請はApp StoreまたはGoogle Playでご確認ください。",
+  "tipPurchaseThankYou": "応援ありがとうございます！",
+  "tipPurchaseCanceled": "購入をキャンセルしました",
+  "tipPurchaseFailed": "購入を完了できませんでした",
+  "tipPurchaseUnconfirmed": "ストアで完了を確認できませんでした。購入履歴をご確認ください。",
+  "tipStoreUnavailable": "ストアの商品情報を取得できません。時間をおいてお試しください。",
+  "tipPriceUnavailable": "価格を取得できません",
+  "libraryBackupTitle": "ライブラリのバックアップ",
+  "libraryBackupDescription": "ファイルと整理情報をまとめて保存・復元します。",
+  "libraryBackupCoverage": "ファイル、チャームと分類、メモ、お気に入り、閲覧履歴、非表示・アーカイブ・ごみ箱を含みます。パスコードや端末のアクセス権は含みません。",
+  "libraryBackupPrivacy": "バックアップには非表示の内容も含まれ、暗号化されません。自分で管理できる保存先を選んでください。自動送信はしません。",
+  "libraryBackupCreate": "バックアップを保存",
+  "libraryBackupChoose": "バックアップから復元",
+  "libraryBackupCreating": "バックアップを作成しています…",
+  "libraryBackupValidating": "バックアップを確認しています…",
+  "libraryBackupSaving": "選んだ保存先へ保存しています…",
+  "libraryBackupRestoring": "ライブラリに追加しています…",
+  "libraryBackupRestorePreview": "復元内容の確認",
+  "libraryBackupRestoreExplanation": "日付付きの専用フォルダへ追加します。同じデータは重複追加せず、現在の編集内容やファイルを上書きしません。元のバックアップは変更しません。",
+  "libraryBackupRestoreConfirm": "この内容をライブラリに追加",
+  "libraryBackupCompleted": "バックアップを保存しました",
+  "libraryBackupRestoreCompleted": "復元しました。追加 {added} 件、既存 {skipped} 件。",
+  "libraryBackupSummary": "ファイル {files} 件・チャーム {tags} 個・{size}",
+  "libraryBackupFailed": "完了できませんでした。空き容量と保存先へのアクセスを確認して、もう一度お試しください。現在のライブラリは上書きしていません。",
+  "libraryBackupInvalid": "バックアップを確認できませんでした。CharmShelfで作成した完全なバックアップを選び直してください。ライブラリのデータは変更していません。",
+  "libraryBackupExternal": "外部参照のファイルが残っています。先にアプリ内へコピーしてから、ライブラリ全体をバックアップしてください。",
+  "libraryBackupCancel": "処理をキャンセル",
+  "libraryBackupCancelPreview": "追加せず戻る",
+  "libraryBackupChooseDestination": "バックアップの保存先を選択",
+  "@libraryBackupRestoreCompleted": {
+    "placeholders": {
+      "added": {
+        "type": "int"
+      },
+      "skipped": {
+        "type": "int"
+      }
+    }
+  },
+  "@libraryBackupSummary": {
+    "placeholders": {
+      "files": {
+        "type": "int"
+      },
+      "tags": {
+        "type": "int"
+      },
+      "size": {
+        "type": "String"
+      }
+    }
+  },
+  "libraryBackupFolderName": "復元 {date}",
+  "@libraryBackupFolderName": {
+    "placeholders": {
+      "date": {
+        "type": "String"
+      }
+    }
+  },
+  "libraryBackupCleanupIncomplete": "復元は完了しています。一時ファイルの削除に失敗しました。保存したバックアップと復元済みのライブラリは、そのまま利用できます。",
+  "libraryBackupHowItWorks": "バックアップのしくみ",
+  "libraryBackupHowItWorksSubtitle": "アプリ内のすべてのデータを1つの「.tagshelf」ファイルにまとめて保存し、いつでも安全に追加・復元できます。",
+  "libraryBackupDiagramLibrary": "CharmShelfのライブラリ",
+  "libraryBackupDiagramArchive": "1つのファイル (.tagshelf)",
+  "libraryBackupDiagramSave": "まるごと保存",
+  "libraryBackupDiagramRestore": "安全に追加復元",
+  "libraryBackupSaveCardTitle": "ライブラリの書き出し",
+  "libraryBackupSaveCardDescription": "ライブラリ全体の写真・動画・チャーム・メモなどを1つのファイルに書き出します。端末内や外部ストレージなどの保存先を選んで保存してください。",
+  "libraryBackupRestoreCardTitle": "バックアップの読み込み",
+  "libraryBackupRestoreCardDescription": "以前保存した「.tagshelf」ファイルを選んでライブラリに追加します。現在のデータは上書きされず安全です。",
+  "libraryBackupIncludedTitle": "バックアップに含まれるもの",
+  "libraryBackupIncludedFilesTitle": "ファイル・表紙",
+  "libraryBackupIncludedFilesSubtitle": "ファイル本体、フォルダ構成、表紙・サムネイル",
+  "libraryBackupIncludedCharmsTitle": "チャーム・整理情報",
+  "libraryBackupIncludedCharmsSubtitle": "チャーム・分類、タイトル、メモ、別名",
+  "libraryBackupIncludedStatusTitle": "利用状態",
+  "libraryBackupIncludedStatusSubtitle": "お気に入り、ピン留め、閲覧履歴など",
+  "libraryBackupIncludedHiddenTitle": "非表示・ごみ箱",
+  "libraryBackupIncludedHiddenSubtitle": "非表示・アーカイブ・ごみ箱の中身も含む",
+  "libraryBackupExcludedNotice": "※ パスコード、端末のアクセス権、アプリ本体の設定は含まれません。",
+  "libraryBackupSafetyTitle": "上書きされない安心設計",
+  "libraryBackupSafetyDescription": "復元時は「復元 日付」という専用フォルダが新しく作られ、そこに追加されます。すでにあるファイルや最新の編集内容が消えたり上書きされる心配はありません。",
+  "libraryBackupNoticeTitle": "知っておきたい注意点",
+  "libraryBackupNoticeManual": "自動同期・自動保存はありません。定期的に手動でバックアップを保存してください。",
+  "libraryBackupNoticeExternal": "外部参照のファイルが残っていると保存できません。先にアプリ内へコピーしてください。",
+  "libraryBackupRestorePreviewSubtitle": "バックアップファイルの内容を確認しました。ライブラリへ安全に追加できます。",
+  "libraryBackupMetricFiles": "ファイル数",
+  "libraryBackupMetricCharms": "チャーム数",
+  "libraryBackupMetricSize": "容量",
+  "libraryBackupMetricDate": "バックアップ作成日時"
+}

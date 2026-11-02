@@ -1,0 +1,426 @@
+{
+  "@@locale": "ja",
+  "settingsDipMenuOpen": "DIPメニューを開く",
+  "settingsDipMenuSubtitle": "開発用デバッグパネル",
+  "dipPanelTitle": "DIP - 開発者パネル",
+  "dipCategoryInfo": "インフォメーション",
+  "dipCategoryData": "データ操作",
+  "dipCategoryUi": "UI/UX調整",
+  "dipCategoryDebug": "開発・デバッグ",
+  "dipCategoryTest": "テストツール",
+  "dipSharedPrefsTitle": "SharedPreferences",
+  "dipSharedPrefsSubtitle": "保存されたデータの閲覧と編集",
+  "dipSharedPrefsItems": "{count} 個の項目",
+  "@dipSharedPrefsItems": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "dipSharedPrefsNoData": "データがありません",
+  "dipSharedPrefsNoMatch": "一致するデータがありません",
+  "dipSharedPrefsDeleteConfirm": "削除の確認",
+  "dipSharedPrefsDeleteMessage": "\"{key}\" を削除しますか？",
+  "@dipSharedPrefsDeleteMessage": {
+    "placeholders": {
+      "key": {
+        "type": "String"
+      }
+    }
+  },
+  "dipSharedPrefsEditTitle": "編集",
+  "dipSharedPrefsAddTitle": "新規追加",
+  "dipSharedPrefsKey": "キー",
+  "dipSharedPrefsType": "型",
+  "dipSharedPrefsValue": "値",
+  "dipWidgetInspectorTitle": "Widgetインスペクター",
+  "dipWidgetInspectorSubtitle": "レイアウトのデバッグ",
+  "dipWidgetInspectorDescription": "UIのデバッグに便利なオプションを切り替えます",
+  "dipWidgetInspectorOptions": "デバッグオプション",
+  "dipWidgetInspectorRepaintRainbow": "リペイントレインボー",
+  "dipWidgetInspectorRepaintRainbowSubtitle": "再描画エリアを色で表示",
+  "dipWidgetInspectorDebugBanner": "デバッグバナー",
+  "dipWidgetInspectorDebugBannerSubtitle": "Show DEBUG banner",
+  "dipWidgetInspectorSemantics": "アクセシビリティ表示",
+  "dipWidgetInspectorSemanticsSubtitle": "アクセシビリティ情報を表示",
+  "dipWidgetInspectorOtherTools": "その他のツール",
+  "dipWidgetInspectorDevTools": "DevToolsを開く",
+  "dipWidgetInspectorDevToolsSubtitle": "ブラウザで詳細なデバッグ",
+  "dipWidgetInspectorDevToolsHint": "Flutter DevToolsを起動してより高度なデバッグを行います",
+  "dipWidgetInspectorWidgetTree": "Widgetツリー表示",
+  "dipWidgetInspectorWidgetTreeSubtitle": "現在の画面構成を確認",
+  "dipWidgetInspectorWidgetTreeDescription": "Widgetの階層構造とプロパティを一覧表示します",
+  "dipLogViewerTitle": "ログビューアー",
+  "dipLogViewerSubtitle": "アプリログの閲覧とエクスポート",
+  "dipLogViewerAll": "すべて",
+  "dipLogViewerNoLogs": "表示するログがありません",
+  "dipLogViewerTag": "チャーム: {tag}",
+  "@dipLogViewerTag": {
+    "placeholders": {
+      "tag": {
+        "type": "String"
+      }
+    }
+  },
+  "dipLogViewerTime": "時間: {time}",
+  "@dipLogViewerTime": {
+    "placeholders": {
+      "time": {
+        "type": "String"
+      }
+    }
+  },
+  "dipLogViewerSubject": "ログの件名",
+  "dipDbViewerTitle": "DBビューアー",
+  "dipDbViewerSubtitle": "Isarデータベースの内容を表示",
+  "dipDbViewerRecords": "{count} 件のレコード",
+  "@dipDbViewerRecords": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "dipDbViewerStatus": "ステータス: {status}",
+  "@dipDbViewerStatus": {
+    "placeholders": {
+      "status": {
+        "type": "String"
+      }
+    }
+  },
+  "dipDbViewerInitialized": "初期化済み",
+  "dipDbViewerPath": "パス: {path}",
+  "@dipDbViewerPath": {
+    "placeholders": {
+      "path": {
+        "type": "String"
+      }
+    }
+  },
+  "dipDbViewerPathUnknown": "不明",
+  "dipDbViewerCollections": "カタログ: {count}",
+  "@dipDbViewerCollections": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "dipDbViewerCollectionsHint": "テーブルを選択してデータを表示",
+  "dipDbViewerOperations": "データベース操作",
+  "dipDbViewerDeleteAll": "すべてのデータを削除",
+  "dipDbViewerDeleteAllConfirm": "Isarデータベースのすべてのデータを削除しますか？この操作は取り消せません。",
+  "dipDbViewerDetailNotImplemented": "レコード詳細は未実装です",
+  "dipDbViewerClearFromCache": "キャッシュから削除",
+  "dipCrashTestTitle": "クラッシュテスト",
+  "dipCrashTestSubtitle": "例外・クラッシュ処理のテスト",
+  "dipCrashTestWarning": "注意: テスト実行時にアプリが強制終了する場合があります",
+  "dipCrashTestDescription": "様々な種類の例外やエラーを意図的に発生させて、アプリの堅牢性とエラーハンドリングを確認します",
+  "dipCrashTestTypes": "テストの種類",
+  "dipCrashTestDartException": "Dart例外",
+  "dipCrashTestDartExceptionDesc": "標準的なDartの例外をスロー",
+  "dipCrashTestUncaughtException": "未捕捉の例外",
+  "dipCrashTestUncaughtExceptionDesc": "async内での未捕捉エラー",
+  "dipCrashTestAssertion": "アサーションエラー",
+  "dipCrashTestAssertionDesc": "assert(false) の実行",
+  "dipCrashTestStackOverflow": "スタックオーバーフロー",
+  "dipCrashTestStackOverflowDesc": "無限再帰によるクラッシュ",
+  "dipCrashTestNullReference": "Null参照",
+  "dipCrashTestNullReferenceDesc": "nullへのプロパティアクセス",
+  "dipCrashTestPurpose": "テストの目的",
+  "dipCrashTestPurposeReport": "エラー報告",
+  "dipCrashTestPurposeReportDesc": "Sentry/Firebaseへの送信確認",
+  "dipCrashTestPurposeHandler": "グローバルハンドラ",
+  "dipCrashTestPurposeHandlerDesc": "アプリが停止しないか確認",
+  "dipCrashTestPurposeRecovery": "リカバリフロー",
+  "dipCrashTestPurposeRecoveryDesc": "再起動・復帰のテスト",
+  "dipCrashTestConfirmTitle": "クラッシュテストの実行",
+  "dipCrashTestConfirmMessage": "選択したエラーを発生させます。よろしいですか？",
+  "dipCacheClearTitle": "キャッシュクリア",
+  "dipCacheClearSubtitle": "DB、設定、画像キャッシュの削除",
+  "dipCacheClearWarning": "警告: 削除されたデータは復元できません",
+  "dipCacheClearCurrent": "現在のキャッシュサイズ",
+  "dipCacheClearImageCache": "イメージキャッシュ: {size}",
+  "@dipCacheClearImageCache": {
+    "placeholders": {
+      "size": {
+        "type": "String"
+      }
+    }
+  },
+  "dipCacheClearAppData": "アプリデータ合算: {size}",
+  "@dipCacheClearAppData": {
+    "placeholders": {
+      "size": {
+        "type": "String"
+      }
+    }
+  },
+  "dipCacheClearOptions": "クリア対象を選択",
+  "dipCacheClearPrefs": "設定データ (SharedPreferences)",
+  "dipCacheClearPrefsSubtitle": "ユーザー設定とフラグをリセット",
+  "dipCacheClearImages": "サムネイル・画像キャッシュ",
+  "dipCacheClearImagesSubtitle": "生成済みサムネイルを全削除",
+  "dipCacheClearIsar": "Isarデータベース",
+  "dipCacheClearIsarSubtitle": "すべての保存済み項目をリセット",
+  "dipCacheClearAll": "すべてをリセット (初期状態へ)",
+  "dipCacheClearPrefsConfirm": "設定の初期化",
+  "dipCacheClearPrefsConfirmMessage": "アプリの設定をすべてデフォルトに戻しますか？",
+  "dipCacheClearPrefsDone": "設定をリセットしました",
+  "dipCacheClearImagesConfirm": "画像キャッシュの削除",
+  "dipCacheClearImagesConfirmMessage": "生成済みのすべてのサムネイルを削除しますか？",
+  "dipCacheClearImagesDone": "画像キャッシュを削除しました",
+  "dipCacheClearIsarConfirm": "DBの初期化",
+  "dipCacheClearIsarConfirmMessage": "データベース内のすべてのデータを削除しますか？",
+  "dipCacheClearIsarDone": "データベースを初期化しました",
+  "dipCacheClearAllConfirm": "フルリセットの実行",
+  "dipCacheClearAllConfirmMessage": "すべてのデータを削除し、インストール直後の状態に戻します。よろしいですか？",
+  "dipCacheClearAllDone": "フルリセットが完了しました",
+  "dipRestartTitle": "アプリ再起動",
+  "dipRestartSubtitle": "初期化フローからやり直す",
+  "dipRestartOptions": "再起動オプション",
+  "dipRestartSoft": "ソフト再起動",
+  "dipRestartSoftSubtitle": "現在の状態を保持してHomeへ",
+  "dipRestartHard": "ハード再起動",
+  "dipRestartHardSubtitle": "アプリを終了して最初から起動",
+  "dipRestartExit": "アプリ終了",
+  "dipRestartExitSubtitle": "システムレベルで終了(iOS非推奨)",
+  "dipRestartDone": "再起動を実行しました",
+  "dipRouteInfoTitle": "ルート情報",
+  "dipRouteInfoSubtitle": "現在の画面パスとパラメータ",
+  "dipRouteInfoCurrentPath": "現在のパス: {path}",
+  "@dipRouteInfoCurrentPath": {
+    "placeholders": {
+      "path": {
+        "type": "String"
+      }
+    }
+  },
+  "dipRouteInfoFullUri": "フルURI: {uri}",
+  "@dipRouteInfoFullUri": {
+    "placeholders": {
+      "uri": {
+        "type": "String"
+      }
+    }
+  },
+  "dipRouteInfoName": "名前: {name}",
+  "@dipRouteInfoName": {
+    "placeholders": {
+      "name": {
+        "type": "String"
+      }
+    }
+  },
+  "dipRouteInfoNameNone": "なし",
+  "dipRouteInfoCopyButton": "パスをコピー",
+  "dipRouteInfoNavHome": "ホームへ遷移",
+  "dipRouteInfoNavBack": "一つ戻る",
+  "dipTextScaleTitle": "文字サイズ",
+  "dipTextScaleSubtitle": "表示倍率を調整",
+  "dipTextScalePreview": "プレビュー",
+  "dipTextScalePreviewNormal": "通常サイズ",
+  "dipTextScalePreviewSample": "これはテキストサイズのプレビュー用サンプルテキストです。調整して視認性を確認してください。",
+  "dipTextScaleSmall": "小",
+  "dipTextScaleNormal": "標準",
+  "dipTextScaleLarge": "大",
+  "dipTextScaleExtraLarge": "特大",
+  "dipEnvInfoTitle": "環境情報",
+  "dipEnvInfoSubtitle": "アプリとデバイスの状態を表示",
+  "dipEnvInfoCopyAll": "すべてコピー",
+  "dipEnvInfoAppInfo": "アプリ情報",
+  "dipEnvInfoAppName": "アプリ名",
+  "dipEnvInfoPackageName": "パッケージ名",
+  "dipEnvInfoVersion": "バージョン",
+  "dipEnvInfoBuildNumber": "ビルド番号",
+  "dipEnvInfoUnknown": "不明",
+  "dipEnvInfoDeviceInfo": "デバイス情報",
+  "dipEnvInfoPlatform": "プラットフォーム",
+  "dipEnvInfoOsVersion": "OSバージョン",
+  "dipEnvInfoLocale": "ロケール",
+  "dipEnvInfoBuildInfo": "ビルド状況",
+  "dipEnvInfoDebugMode": "デバッグモード",
+  "dipEnvInfoProfileMode": "プロファイルモード",
+  "dipEnvInfoReleaseMode": "リリースモード",
+  "dipEnvInfoYes": "はい",
+  "dipEnvInfoNo": "いいえ",
+  "dipEnvInfoScreenInfo": "画面情報",
+  "dipEnvInfoScreenSize": "画面サイズ",
+  "dipEnvInfoDevicePixelRatio": "ピクセル比(DPR)",
+  "dipEnvInfoTextScale": "テキスト倍率",
+  "dipEnvInfoPaddingTop": "SafeArea(Top)",
+  "dipEnvInfoPaddingBottom": "SafeArea(Bottom)",
+  "dipEnvInfoThemeInfo": "テーマ情報",
+  "dipEnvInfoBrightness": "明るさモード",
+  "dipEnvInfoBrightnessDark": "ダーク",
+  "dipEnvInfoBrightnessLight": "ライト",
+  "dipEnvInfoPrimaryColor": "プライマリーカラー",
+  "dipNetworkTitle": "ネットワーク",
+  "dipNetworkSubtitle": "API通信ログを確認",
+  "dipNetworkSearchHint": "URLまたはステータスで検索",
+  "dipNetworkAll": "すべて表示",
+  "dipNetworkClearTooltip": "ログをクリア",
+  "dipNetworkRefreshTooltip": "更新",
+  "dipNetworkNoRequests": "リクエストがありません",
+  "dipNetworkNoRequestsHint": "API通信が発生するとここに表示されます",
+  "dipNetworkOverview": "概要",
+  "dipNetworkRequest": "リクエスト",
+  "dipNetworkResponse": "レスポンス",
+  "dipNetworkUrl": "URL",
+  "dipNetworkStatus": "ステータス",
+  "dipNetworkError": "エラー",
+  "dipNetworkHeaders": "ヘッダー",
+  "dipNetworkBody": "ボディ",
+  "dipNetworkCopyAsCurl": "cURLとしてコピー",
+  "dipNetworkCurlCopied": "cURLをコピーしました",
+  "dipPushTestTitle": "通知テスト",
+  "dipPushTestSubtitle": "ローカル通知を送信",
+  "dipPushTestContent": "通知内容の設定",
+  "dipPushTestTitleLabel": "タイトル",
+  "dipPushTestBody": "本文",
+  "dipPushTestDefaultTitle": "テスト通知",
+  "dipPushTestDefaultBody": "これはDIPからのテスト通知です",
+  "dipPushTestTiming": "送信タイミング",
+  "dipPushTestImmediate": "即時",
+  "dipPushTestDelayed": "5秒後",
+  "dipPushTestSend": "通知を送信",
+  "dipPushTestPresets": "プリセット",
+  "dipPushTestPresetMessage": "メッセージ",
+  "dipPushTestPresetMessageTitle": "新着メッセージ",
+  "dipPushTestPresetMessageBody": "新しいメッセージが届きました",
+  "dipPushTestPresetReminder": "リマインダー",
+  "dipPushTestPresetReminderBody": "未完了のタスクがあります",
+  "dipPushTestPresetUpdate": "アップデート",
+  "dipPushTestPresetUpdateTitle": "更新完了",
+  "dipPushTestPresetUpdateBody": "アプリを最新の状態に更新しました",
+  "dipPushTestPresetPromotion": "プロモーション",
+  "dipPushTestPresetPromotionTitle": "期間限定セール",
+  "dipPushTestPresetPromotionBody": "今だけ全品50%OFFキャンペーン実施中！",
+  "dipPushTestNotes": "注意事項",
+  "dipPushTestNotesContent": "・通知権限が許可されている必要があります\n・OSの設定で通知が無効な場合は表示されません\n・iOS実機ではAPNsの設定が必要な場合があります",
+  "dipPushTestChannelName": "テスト用チャンネル",
+  "dipPushTestChannelDesc": "DIPからのテスト通知用",
+  "dipPushTestScheduled": "予約しました",
+  "dipPushTestSent": "送信しました",
+  "dipPushTestDelayedMessage": "5秒後に通知が届きます",
+  "dipPushTestError": "エラー: {error}",
+  "@dipPushTestError": {
+    "placeholders": {
+      "error": {
+        "type": "String"
+      }
+    }
+  },
+  "dipAppIconTitle": "アプリアイコン",
+  "dipAppIconSubtitle": "アイコンを動的に変更 (iOS)",
+  "dipAppIconIosOnly": "iOSのみ対応",
+  "dipAppIconDescription": "ホーム画面のアイコンを変更します。iOS実機でのみ動作します。",
+  "dipAppIconSelect": "アイコンを選択",
+  "dipAppIconDefault": "デフォルト",
+  "dipAppIconDark": "ダークモード",
+  "dipAppIconLight": "ライトモード",
+  "dipAppIconRed": "レッドカスタム",
+  "dipAppIconGreen": "グリーンカスタム",
+  "dipAppIconHowToSetup": "アイコン追加の手順",
+  "dipAppIconStep1": "1. アセットの配置",
+  "dipAppIconStep1Desc": "Info.plistとAssetsに背景・アイコンを登録",
+  "dipAppIconStep2": "2. 機能の有効化",
+  "dipAppIconStep2Desc": "PrivacyNativeService経由で実行",
+  "dipAppIconChanged": "アイコンを変更しました",
+  "dipAppIconChangeFailed": "変更に失敗しました",
+  "dipAppIconIosOnlyMessage": "この機能はiOSでのみ利用可能です",
+  "dipMockDataTitle": "モックデータ生成",
+  "dipMockDataSubtitle": "テスト用のダミーデータを作成",
+  "dipMockDataDescription": "開発・デモ用のダミーデータを生成します。既存のデータは保持されます。",
+  "dipMockDataSettings": "生成設定",
+  "dipMockDataCount": "生成件数: {count}",
+  "@dipMockDataCount": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "dipMockDataTypes": "データ種別",
+  "dipMockDataUser": "ユーザー",
+  "dipMockDataUserSubtitle": "プロフィール、アイコン、設定",
+  "dipMockDataPost": "投稿 / メディア",
+  "dipMockDataPostSubtitle": "画像、動画、テキスト、チャーム",
+  "dipMockDataComment": "コメント / 反応",
+  "dipMockDataCommentSubtitle": "スレッド、いいね、履歴",
+  "dipMockDataNotification": "通知履歴",
+  "dipMockDataNotificationSubtitle": "システム、プロモーション、新着",
+  "dipMockDataHelper": "ヘルパー",
+  "dipMockDataHelperTitle": "アセットから読み込む",
+  "dipMockDataGenerated": "{count} 件のデータを生成しました",
+  "@dipMockDataGenerated": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "dipLocaleSwitchTitle": "言語切り替え",
+  "dipLocaleSwitchSubtitle": "アプリの言語を強制的に変更",
+  "dipLocaleSwitchAuto": "自動 (システム設定)",
+  "dipLocaleSwitchJapanese": "日本語に固定",
+  "dipLocaleSwitchSystem": "システム設定に戻す",
+  "dipThemeSwitchTitle": "テーマ切り替え",
+  "dipThemeSwitchSubtitle": "テーマモードを強制的に変更",
+  "dipThemeSwitchLight": "ライトモード固定",
+  "dipThemeSwitchDark": "ダークモード固定",
+  "dipThemeSwitchSystem": "システム設定に合わせる",
+  "dipPerformanceTitle": "パフォーマンス",
+  "dipPerformanceSubtitle": "レンダリング統計の表示",
+  "dipSlowAnimationsTitle": "スローアニメーション",
+  "dipSlowAnimationsSubtitle": "アニメーションを極端に遅くする",
+  "dipSlowAnimationsOn": "スローモーションON",
+  "dipFeatureFlagsTitle": "機能フラグ",
+  "dipFeatureFlagsSubtitle": "機能のON/OFFを確認",
+  "dipFeatureFlagsDescription": "template_config.yaml で定義された現在の有効化設定を確認します",
+  "dipFeatureFlagsCurrent": "現在のフラグ一覧",
+  "dipFeatureFlagsOther": "その他の設定",
+  "dipFeatureFlagsTabBar": "タブバー",
+  "dipFeatureFlagsLocalAuth": "生体認証 / ロック",
+  "dipFeatureFlagsOnboarding": "オンボーディング",
+  "dipFeatureFlagsPermissions": "権限リクエスト",
+  "dipFeatureFlagsBackup": "バックアップ機能",
+  "dipFeatureFlagsAppReview": "レビュー依頼",
+  "dipFeatureFlagsTutorial": "チュートリアル",
+  "dipFeatureFlagsForceUpdate": "強制アップデート",
+  "dipFeatureFlagsDeepLink": "ディープリンク",
+  "dipFeatureFlagsDarkMode": "ダークモード対応",
+  "dipFeatureFlagsI18n": "多言語対応",
+  "dipFeatureFlagsHaptics": "触覚フィードバック",
+  "dipFeatureFlagsSound": "サウンドエフェクト",
+  "dipFeatureFlagsDip": "開発者パネル",
+  "dipFeatureFlagsAppName": "アプリ表示名",
+  "dipFeatureFlagsPackageName": "パッケージ名",
+  "dipFeatureFlagsMinAge": "対象年齢",
+  "dipFeatureFlagsMinAgeValue": "{age} 歳以上",
+  "@dipFeatureFlagsMinAgeValue": {
+    "placeholders": {
+      "age": {
+        "type": "int"
+      }
+    }
+  },
+  "dipFeatureFlagsDeepLinkScheme": "DLスキーム",
+  "dipFeatureFlagsTextScaleMax": "最大文字サイズ",
+  "dipFeatureFlagsOrientation": "画面回転",
+  "dipEnvSwitchTitle": "環境切り替え",
+  "dipEnvSwitchSubtitle": "Dev / Staging / Prod",
+  "dipEnvSwitchWarning": "環境を切り替えるとアプリが再起動します",
+  "dipEnvSwitchProductionWarning": "※本番環境への切り替えは慎重に行ってください",
+  "dipEnvDevelopment": "開発用 (Development)",
+  "dipEnvDevelopmentDesc": "ローカルデバッグ・モックAPI",
+  "dipEnvStaging": "ステージング (Staging)",
+  "dipEnvStagingDesc": "テスト用サーバー接続",
+  "dipEnvProduction": "本番 (Production)",
+  "dipEnvProductionDesc": "実サービス環境",
+  "dipActionLogToggleTitle": "アクションログ表示",
+  "dipActionLogToggleSubtitle": "画面上にユーザーアクションを表示",
+  "dipActionLogEnabled": "表示ON"
+}

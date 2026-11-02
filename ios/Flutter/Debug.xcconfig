@@ -1,0 +1,3 @@
+#include "Generated.xcconfig"
+// Apple Siliconシミュレータだけを対象にして依存とRunnerの構成を揃える。
+EXCLUDED_ARCHS[sdk=iphonesimulator*]=$(inherited) i386 x86_64

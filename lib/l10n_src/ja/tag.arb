@@ -1,0 +1,178 @@
+{
+  "@@locale": "ja",
+  "tagAdvancedSettings": "詳細設定",
+  "tagParentConfigured": "親チャームを設定済み",
+  "tagFacetEmptyHint": "分類は後から設定できます",
+  "tagNameExample": "例：旅行、未読",
+  "tagListTitle": "チャーム一覧",
+  "tagDisplayModeTitle": "表示モード",
+  "tagDisplayModeNormal": "標準",
+  "tagDisplayModeHierarchy": "階層",
+  "tagDisplayModeHybrid": "ハイブリッド",
+  "tagSortTitle": "並べ替え",
+  "tagFacetTabTitle": "分類",
+  "tagFacetLabel": "分類",
+  "tagFacetDeleteConfirmTitle": "分類の削除",
+  "tagFacetDeleteConfirmMessage": "分類「{facetName}」を削除してもよろしいですか？\n所属しているすべてのチャームが未分類になります。",
+  "@tagFacetDeleteConfirmMessage": {
+    "placeholders": {
+      "facetName": {
+        "type": "String"
+      }
+    }
+  },
+  "tagFacetAddTitle": "分類を追加",
+  "tagFacetEditTitle": "分類を編集",
+  "tagFacetAddDescription": "新しいチャームの分類を作成します。",
+  "tagFacetEditDescription": "分類の名前を編集します。",
+  "tagFacetNameHint": "分類名（例：キャラクター、ジャンル）",
+  "tagFacetNone": "分類なし",
+  "tagFacetRequired": "分類の指定が必要です",
+  "tagFacetNameRequired": "分類名を入力してください",
+  "tagCreate": "チャームを作成",
+  "tagAddNew": "新しいチャームを追加",
+  "tagManageTitle": "チャーム管理",
+  "tagDeleteConfirm": "チャームの削除",
+  "tagDeleteMessage": "「{tagName}」を削除しますか？",
+  "@tagDeleteMessage": {
+    "placeholders": {
+      "tagName": {
+        "type": "String"
+      }
+    }
+  },
+  "tagEditDialogTitle": "チャームを編集",
+  "tagEditDialogDescription": "チャームの内容を編集します。",
+  "tagParentLabel": "親チャーム",
+  "tagParentFacetRequired": "先に分類を選択してください",
+  "tagParentNotNeeded": "指定なし",
+  "tagParentNone": "なし",
+  "tagLevelLabel": "階層レベル",
+  "tagTitleRequired": "チャーム名を入力してください",
+  "tagSelectedCount": "{count}個選択中",
+  "@tagSelectedCount": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "tagSearchHint": "チャームを検索",
+  "tagChangeFailed": "チャームの変更に失敗しました: {error}",
+  "@tagChangeFailed": {
+    "placeholders": {
+      "error": {
+        "type": "String"
+      }
+    }
+  },
+  "tagFilterAllFacets": "すべての分類",
+  "tagFilterHint": "フィルター",
+  "tagGoToManagement": "チャーム管理画面へ",
+  "tagNoTagsMessage": "チャームが見つかりません",
+  "tagCreateFromSearchHint": "入力した名前を使ってチャームを作成できます。",
+  "tagCreateFromSearch": "入力した名前で作成",
+  "tagSearchAllCategories": "すべての分類で探す",
+  "tagNewDialogTitle": "チャームを作成",
+  "tagNewDialogDescription": "新しいチャームを作成して登録します。",
+  "tagNewDialogHint": "チャーム名",
+  "tagNewChip": "新規",
+  "tagColorLabel": "カラー",
+  "tagShowAdvancedOptions": "詳細オプションを表示",
+  "tagHideAdvancedOptions": "詳細オプションを隠す",
+  "tagDisplayModeFlat": "フラット表示",
+  "tagDisplayModeTree": "階層ツリー表示",
+  "tagImportTabTitle": "ファイルから読み込む",
+  "tagHiddenLabel": "非表示",
+  "tagHiddenSubtitle": "このチャームを検索結果から隠す",
+  "tagActionAdd": "{label} を追加",
+  "@tagActionAdd": {
+    "placeholders": {
+      "label": {
+        "type": "String"
+      }
+    }
+  },
+  "tagActionRemove": "{label} を削除",
+  "@tagActionRemove": {
+    "placeholders": {
+      "label": {
+        "type": "String"
+      }
+    }
+  },
+  "tagMoreActions": "{label} のその他の操作",
+  "@tagMoreActions": {
+    "placeholders": {
+      "label": {
+        "type": "String"
+      }
+    }
+  },
+  "tagEmptyGuideTitle": "チャームを追加しましょう",
+  "tagEmptyGuideSubtitle": "自分で作るか、おすすめチャームから始められます。",
+  "tagSetupPresetsAction": "おすすめチャームを追加",
+  "tagAllFacets": "すべて",
+  "tagQuickAdd": "チャームを追加",
+  "tagViewChips": "チップ表示",
+  "tagViewList": "リスト表示",
+  "tagManageFacets": "分類の管理",
+  "tagPresetsCreated": "{count}個のチャームを追加しました",
+  "@tagPresetsCreated": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "tagAllCount": "すべてのチャーム ({count})",
+  "@tagAllCount": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "tagSetupPresetsConfirmTitle": "おすすめチャームの一括セットアップ",
+  "tagSetupPresetsConfirmMessage": "作品の整理や検索に役立つ標準的なチャーム（コンテンツタイプ・ジャンル・状態・雰囲気など約40個）と分類をまとめて追加します。\n\n※すでに登録されているチャームが消えることはありません。追加後も自由に編集・削除できます。",
+  "tagSetupPresetsConfirmAction": "セットアップする",
+  "tagExportAction": "ファイルに書き出す",
+  "tagExportScopeTitle": "書き出す範囲",
+  "tagExportAll": "すべてのチャーム",
+  "tagExportSelectedFacet": "「{facetName}」のチャーム",
+  "@tagExportSelectedFacet": {
+    "placeholders": {
+      "facetName": {
+        "type": "String"
+      }
+    }
+  },
+  "tagExportSaveDialogTitle": "チャームファイルの保存先を選択",
+  "tagExportCompleted": "分類{facetCount}件・チャーム{tagCount}件を書き出しました",
+  "@tagExportCompleted": {
+    "placeholders": {
+      "facetCount": {
+        "type": "int"
+      },
+      "tagCount": {
+        "type": "int"
+      }
+    }
+  },
+  "tagCreateAndAttach": "「{name}」を作成して付ける",
+  "@tagCreateAndAttach": {
+    "placeholders": {
+      "name": {
+        "type": "String"
+      }
+    }
+  },
+  "tagAttachCreated": "「{name}」を付ける（再試行）",
+  "@tagAttachCreated": {
+    "placeholders": {
+      "name": {
+        "type": "String"
+      }
+    }
+  }
+}

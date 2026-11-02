@@ -1,0 +1,1115 @@
+{
+  "@@locale": "en",
+  "importCatalogHint": "Catalogs support charms and favorites.",
+  "archiveTitle": "Archive",
+  "libraryBulkTag": "Add charms to selected items",
+  "libraryBulkCatalogify": "Make each item a catalog",
+  "libraryBulkDecatalogify": "Clear catalog organization",
+  "libraryBulkCatalogifyConfirmTitle": "Make each selected item a catalog?",
+  "libraryBulkDecatalogifyConfirmTitle": "Clear organization for selected catalogs?",
+  "libraryBulkCatalogifyConfirmMessage": "Make each of the {count} items a separate catalog. You can then add charms and favorites.",
+  "@libraryBulkCatalogifyConfirmMessage": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "libraryBulkDecatalogifyConfirmMessage": "Clear catalog organization for {count} items. Charms, tier, pinning, and cover settings will be removed. Original files will remain.",
+  "@libraryBulkDecatalogifyConfirmMessage": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "libraryBulkCatalogifySuccess": "Made {count} items into separate catalogs",
+  "@libraryBulkCatalogifySuccess": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "libraryBulkDecatalogifySuccess": "Cleared catalog organization for {count} items",
+  "@libraryBulkDecatalogifySuccess": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "libraryBulkCatalogPartialResult": "Completed {success} of {total} items",
+  "@libraryBulkCatalogPartialResult": {
+    "placeholders": {
+      "success": {
+        "type": "int"
+      },
+      "total": {
+        "type": "int"
+      }
+    }
+  },
+  "libraryBulkTagMessage": "Set charms for {count} items.",
+  "@libraryBulkTagMessage": {
+    "description": "Confirmation message for bulk adding tags",
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "librarySelectionCount": "{count} selected",
+  "@librarySelectionCount": {
+    "description": "Number of selected items",
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "librarySelectionScope": "{selectedCount} selected ({totalCount} shown)",
+  "@librarySelectionScope": {
+    "placeholders": {
+      "selectedCount": {
+        "type": "int"
+      },
+      "totalCount": {
+        "type": "int"
+      }
+    }
+  },
+  "libraryBreadcrumbRoot": "{label}, root",
+  "@libraryBreadcrumbRoot": {
+    "placeholders": {
+      "label": {
+        "type": "String"
+      }
+    }
+  },
+  "libraryBreadcrumbNavigateHint": "Go to {label}",
+  "@libraryBreadcrumbNavigateHint": {
+    "placeholders": {
+      "label": {
+        "type": "String"
+      }
+    }
+  },
+  "libraryBreadcrumbSiblingMenu": "Show folders alongside {label}",
+  "@libraryBreadcrumbSiblingMenu": {
+    "placeholders": {
+      "label": {
+        "type": "String"
+      }
+    }
+  },
+  "libraryCopyCatalogInfo": "Copy details",
+  "libraryCopyFile": "Copy file",
+  "libraryCatalogType": "Type",
+  "libraryCopyPath": "Copy current path",
+  "libraryPathCopied": "Path copied",
+  "libraryErrorMessage": "An error occurred: {error}",
+  "@libraryErrorMessage": {
+    "description": "Error display in library",
+    "placeholders": {
+      "error": {
+        "type": "String"
+      }
+    }
+  },
+  "librarySyncComplete": "Sync complete (Added: {added}, Missing: {missing})",
+  "@librarySyncComplete": {
+    "description": "Sync completion message",
+    "placeholders": {
+      "added": {
+        "type": "int"
+      },
+      "missing": {
+        "type": "int"
+      }
+    }
+  },
+  "syncStatusScanning": "Scanning...",
+  "syncStatusProcessing": "Processing {processed}/{total}...",
+  "@syncStatusProcessing": {
+    "description": "Progress of sync processing",
+    "placeholders": {
+      "processed": {
+        "type": "int"
+      },
+      "total": {
+        "type": "int"
+      }
+    }
+  },
+  "libraryMenuArchive": "Show Archived",
+  "libraryMenuHiddenItems": "Hidden items",
+  "hiddenItemsTitle": "Hidden items",
+  "hiddenItemsEmpty": "No hidden items",
+  "hiddenItemsUnhide": "Unhide",
+  "hiddenItemsUnhideConfirmMessage": "Unhide \"{name}\"?",
+  "@hiddenItemsUnhideConfirmMessage": {
+    "placeholders": {
+      "name": {
+        "type": "String"
+      }
+    }
+  },
+  "libraryUnarchiveConfirmMessage": "Unarchive \"{name}\"?",
+  "@libraryUnarchiveConfirmMessage": {
+    "placeholders": {
+      "name": {
+        "type": "String"
+      }
+    }
+  },
+  "libraryTitle": "Library",
+  "libraryExternalTitle": "External",
+  "libraryInternalTitle": "Internal Storage",
+  "librarySearchHint": "Search names, charms, notes",
+  "librarySearchTarget": "Search scope",
+  "libraryFilterVisibility": "Visibility",
+  "libraryFilterVisible": "Visible",
+  "libraryFilterHidden": "Hidden",
+  "librarySearchCatalogsOnly": "Search catalog details only",
+  "librarySearchFilesIncluded": "Search everything",
+  "librarySearchScopeCurrent": "Current Folder",
+  "librarySearchScopeAll": "Entire library",
+  "libraryBrowseFolders": "Folders",
+  "libraryBrowseCatalogs": "Catalogs",
+  "librarySearchAction": "Search Library",
+  "libraryMoreActions": "Manage and more actions",
+  "libraryCloseSearch": "Close search",
+  "libraryActiveSearchQuery": "Search: {query}",
+  "@libraryActiveSearchQuery": {
+    "placeholders": {
+      "query": {
+        "type": "String"
+      }
+    }
+  },
+  "libraryActiveTiers": "Tiers: {tiers}",
+  "@libraryActiveTiers": {
+    "placeholders": {
+      "tiers": {
+        "type": "String"
+      }
+    }
+  },
+  "libraryActiveMediaTypes": "Types: {types}",
+  "@libraryActiveMediaTypes": {
+    "placeholders": {
+      "types": {
+        "type": "String"
+      }
+    }
+  },
+  "libraryClearAllConditions": "Clear all conditions",
+  "librarySearchNoResults": "No items match these conditions",
+  "librarySearchNoResultsGuidance": "Change the items shown or clear filters to look again.",
+  "librarySearchNoResultsQueryGuidance": "Check the name or charm, or try a shorter search.",
+  "librarySearchNoResultsRelaxGuidance": "You can change the search scope or filters while keeping your search.",
+  "librarySearchEntireLibrary": "Search entire library",
+  "libraryShowFilesToo": "Show files too",
+  "libraryClearSearch": "Clear search",
+  "librarySearchPromptTitle": "Enter a search term",
+  "librarySearchPromptDescription": "Find library items by name or charm.",
+  "libraryClearSearchAndFilters": "Clear search and filters",
+  "librarySearchTryAllCatalogs": "Also search all catalogs",
+  "librarySearchTryCurrentFolder": "Search the current folder",
+  "librarySortSettings": "Sort Settings (saved per catalog)",
+  "librarySortRecent": "Recently Viewed",
+  "librarySortNameAsc": "Name (Asc)",
+  "librarySortNameDesc": "Name (Desc)",
+  "librarySortAddedDateDesc": "Added Date (Newest)",
+  "librarySortAddedDateAsc": "Added Date (Oldest)",
+  "librarySortUpdatedDateDesc": "Updated Date (Newest)",
+  "librarySortUpdatedDateAsc": "Updated Date (Oldest)",
+  "librarySortDateAsc": "Date (Asc)",
+  "librarySortDateDesc": "Date (Desc)",
+  "librarySortSizeAsc": "Size (Asc)",
+  "librarySortSizeDesc": "Size (Desc)",
+  "librarySortTierAsc": "Tier (Asc)",
+  "librarySortTierDesc": "Tier (Desc)",
+  "librarySortFavoriteDesc": "Favorites First",
+  "librarySetDefaultSort": "Set Current Sort as Default",
+  "librarySetDefaultSortSuccess": "Updated default sort",
+  "libraryViewModeGrid": "Grid View",
+  "libraryViewModeList": "List View",
+  "librarySimpleDisplayTitle": "Compact Layout",
+  "librarySimpleDisplayOnDescription": "Showing essential information only",
+  "librarySimpleDisplayOffDescription": "Showing detailed information",
+  "libraryCatalogDisplayTitle": "Catalogs Only",
+  "libraryCatalogDisplayOnDescription": "Showing catalogs only",
+  "libraryCatalogDisplayOffDescription": "Showing all items",
+  "libraryFilterFavorite": "Favorites",
+  "libraryFilterFavoriteOnly": "Show Favorites Only",
+  "libraryFilterMediaType": "Media Type",
+  "libraryFilterTagStatus": "Charm Status",
+  "libraryFilterHasTags": "With Charms",
+  "libraryFilterNoTags": "Without Charms",
+  "libraryFilterByTag": "Filter by Charm",
+  "libraryNoTagsAvailable": "Create your own markers in Charm Management and add them to catalogs to filter here",
+  "libraryApplyTagPreset": "Apply Charm Preset",
+  "libraryPinHome": "Pin to Top",
+  "libraryUnpinHome": "Unpin from Top",
+  "libraryPinSuccess": "Pinned to Top",
+  "libraryUnpinSuccess": "Unpinned from Top",
+  "libraryBulkTagTitle": "Add charms to selected items",
+  "libraryBulkTagNoTagsMessage": "No charms registered.",
+  "libraryBulkTagDialogTitle": "Add charms to selected items",
+  "libraryDeselect": "Deselect",
+  "libraryDownload": "Save outside the app",
+  "libraryDownloadConfirmTitle": "Confirm Export",
+  "libraryDownloadConfirmMessage": "Export the selected items to your device?",
+  "libraryDownloadDestinationLabel": "Save Location:",
+  "libraryDownloadDestinationIOS": "A folder you choose in the Files app",
+  "libraryDownloadDestinationAndroid": "Download folder",
+  "libraryDownloadDestinationGeneric": "Device storage",
+  "libraryDownloadSuccess": "Exported successfully",
+  "libraryDownloadSuccessWithDestination": "Exported successfully\n(Saved to: {destination})",
+  "@libraryDownloadSuccessWithDestination": {
+    "placeholders": {
+      "destination": {
+        "type": "String"
+      }
+    }
+  },
+  "libraryDownloadFailed": "Export failed",
+  "imageSaveFailed": "Failed to save image",
+  "imageDeleteFailed": "Failed to delete image.",
+  "librarySecretModeOn": "Secret Mode On",
+  "librarySecretModeOff": "Secret Mode Off",
+  "librarySecretModeSubtitle": "Shows hidden items",
+  "libraryNoItems": "No items",
+  "libraryNoFolders": "No folders",
+  "libraryNoFoldersCreated": "No folders created",
+  "libraryRoot": "Root",
+  "librarySelectFolder": "Select Folder",
+  "libraryEmptyMessage": "No items",
+  "libraryNewFolder": "New Folder",
+  "libraryCatalogRegistration": "Make a catalog",
+  "libraryCatalogFolder": "Make the folder a catalog",
+  "libraryCatalogFile": "Make the file a catalog",
+  "libraryCreateNewFolder": "Create New Folder",
+  "libraryNewFolderHint": "Enter folder name",
+  "libraryCreateFolder": "Create Folder",
+  "libraryImportFolder": "Import a folder",
+  "libraryImportFile": "Import files",
+  "libraryVideoOpenError": "Could not open video",
+  "libraryMoveToParent": "Move to Parent",
+  "libraryNoFoldersToMove": "No folders available to move",
+  "libraryImportGuidanceTitle": "Add Your First Files or Folder",
+  "libraryImportGuidanceMessage": "Add photos, videos, audio, and PDFs to your library.",
+  "libraryImportGuidanceAction": "Get Started",
+  "libraryImportStorageSafeBanner": "Files are copied into CharmShelf.\n[primary]Your originals stay unchanged[/primary].",
+  "libraryQuickImportButton": "Add all {count} items directly",
+  "@libraryQuickImportButton": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "libraryQuickImportTitle": "Quick Add",
+  "libraryAdvancedImportSettings": "Advanced options (Tree selection, exclusions, catalogs)",
+  "libraryCatalogTooltip": "Catalog: Files treated as one unit. A folder or a single file can be a catalog.",
+  "libraryTierSubtitle": "Priority (S / A / B / C)",
+  "libraryMenuArchiveSubtitle": "Put it away. You can bring it back.",
+  "libraryMenuHiddenSubtitle": "Removes it from the list. A lock is separate.",
+  "libraryMenuTrashSubtitle": "Temporary storage for deleted items",
+  "libraryAddFiles": "Add files",
+  "libraryAddFolder": "Add folder",
+  "libraryViewSupportedFormats": "View supported formats",
+  "libraryOpenCatalogContents": "View catalog contents",
+  "libraryCatalogContentsTitle": "Catalog Contents",
+  "librarySupportedFormatsTitle": "Supported Formats Guide",
+  "librarySupportedFormatsMessage": "Images: JPG, PNG, GIF, WebP, BMP, HEIC\nVideo: MP4, MOV, M4V, WebM, MKV, AVI\nAudio: MP3, M4A, AAC, WAV, FLAC, OGG\nDocuments and archives: PDF, ZIP, CBZ\n\nPreview availability for some formats depends on your device and operating system.",
+  "librarySupportedFormatsPage1Title": "Images & Videos",
+  "librarySupportedFormatsPage1Content": "[primary]Image Formats[/primary]\nJPG, PNG, GIF, WebP, BMP, HEIC\n\n[primary]Video Formats[/primary]\nMP4, MOV, M4V, WebM, MKV, AVI",
+  "librarySupportedFormatsPage2Title": "Audio & Documents",
+  "librarySupportedFormatsPage2Content": "[primary]Audio Formats[/primary]\nMP3, M4A, AAC, WAV, FLAC, OGG\n\n[primary]Documents & Archives[/primary]\nPDF, ZIP, CBZ\n\n* Preview capability depends on your device environment.",
+  "viewerImageSemanticsLabel": "Image: {name}",
+  "@viewerImageSemanticsLabel": {
+    "placeholders": {
+      "name": {
+        "type": "String"
+      }
+    }
+  },
+  "viewerImageSemanticsLabelLeft": "Image: {name}, left page",
+  "@viewerImageSemanticsLabelLeft": {
+    "placeholders": {
+      "name": {
+        "type": "String"
+      }
+    }
+  },
+  "viewerImageSemanticsLabelRight": "Image: {name}, right page",
+  "@viewerImageSemanticsLabelRight": {
+    "placeholders": {
+      "name": {
+        "type": "String"
+      }
+    }
+  },
+  "viewerImageSemanticsHint": "Double tap to show or hide controls. Pinch to zoom",
+  "libraryPickerNotificationTitle": "Importing Items",
+  "libraryPickerNotificationBody": "Processing in background",
+  "libraryShowAllCatalogs": "Show All Catalogs",
+  "libraryExternalEmptyTitle": "No External Folders",
+  "libraryExternalEmptyMessage": "Add folders or files using the button below",
+  "itemMove": "Move",
+  "tierNone": "Not Set",
+  "externalAddFolder": "Add Folder",
+  "externalAddFile": "Add Files",
+  "externalAddTooltip": "Register External Items",
+  "librarySelectTier": "Tier",
+  "importNoMediaFound": "No importable media were found",
+  "importDescriptionTitle": "About Importing",
+  "importDescriptionContent": "Selected folders and files are copied into the app. A catalog lets you add charms and aliases to a file or folder. If you make a parent folder a catalog, everything under it is treated as one unit. Make sure you have enough free space before continuing.",
+  "importStepScanning": "Scan",
+  "importStepConfirming": "Review",
+  "importStepImporting": "Run",
+  "importStepCompleted": "Done",
+  "importSelectionEstimateTitle": "Selection",
+  "importSelectionEstimateItems": "{count} items",
+  "@importSelectionEstimateItems": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "importSelectionEstimateFiles": "{count} files",
+  "@importSelectionEstimateFiles": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "importSelectionEstimateSize": "About {size}",
+  "@importSelectionEstimateSize": {
+    "placeholders": {
+      "size": {
+        "type": "String"
+      }
+    }
+  },
+  "importSummaryAdded": "Added: {count}",
+  "@importSummaryAdded": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "importSummarySkipped": "Skipped: {count}",
+  "@importSummarySkipped": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "importSummaryFailed": "Failed: {count}",
+  "@importSummaryFailed": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "importSummaryCancelled": "Cancelled",
+  "importFailedItemsTitle": "Failed items and reasons",
+  "importFailureCancelled": "Cancelled",
+  "importFailureNoSpace": "Not enough storage space",
+  "importFailurePermission": "Required permission is unavailable",
+  "importFailureDuplicate": "This item already exists",
+  "importFailureUnsupported": "Unsupported file format",
+  "importFailureCorrupt": "The file is damaged or unreadable",
+  "importFailureInvalid": "The file contents could not be validated",
+  "importFailureFile": "The file could not be read",
+  "importFailureDatabase": "The item information could not be saved",
+  "importFailureNetwork": "Network request failed",
+  "importFailureAuthentication": "Authentication failed",
+  "importFailureSystem": "System operation failed",
+  "importFailureUi": "Screen operation failed",
+  "importFailureTemporaryCopy": "A temporary copy could not be created",
+  "importFailureProcessing": "The operation could not be completed",
+  "importViewAddedItems": "View Added Items",
+  "libraryCollectionInfoCollapseTooltip": "Collapse Info",
+  "libraryCollectionInfoExpandTooltip": "Expand Info",
+  "libraryTrashEmptyConfirmTitle": "Empty Trash",
+  "libraryBulkActionPartialDialogTitle": "Bulk Action Result",
+  "libraryBulkActionPartialResult": "Completed {success} of {total} items.",
+  "@libraryBulkActionPartialResult": {
+    "placeholders": {
+      "total": {
+        "type": "int"
+      },
+      "success": {
+        "type": "int"
+      }
+    }
+  },
+  "libraryBulkActionPartialFailedItems": "Failed items:",
+  "importBusyScanningSubtitle": "Please wait a moment",
+  "importBusyImportingSubtitle": "Processing. Keep the app in the foreground.",
+  "importBusyBackgroundSuffix": "{base} Processing may stop in the background. Return to review the result.",
+  "@importBusyBackgroundSuffix": {
+    "placeholders": {
+      "base": {
+        "type": "String"
+      }
+    }
+  },
+  "importLifecycleBackgroundWarning": "The app is moving to the background. Processing may stop. Return to review the result.",
+  "importLifecycleInactiveWarning": "The app is inactive. Keep the screen in front while processing.",
+  "importLifecycleDetachedWarning": "The app is shutting down. Check again after you return.",
+  "importDoNotCloseWarning": "Keep this screen open during import.",
+  "importCancelConfirmTitle": "Cancel Import?",
+  "importCancelConfirmMessage": "Stop the current import? Completed imports will remain. Work that has not been committed will be rolled back.",
+  "importCancelContinueAction": "Continue Import",
+  "importCancelConfirmAction": "Cancel Import",
+  "importRollingBack": "Cancelling... Reverting changes",
+  "importCollectionRegisteredLabel": "Catalog",
+  "importCollectionModeNormal": "Normal",
+  "importCollectionModeCatalog": "Catalog",
+  "importTotalFolders": "Folders: {count}",
+  "@importTotalFolders": {
+    "description": "Displays the number of target folders for import",
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "importTotalFiles": "Files: {count}",
+  "@importTotalFiles": {
+    "description": "Displays the number of target files for import",
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "libraryMove": "Move",
+  "libraryBulkMove": "Bulk Move",
+  "libraryBulkCopy": "Bulk Duplicate",
+  "libraryMoveHere": "Move Here",
+  "libraryCopyHere": "Duplicate Here",
+  "libraryMoveConfirmTitle": "Move selected items?",
+  "libraryMoveConfirmMessage": "Move {count} item(s). Choose a destination folder.",
+  "@libraryMoveConfirmMessage": {
+    "description": "Confirmation message before moving items",
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "libraryMoveTo": "Select Move Target",
+  "libraryMoveTargetDescription": "Select a destination folder for the items",
+  "libraryMoveSourceBadge": "Source",
+  "libraryMoveCurrentLocationBadge": "Current",
+  "libraryMoveCannotSelectBadge": "Unavailable",
+  "libraryCopyTo": "Select Destination to Duplicate",
+  "libraryMoveSuccess": "Moved successfully",
+  "libraryCopySuccess": "Duplicated successfully",
+  "importScanResult": "Scan Results",
+  "importFolderStructure": "Folder Structure",
+  "importAsCollection": "Make a catalog",
+  "importStart": "Import",
+  "importScanning": "Checking Items",
+  "importImporting": "Importing...",
+  "importCompleted": "Import Complete",
+  "importNoNodesSelected": "No items are selected to make into catalogs",
+  "importExpandAll": "Expand All",
+  "importCollapseAll": "Collapse All",
+  "importSelectAll": "Select All",
+  "importDeselectAll": "Deselect All",
+  "importFilterAll": "All",
+  "importFilterImages": "Images",
+  "importFilterVideos": "Videos",
+  "importFilterAudio": "Audio",
+  "importFilterDocs": "Documents",
+  "importReviewAllFiles": "Review all selected files",
+  "importPreviewTooltip": "Tap to preview",
+  "librarySelect": "Select",
+  "libraryBulkTagUpdateSuccess": "Charms updated",
+  "libraryBulkTierUpdateSuccess": "Tier updated",
+  "libraryMenuTrash": "Trash",
+  "libraryTrashTitle": "Trash",
+  "libraryTrashEmpty": "Trash is empty",
+  "libraryTrashRestore": "Restore",
+  "libraryTrashRestoreConfirmMessage": "Restore \"{name}\" from Trash?",
+  "@libraryTrashRestoreConfirmMessage": {
+    "placeholders": {
+      "name": {
+        "type": "String"
+      }
+    }
+  },
+  "libraryTrashRestoreSuccess": "Item restored.",
+  "libraryTrashOriginalLocation": "Original location: {path}",
+  "@libraryTrashOriginalLocation": {
+    "placeholders": {
+      "path": {
+        "type": "String"
+      }
+    }
+  },
+  "libraryTrashDeletedAt": "Deleted: {date}",
+  "@libraryTrashDeletedAt": {
+    "placeholders": {
+      "date": {
+        "type": "String"
+      }
+    }
+  },
+  "libraryTrashDeletePermanently": "Delete permanently",
+  "libraryTrashDeleteConfirmWithCount": "Permanently delete {count} items? This action cannot be undone.",
+  "@libraryTrashDeleteConfirmWithCount": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "libraryTrashEmptyPartialDialogTitle": "Some items could not be deleted",
+  "libraryTrashEmptyPartialFailedItems": "Items that could not be deleted:",
+  "libraryTrashRestoreWithNewName": "Restore with a new name",
+  "libraryTrashRestoreToAnotherLocation": "Restore to another location",
+  "libraryTrashRestoreCancel": "Cancel",
+  "libraryTrashDeleteTargetFile": "Target: {name} (file)",
+  "@libraryTrashDeleteTargetFile": {
+    "placeholders": {
+      "name": {
+        "type": "String"
+      }
+    }
+  },
+  "libraryTrashDeleteTargetFolder": "Target: {name} (folder)",
+  "@libraryTrashDeleteTargetFolder": {
+    "placeholders": {
+      "name": {
+        "type": "String"
+      }
+    }
+  },
+  "libraryTrashDeleteTargetCatalog": "Target: {name} (catalog)",
+  "@libraryTrashDeleteTargetCatalog": {
+    "placeholders": {
+      "name": {
+        "type": "String"
+      }
+    }
+  },
+  "libraryTrashDeleteImpactInternal": "Related information such as charms and notes moves to Trash with the item.",
+  "libraryTrashDeleteImpactExternal": "Impact: Removes only the in-app reference. The original file remains.",
+  "libraryTrashDeleteUndoHint": "Undo: You can restore the item from Trash.",
+  "libraryTrashEmptyConfirmWithCountAll": "Permanently delete all items ({count}) in the trash? This action cannot be undone.",
+  "@libraryTrashEmptyConfirmWithCountAll": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "libraryTrashRestoreConflict": "This item cannot be restored because its original location is already in use.",
+  "libraryTrashEmptyAction": "Empty Trash",
+  "libraryTrashEmptyConfirm": "Permanently delete everything in Trash? This cannot be undone.",
+  "libraryTrashEmptySuccess": "Permanently deleted {count} items.",
+  "@libraryTrashEmptySuccess": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "libraryTrashEmptyPartial": "Deleted {deleted} of {total} items. The remaining items are still in Trash.",
+  "@libraryTrashEmptyPartial": {
+    "placeholders": {
+      "deleted": {
+        "type": "int"
+      },
+      "total": {
+        "type": "int"
+      }
+    }
+  },
+  "importCatalogChildFolderHandlingTitle": "Subfolder Handling",
+  "importCatalogChildFolderHandlingNormalDesc": "If the parent is not a catalog, you can make each subfolder a separate catalog.",
+  "importCatalogChildFolderHandlingAsContentDesc": "If the parent is a catalog, subfolders are treated as content within that catalog.",
+  "importCatalogFolderImportTitle": "Folder Import",
+  "importCatalogFileImportTitle": "File Import",
+  "importCatalogRegisterAsCatalogBtn": "Import as\nCatalog",
+  "importCatalogNormalImportBtn": "Normal\nImport",
+  "importCatalogRegisterAsCatalogDesc": "A catalog lets you add charms to find it later and manage its files together.",
+  "importCatalogNormalImportDesc": "Normal import imports as a regular {type}.",
+  "@importCatalogNormalImportDesc": {
+    "placeholders": {
+      "type": {
+        "type": "String"
+      }
+    }
+  },
+  "importCatalogChildFolderSettings": "Subfolder Settings",
+  "importCatalogRegisterChildAsCatalog": "Make each subfolder a catalog",
+  "collectionActionMoveToParent": "Go up one folder",
+  "collectionActionCurrentLocationFolders": "Folders in current location",
+  "collectionActionNoFoldersToMove": "No folders available to move",
+  "libraryTrashRestoreConflictPaths": "Conflicting locations:",
+  "resumeBannerPrompt": "Do you want to resume from where you left off?",
+  "resumeBannerAction": "Open",
+  "resumeBannerLastOpenedFile": "Last opened file",
+  "resumeBannerLastViewedAt": "Last viewed: {date}",
+  "@resumeBannerLastViewedAt": {
+    "placeholders": {
+      "date": {
+        "type": "String"
+      }
+    }
+  },
+  "resumeBannerReadFailed": "Couldn’t load the last opened file’s information.",
+  "resumeBannerOpenFailed": "Couldn’t open the file. Please try again.",
+  "resumeBannerUnavailable": "This file can’t be opened right now",
+  "libraryCollectionAboutCatalog": "About this catalog",
+  "libraryCollectionFileListHeader": "Files ({count})",
+  "@libraryCollectionFileListHeader": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "importSimpleConfirmFolderMessage": "Add the following as one catalog",
+  "importCatalogModeTitle": "Management mode",
+  "importCatalogModeFolder": "Folder mode",
+  "importCatalogModeFolderDescription": "Treat the folder as one catalog",
+  "importCatalogModeFile": "File mode",
+  "importCatalogModeFileDescription": "Treat each file as a separate catalog",
+  "importCatalogModeFolderSummary": "1 folder catalog · {count} files",
+  "importCatalogModeFileSummary": "{count} file catalogs · {count} files",
+  "importCatalogModeFileWarning": "Each supported file inside will become a separate catalog",
+  "@importCatalogModeFolderSummary": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "@importCatalogModeFileSummary": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "importSimpleConfirmFileMessage": "Add this file",
+  "importSimpleConfirmFilesMessage": "Add the selected files",
+  "importAdvancedSettings": "Change Selection",
+  "importSimpleConfirmTitle": "Review Before Adding",
+  "importSimpleConfirmAction": "Add",
+  "importReturnToLibrary": "Return to Library",
+  "importBackToSimple": "Back to Simple Confirmation",
+  "libraryNotSyncedYet": "Not synced yet",
+  "librarySyncNow": "Sync now",
+  "libraryReturnToTagShelfTitle": "Return to CharmShelf",
+  "libraryReturnToTagShelfBody": "Tap to cancel file selection and return to the app",
+  "importPickerGuideOriginalsSafeTitle": "Add files and give them charms",
+  "importPickerGuideOriginalsSafeBody": "Add a file or folder as a catalog, then give it charms to make it yours and easy to find. Original files stay where they are and are not moved or deleted.",
+  "importPickerGuideProceed": "Choose Files",
+  "libraryUpdatedDate": "Updated: {date}",
+  "@libraryUpdatedDate": {
+    "placeholders": {
+      "date": {
+        "type": "String"
+      }
+    }
+  },
+  "libraryTagUncategorized": "Uncategorized",
+  "libraryDisplayTypeCatalog": "Catalog",
+  "libraryDisplayTypeFolder": "Folder",
+  "libraryDisplayTypeFile": "File",
+  "libraryItemTypeFolder": "Folder",
+  "libraryItemTypeFile": "File",
+  "libraryItemCount": "{count} items",
+  "@libraryItemCount": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "librarySyncFolderAction": "Sync Folder",
+  "libraryEmptyFolderDesc": "Add files or folders here.",
+  "libraryRescanFolder": "Rescan Folder",
+  "librarySectionQuickActions": "Quick Actions",
+  "librarySectionProperties": "Info & Notes",
+  "librarySectionDisplay": "Display Settings",
+  "librarySectionFileOps": "File Operations",
+  "librarySectionVisibilityOrganization": "Visibility & Organization",
+  "librarySectionDanger": "Danger Zone",
+  "libraryCannotMoveToSelfOrDescendant": "Cannot move to itself or its subfolders",
+  "libraryCreateFolderSuccess": "Folder created successfully",
+  "librarySectionFolders": "Folders ({count})",
+  "@librarySectionFolders": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "librarySectionFiles": "Files ({count})",
+  "@librarySectionFiles": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "libraryFolderSummary": "{folders} catalogs, {files} files",
+  "@libraryFolderSummary": {
+    "placeholders": {
+      "folders": {
+        "type": "int"
+      },
+      "files": {
+        "type": "int"
+      }
+    }
+  },
+  "libraryFolderSummaryCounts": "{folders} folders, {files} files · {catalogs} catalogs",
+  "@libraryFolderSummaryCounts": {
+    "placeholders": {
+      "folders": {
+        "type": "int"
+      },
+      "files": {
+        "type": "int"
+      },
+      "catalogs": {
+        "type": "int"
+      }
+    }
+  },
+  "libraryFolderSummaryOnlyFiles": "{count} files",
+  "@libraryFolderSummaryOnlyFiles": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "libraryFolderSummaryOnlyFolders": "{count} catalogs",
+  "@libraryFolderSummaryOnlyFolders": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "libraryFolderSummaryEmpty": "Empty folder",
+  "libraryEmptyFolder": "Empty folder",
+  "libraryParentCatalogLabel": "Belongs to Catalog",
+  "libraryParentCatalogNone": "No Catalog Assigned",
+  "librarySetAsCatalogCover": "Set as Catalog Cover",
+  "librarySetAsFolderCover": "Set as Catalog Cover",
+  "librarySetAsCatalogCoverSuccess": "Catalog cover updated",
+  "libraryCatalogifyThisFile": "Make a catalog",
+  "libraryCatalogifyThisFolder": "Make a catalog",
+  "dataRestoreTitle": "Restore Previous Data",
+  "dataRestoreCompletedTitle": "Previous Data Restored",
+  "dataRestoreDescription": "Previous CharmShelf data was found on your device. You can restore your data and resume right away.",
+  "dataRestoreSelectFolder": "Restore Previous Data",
+  "dataRestorePermissionTitle": "Restore Previous Data?",
+  "dataRestorePermissionDescription": "If you have used this app before, choose the “CharmShelf” folder you used previously to restore your photos, charms, and other data. Nothing in the folder will be deleted. If this is your first time or you do not need the previous data, choose “Continue.”",
+  "dataRestoreCompletedDescription": "Previous CharmShelf data was found on this device and has been automatically restored.",
+  "dataRestoreStatMedia": "Media",
+  "dataRestoreStatTags": "Charms",
+  "dataRestoreStatCollections": "Collections",
+  "dataRestoreActionStart": "Get Started",
+  "dataRestoreActionContinue": "Continue",
+  "dataRestoreStoragePath": "Storage Location",
+  "dataRestoreTagCount": "{count} Charms",
+  "@dataRestoreTagCount": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "dataRestoreCollectionCount": "{count} Collections",
+  "@dataRestoreCollectionCount": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "dataRestoreMediaCount": "{count} Media Files",
+  "@dataRestoreMediaCount": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "dataRestoreLastExport": "Last saved: {date}",
+  "@dataRestoreLastExport": {
+    "placeholders": {
+      "date": {
+        "type": "String"
+      }
+    }
+  },
+  "dataRestoreActionRestore": "Restore Data",
+  "dataRestoreActionSkip": "Start Fresh without Restoring",
+  "dataRestoreSkipNote": "* You can also restore your data later anytime from Settings > Storage.",
+  "dataRestoreInProgress": "Restoring data...",
+  "dataRestoreSuccess": "Data restored successfully",
+  "dataRestoreFailed": "Failed to restore data: {error}",
+  "@dataRestoreFailed": {
+    "placeholders": {
+      "error": {
+        "type": "String"
+      }
+    }
+  },
+  "librarySearchIncludeFiles": "Include files",
+  "libraryClearFiltersKeepQuery": "Clear filters",
+  "librarySearchTargetFiles": "Search everything",
+  "librarySearchTargetCatalogs": "Searching catalog details only",
+  "importGroupingChange": "Change grouping",
+  "importGroupingFolder": "Keep as one catalog",
+  "importGroupingFiles": "Show files individually",
+  "importOpenFile": "Open imported file",
+  "importOpenCatalog": "Open the catalog you added",
+  "importOpenResults": "View imported items",
+  "importResultsUnavailable": "These items cannot be opened now. Check the library for moved, deleted, or hidden items.",
+  "importResultsLoadFailed": "Couldn't load the added items' information.",
+  "importResultsReload": "Reload",
+  "importResultsChecking": "Loading item information",
+  "importRetryUnavailable": "Retry is paused because the saved state could not be verified. Check the imported items in your library.",
+  "importPendingRetry": "Retry unsaved items",
+  "libraryHideNeedsLockTitle": "There is no lock yet",
+  "libraryHideNeedsLockMessage": "Hiding only removes an item from the list. Anyone who can open the app can still see it. Add a lock first?",
+  "libraryHideNeedsLockContinue": "Hide anyway",
+  "libraryHideNeedsLockSet": "Add a lock first",
+  "legacyFoundTitle": "Previous data found",
+  "legacyRecommended": "Recommended",
+  "legacyFolderTitle": "Internal storage → Documents",
+  "legacyFolderBody": "Open Documents and tap “Use this folder”.",
+  "legacyRestoreCleanup": "After the transfer is verified, the original old data will be deleted.",
+  "legacyDiscardHint": "If you no longer need your previous data",
+  "legacyWelcomeTitle": "Welcome to CharmShelf",
+  "legacyWelcomeBody": "Keep your files together in catalogs and add charms as your own markers.",
+  "legacyFirstUse": "Start",
+  "legacyTransferTitle": "Transfer previous data",
+  "legacyReturningHint": "For people who previously used CharmShelf on this device",
+  "legacyStartWithoutTransfer": "Start without transferring",
+  "legacyLaterHint": "You can transfer later in Settings.",
+  "legacyStartTitle": "Start organizing your files",
+  "legacySaveFailure": "Could not save your choice. Please try again.",
+  "legacyLater": "Later",
+  "legacyDecideLater": "Decide later",
+  "legacyNotFoundTitle": "No previous data found",
+  "legacyNotFoundBody": "No data to transfer was found in Documents on this device.",
+  "legacyRestoredTitle": "Data transferred",
+  "legacyDeletedTitle": "Previous data deleted",
+  "legacyBackToSettings": "Back to Settings",
+  "legacyReconnect": "Grant access to Documents again",
+  "legacyRecoveryTitle": "A data operation is unfinished",
+  "legacyOperationBusy": "Another data operation is running. Try again when it finishes.",
+  "legacyRecordFailure": "The operation record could not be read. Operations are paused for safety. Please retry.",
+  "legacyTitle": "Find previous data",
+  "legacySelectBody": "Check for previous CharmShelf data on this device.\nChecking does not change any files.",
+  "legacyChoiceBody": "Import your photos, videos, and charms.\nYour current data will not be overwritten.",
+  "legacyDiscardTitle": "Delete earlier data?",
+  "legacyDiscardWarning": "Photos, videos, charms, and other old data in Documents/CharmShelf will be deleted.\n\nThis cannot be undone.\nYour current in-app data will be kept.",
+  "legacyDiscardConfirm": "Delete",
+  "legacyCompletedTitle": "Check complete",
+  "legacyCompletedBody": "You can now start using CharmShelf.",
+  "legacyResumeBody": "Resume the remaining operation to keep your data consistent.\nData already deleted cannot be recovered.",
+  "legacyFailure": "Could not finish. Check access to Documents and available space, then retry.",
+  "legacyWorking": "Checking and processing data. Please wait.",
+  "legacySelectDocuments": "Choose folder",
+  "legacyRestore": "Transfer data",
+  "legacyDecline": "Delete without transferring",
+  "legacyInspectAgain": "Check again",
+  "legacyContinue": "Start CharmShelf",
+  "legacyInventory": "Files: {count} · {size} MB",
+  "@legacyInventory": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      },
+      "size": {
+        "type": "String"
+      }
+    }
+  },
+  "legacyWrongFolder": "Select Documents in internal storage. Other folders will not be deleted.",
+  "legacyUnknownFiles": "Some files cannot be identified as earlier CharmShelf data. Review them in your device file manager and move unrelated files elsewhere before checking again.",
+  "legacySourceChanged": "The old folder changed after it was checked. Deletion stopped. Keep added or changed files elsewhere, or check the folder again if processing has not started.",
+  "legacyUnsupportedFiles": "Some files cannot be restored by this app. Save files you need elsewhere and check again, or choose to delete without restoring.",
+  "legacyInvalidMetadata": "The earlier organization data could not be read. The originals have not been deleted. Repair the data and retry, or delete without restoring.",
+  "legacyLinkedFolder": "This old folder is also registered as an external folder in the current app. Referenced files cannot be deleted.",
+  "legacyUnlinkTitle": "Review external folder registration",
+  "legacyUnlinkBody": "Removing these external folder registrations deletes their organization data in the app. Source files remain. Then select Documents again to restore or delete the earlier data.",
+  "legacyUnlinkConfirm": "Remove listed registrations",
+  "legacyCopying": "Copying earlier data",
+  "legacyVerifying": "Verifying restored data",
+  "legacyDeleting": "Deleting verified earlier data",
+  "legacyRestoredCatalog": "Earlier CharmShelf",
+  "importSourceTitle": "Choose an import source",
+  "importSourceImport": "Import",
+  "importSourceIntro": "Register a folder to choose files inside CharmShelf next time. Close or use system Back to leave from any folder.",
+  "importSourceAdd": "Add a location",
+  "importSourcePermissionBody": "Choose a source folder in the system picker. Afterwards, browse it inside CharmShelf. Original files will not be changed.",
+  "importSourceReconnect": "Reconnect location",
+  "importSourceReplaceBody": "You selected a different folder. Replace this source with the new location?",
+  "importSourceExisting": "Add an existing external folder",
+  "importSourceNoExisting": "No external folders are available.",
+  "importSourceRemove": "Remove registration",
+  "importSourceRemoveBody": "Remove this source registration. Original and previously imported files will remain.",
+  "importSourceLocations": "Locations",
+  "importSourceDiscard": "Clear your selection and return to locations?",
+  "importSourceUp": "Parent folder",
+  "importSourceSelectFolder": "Select this folder and its contents",
+  "importSourceUnavailable": "Could not read this location. Check its connection and access permission, then try again.",
+  "importSourceRetry": "Try again",
+  "importSourceFallback": "Use the system picker this time",
+  "importSourceEmpty": "This folder is empty.",
+  "importSourceUnsupported": "Unsupported format",
+  "importSourceUnselect": "Unselect",
+  "importSourceReview": "Review selection",
+  "importSourceSelected": "Selected: {files} files, {folders} folders",
+  "importSourceContinue": "Continue",
+  "@importSourceSelected": {
+    "placeholders": {
+      "files": {
+        "type": "int"
+      },
+      "folders": {
+        "type": "int"
+      }
+    }
+  },
+  "importSourceNoSupported": "The selection contains no supported files.",
+  "deviceFilesTitle": "Device files",
+  "deviceFilesSubtitle": "Open or import using the system file picker",
+  "deviceOpenFile": "Open a file",
+  "deviceImportFiles": "Import files",
+  "deviceImportFolder": "Import a folder",
+  "devicePickerError": "Could not select files. Check the storage location and access, then try again.",
+  "importSizeUnknown": "Size unknown",
+  "deviceAccessExplanation": "All-files access lets you find files on your device for import. Imports create copies and never change or delete originals. Organize with charms and catalogs after import. Cloud storage and private app directories are excluded. You can also use the system picker without this permission.",
+  "deviceAllowAccess": "Allow access",
+  "deviceAccessGranted": "Device file access is allowed",
+  "deviceLater": "Later · Return to library",
+  "deviceUsePicker": "Import using the system picker or cloud provider",
+  "deviceLocations": "Locations",
+  "deviceIndexTitle": "Find files to import",
+  "deviceIndexExplanation": "Read file names, locations and sizes from shared storage to find import candidates in this screen. This does not organize originals or create a persistent index. Excluded locations are skipped, and you can stop the scan.",
+  "deviceIndexUpdate": "Search this device",
+  "deviceIndexEmpty": "You can also search this device for files to import.",
+  "deviceIndexDate": "Index updated: {date}",
+  "@deviceIndexDate": {
+    "placeholders": {
+      "date": {
+        "type": "String"
+      }
+    }
+  },
+  "deviceSearchAll": "Search previous candidates",
+  "deviceSearchFolder": "Search this location: name, charm or catalog",
+  "deviceSavedIndex": "Previous candidates (for migration)",
+  "deviceFavorites": "Favorites",
+  "deviceType": "File type",
+  "deviceAllTypes": "All types",
+  "deviceReadError": "Could not read this location. Check access permission and storage, then retry. If indexing failed, the previous index has been kept.",
+  "deviceChanged": "The file may have moved or changed, or the update could not be saved. Reopen its location and check again.",
+  "deviceOrganize": "Organize with charms and catalogs",
+  "deviceLabelsExplanation": "The original file stays unchanged. Organization details for this device file are saved inside CharmShelf.",
+  "deviceTags": "Charms (comma separated)",
+  "deviceCatalog": "Catalog name",
+  "deviceExclude": "Exclude from search",
+  "deviceExcludeExplanation": "Exclude this location from indexing and the saved list. No files are deleted. You can still browse it directly.",
+  "deviceExclusions": "Excluded locations",
+  "deviceInclude": "Remove exclusion",
+  "deviceNoResults": "No items to show",
+  "deviceSelectImport": "Select files to import",
+  "deviceOneVolume": "Select items from one storage volume per import",
+  "deviceSelected": "Selected items: {count}",
+  "@deviceSelected": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "deviceUnselect": "Remove from selection",
+  "deviceSkipped": "Unreadable or restricted entries: {count} (not included in this list or index)",
+  "@deviceSkipped": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "deviceScanning": "Checking: {count} items",
+  "@deviceScanning": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "deviceLabelsChanged": "The file at this location has changed. These are the previous organization details. Save only if you want to apply them to the current file.",
+  "deviceLegacyExplanation": "Allow device file access to also check for earlier CharmShelf data. If earlier data exists, or you prefer not to allow broad access, select the Documents folder to check it. Checking does not change or delete files.",
+  "referenceMigrationTitle": "Import previous external references",
+  "referenceMigrationDescription": "Your library manages imported copies. Copy previous references while keeping the originals, charms, notes and history. Interrupted copies can be resumed.",
+  "referenceMigrationConfirm": "Copy the listed registered files into the app. Originals remain unchanged and storage usage increases. Use regular import for unregistered files.",
+  "referenceMigrationSuccess": "The operation is complete.",
+  "referenceMigrationPaused": "Paused. Completed copies are retained. Resume from the same entry.",
+  "referenceMigrationFailure": "Could not complete the operation. Metadata and completed copies are retained. Check free space and source access, then retry.",
+  "referenceMigrationPause": "Pause",
+  "referenceMigrationEmpty": "No external references are waiting to be imported.",
+  "referenceMigrationCopy": "Copy into library / resume",
+  "referenceMigrationExport": "Save or share metadata",
+  "referenceMigrationReconnect": "Reconnect source files",
+  "referenceMigrationReconnectConfirm": "Select one replacement source for this entry. Choose the same content; a matching name alone does not establish identity.",
+  "referenceMigrationTrash": "Includes trashed entries. They remain in the trash after copying.",
+  "referenceMigrationCleanup": "Retry access cleanup",
+  "referenceMigrationCounts": "{count} files · {bytes} known bytes · {unknown} unknown sizes",
+  "@referenceMigrationCounts": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      },
+      "bytes": {
+        "type": "int"
+      },
+      "unknown": {
+        "type": "int"
+      }
+    }
+  },
+  "referenceMigrationRemove": "Remove references",
+  "referenceMigrationRemoveConfirm": "Remove this group’s references, charm links and history. Original files remain. Save any metadata you need first. The private migration snapshot and staged copies are retained.",
+  "referenceMigrationRecoveryPending": "Recover unfinished operations first. Restart the app, check the recovery result, then retry.",
+  "referenceMigrationChanged": "Metadata changed, so migration paused. Retry this group to create a new plan using the latest information.",
+  "referenceMigrationStorageFailure": "Storage capacity could not be confirmed or is insufficient. Check free space and retry. Completed copies are preserved.",
+  "referenceMigrationSourceFailure": "The source could not be read or its content changed. Check access or select the source again. Metadata is preserved.",
+  "legacyReturningEntry": "Used CharmShelf before?",
+  "freshStartConfirmTitle": "Start with a clean slate?",
+  "freshStartConfirmBody": "Reset files, records, and settings stored in CharmShelf. This cannot be undone.\nOriginal files and backups in external folders will be kept.",
+  "freshStartConfirmAction": "Reset and start",
+  "freshStartProgress": "Preparing a clean slate",
+  "freshStartFailure": "Reset could not be completed. Retry to resume the process.",
+  "freshStartCheckFailure": "Could not prepare to start. Please try again."
+}

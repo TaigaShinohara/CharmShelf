@@ -1,0 +1,14 @@
+--- a/packages/flutter_tools/lib/src/build_system/targets/ios.dart
++++ b/packages/flutter_tools/lib/src/build_system/targets/ios.dart
+@@ -169,7 +169,10 @@
+   ];
+ 
+   @override
+-  List<Source> get outputs => const <Source>[Source.pattern('{OUTPUT_DIR}/App.framework/App')];
++  List<Source> get outputs => const <Source>[
++    Source.pattern('{BUILD_DIR}/App.framework/App'),
++    Source.pattern('{BUILD_DIR}/App.framework.dSYM/Contents/Resources/DWARF/App'),
++  ];
+ 
+   @override
+   List<Target> get dependencies => const <Target>[ReleaseUnpackIOS(), KernelSnapshot()];

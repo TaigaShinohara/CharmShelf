@@ -1,0 +1,13 @@
+{
+  "source_commit": "1e3a5a8b",
+  "generator": "isar_generator 3.1.0+1",
+  "files": {
+    "lib/features/library/domain/models/collection.g.dart": "3d7a554a70bb45b2bcd54945fa1db2c75f08dcdf1e785ccf8820133b7de032b4",
+    "lib/features/library/domain/models/media_item.g.dart": "859306dc66765c391a40181c3b59d3845e8a44faeab8431e3b48d8dc5accd2d2",
+    "lib/features/library/domain/models/reference_migration.g.dart": "2bc1ddc6428c1686570753aad1a165423153b4bff24a71bdbdcfaad4373d23e1",
+    "lib/features/library/domain/models/storage_ref.g.dart": "d7c283ee3de69bd627c76dffd5e6500e63ce2ae447bd1a295e9f9f9df62ceff9",
+    "lib/features/library/domain/models/tag.g.dart": "a2d74a33a7a0fa7d790466430e9e7dccfce07318843febbd27d4e7e1f33fc370",
+    "lib/features/library/domain/models/tag_facet.g.dart": "3cfbc27c0947efb6c9ad5b1a45ff07088f8ce3571da86c907e0839b6eb0560f6",
+    "lib/features/library/domain/models/viewing_history.g.dart": "d39d0c706664efce4ac35763be60ffd37e2bd03c0fb3e92ea9cfb23000cbc9c1"
+  }
+}

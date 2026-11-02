@@ -1,0 +1,257 @@
+require "tempfile"
+
+default_platform(:ios)
+
+def android_application_id
+  ENV["ANDROID_APPLICATION_ID"].to_s.empty? ? "com.tsmusic.privateshelf.opensource" : ENV["ANDROID_APPLICATION_ID"]
+end
+
+def with_google_play_service_account
+  json = ENV["GOOGLE_PLAY_SERVICE_ACCOUNT_JSON"].to_s
+  UI.user_error!("GOOGLE_PLAY_SERVICE_ACCOUNT_JSON が未設定です") if json.empty?
+
+  file = Tempfile.new(["tagshelf-google-play-", ".json"])
+  begin
+    file.chmod(0o600)
+    file.write(json)
+    file.flush
+    yield(file.path)
+  ensure
+    file.close!
+  end
+end
+
+def ios_api_key
+  key_id = ENV["APP_STORE_CONNECT_API_KEY_ID"].to_s
+  issuer_id = ENV["APP_STORE_CONNECT_ISSUER_ID"].to_s
+  key_content = ENV["APP_STORE_CONNECT_API_KEY_CONTENT"].to_s
+  UI.user_error!("App Store Connect APIキーが不足しています") if key_id.empty? || issuer_id.empty? || key_content.empty?
+
+  app_store_connect_api_key(
+    key_id: key_id,
+    issuer_id: issuer_id,
+    key_content: key_content,
+    is_key_content_base64: false
+  )
+end
+
+def build_ios_release(api_key: nil)
+  sh("python3", "scripts/check_distribution_config.py", "ios")
+  project_root = File.expand_path("..", __dir__)
+  build_started_at = Time.now
+  Dir.chdir(project_root) do
+    sh("bash", "scripts/maintenance/check_flutter_version.sh")
+    sh(
+      "xcodebuild", "-resolvePackageDependencies",
+      "-workspace", "ios/Runner.xcworkspace", "-scheme", "Runner",
+      "-clonedSourcePackagesDirPath", "build/ios/SourcePackages"
+    )
+    sh(
+      "python3", "scripts/maintenance/check_ios_swift_packages.py", "--resolved",
+      "ios/Runner.xcodeproj/project.xcworkspace/xcshareddata/swiftpm/Package.resolved"
+    )
+    sh(
+      "python3", "scripts/maintenance/export_ios_licenses.py", "--check",
+      "--source-packages", "build/ios/SourcePackages/checkouts"
+    )
+
+    app_identifier = ENV["IOS_BUNDLE_ID"].to_s.empty? ? "org.charmshelf.opensource" : ENV["IOS_BUNDLE_ID"]
+    # TestFlightの最新ビルド番号を取得して+1する。GitHub Actionsのrun_numberに依存せず、
+    # どの環境からのアップロードでも一貫したインクリメントを保証する。
+    build_number = latest_testflight_build_number(
+      api_key: api_key,
+      app_identifier: app_identifier,
+      initial_build_number: 108 # 現在のベースライン
+    ) + 1
+
+    # CI環境ではマニュアル署名を強制する。
+    # scripts/ios_signing_assets.py によってプロファイルと証明書がインストール済みであることを前提とする。
+    if ENV["GITHUB_ACTIONS"] == "true"
+      UI.message("CI環境を検出: マニュアル署名を設定します")
+
+      # インストールされた .mobileprovision から情報を抽出
+      profile_uuid = ENV["IOS_PROVISIONING_PROFILE_UUID"]
+      profile_path = File.expand_path("~/Library/Developer/Xcode/UserData/Provisioning Profiles/#{profile_uuid}.mobileprovision")
+      
+      # 互換性のためのチェック
+      unless File.exist?(profile_path)
+        profile_path = File.expand_path("~/Library/MobileDevice/Provisioning Profiles/#{profile_uuid}.mobileprovision")
+      end
+
+      UI.user_error!("Provisioning profile not found at expected paths.") unless File.exist?(profile_path)
+
+      # security cms -D でデコードし、Nameを取得
+      profile_content = sh("/usr/bin/security", "cms", "-D", "-i", profile_path)
+      require 'plist'
+      profile_data = Plist.parse_xml(profile_content)
+      profile_name = profile_data['Name']
+      profile_actual_uuid = profile_data['UUID']
+      team_identifier = profile_data['TeamIdentifier'].first
+      entitlements = profile_data['Entitlements']
+      full_bundle_id = entitlements['application-identifier']
+
+      UI.message("Profile Name: #{profile_name}")
+      UI.message("Profile UUID: #{profile_actual_uuid}")
+      UI.message("Profile Expiration: #{profile_data['ExpirationDate']}")
+
+      # Bundle IDの不一致を早期に検出 (TEAMID.com.example.app)
+      expected_full_id = "#{team_identifier}.#{app_identifier}"
+      if full_bundle_id != expected_full_id
+        UI.user_error!("Bundle ID mismatch: Profile has #{full_bundle_id}, but expected #{expected_full_id}")
+      end
+
+      update_code_signing_settings(
+        use_automatic_signing: false,
+        path: File.join(project_root, "ios/Runner.xcodeproj"),
+        profile_name: profile_name,
+        profile_uuid: profile_uuid,
+        bundle_identifier: app_identifier,
+        code_sign_identity: "Apple Distribution",
+        team_id: team_identifier,
+        targets: ["Runner"],
+        build_configurations: ["Release"],
+        sdk: "iphoneos"
+      )
+      
+      # 署名設定を永続化せず、現在のビルドセッションのみに適用するための設定。
+      # build_settings 経由での指定は xcconfig を汚さず安全。
+      export_options = {
+        method: "app-store",
+        provisioningProfiles: {
+          app_identifier => profile_uuid
+        },
+        signingStyle: "manual",
+        teamID: team_identifier
+      }
+      export_options_path = File.join(project_root, "build/ios/ExportOptions.plist")
+      FileUtils.mkdir_p(File.dirname(export_options_path))
+      File.write(export_options_path, export_options.to_plist)
+      
+      sh("flutter", "build", "ipa", "--release", 
+         "--dart-define=ENV=production", 
+         "--build-number=#{build_number}",
+         "--export-options-plist=#{export_options_path}")
+    else
+      # ローカル環境ではプロジェクト設定（通常はAutomatic）に従う。
+      sh("flutter", "build", "ipa", "--release", "--dart-define=ENV=production", "--build-number=#{build_number}")
+    end
+
+    sh("python3", "scripts/maintenance/check_ios_archive.py", "build/ios/archive/Runner.xcarchive")
+  end
+  ipa_paths = Dir.glob(File.join(project_root, "build/ios/ipa/*.ipa"))
+  UI.user_error!("検証対象のIPAを1件に特定できません") unless ipa_paths.length == 1
+  UI.user_error!("今回のビルドで生成されたIPAではありません") if File.mtime(ipa_paths.first) < build_started_at
+  ipa_paths.first
+end
+
+def build_android_aab
+  sh("python3", "scripts/check_distribution_config.py", "android")
+  sh("bash scripts/maintenance/check_flutter_version.sh")
+  sh("flutter pub get")
+  sh("git diff --exit-code -- pubspec.lock")
+  sh("python3 scripts/maintenance/check_path_override_upstream.py")
+  sh("flutter build appbundle --release --dart-define=ENV=production")
+  aab_path = "build/app/outputs/bundle/release/app-release.aab"
+  sh("jarsigner -verify #{aab_path}", log: false)
+  certificate = sh("keytool -printcert -jarfile #{aab_path}", log: false)
+  UI.user_error!("Debug certificate must never sign a release bundle") if certificate.include?("Android Debug")
+
+  actual_fingerprints = certificate.scan(/SHA256:\s*([0-9A-F:]+)/i).flatten.map(&:upcase).uniq
+  expected_fingerprint_path = "android/upload_certificate.sha256"
+  UI.user_error!("Release bundle must have exactly one signing certificate") unless actual_fingerprints.length == 1
+  UI.user_error!("Expected upload certificate fingerprint is missing") unless File.file?(expected_fingerprint_path)
+
+  expected_fingerprint = File.read(expected_fingerprint_path).strip.upcase
+  actual_fingerprint = actual_fingerprints.first
+  UI.user_error!("Release bundle was signed by an unexpected certificate") unless actual_fingerprint == expected_fingerprint
+  sh("python3 scripts/maintenance/check_android_bundle.py #{aab_path}")
+  UI.success!("Release bundle signature verified: #{actual_fingerprint}")
+end
+
+platform :android do
+  lane :internal do
+    sh("python3", File.expand_path("../scripts/google_play_publication.py", __dir__), "internal")
+    with_google_play_service_account do |json_path|
+      build_android_aab
+      upload_to_play_store(
+        json_key: json_path,
+        package_name: android_application_id,
+        track: "internal",
+        aab: "build/app/outputs/bundle/release/app-release.aab"
+      )
+    end
+  end
+
+  lane :beta do
+    sh("python3", File.expand_path("../scripts/google_play_publication.py", __dir__), "beta")
+    with_google_play_service_account do |json_path|
+      build_android_aab
+      upload_to_play_store(
+        json_key: json_path,
+        package_name: android_application_id,
+        track: "beta",
+        aab: "build/app/outputs/bundle/release/app-release.aab"
+      )
+    end
+  end
+
+  lane :release do
+    sh("python3", File.expand_path("../scripts/google_play_publication.py", __dir__), "release")
+    with_google_play_service_account do |json_path|
+      build_android_aab
+      upload_to_play_store(
+        json_key: json_path,
+        package_name: android_application_id,
+        track: "production",
+        aab: "build/app/outputs/bundle/release/app-release.aab"
+      )
+    end
+  end
+
+  lane :firebase do
+    UI.user_error!("firebase lane は未設定です。必要なら fastlane-plugin-firebase_app_distribution を追加してください")
+  end
+end
+
+platform :ios do
+  lane :beta do
+    sh("python3", "scripts/check_distribution_config.py", "ios")
+    api_key = ios_api_key
+    ipa_path = build_ios_release(api_key: api_key)
+
+    pr_number = ENV["GITHUB_PR_NUMBER"]
+    sha = ENV["GITHUB_SHA_SHORT"]
+    changelog = pr_number ? "PR ##{pr_number} (#{sha})" : "Manual build (#{sha})"
+
+    upload_to_testflight(
+      api_key: api_key,
+      ipa: ipa_path,
+      app_identifier: ENV["IOS_BUNDLE_ID"].to_s.empty? ? "org.charmshelf.opensource" : ENV["IOS_BUNDLE_ID"],
+      skip_waiting_for_build_processing: true,
+      localized_build_info: {
+        "default": {
+          whats_new: changelog
+        }
+      }
+    )
+  end
+
+  lane :release do
+    sh("python3", "scripts/check_distribution_config.py", "ios")
+    api_key = ios_api_key
+    ipa_path = build_ios_release(api_key: api_key)
+    upload_to_app_store(
+      api_key: api_key,
+      ipa: ipa_path,
+      app_identifier: ENV["IOS_BUNDLE_ID"].to_s.empty? ? "org.charmshelf.opensource" : ENV["IOS_BUNDLE_ID"],
+      skip_metadata: true,
+      skip_screenshots: true,
+      submit_for_review: false,
+      automatic_release: false
+    )
+  end
+
+  lane :firebase do
+    UI.user_error!("firebase lane は未設定です。必要なら fastlane-plugin-firebase_app_distribution を追加してください")
+  end
+end

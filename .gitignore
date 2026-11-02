@@ -125,3 +125,14 @@ auth/*.local.json
 .cursor/
 .kiro/
 .vscode/
+
+# Private signing and authentication material.
+*.p8
+*.p12
+*.pem
+*.mobileprovision
+*.provisionprofile
+*.certSigningRequest
+
+# Generated golden mismatch evidence is not source.
+/test/goldens/failures/

@@ -1,0 +1,31 @@
+# objective_c 9.6.2: deterministic private debug paths
+
+This is a minimal local copy of the resolved objective_c 9.6.2 package. Runtime
+lib/ and native src/ files are unchanged from upstream. LICENSE, README.md,
+CHANGELOG.md and pubspec.yaml are retained. The published package has no AUTHORS
+file; its original copyright and license notices remain intact.
+
+Only hook/build.dart is patched. The hook invokes clang directly and ignores
+CFLAGS/Xcode OTHER_CFLAGS, so this path override applies the flags at the owning
+compile boundary instead of modifying the shared package cache or global tools.
+
+The hook retains -gline-tables-only and all existing target/link flags. It adds
+-ffile-prefix-map and -fdebug-prefix-map for the package parent, current working
+directory, build output and finally the specific package root. Clang's last
+matching prefix wins; the last mapping is /packages/objective_c. An explicit
+-fdebug-compilation-dir uses that same portable directory. Metadata paths change;
+function symbols, source-relative filenames and line tables remain available.
+
+Source provenance and SHA-256 hashes are registered in
+scripts/maintenance/path_override_upstream_hashes.json, including the original
+and patched hook hashes. The package version and runtime/native sources are not
+upgraded. No post-link editing or UUID rewriting is performed. Each rebuild must
+produce matching framework/dSYM UUIDs through the existing iOS archive checker.
+
+Validation after resolving this override:
+- Run the existing path-override upstream-hash check.
+- Analyze hook/build.dart with the project SDK.
+- Rebuild native assets and the iOS candidate; do not reuse the old objective_c
+  framework/dSYM cache. Keep uploadSymbols enabled.
+- Check both Runner.app and the exported IPA with check_private_content.py.
+  The export check includes Symbols/*.symbols, not only the signed payload.

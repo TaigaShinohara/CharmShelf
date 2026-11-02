@@ -1,0 +1,109 @@
+{
+  "@@locale": "fr",
+  "appTitle": "Application Modèle",
+  "homeTitle": "Accueil",
+  "settingsTitle": "Paramètres",
+  "commonOk": "OK",
+  "commonCancel": "Annuler",
+  "commonYes": "Oui",
+  "commonNo": "Non",
+  "commonRetry": "Réessayer",
+  "commonEmptyTitle": "Aucun élément",
+  "commonErrorOccurred": "Une erreur s'est produite",
+  "avatarActionTitle": "Photo de profil",
+  "avatarActionTakePhoto": "Prendre une photo",
+  "avatarActionChooseFromLibrary": "Choisir dans la bibliothèque",
+  "avatarActionRemove": "Supprimer la photo",
+  "avatarTapToChange": "Appuyez pour modifier",
+  "avatarRemoveTitle": "Supprimer la photo ?",
+  "avatarRemoveMessage": "Cela supprimera votre photo de profil.",
+  "relativeJustNow": "à l'instant",
+  "relativeMinutesAgo": "{minutes, plural, =1{il y a 1 minute} other{il y a {minutes} minutes}}",
+  "@relativeMinutesAgo": {
+    "placeholders": {
+      "minutes": {
+        "type": "int"
+      }
+    }
+  },
+  "relativeHoursAgo": "{hours, plural, =1{il y a 1 heure} other{il y a {hours} heures}}",
+  "@relativeHoursAgo": {
+    "placeholders": {
+      "hours": {
+        "type": "int"
+      }
+    }
+  },
+  "relativeDaysAgo": "{days, plural, =1{il y a 1 jour} other{il y a {days} jours}}",
+  "@relativeDaysAgo": {
+    "placeholders": {
+      "days": {
+        "type": "int"
+      }
+    }
+  },
+  "relativeYesterdayAt": "Hier à {time}",
+  "@relativeYesterdayAt": {
+    "placeholders": {
+      "time": {
+        "type": "String"
+      }
+    }
+  },
+  "validationRequired": "Obligatoire",
+  "validationMinLength": "Doit contenir au moins {min} caractères",
+  "@validationMinLength": {
+    "placeholders": {
+      "min": {
+        "type": "int"
+      }
+    }
+  },
+  "validationMaxLength": "Doit contenir au maximum {max} caractères",
+  "@validationMaxLength": {
+    "placeholders": {
+      "max": {
+        "type": "int"
+      }
+    }
+  },
+  "validationInvalidEmail": "Adresse e-mail invalide",
+  "validationInvalidNumber": "Nombre invalide",
+  "validationMinValueInt": "Doit être >= {min}",
+  "@validationMinValueInt": {
+    "placeholders": {
+      "min": {
+        "type": "int"
+      }
+    }
+  },
+  "validationMaxValueInt": "Doit être <= {max}",
+  "@validationMaxValueInt": {
+    "placeholders": {
+      "max": {
+        "type": "int"
+      }
+    }
+  },
+  "validationMinValueDouble": "Doit être >= {min}",
+  "@validationMinValueDouble": {
+    "placeholders": {
+      "min": {
+        "type": "double"
+      }
+    }
+  },
+  "validationMaxValueDouble": "Doit être <= {max}",
+  "@validationMaxValueDouble": {
+    "placeholders": {
+      "max": {
+        "type": "double"
+      }
+    }
+  },
+  "imageSaveFailed": "Échec de l'enregistrement de l'image",
+  "imageDeleteFailed": "Échec de la suppression de l'image",
+  "unsavedDataDialogTitle": "Abandonner les modifications ?",
+  "unsavedDataDialogMessage": "Vous avez des modifications non enregistrées. Si vous quittez maintenant, vos modifications seront perdues.",
+  "unsavedDataDialogDiscard": "Abandonner"
+}

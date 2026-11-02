@@ -1,0 +1,47 @@
+{
+  "python": "3.12.5",
+  "machine": "arm64",
+  "numpy": "2.1.0",
+  "lameenc": "1.8.4",
+  "generator_bytes": 10232,
+  "generator_sha256": "f57ce3f3a8230897f5eb10de9bd4ec8b56165db65fed0e1b4a4920a0f12f6e7c",
+  "files": [
+    {
+      "name": "tap.mp3",
+      "bytes": 1880,
+      "sha256": "effb0639ef138bfc932e824281433eb26fe3296ff3a6d74cdddf7573618c82e4",
+      "recreated_sha256": "effb0639ef138bfc932e824281433eb26fe3296ff3a6d74cdddf7573618c82e4",
+      "byte_identical": true
+    },
+    {
+      "name": "success.mp3",
+      "bytes": 11284,
+      "sha256": "686e71060f4a964ea190090ac3003e548ca532199c4827f660fb7f7686d779ff",
+      "recreated_sha256": "686e71060f4a964ea190090ac3003e548ca532199c4827f660fb7f7686d779ff",
+      "byte_identical": true
+    },
+    {
+      "name": "error.mp3",
+      "bytes": 6896,
+      "sha256": "694cf6baa984b5f068112b632a9d0d06fe935748a8eb34e84733f254a0bf8a54",
+      "recreated_sha256": "694cf6baa984b5f068112b632a9d0d06fe935748a8eb34e84733f254a0bf8a54",
+      "byte_identical": true
+    }
+  ],
+  "assets_modified": false,
+  "source_rollout_id": "01a03d68-d9e2-7452-b457-1bf282fd05cf",
+  "source_lines": [
+    52,
+    105,
+    130,
+    183
+  ],
+  "method": "Replayed generator add/update patch text without executing historic tool calls",
+  "bytes": 10232,
+  "verified_date": "2026-08-31",
+  "generator_path": "tool/ui_sounds/generate_ui_sounds.py",
+  "scope": "Independent waveform synthesis of tap/success/error only; no statement about other assets or overall release clearance",
+  "verified_ipa_sha256": "724d4e0d1a04a14f2de976352bcad535a93ea6984040aebe6cefbc81f5a377f4",
+  "verified_ipa_path": "build/ios-release-candidates/1.0.12-104-20260831-174129/export/private_shelf.ipa",
+  "bundled_sound_files_match": true
+}

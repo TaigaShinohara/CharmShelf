@@ -1,0 +1,109 @@
+{
+  "@@locale": "ar",
+  "appTitle": "تطبيق نموذجي",
+  "homeTitle": "الرئيسية",
+  "settingsTitle": "الإعدادات",
+  "commonOk": "موافق",
+  "commonCancel": "إلغاء",
+  "commonYes": "نعم",
+  "commonNo": "لا",
+  "commonRetry": "إعادة المحاولة",
+  "commonEmptyTitle": "لا توجد عناصر",
+  "commonErrorOccurred": "حدث خطأ ما",
+  "avatarActionTitle": "صورة الملف الشخصي",
+  "avatarActionTakePhoto": "التقاط صورة",
+  "avatarActionChooseFromLibrary": "اختيار من المكتبة",
+  "avatarActionRemove": "إزالة الصورة",
+  "avatarTapToChange": "اضغط للتغيير",
+  "avatarRemoveTitle": "إزالة الصورة؟",
+  "avatarRemoveMessage": "سيؤدي هذا إلى إزالة صورة ملفك الشخصي.",
+  "relativeJustNow": "الآن",
+  "relativeMinutesAgo": "منذ {minutes} دقيقة",
+  "@relativeMinutesAgo": {
+    "placeholders": {
+      "minutes": {
+        "type": "int"
+      }
+    }
+  },
+  "relativeHoursAgo": "منذ {hours} ساعة",
+  "@relativeHoursAgo": {
+    "placeholders": {
+      "hours": {
+        "type": "int"
+      }
+    }
+  },
+  "relativeDaysAgo": "منذ {days} يوم",
+  "@relativeDaysAgo": {
+    "placeholders": {
+      "days": {
+        "type": "int"
+      }
+    }
+  },
+  "relativeYesterdayAt": "أمس {time}",
+  "@relativeYesterdayAt": {
+    "placeholders": {
+      "time": {
+        "type": "String"
+      }
+    }
+  },
+  "validationRequired": "مطلوب",
+  "validationMinLength": "يجب أن يكون على الأقل {min} حرفًا",
+  "@validationMinLength": {
+    "placeholders": {
+      "min": {
+        "type": "int"
+      }
+    }
+  },
+  "validationMaxLength": "يجب أن يكون على الأكثر {max} حرفًا",
+  "@validationMaxLength": {
+    "placeholders": {
+      "max": {
+        "type": "int"
+      }
+    }
+  },
+  "validationInvalidEmail": "عنوان بريد إلكتروني غير صالح",
+  "validationInvalidNumber": "رقم غير صالح",
+  "validationMinValueInt": "يجب أن يكون >= {min}",
+  "@validationMinValueInt": {
+    "placeholders": {
+      "min": {
+        "type": "int"
+      }
+    }
+  },
+  "validationMaxValueInt": "يجب أن يكون <= {max}",
+  "@validationMaxValueInt": {
+    "placeholders": {
+      "max": {
+        "type": "int"
+      }
+    }
+  },
+  "validationMinValueDouble": "يجب أن يكون >= {min}",
+  "@validationMinValueDouble": {
+    "placeholders": {
+      "min": {
+        "type": "double"
+      }
+    }
+  },
+  "validationMaxValueDouble": "يجب أن يكون <= {max}",
+  "@validationMaxValueDouble": {
+    "placeholders": {
+      "max": {
+        "type": "double"
+      }
+    }
+  },
+  "imageSaveFailed": "فشل حفظ الصورة",
+  "imageDeleteFailed": "فشل حذف الصورة",
+  "unsavedDataDialogTitle": "تجاهل التغييرات؟",
+  "unsavedDataDialogMessage": "لديك تغييرات غير محفوظة. إذا غادرت الآن، ستفقد تغييراتك.",
+  "unsavedDataDialogDiscard": "تجاهل"
+}

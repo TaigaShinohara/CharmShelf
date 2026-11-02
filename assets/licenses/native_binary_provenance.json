@@ -1,0 +1,26 @@
+{
+  "package": "isar_flutter_libs",
+  "version": "3.1.0+1",
+  "metadata_source": "https://pub.dev/api/packages/isar_flutter_libs/versions/3.1.0%2B1",
+  "archive_source": "https://pub.dev/api/archives/isar_flutter_libs-3.1.0%2B1.tar.gz",
+  "archive_sha256": "bc6768cc4b9c61aabff77152e7f33b4b17d2fc93134f7af1c3dd51500fe8d5e8",
+  "files": [
+    {
+      "file": "patches/isar_flutter_libs/linux/libisar.so",
+      "sha256": "7dc70df7a2fbf63cd552eca36708b6deeb68cbd2aa270c1e201215e0bfc38ef1",
+      "bytes": 1231320,
+      "matches_official_archive": true,
+      "matches_pub_cache": true,
+      "contains_local_user_markers": false
+    },
+    {
+      "file": "patches/isar_flutter_libs/windows/isar.dll",
+      "sha256": "5e67863f188c5f9681a37f84f2eb942eaf702509d3f994c0344d5049ebc9e48f",
+      "bytes": 1171456,
+      "matches_official_archive": true,
+      "matches_pub_cache": true,
+      "contains_local_user_markers": false
+    }
+  ],
+  "note": "Linux and Windows binaries are unchanged upstream artifacts. Their upstream source-location strings are present in the official package; no paths from the local public-snapshot build were added."
+}

@@ -1,0 +1,109 @@
+{
+  "@@locale": "ru",
+  "appTitle": "Шаблон приложения",
+  "homeTitle": "Главная",
+  "settingsTitle": "Настройки",
+  "commonOk": "ОК",
+  "commonCancel": "Отмена",
+  "commonYes": "Да",
+  "commonNo": "Нет",
+  "commonRetry": "Повторить",
+  "commonEmptyTitle": "Нет элементов",
+  "commonErrorOccurred": "Что-то пошло не так",
+  "avatarActionTitle": "Фото профиля",
+  "avatarActionTakePhoto": "Сделать фото",
+  "avatarActionChooseFromLibrary": "Выбрать из галереи",
+  "avatarActionRemove": "Удалить фото",
+  "avatarTapToChange": "Нажмите, чтобы изменить",
+  "avatarRemoveTitle": "Удалить фото?",
+  "avatarRemoveMessage": "Это удалит вашу фотографию профиля.",
+  "relativeJustNow": "только что",
+  "relativeMinutesAgo": "{minutes, plural, =1{1 минуту назад} few{{minutes} минуты назад} other{{minutes} минут назад}}",
+  "@relativeMinutesAgo": {
+    "placeholders": {
+      "minutes": {
+        "type": "int"
+      }
+    }
+  },
+  "relativeHoursAgo": "{hours, plural, =1{1 час назад} few{{hours} часа назад} other{{hours} часов назад}}",
+  "@relativeHoursAgo": {
+    "placeholders": {
+      "hours": {
+        "type": "int"
+      }
+    }
+  },
+  "relativeDaysAgo": "{days, plural, =1{1 день назад} few{{days} дня назад} other{{days} дней назад}}",
+  "@relativeDaysAgo": {
+    "placeholders": {
+      "days": {
+        "type": "int"
+      }
+    }
+  },
+  "relativeYesterdayAt": "Вчера в {time}",
+  "@relativeYesterdayAt": {
+    "placeholders": {
+      "time": {
+        "type": "String"
+      }
+    }
+  },
+  "validationRequired": "Обязательно",
+  "validationMinLength": "Минимум {min} символов",
+  "@validationMinLength": {
+    "placeholders": {
+      "min": {
+        "type": "int"
+      }
+    }
+  },
+  "validationMaxLength": "Максимум {max} символов",
+  "@validationMaxLength": {
+    "placeholders": {
+      "max": {
+        "type": "int"
+      }
+    }
+  },
+  "validationInvalidEmail": "Неверный адрес электронной почты",
+  "validationInvalidNumber": "Неверное число",
+  "validationMinValueInt": "Должно быть >= {min}",
+  "@validationMinValueInt": {
+    "placeholders": {
+      "min": {
+        "type": "int"
+      }
+    }
+  },
+  "validationMaxValueInt": "Должно быть <= {max}",
+  "@validationMaxValueInt": {
+    "placeholders": {
+      "max": {
+        "type": "int"
+      }
+    }
+  },
+  "validationMinValueDouble": "Должно быть >= {min}",
+  "@validationMinValueDouble": {
+    "placeholders": {
+      "min": {
+        "type": "double"
+      }
+    }
+  },
+  "validationMaxValueDouble": "Должно быть <= {max}",
+  "@validationMaxValueDouble": {
+    "placeholders": {
+      "max": {
+        "type": "double"
+      }
+    }
+  },
+  "imageSaveFailed": "Не удалось сохранить изображение",
+  "imageDeleteFailed": "Не удалось удалить изображение",
+  "unsavedDataDialogTitle": "Отменить изменения?",
+  "unsavedDataDialogMessage": "У вас есть несохранённые изменения. Если вы уйдёте сейчас, изменения будут потеряны.",
+  "unsavedDataDialogDiscard": "Отменить"
+}

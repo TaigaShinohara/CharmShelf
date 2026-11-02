@@ -1,0 +1,25 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none">
+  <!--
+    TagShelf charm icon
+    - Rounded label silhouette matches AppTag.
+    - The heavier curved left edge follows the charm color ribbon.
+    - A four-point sparkle marks the center of the chip.
+  -->
+  <rect
+    x="2.25"
+    y="6.25"
+    width="19.5"
+    height="11.5"
+    rx="5.75"
+    stroke="#191919"
+    stroke-width="1.5"
+  />
+  <path
+    d="M8 5.5A6.5 6.5 0 0 0 8 18.5V17C5.65 17 4 14.76 4 12C4 9.24 5.65 7 8 7Z"
+    fill="#191919"
+  />
+  <path
+    d="M13.25 8.5C13.7 10.65 14.6 11.55 16.75 12C14.6 12.45 13.7 13.35 13.25 15.5C12.8 13.35 11.9 12.45 9.75 12C11.9 11.55 12.8 10.65 13.25 8.5Z"
+    fill="#191919"
+  />
+</svg>

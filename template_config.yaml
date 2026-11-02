@@ -1,0 +1,155 @@
+app:
+  name: "CharmShelf"
+  package_name: "com.tsmusic.privateshelf.opensource"
+  version: "1.0.12"
+  min_age: 0 # 年齢制限なし（未成年利用可）
+  external_legal_url: ""
+
+company:
+  name: "Private Shelf Project"
+  email: "deeple+charmshelfstaff@inkboxmail.com"
+
+# プラットフォーム設定
+platform:
+  web:
+    enabled: false
+  watch_os:
+    enabled: false
+  wear_os:
+    enabled: false
+
+# アプリごとに変えやすい見た目の設定
+theme:
+  primary_color: "#5578A8"
+  secondary_color: "#55749F"
+  success_color: "#059669"
+  warning_color: "#D97706"
+  error_color: "#DC2626"
+  info_color: "#4F719D"
+  # 追加色
+  background_color: "#FFFFFF"
+  surface_color: "#F8FAFF"
+  scaffold_color: "#F1F5FB"
+  shadow_color: "#1E3A5F"
+  overlay_color: "#0F172A"
+  border_color: "#CBD5E8"
+  text_primary_color: "#0F172A"
+  text_secondary_color: "#475569"
+  text_disabled_color: "#94A3B8"
+  use_material3: true
+
+# 触覚・効果音
+feedback:
+  haptics:
+    enabled: true
+  sound:
+    enabled: false # デフォルトOFF
+    volume: 0.5
+
+# ティア（格付け）設定
+tiers:
+  s: "S"
+  a: "A"
+  b: "B"
+  c: "C"
+  d: "D"
+
+# アニメーション設定
+animation:
+  enabled: true
+  preset: "standard"
+  duration:
+    instant: 100
+    fast: 200
+    normal: 300
+    slow: 500
+    page: 350
+  stagger_delay: 50
+
+# 機能ON/OFF
+features:
+  tab_bar:
+    enabled: true
+    tabs:
+      - name: "ライブラリ"
+        icon: "grid_view"
+      - name: "検索"
+        icon: "search"
+      - name: "設定"
+        icon: "settings"
+
+  local_auth:
+    enabled: true
+    use_biometrics: true
+    use_pin: true
+
+  onboarding:
+    enabled: true
+
+  # アプリ評価促進
+  app_review:
+    enabled: false
+
+  # チュートリアル/ツールチップ
+  tutorial:
+    enabled: true
+
+  # 強制アップデート
+  force_update:
+    enabled: false
+
+  # ディープリンク
+  deep_link:
+    enabled: false
+    scheme: "charmshelf"
+
+  dark_mode:
+    enabled: true
+    default: "system"
+
+  # ライブラリの追加ボタン（FAB）をスクロール時に自動で隠す
+  library_fab_auto_hide: true
+
+  # 多言語対応
+  i18n:
+    enabled: true
+    default_locale: "ja"
+    supported_locales: ["ja", "en"]
+
+  # Premium (将来のクラウド拡張用)
+  premium:
+    enabled: false
+    cloud_backup:
+      enabled: false
+      sync_metadata: true
+      sync_thumbnails: true
+      storage_integration: false # S3/GoogleDriveなど
+
+  # 開発者向けDIP
+  dip:
+    enabled: true
+
+  # UIショーケース
+  ui_showcase:
+    enabled: false
+    chat: false
+    timeline: false
+    video: false
+    shorts: false
+    swipe_card: false
+
+  # エラーハンドリング
+  error_handling:
+    detailed_logging: true
+    crash_reporting: true
+    error_boundaries: true
+    retry_enabled: true
+
+system:
+  orientation: "portrait" # portrait / landscape / all
+  text_scale_max: 2.0
+
+ci_cd:
+  github_actions: true
+  code_coverage: true
+  auto_deploy: false

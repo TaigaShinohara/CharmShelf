@@ -1,0 +1,109 @@
+{
+  "@@locale": "zh_Hant",
+  "appTitle": "範本應用程式",
+  "homeTitle": "首頁",
+  "settingsTitle": "設定",
+  "commonOk": "確定",
+  "commonCancel": "取消",
+  "commonYes": "是",
+  "commonNo": "否",
+  "commonRetry": "重試",
+  "commonEmptyTitle": "暫無內容",
+  "commonErrorOccurred": "發生錯誤",
+  "avatarActionTitle": "頭像",
+  "avatarActionTakePhoto": "拍照",
+  "avatarActionChooseFromLibrary": "從相簿選擇",
+  "avatarActionRemove": "刪除頭像",
+  "avatarTapToChange": "點擊更換",
+  "avatarRemoveTitle": "刪除頭像？",
+  "avatarRemoveMessage": "這將刪除您的頭像。",
+  "relativeJustNow": "剛剛",
+  "relativeMinutesAgo": "{minutes}分鐘前",
+  "@relativeMinutesAgo": {
+    "placeholders": {
+      "minutes": {
+        "type": "int"
+      }
+    }
+  },
+  "relativeHoursAgo": "{hours}小時前",
+  "@relativeHoursAgo": {
+    "placeholders": {
+      "hours": {
+        "type": "int"
+      }
+    }
+  },
+  "relativeDaysAgo": "{days}天前",
+  "@relativeDaysAgo": {
+    "placeholders": {
+      "days": {
+        "type": "int"
+      }
+    }
+  },
+  "relativeYesterdayAt": "昨天 {time}",
+  "@relativeYesterdayAt": {
+    "placeholders": {
+      "time": {
+        "type": "String"
+      }
+    }
+  },
+  "validationRequired": "必填",
+  "validationMinLength": "至少需要{min}個字元",
+  "@validationMinLength": {
+    "placeholders": {
+      "min": {
+        "type": "int"
+      }
+    }
+  },
+  "validationMaxLength": "最多{max}個字元",
+  "@validationMaxLength": {
+    "placeholders": {
+      "max": {
+        "type": "int"
+      }
+    }
+  },
+  "validationInvalidEmail": "電子郵件格式不正確",
+  "validationInvalidNumber": "請輸入有效數字",
+  "validationMinValueInt": "必須大於等於{min}",
+  "@validationMinValueInt": {
+    "placeholders": {
+      "min": {
+        "type": "int"
+      }
+    }
+  },
+  "validationMaxValueInt": "必須小於等於{max}",
+  "@validationMaxValueInt": {
+    "placeholders": {
+      "max": {
+        "type": "int"
+      }
+    }
+  },
+  "validationMinValueDouble": "必須大於等於{min}",
+  "@validationMinValueDouble": {
+    "placeholders": {
+      "min": {
+        "type": "double"
+      }
+    }
+  },
+  "validationMaxValueDouble": "必須小於等於{max}",
+  "@validationMaxValueDouble": {
+    "placeholders": {
+      "max": {
+        "type": "double"
+      }
+    }
+  },
+  "imageSaveFailed": "圖片儲存失敗",
+  "imageDeleteFailed": "圖片刪除失敗",
+  "unsavedDataDialogTitle": "捨棄變更？",
+  "unsavedDataDialogMessage": "您有未儲存的變更。如果現在離開，變更將遺失。",
+  "unsavedDataDialogDiscard": "捨棄"
+}

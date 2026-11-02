@@ -1,0 +1,109 @@
+{
+  "@@locale": "ko",
+  "appTitle": "템플릿 앱",
+  "homeTitle": "홈",
+  "settingsTitle": "설정",
+  "commonOk": "확인",
+  "commonCancel": "취소",
+  "commonYes": "예",
+  "commonNo": "아니요",
+  "commonRetry": "재시도",
+  "commonEmptyTitle": "항목 없음",
+  "commonErrorOccurred": "오류가 발생했습니다",
+  "avatarActionTitle": "프로필 사진",
+  "avatarActionTakePhoto": "사진 촬영",
+  "avatarActionChooseFromLibrary": "라이브러리에서 선택",
+  "avatarActionRemove": "사진 삭제",
+  "avatarTapToChange": "탭하여 변경",
+  "avatarRemoveTitle": "사진을 삭제하시겠습니까?",
+  "avatarRemoveMessage": "프로필 사진이 삭제됩니다.",
+  "relativeJustNow": "방금",
+  "relativeMinutesAgo": "{minutes}분 전",
+  "@relativeMinutesAgo": {
+    "placeholders": {
+      "minutes": {
+        "type": "int"
+      }
+    }
+  },
+  "relativeHoursAgo": "{hours}시간 전",
+  "@relativeHoursAgo": {
+    "placeholders": {
+      "hours": {
+        "type": "int"
+      }
+    }
+  },
+  "relativeDaysAgo": "{days}일 전",
+  "@relativeDaysAgo": {
+    "placeholders": {
+      "days": {
+        "type": "int"
+      }
+    }
+  },
+  "relativeYesterdayAt": "어제 {time}",
+  "@relativeYesterdayAt": {
+    "placeholders": {
+      "time": {
+        "type": "String"
+      }
+    }
+  },
+  "validationRequired": "필수 입력",
+  "validationMinLength": "최소 {min}자 이상 입력하세요",
+  "@validationMinLength": {
+    "placeholders": {
+      "min": {
+        "type": "int"
+      }
+    }
+  },
+  "validationMaxLength": "최대 {max}자까지 입력 가능합니다",
+  "@validationMaxLength": {
+    "placeholders": {
+      "max": {
+        "type": "int"
+      }
+    }
+  },
+  "validationInvalidEmail": "올바른 이메일 형식이 아닙니다",
+  "validationInvalidNumber": "유효한 숫자를 입력하세요",
+  "validationMinValueInt": "{min} 이상이어야 합니다",
+  "@validationMinValueInt": {
+    "placeholders": {
+      "min": {
+        "type": "int"
+      }
+    }
+  },
+  "validationMaxValueInt": "{max} 이하여야 합니다",
+  "@validationMaxValueInt": {
+    "placeholders": {
+      "max": {
+        "type": "int"
+      }
+    }
+  },
+  "validationMinValueDouble": "{min} 이상이어야 합니다",
+  "@validationMinValueDouble": {
+    "placeholders": {
+      "min": {
+        "type": "double"
+      }
+    }
+  },
+  "validationMaxValueDouble": "{max} 이하여야 합니다",
+  "@validationMaxValueDouble": {
+    "placeholders": {
+      "max": {
+        "type": "double"
+      }
+    }
+  },
+  "imageSaveFailed": "이미지 저장 실패",
+  "imageDeleteFailed": "이미지 삭제 실패",
+  "unsavedDataDialogTitle": "변경 사항을 취소하시겠습니까?",
+  "unsavedDataDialogMessage": "저장되지 않은 변경 사항이 있습니다. 지금 나가면 변경 사항이 손실됩니다.",
+  "unsavedDataDialogDiscard": "취소"
+}

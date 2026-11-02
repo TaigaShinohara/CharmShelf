@@ -1,0 +1,25 @@
+{
+  "service": "iOS signing / TagShelf",
+  "environment": "release-signing",
+  "local_auth": {
+    "mode": "service_account_keychain",
+    "keychain_service": "codex.1password.YOUR_IOS_SIGNING",
+    "keychain_account": "service-account"
+  },
+  "secret_references": {
+    "IOS_CERTIFICATE_BASE64": "op://YOUR_VAULT/YOUR_ITEM/IOS_CERTIFICATE_BASE64",
+    "IOS_CERTIFICATE_PASSWORD": "op://YOUR_VAULT/YOUR_ITEM/IOS_CERTIFICATE_PASSWORD",
+    "IOS_PROVISIONING_PROFILE_BASE64": "op://YOUR_VAULT/YOUR_ITEM/IOS_PROVISIONING_PROFILE_BASE64",
+    "IOS_PROVISIONING_PROFILE_UUID": "op://YOUR_VAULT/YOUR_ITEM/IOS_PROVISIONING_PROFILE_UUID",
+    "IOS_BUNDLE_ID": "op://YOUR_VAULT/YOUR_ITEM/IOS_BUNDLE_ID",
+    "APPLE_TEAM_ID": "op://YOUR_VAULT/YOUR_ITEM/APPLE_TEAM_ID"
+  },
+  "allowed_domains": [
+    "localhost"
+  ],
+  "verification": "Import temporary Keychain, codesign and verify a local probe; no build or upload",
+  "cloud": {
+    "status": "not_registered",
+    "reason": "Binary signing files and JWT credentials are not simple HTTPS Network secrets"
+  }
+}

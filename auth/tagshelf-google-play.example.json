@@ -1,0 +1,22 @@
+{
+  "service": "Google Play / TagShelf",
+  "environment": "release",
+  "local_auth": {
+    "mode": "service_account_keychain",
+    "keychain_service": "codex.1password.YOUR_TAGSHELF_PLAY",
+    "keychain_account": "service-account"
+  },
+  "secret_references": {
+    "GOOGLE_PLAY_SERVICE_ACCOUNT_JSON": "op://YOUR_VAULT/YOUR_ITEM/GOOGLE_PLAY_SERVICE_ACCOUNT_JSON",
+    "ANDROID_APPLICATION_ID": "op://YOUR_VAULT/YOUR_ITEM/ANDROID_APPLICATION_ID"
+  },
+  "allowed_domains": [
+    "oauth2.googleapis.com",
+    "androidpublisher.googleapis.com"
+  ],
+  "verification": "OAuth token and read-only Google Play request",
+  "cloud": {
+    "status": "not_registered",
+    "reason": "Binary signing files and JWT credentials are not simple HTTPS Network secrets"
+  }
+}

@@ -1,0 +1,121 @@
+# This file configures the analyzer, which statically analyzes Dart code to
+# check for errors, warnings, and lints.
+#
+# The issues identified by the analyzer are surfaced in the UI of Dart-enabled
+# IDEs (https://dart.dev/tools#ides-and-editors). The analyzer can also be
+# invoked from the command line by running `flutter analyze`.
+
+# The following line activates a set of recommended lints for Flutter apps,
+# packages, and plugins designed to encourage good coding practices.
+include: package:flutter_lints/flutter.yaml
+
+analyzer:
+  exclude:
+    - "**/*.g.dart"
+    - "**/*.freezed.dart"
+    - "**/*.gen.dart"
+    - "build/**"
+    - ".dart_tool/**"
+    # dependency_overrides配下は外部コードとして各fork側で解析する。
+    - "patches/**"
+    # Flutter 3.47.2がpub get時に追加するプラットフォーム生成ディレクトリ。
+    - android/**
+    - ios/**
+    - windows/**
+    - macos/**
+  errors:
+    # 未使用の要素は警告に
+    unused_import: warning
+    unused_local_variable: warning
+    unused_field: warning
+    unused_element: warning
+    # 非推奨の使用はエラーに
+    deprecated_member_use: warning
+  language:
+    strict-casts: true
+    strict-raw-types: true
+
+linter:
+  # The lint rules applied to this project can be customized in the
+  # section below to disable rules from the `package:flutter_lints/flutter.yaml`
+  # included above or to enable additional rules. A list of all available lints
+  # and their documentation is published at https://dart.dev/lints.
+  rules:
+    # ============================================
+    # エラー防止
+    # ============================================
+    # テンプレでは print を使わず AppLogger に寄せる（品質の一貫性）
+    avoid_print: true
+    # 空の catch ブロックを禁止
+    empty_catches: true
+    # 不要な await を禁止
+    # null チェック後の非 null アサーションを推奨
+    null_check_on_nullable_type_parameter: true
+    # dispose されていないコントローラーを検出
+    cancel_subscriptions: true
+    close_sinks: true
+
+    # ============================================
+    # コードスタイル
+    # ============================================
+    # 文字列は基本シングルクォート（差分が安定しやすい）
+    prefer_single_quotes: true
+    # UIのコーディングが多いので、const で最適化できる箇所は積極的に
+    prefer_const_constructors: true
+    prefer_const_literals_to_create_immutables: true
+    prefer_const_declarations: true
+    # final を推奨
+    prefer_final_locals: true
+    prefer_final_in_for_each: true
+    # 型の省略を許可（推論が明確な場合）
+    omit_local_variable_types: true
+    # 明示的な型を許可しない（一貫性のため）
+    always_specify_types: false
+    
+    # ============================================
+    # 可読性
+    # ============================================
+    # 相対インポートも許可（プロジェクト規模に応じて選択）
+    always_use_package_imports: false
+    prefer_relative_imports: false  # どちらでも OK
+    # 行の長さ制限（80文字）
+    lines_longer_than_80_chars: false  # 80文字は厳しすぎるため無効
+    # コメントの形式
+    slash_for_doc_comments: true
+    # パラメータの末尾カンマは推奨（エラーにはしない）
+    require_trailing_commas: false
+    # 条件式での括弧
+    unnecessary_parenthesis: true
+    
+    # ============================================
+    # 安全性
+    # ============================================
+    # null 安全性
+    # イミュータブルな型を推奨
+    prefer_void_to_null: true
+    
+    # ============================================
+    # パフォーマンス
+    # ============================================
+    # 不要なビルドを避ける
+    avoid_unnecessary_containers: true
+    # 効率的なコレクション操作
+    prefer_collection_literals: true
+    prefer_for_elements_to_map_fromIterable: true
+    prefer_iterable_whereType: true
+    prefer_spread_collections: true
+    prefer_if_null_operators: true
+    prefer_null_aware_operators: true
+    
+    # ============================================
+    # ウィジェット関連
+    # ============================================
+    # Widgetのkey引数
+    use_key_in_widget_constructors: true
+    # BuildContext の非同期使用
+    use_build_context_synchronously: true
+    # SizedBox vs Container
+    sized_box_for_whitespace: true
+
+# Additional information about this file can be found at
+# https://dart.dev/guides/language/analysis-options

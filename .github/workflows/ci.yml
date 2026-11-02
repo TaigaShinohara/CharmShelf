@@ -1,0 +1,51 @@
+name: CI
+on:
+  push:
+    branches: [main]
+  pull_request:
+  workflow_dispatch:
+permissions:
+  contents: read
+concurrency:
+  group: ci-${{ github.ref }}
+  cancel-in-progress: true
+jobs:
+  verify:
+    runs-on: ubuntu-latest
+    timeout-minutes: 35
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1
+        with:
+          persist-credentials: false
+          fetch-depth: 0
+      - uses: subosito/flutter-action@1a449444c387b1966244ae4d4f8c696479add0b2
+        with:
+          flutter-version-file: pubspec.yaml
+          channel: stable
+          cache: true
+      - uses: actions/setup-java@b843ebf9b913146b38da2eaa7aeddf76074ae1ad
+        with:
+          distribution: temurin
+          java-version: '17'
+      - name: Prepare development checkout
+        run: bash scripts/setup_dev.sh
+      - name: Verify reproducible configuration and sources
+        run: |
+          git diff --exit-code -- lib pubspec.lock
+          python3 -m unittest discover -s test/scripts -p '*_test.py'
+          python3 -m unittest discover -s scripts -p 'test_*.py'
+          python3 scripts/maintenance/check_path_override_upstream.py
+          python3 scripts/maintenance/check_isar_codegen_compatibility.py
+          python3 scripts/maintenance/check_private_content.py --sources-only
+          python3 scripts/maintenance/export_public_notices.py --check
+          python3 scripts/maintenance/check_public_snapshot.py
+          python3 scripts/maintenance/check_secrets.py
+          dart run scripts/maintenance/check_architecture_boundaries.dart
+      - name: Analyze
+        run: flutter analyze
+      - name: Test
+        run: flutter test --exclude-tags golden
+      - name: Build Android debug without signing credentials
+        run: |
+          flutter build apk --debug
+          python3 scripts/maintenance/check_android_bundle.py build/app/outputs/flutter-apk/app-debug.apk

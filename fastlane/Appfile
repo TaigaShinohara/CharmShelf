@@ -1,0 +1,4 @@
+app_identifier(ENV["IOS_BUNDLE_ID"] || "org.charmshelf.opensource")
+package_name(ENV["ANDROID_APPLICATION_ID"] || "com.tsmusic.privateshelf.opensource")
+
+itc_team_id(ENV["APPLE_TEAM_ID"]) unless ENV["APPLE_TEAM_ID"].to_s.empty?

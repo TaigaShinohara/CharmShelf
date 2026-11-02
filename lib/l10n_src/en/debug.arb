@@ -1,0 +1,426 @@
+{
+  "@@locale": "en",
+  "settingsDipMenuOpen": "Open DIP Menu",
+  "settingsDipMenuSubtitle": "Developer debug panel",
+  "dipPanelTitle": "DIP - Developer Panel",
+  "dipCategoryInfo": "Information",
+  "dipCategoryData": "Data Operations",
+  "dipCategoryUi": "UI/UX Adjustment",
+  "dipCategoryDebug": "Development & Debug",
+  "dipCategoryTest": "Testing",
+  "dipSharedPrefsTitle": "SharedPreferences",
+  "dipSharedPrefsSubtitle": "Browse & edit saved data",
+  "dipSharedPrefsItems": "{count, plural, =1{1 item} other{{count} items}}",
+  "@dipSharedPrefsItems": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "dipSharedPrefsNoData": "No data",
+  "dipSharedPrefsNoMatch": "No matching items",
+  "dipSharedPrefsDeleteConfirm": "Confirm Delete",
+  "dipSharedPrefsDeleteMessage": "Delete \"{key}\"?",
+  "@dipSharedPrefsDeleteMessage": {
+    "placeholders": {
+      "key": {
+        "type": "String"
+      }
+    }
+  },
+  "dipSharedPrefsEditTitle": "Edit",
+  "dipSharedPrefsAddTitle": "Add New",
+  "dipSharedPrefsKey": "Key",
+  "dipSharedPrefsType": "Type",
+  "dipSharedPrefsValue": "Value",
+  "dipWidgetInspectorTitle": "Widget Inspector",
+  "dipWidgetInspectorSubtitle": "Layout debugging",
+  "dipWidgetInspectorDescription": "Toggle options for debugging UI",
+  "dipWidgetInspectorOptions": "Debug Options",
+  "dipWidgetInspectorRepaintRainbow": "Repaint Rainbow",
+  "dipWidgetInspectorRepaintRainbowSubtitle": "Show repainted areas with colors",
+  "dipWidgetInspectorDebugBanner": "Debug Banner",
+  "dipWidgetInspectorDebugBannerSubtitle": "Show DEBUG banner",
+  "dipWidgetInspectorSemantics": "Semantics Overlay",
+  "dipWidgetInspectorSemanticsSubtitle": "Show accessibility information",
+  "dipWidgetInspectorOtherTools": "Other Tools",
+  "dipWidgetInspectorDevTools": "Open DevTools",
+  "dipWidgetInspectorDevToolsSubtitle": "Detailed debugging in browser",
+  "dipWidgetInspectorDevToolsHint": "Launch Flutter DevTools for more advanced debugging",
+  "dipWidgetInspectorWidgetTree": "Widget Tree",
+  "dipWidgetInspectorWidgetTreeSubtitle": "Check current screen structure",
+  "dipWidgetInspectorWidgetTreeDescription": "Displays the widget hierarchy and properties",
+  "dipLogViewerTitle": "Log Viewer",
+  "dipLogViewerSubtitle": "Browse & export app logs",
+  "dipLogViewerAll": "All",
+  "dipLogViewerNoLogs": "No logs to display",
+  "dipDbViewerTitle": "DB Viewer",
+  "dipDbViewerSubtitle": "View Isar DB contents",
+  "dipDbViewerRecords": "{count, plural, =1{1 record} other{{count} records}}",
+  "@dipDbViewerRecords": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "dipCacheClearTitle": "Cache Clear",
+  "dipCacheClearSubtitle": "Delete DB, Prefs, & image cache",
+  "dipCacheClearWarning": "Warning: Deleted data cannot be recovered",
+  "dipRestartTitle": "Restart App",
+  "dipRestartSubtitle": "Restart from initialization flow",
+  "dipRouteInfoTitle": "Route Info",
+  "dipRouteInfoSubtitle": "Show current route & parameters",
+  "dipTextScaleTitle": "Text Size",
+  "dipTextScaleSubtitle": "Adjust text size",
+  "dipEnvInfoTitle": "Environment Info",
+  "dipEnvInfoSubtitle": "Show app & device info",
+  "dipNetworkTitle": "Network",
+  "dipNetworkSubtitle": "View API communication logs",
+  "dipPushTestTitle": "Push Notification Test",
+  "dipPushTestSubtitle": "Send local notifications",
+  "dipAppIconTitle": "App Icon",
+  "dipAppIconSubtitle": "Change icon dynamically (iOS)",
+  "dipMockDataTitle": "Mock Data Generator",
+  "dipMockDataSubtitle": "Create test dummy data",
+  "dipLocaleSwitchTitle": "Language Switch",
+  "dipThemeSwitchTitle": "Theme Switch",
+  "dipPerformanceTitle": "Performance",
+  "dipSlowAnimationsTitle": "Slow Animations",
+  "dipFeatureFlagsTitle": "Feature Flags",
+  "dipFeatureFlagsSubtitle": "Check feature ON/OFF",
+  "dipEnvSwitchTitle": "Environment Switch",
+  "dipEnvSwitchSubtitle": "Dev/Staging/Prod",
+  "dipLogViewerTag": "Charm: {tag}",
+  "@dipLogViewerTag": {
+    "placeholders": {
+      "tag": {
+        "type": "String"
+      }
+    }
+  },
+  "dipLogViewerTime": "Time: {time}",
+  "@dipLogViewerTime": {
+    "placeholders": {
+      "time": {
+        "type": "String"
+      }
+    }
+  },
+  "dipLogViewerSubject": "Log Subject",
+  "dipDbViewerStatus": "Status: {status}",
+  "@dipDbViewerStatus": {
+    "placeholders": {
+      "status": {
+        "type": "String"
+      }
+    }
+  },
+  "dipDbViewerInitialized": "Initialized",
+  "dipDbViewerPath": "Path: {path}",
+  "@dipDbViewerPath": {
+    "placeholders": {
+      "path": {
+        "type": "String"
+      }
+    }
+  },
+  "dipDbViewerPathUnknown": "Unknown",
+  "dipDbViewerCollections": "Catalogs: {count}",
+  "@dipDbViewerCollections": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "dipDbViewerCollectionsHint": "Select a table to view data",
+  "dipDbViewerOperations": "DB Operations",
+  "dipDbViewerDeleteAll": "Delete All Data",
+  "dipDbViewerDeleteAllConfirm": "Are you sure you want to delete all data in the Isar database? This cannot be undone.",
+  "dipDbViewerDetailNotImplemented": "Record details not yet implemented",
+  "dipDbViewerClearFromCache": "Clear from Cache",
+  "dipCrashTestTitle": "Crash Test",
+  "dipCrashTestSubtitle": "Test exception & crash handling",
+  "dipCrashTestWarning": "Note: The app may force close during tests",
+  "dipCrashTestDescription": "Intentionally trigger various types of exceptions to verify app robustness and error handling",
+  "dipCrashTestTypes": "Test Types",
+  "dipCrashTestDartException": "Dart Exception",
+  "dipCrashTestDartExceptionDesc": "Throw standard Dart exception",
+  "dipCrashTestUncaughtException": "Uncaught Exception",
+  "dipCrashTestUncaughtExceptionDesc": "Uncaught error within async",
+  "dipCrashTestAssertion": "Assertion Error",
+  "dipCrashTestAssertionDesc": "Execution of assert(false)",
+  "dipCrashTestStackOverflow": "Stack Overflow",
+  "dipCrashTestStackOverflowDesc": "Crash due to infinite recursion",
+  "dipCrashTestNullReference": "Null Reference",
+  "dipCrashTestNullReferenceDesc": "Property access on null",
+  "dipCrashTestPurpose": "Test Purpose",
+  "dipCrashTestPurposeReport": "Error Reporting",
+  "dipCrashTestPurposeReportDesc": "Verify delivery to Sentry/Firebase",
+  "dipCrashTestPurposeHandler": "Global Handlers",
+  "dipCrashTestPurposeHandlerDesc": "Check if app remains stable",
+  "dipCrashTestPurposeRecovery": "Recovery Flow",
+  "dipCrashTestPurposeRecoveryDesc": "Test restart/recovery",
+  "dipCrashTestConfirmTitle": "Run Crash Test",
+  "dipCrashTestConfirmMessage": "Trigger selected error? Proceed?",
+  "dipCacheClearCurrent": "Current Cache Sizes",
+  "dipCacheClearImageCache": "Image Cache: {size}",
+  "@dipCacheClearImageCache": {
+    "placeholders": {
+      "size": {
+        "type": "String"
+      }
+    }
+  },
+  "dipCacheClearAppData": "Total App Data: {size}",
+  "@dipCacheClearAppData": {
+    "placeholders": {
+      "size": {
+        "type": "String"
+      }
+    }
+  },
+  "dipCacheClearOptions": "Select clear target",
+  "dipCacheClearPrefs": "Settings Data (SharedPreferences)",
+  "dipCacheClearPrefsSubtitle": "Reset user settings & flags",
+  "dipCacheClearImages": "Thumbnails & Image Cache",
+  "dipCacheClearImagesSubtitle": "Delete all generated thumbnails",
+  "dipCacheClearIsar": "Isar Database",
+  "dipCacheClearIsarSubtitle": "Reset all saved items",
+  "dipCacheClearAll": "Reset Everything (To Init)",
+  "dipCacheClearPrefsConfirm": "Reset Settings",
+  "dipCacheClearPrefsConfirmMessage": "Reset all app settings to default?",
+  "dipCacheClearPrefsDone": "Settings reset successfully",
+  "dipCacheClearImagesConfirm": "Clear Image Cache",
+  "dipCacheClearImagesConfirmMessage": "Are you sure you want to delete all generated thumbnails?",
+  "dipCacheClearImagesDone": "Image cache cleared",
+  "dipCacheClearIsarConfirm": "DB Initialization",
+  "dipCacheClearIsarConfirmMessage": "Are you sure you want to delete all data in the database?",
+  "dipCacheClearIsarDone": "Database initialized",
+  "dipCacheClearAllConfirm": "Perform Full Reset",
+  "dipCacheClearAllConfirmMessage": "Delete all data and return to fresh install state. Proceed?",
+  "dipCacheClearAllDone": "Full reset completed",
+  "dipRestartOptions": "Restart Options",
+  "dipRestartSoft": "Soft Restart",
+  "dipRestartSoftSubtitle": "Retain state & go to Home",
+  "dipRestartHard": "Hard Restart",
+  "dipRestartHardSubtitle": "Exit & start from beginning",
+  "dipRestartExit": "Exit App",
+  "dipRestartExitSubtitle": "System-level exit (iOS discourages)",
+  "dipRestartDone": "Restart executed",
+  "dipRouteInfoCurrentPath": "Current Path: {path}",
+  "@dipRouteInfoCurrentPath": {
+    "placeholders": {
+      "path": {
+        "type": "String"
+      }
+    }
+  },
+  "dipRouteInfoFullUri": "Full URI: {uri}",
+  "@dipRouteInfoFullUri": {
+    "placeholders": {
+      "uri": {
+        "type": "String"
+      }
+    }
+  },
+  "dipRouteInfoName": "Name: {name}",
+  "@dipRouteInfoName": {
+    "placeholders": {
+      "name": {
+        "type": "String"
+      }
+    }
+  },
+  "dipRouteInfoNameNone": "None",
+  "dipRouteInfoCopyButton": "Copy Path",
+  "dipRouteInfoNavHome": "Navigate to Home",
+  "dipRouteInfoNavBack": "Go Back",
+  "dipTextScalePreview": "Preview",
+  "dipTextScalePreviewNormal": "Normal Size",
+  "dipTextScalePreviewSample": "This is sample text for text size preview. Adjust to check legibility.",
+  "dipTextScaleSmall": "Small",
+  "dipTextScaleNormal": "Normal",
+  "dipTextScaleLarge": "Large",
+  "dipTextScaleExtraLarge": "Extra Large",
+  "dipEnvInfoCopyAll": "Copy All",
+  "dipEnvInfoAppInfo": "App Info",
+  "dipEnvInfoAppName": "App Name",
+  "dipEnvInfoPackageName": "Package Name",
+  "dipEnvInfoVersion": "Version",
+  "dipEnvInfoBuildNumber": "Build Number",
+  "dipEnvInfoUnknown": "Unknown",
+  "dipEnvInfoDeviceInfo": "Device Info",
+  "dipEnvInfoPlatform": "Platform",
+  "dipEnvInfoOsVersion": "OS Version",
+  "dipEnvInfoLocale": "Locale",
+  "dipEnvInfoBuildInfo": "Build Info",
+  "dipEnvInfoDebugMode": "Debug Mode",
+  "dipEnvInfoProfileMode": "Profile Mode",
+  "dipEnvInfoReleaseMode": "Release Mode",
+  "dipEnvInfoYes": "Yes",
+  "dipEnvInfoNo": "No",
+  "dipEnvInfoScreenInfo": "Screen Info",
+  "dipEnvInfoScreenSize": "Screen Size",
+  "dipEnvInfoDevicePixelRatio": "Pixel Ratio (DPR)",
+  "dipEnvInfoTextScale": "Text Scale",
+  "dipEnvInfoPaddingTop": "SafeArea (Top)",
+  "dipEnvInfoPaddingBottom": "SafeArea (Bottom)",
+  "dipEnvInfoThemeInfo": "Theme Info",
+  "dipEnvInfoBrightness": "Brightness Mode",
+  "dipEnvInfoBrightnessDark": "Dark",
+  "dipEnvInfoBrightnessLight": "Light",
+  "dipEnvInfoPrimaryColor": "Primary Color",
+  "dipNetworkSearchHint": "Search by URL or Status",
+  "dipNetworkAll": "Show All",
+  "dipNetworkClearTooltip": "Clear Logs",
+  "dipNetworkRefreshTooltip": "Refresh",
+  "dipNetworkNoRequests": "No requests",
+  "dipNetworkNoRequestsHint": "API calls will appear here",
+  "dipNetworkOverview": "Overview",
+  "dipNetworkRequest": "Request",
+  "dipNetworkResponse": "Response",
+  "dipNetworkUrl": "URL",
+  "dipNetworkStatus": "Status",
+  "dipNetworkError": "Error",
+  "dipNetworkHeaders": "Headers",
+  "dipNetworkBody": "Body",
+  "dipNetworkCopyAsCurl": "Copy as cURL",
+  "dipNetworkCurlCopied": "cURL copied to clipboard",
+  "dipPushTestContent": "Push Content Settings",
+  "dipPushTestTitleLabel": "Title",
+  "dipPushTestBody": "Body",
+  "dipPushTestDefaultTitle": "Test Notification",
+  "dipPushTestDefaultBody": "This is a test notification from DIP",
+  "dipPushTestTiming": "Timing",
+  "dipPushTestImmediate": "Immediate",
+  "dipPushTestDelayed": "5 seconds later",
+  "dipPushTestSend": "Send Notification",
+  "dipPushTestPresets": "Presets",
+  "dipPushTestPresetMessage": "Message",
+  "dipPushTestPresetMessageTitle": "New Message",
+  "dipPushTestPresetMessageBody": "You've received a new message",
+  "dipPushTestPresetReminder": "Reminder",
+  "dipPushTestPresetReminderBody": "You have an uncompleted task",
+  "dipPushTestPresetUpdate": "Update",
+  "dipPushTestPresetUpdateTitle": "Update Complete",
+  "dipPushTestPresetUpdateBody": "App has been updated to the latest",
+  "dipPushTestPresetPromotion": "Promotion",
+  "dipPushTestPresetPromotionTitle": "Limited Sale",
+  "dipPushTestPresetPromotionBody": "All items 50% OFF campaign now on!",
+  "dipPushTestNotes": "Notes",
+  "dipPushTestNotesContent": "• Notification permission must be granted\n• Won't show if disabled in OS settings\n• APNs setup may be required for iOS devices",
+  "dipPushTestChannelName": "Test Channel",
+  "dipPushTestChannelDesc": "For test notifications from DIP",
+  "dipPushTestScheduled": "Scheduled",
+  "dipPushTestSent": "Sent",
+  "dipPushTestDelayedMessage": "Notification will arrive in 5 seconds",
+  "dipPushTestError": "Error: {error}",
+  "@dipPushTestError": {
+    "placeholders": {
+      "error": {
+        "type": "String"
+      }
+    }
+  },
+  "dipAppIconIosOnly": "iOS Only",
+  "dipAppIconDescription": "Change home screen icon. Works on iOS devices only.",
+  "dipAppIconSelect": "Select Icon",
+  "dipAppIconDefault": "Default",
+  "dipAppIconDark": "Dark Mode",
+  "dipAppIconLight": "Light Mode",
+  "dipAppIconRed": "Red Custom",
+  "dipAppIconGreen": "Green Custom",
+  "dipAppIconHowToSetup": "Setup Procedure",
+  "dipAppIconStep1": "1. Asset Placement",
+  "dipAppIconStep1Desc": "Register background/icon in Info.plist & Assets",
+  "dipAppIconStep2": "2. Enable Function",
+  "dipAppIconStep2Desc": "Executed via PrivacyNativeService",
+  "dipAppIconChanged": "Icon changed",
+  "dipAppIconChangeFailed": "Failed to change",
+  "dipAppIconIosOnlyMessage": "This feature is only available on iOS",
+  "dipMockDataDescription": "Generate dummy data for dev/demo. Existing data is retained.",
+  "dipMockDataSettings": "Generation Settings",
+  "dipMockDataCount": "Count: {count}",
+  "@dipMockDataCount": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "dipMockDataTypes": "Data Types",
+  "dipMockDataUser": "Users",
+  "dipMockDataUserSubtitle": "Profiles, Icons, Settings",
+  "dipMockDataPost": "Posts / Media",
+  "dipMockDataPostSubtitle": "Images, Videos, Texts, Charms",
+  "dipMockDataComment": "Comments / Reactions",
+  "dipMockDataCommentSubtitle": "Threads, Likes, History",
+  "dipMockDataNotification": "Notification History",
+  "dipMockDataNotificationSubtitle": "System, Promo, New",
+  "dipMockDataHelper": "Helper",
+  "dipMockDataHelperTitle": "Import from Assets",
+  "dipMockDataGenerated": "Generated {count} items",
+  "@dipMockDataGenerated": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "dipLocaleSwitchSubtitle": "Force app language change",
+  "dipLocaleSwitchAuto": "Auto (System)",
+  "dipLocaleSwitchJapanese": "Fixed to Japanese",
+  "dipLocaleSwitchSystem": "Back to System",
+  "dipThemeSwitchSubtitle": "Force theme mode change",
+  "dipThemeSwitchLight": "Fixed Light Mode",
+  "dipThemeSwitchDark": "Fixed Dark Mode",
+  "dipThemeSwitchSystem": "Follow System",
+  "dipPerformanceSubtitle": "Show rendering statistics",
+  "dipSlowAnimationsSubtitle": "Make animations extremely slow",
+  "dipSlowAnimationsOn": "Slow-mo ON",
+  "dipFeatureFlagsDescription": "Check current activation status defined in template_config.yaml",
+  "dipFeatureFlagsCurrent": "Current Flags",
+  "dipFeatureFlagsOther": "Other Settings",
+  "dipFeatureFlagsTabBar": "Tab Bar",
+  "dipFeatureFlagsLocalAuth": "Biometric / Lock",
+  "dipFeatureFlagsOnboarding": "Onboarding",
+  "dipFeatureFlagsPermissions": "Permission Requests",
+  "dipFeatureFlagsBackup": "Backup Feature",
+  "dipFeatureFlagsAppReview": "Review Request",
+  "dipFeatureFlagsTutorial": "Tutorial",
+  "dipFeatureFlagsForceUpdate": "Force Update",
+  "dipFeatureFlagsDeepLink": "Deep Link",
+  "dipFeatureFlagsDarkMode": "Dark Mode Support",
+  "dipFeatureFlagsI18n": "Multi-language Support",
+  "dipFeatureFlagsHaptics": "Haptic Feedback",
+  "dipFeatureFlagsSound": "Sound Effects",
+  "dipFeatureFlagsDip": "Developer Panel",
+  "dipFeatureFlagsAppName": "App Display Name",
+  "dipFeatureFlagsPackageName": "Package Name",
+  "dipFeatureFlagsMinAge": "Min Age",
+  "dipFeatureFlagsMinAgeValue": "{age}+",
+  "@dipFeatureFlagsMinAgeValue": {
+    "placeholders": {
+      "age": {
+        "type": "int"
+      }
+    }
+  },
+  "dipFeatureFlagsDeepLinkScheme": "DL Scheme",
+  "dipFeatureFlagsTextScaleMax": "Max Text Scale",
+  "dipFeatureFlagsOrientation": "Orientation",
+  "dipEnvSwitchWarning": "App will restart when changing environments",
+  "dipEnvSwitchProductionWarning": "* Be extremely careful when switching to production",
+  "dipEnvDevelopment": "Development",
+  "dipEnvDevelopmentDesc": "Local debug / Mock API",
+  "dipEnvStaging": "Staging",
+  "dipEnvStagingDesc": "Test server connection",
+  "dipEnvProduction": "Production",
+  "dipEnvProductionDesc": "Live service environment",
+  "dipActionLogToggleTitle": "Action Log Display",
+  "dipActionLogToggleSubtitle": "Display user actions on screen",
+  "dipActionLogEnabled": "Display ON"
+}

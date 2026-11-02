@@ -1,0 +1,979 @@
+{
+  "downloadsfolder": {
+    "version": "2.0.0-pre.1",
+    "files": {
+      "android/src/main/AndroidManifest.xml": "73a76ced50885c2b66c18fd66404595694626921aa99db96b3e8f7f61fc1e45b",
+      "android/src/main/kotlin/com/oodrive/downloadsfolder/DownloadsfolderPlugin.kt": "3cb802afb6c1a9d84a2ec5e765bf1029f7cd8772e03fc41cb96027a3170f907d",
+      "android/src/main/kotlin/com/oodrive/downloadsfolder/mimeTypes.kt": "6a3cb6a466496cbce7387369e54b64bb85a017022f1a268247cf152a71080a3b",
+      "lib/downloadsfolder.dart": "d5e4aa622ef7e6bfaa72ed19e39a26bccc0e713e0efc5e03e42c0ad7387819f7",
+      "lib/downloadsfolder_method_channel.dart": "7cbe2cb024e83d08d3b079c0052fa0b9230872995244f432c88d7c5792c0baea",
+      "lib/downloadsfolder_platform_interface.dart": "75ff64ab0f62ae5bd1ad7b7c39196ab683b2de092ad6d1cb3caf130c10b95674",
+      "lib/src/constants.dart": "f0e205dafe0adaec9ef6a415e470474f092526eba4c8d46b0b54fec69c793f20",
+      "lib/src/file_extension.dart": "30d4fd2b301d1658de317a0f417ad1fe969dcc021dee7cf0ca986ca4baf14d52"
+    }
+  },
+  "secure_application": {
+    "version": "4.1.0",
+    "files": {
+      "android/src/main/AndroidManifest.xml": "8d2963c118350434793471929bc58424e77921e004ff55416e5c8fae1e505c71",
+      "android/src/main/kotlin/org/jezequel/secure_application/SecureApplicationPlugin.kt": "feb970003398bdda74918d093a9bb84159435e495cfa962b5c1211fe3dc8276f",
+      "lib/secure_application.dart": "9f76762d91399ef1fce12744ae417de07790d5b9418b07e90cc2704cbd78b6e7",
+      "lib/secure_application_controller.dart": "73b80b0964511fc3c75bed996ed49c6e187383c061a26b25b3aa38aa57ee5214",
+      "lib/secure_application_native.dart": "d1ef99fcc92ba697eee5bed72c96d997ea527c37a409c2e6b1350c8256090f09",
+      "lib/secure_application_provider.dart": "367aab7e4c060c9016a9e1659c2aa869962a34fddb97a3df4fa26424ce79283d",
+      "lib/secure_application_state.dart": "4a171a5a416e72d907be9618231cb92e060b54919d721e2bdf2ac59aaa538393",
+      "lib/secure_application_web.dart": "266d1a2e8424d20057791f8245ccf12abac2c922bdc0aae8022f765f8756fa84",
+      "lib/secure_gate.dart": "1641e570dfcace19056521631c310921f52f7b90e5caccba68b9626a6da92c6a"
+    }
+  },
+  "video_thumbnail": {
+    "version": "0.5.6",
+    "files": {
+      "android/src/main/AndroidManifest.xml": "fa5ffd85754c0cc3bda41fb7c7d3148939dfb3ccb2486566fe4188513aa7521d",
+      "android/src/main/java/xyz/justsoft/video_thumbnail/VideoThumbnailPlugin.java": "0e7ac30ae4ca1fe3f5e54eace2b3487adc2cc4f397a2e107828e5ce4d3824d1a",
+      "lib/video_thumbnail.dart": "debd52595400e39284fcafd5d1617aded125b67038109e3358eacaed8c74a80f"
+    }
+  },
+  "flutter_local_notifications_linux": {
+    "version": "8.0.2",
+    "archive_url": "https://pub.dev/api/archives/flutter_local_notifications_linux-8.0.2.tar.gz",
+    "archive_sha256": "3b89a4bf095fa5f8a99beeabf982c5bd506c3ad25e7b9e61da945e994dc5b615",
+    "implementation_roots": [
+      "lib"
+    ],
+    "files": {
+      "lib/flutter_local_notifications_linux.dart": "df0478e5625c4d391260fb5c8fefe35e3cd1a9e5d65c176a2e60e047201f3c46",
+      "lib/src/helpers.dart": "3dc87eed996773796ba64aea44316fa1dcad860020630c31a7eb3229584424f4",
+      "lib/src/platform_info.dart": "6d823c986f985fcb44a66394099febe269d4f5042587bb0e7e3db1b985e45cfc",
+      "lib/src/flutter_local_notifications_platform_linux.dart": "8b65209dcc8f939a0009b26ba37fe9a7ba43e09a4b123316ed5d4b7e659611ce",
+      "lib/src/storage.dart": "5a3449b003b41eff2e50f37a467a337fc4a127245acac982cbf8ea38aeca987e",
+      "lib/src/notification_info.dart": "fe19879f55868a4ce9264a2f5699e353eea4d79fc68c08e0e1c922eda6086161",
+      "lib/src/posix.dart": "bcefe884340f16ee37ab4bebc27f54cc017a18e9c6e040e72923d7fe7093596f",
+      "lib/src/flutter_local_notifications_stub.dart": "eb50e7054617a328c9016d8a8f3c9df98568504ee3cad024b7d58482f4c8ea01",
+      "lib/src/dbus_wrapper.dart": "fb0d1bf6c847a263e64480df0280e9456594666c5ffdde17adbfd0d065f348ac",
+      "lib/src/flutter_local_notifications.dart": "8f92e26e79d1bbc4d54af4431247436f760e3e826b79fbcec0a98874db255901",
+      "lib/src/notifications_manager.dart": "feb1157c6c3b8ae1819faf537d0218741982e45b044a5f2c0d094bf0cd1478c9",
+      "lib/src/file_system.dart": "2b922d54cc41bd1bf2dd786aac572e8f9fc72fdccdce11ce6ff3a4b6629212cb",
+      "lib/src/model/sound.dart": "b9c15e806e313447bd6b497aef44bbdc95361fd2ccf7c1eb81137fa2446b10a4",
+      "lib/src/model/initialization_settings.dart": "d184fa5b929b8c226b1399c13461df43033e525ded31fce647d5f4de6752d432",
+      "lib/src/model/enums.dart": "18b8f40060b1e77554802b58f3160f69d509a4d7e1ac93f9837ecc07e1746782",
+      "lib/src/model/timeout.dart": "3b7eee85b4d65ea55d3bdc0b9af5da123c895263b1624b084125e870bc3c7cf2",
+      "lib/src/model/icon.dart": "1a6ec4cc7bc8ecbb83f2c48ff3c4f7065f459234f43d676725cfaffe5d20f516",
+      "lib/src/model/notification_details.dart": "79f6db3ad700f47567c0e2bdaff7ddc4178c0d59d20e9bfac8f01878320426c1",
+      "lib/src/model/hint.dart": "d8f77f7506757a1136d6b0f914eb962150bed388e097b735882eb785232ed54d",
+      "lib/src/model/location.dart": "634b00f3ee046f3704bc9afb7af569eb9aa785b6d3c922cdf6c64c0ae422d558",
+      "lib/src/model/capabilities.dart": "a25a9204f8e039c8b44fd22d91dbc97ef03206bc0689fb49ab24a0571a99017c"
+    }
+  },
+  "wakelock_plus": {
+    "version": "1.8.2",
+    "archive_url": "https://pub.dev/api/archives/wakelock_plus-1.8.2.tar.gz",
+    "archive_sha256": "39a1d99085cf3190d41305bca05f0c0d77522f355f7f99bb648ee231192d9d68",
+    "implementation_roots": [
+      "lib",
+      "android/src/main",
+      "android/build.gradle",
+      "ios",
+      "macos"
+    ],
+    "files": {
+      "android/build.gradle": "d5f474adc9bf65def61c328c1ffafa75e6b0e0ef15be20311bd0e842b26c6e09",
+      "android/src/main/AndroidManifest.xml": "084adff837e631646cb0081d6b3f9622aac2b7ba1b998fe7be3204904d3df3fd",
+      "android/src/main/kotlin/dev/fluttercommunity/plus/wakelock/Wakelock.kt": "21ce704cfb9eb871b6e2b990ef19636c6b2f96711d0a9970fd68125e7bf0deef",
+      "android/src/main/kotlin/dev/fluttercommunity/plus/wakelock/WakelockPlusMessages.g.kt": "dffe36c756c3269489c22eb1f3d71740585843646a62c20e32d6b5d6033f1d92",
+      "android/src/main/kotlin/dev/fluttercommunity/plus/wakelock/WakelockPlusPlugin.kt": "953780bcd7893da66c78f5eaddb36d302ab26ba40d175ae53cff32eef6d38833",
+      "ios/wakelock_plus.podspec": "559b31adae90ddd0730becc52062cbef7eea842c7b9c536d2397e8999eba11c0",
+      "ios/wakelock_plus/Package.swift": "360dfc58f621373f31eb42ebf88d83789401e8c07b0efa5dfa69fce955858838",
+      "ios/wakelock_plus/Sources/wakelock_plus/Resources/PrivacyInfo.xcprivacy": "6d2da0d8d930227d428c1d9363b0ad6e3a12e2c9b68c5ce297158a7412fc8c31",
+      "ios/wakelock_plus/Sources/wakelock_plus/UIApplication+idleTimerLock.m": "1b1fb262374b4d1f914830149c81d44695fdd102c2d18f4c73836b1662eba16d",
+      "ios/wakelock_plus/Sources/wakelock_plus/WakelockPlusPlugin.m": "f6e0fd7c1bbc57f7b30f6b55d6d4d31693e681fae402bd05e10345a8bdcddfbf",
+      "ios/wakelock_plus/Sources/wakelock_plus/include/wakelock_plus/UIApplication+idleTimerLock.h": "7b172f48c791f448ddc5ee3f2cb571b8e1654d7007f3b4a933621a41c18b097d",
+      "ios/wakelock_plus/Sources/wakelock_plus/include/wakelock_plus/WakelockPlusPlugin.h": "f4f3ad259c539ba6d1e719f11d22a91b406b8e7b7cf78af947d320c532de0e9a",
+      "ios/wakelock_plus/Sources/wakelock_plus/include/wakelock_plus/messages.g.h": "dfe451bb2854e1920a3d1f0441b2579eec8c63da11faece27a3a69eb363e3b82",
+      "ios/wakelock_plus/Sources/wakelock_plus/messages.g.m": "4c2aae10da9e7cb158786721491fbe438357c40dc2306b8797fba2c2d4213b4a",
+      "lib/assets/no_sleep.js": "726c644cda17bf271d996fb629806a59409607e9b00e0dfbf75adfd3986bbb7e",
+      "lib/src/wakelock_plus_io_plugin.dart": "4042228bb59f7280f0a989f01b0c08bd94f3b1329270aaf912e1cb329355393a",
+      "lib/src/wakelock_plus_linux_plugin.dart": "cdb3fd572e902944b126554c0aeeb9a791e419c7e59310ee40e400c65ddddce4",
+      "lib/src/wakelock_plus_macos_plugin.dart": "9988e6e21190ae69e91b2583a80286daa1e3e401c391aadc5252ab3cf4fb6c4d",
+      "lib/src/wakelock_plus_web_plugin.dart": "c514901e29da0c1c761e90b07b69aedf95627df7702a4fdef1b73c8331aa2fd9",
+      "lib/src/wakelock_plus_windows_plugin.dart": "bd6a11983c09eefd9cafb12a8b7eb68c3bed165b2cbdaf15a38cb414ff9159d2",
+      "lib/src/web_impl/import_js_library.dart": "6aefa223dca73b419b702129b9e5b2c7398ed31f37ada72c1cf8f88f668f4db5",
+      "lib/src/web_impl/js_wakelock.dart": "a7d236bb9c00865cdc016364e990fe374dc328585fe769655069e2135af0b8ef",
+      "lib/wakelock_plus.dart": "c53d4f251e7f9d83012c2398a85ecf66fb349ac46137d0fc3ab9c3eb70094c84",
+      "macos/wakelock_plus.podspec": "2daaaeaf86444ed3ae40fb9a4ced9169e58d4fe71726189a5d73b405b5caa113",
+      "macos/wakelock_plus/Package.swift": "e2c4106498c0e872f860194fce88d3765f013bfbf4acb60a60f3229059205994",
+      "macos/wakelock_plus/Sources/wakelock_plus/Resources/PrivacyInfo.xcprivacy": "204d035a88eab2281b3d914f46c796766ae78e3cb82537711928dca9e28dbbb8",
+      "macos/wakelock_plus/Sources/wakelock_plus/WakelockPlusMacosPlugin.swift": "b03e39969a526aab354ee6ae29d17ebf692dc6fde2cdd447dd55143e1d00d9ef"
+    },
+    "patched_files": {
+      "android/build.gradle": {
+        "upstream_sha256": "d5f474adc9bf65def61c328c1ffafa75e6b0e0ef15be20311bd0e842b26c6e09",
+        "patched_sha256": "1653fcad61cc777403519699604e13b677a8b040aff7796cbb3f61c14311339e",
+        "reason": "Apply external KGP when AGP 9 built-in Kotlin is explicitly disabled by the consuming app"
+      },
+      "lib/src/wakelock_plus_windows_plugin.dart": {
+        "upstream_sha256": "bd6a11983c09eefd9cafb12a8b7eb68c3bed165b2cbdaf15a38cb414ff9159d2",
+        "patched_sha256": "018a6e4566efb992ba0e48485759b39b1489bd7de461b0711aef661dbcbc5524",
+        "reason": "Retain injectable typed EXECUTION_STATE calls and failed-call state regression"
+      },
+      "ios/wakelock_plus/Package.swift": {
+        "upstream_sha256": "360dfc58f621373f31eb42ebf88d83789401e8c07b0efa5dfa69fce955858838",
+        "patched_sha256": "b206bcb11471b41cc77d2e494158805dcf2f955dc673a2e00a93e2646007f2f6",
+        "reason": "Omit sibling FlutterFramework package/product; the app owns the single Flutter link"
+      },
+      "macos/wakelock_plus/Package.swift": {
+        "upstream_sha256": "e2c4106498c0e872f860194fce88d3765f013bfbf4acb60a60f3229059205994",
+        "patched_sha256": "49eec3cbaf560f5c0412b2d22a0f0d64ca435f70c532a320c4f6fac734ca3726",
+        "reason": "Omit sibling FlutterFramework package/product; the app owns the single Flutter link"
+      }
+    }
+  },
+  "flutter_local_notifications": {
+    "version": "22.3.3",
+    "archive_url": "https://pub.dev/api/archives/flutter_local_notifications-22.3.3.tar.gz",
+    "archive_sha256": "fd5fc8966a8b34337ac182dc394f3506139b69d8138d4e9e174a13d6468adcd4",
+    "implementation_roots": [
+      "lib",
+      "android",
+      "ios",
+      "macos"
+    ],
+    "files": {
+      "lib/flutter_local_notifications.dart": "bf3b6fd688767f94ed49f91de35e2a08d20f1b10f0ae3f9a258a44977bd6304e",
+      "lib/src/tz_datetime_mapper.dart": "3772780d16fdc09b6ca867b2697cabc790abf603cc331c5682783d8a55c2f46c",
+      "lib/src/helpers.dart": "ec2020b038dc97fa94c75b0726fb7a667a7f581dd331bbe15a1872f19aa37979",
+      "lib/src/initialization_settings.dart": "8466932ef854c07f60b5660bc24549ee2ad89c81efd781e2617feac82a4c2aa9",
+      "lib/src/platform_flutter_local_notifications.dart": "c3277fbdc0e202c5af6e4d2a6d0f56cf729b7bc4e6b9faa20373a2cb173932a1",
+      "lib/src/typedefs.dart": "954affe98028dd297ab8a4cb0dcb69bc09972edc259fa487ade170fdc144f838",
+      "lib/src/callback_dispatcher.dart": "bea7f38f2f3cdda3e7af3b191bb48343826f2adebd3457bbb81ee4cf7a3e4514",
+      "lib/src/notification_details.dart": "39cb307bd38c9506ad902eb26f74ec60b36071290a33fa3bef905a25ea190425",
+      "lib/src/flutter_local_notifications_plugin.dart": "9eac61181cf3281a9d707fa7890c636d64823c5d83b60bd9140fd24c1cde3e26",
+      "lib/src/types.dart": "728230119eaa96d6c0a374e3c2df6fcd4821b0784aa835f8806b3c396a8f2819",
+      "lib/src/platform_specifics/android/initialization_settings.dart": "6c7b11508690750c7729b16c6a00190f18f5ec35a9910f0a640c6b891cd6a770",
+      "lib/src/platform_specifics/android/message.dart": "403252435499c0ca91e544964e6f1b99abfece55c0af6c29e7806c241d94d183",
+      "lib/src/platform_specifics/android/enums.dart": "cae41d86f1b3068449d72d9e25be3f3d50d8a03d20c094ef451e5c580c7916ad",
+      "lib/src/platform_specifics/android/notification_sound.dart": "4b5ec192fc38e568257a163d0afb70db02c5d5c434873fe796961b9b77d9eb33",
+      "lib/src/platform_specifics/android/icon.dart": "7356cbebd2a3e8f5abd22cb3b8005a234d808831cd63850a0ba23429b0ecbf52",
+      "lib/src/platform_specifics/android/notification_details.dart": "c9d292efea5e54e2cc46fcbf7aa7b28bf145469c56ad309e719c641b12b3519d",
+      "lib/src/platform_specifics/android/person.dart": "5422dd892ffb6e239d03ed1d271051635274ae1eeb59f612dd60e204e841a86f",
+      "lib/src/platform_specifics/android/notification_channel.dart": "59f6fe971bc03c94c1711ef9a8dafc041fbc21c82765df0c002f5f17656cdc6b",
+      "lib/src/platform_specifics/android/notification_channel_group.dart": "2eb385892f16a874df0b0b247ee67a13468e3a62f0d6562eb4e36e0e6be79299",
+      "lib/src/platform_specifics/android/bitmap.dart": "08005cf753c70b8d725dfbaf09d4e5e0e7946cb6b0ca3b23471bef564cb956d7",
+      "lib/src/platform_specifics/android/schedule_mode.dart": "32bd591424dc15d07f5ae5f1095c2d6aa25fda5e9d8e2b05ca0c200177419aaf",
+      "lib/src/platform_specifics/android/method_channel_mappers.dart": "38bf6ebba06c9bfc863e5df2f54231d12edf3f020fe9b4211fc5ad585332f376",
+      "lib/src/platform_specifics/darwin/notification_category.dart": "30a2aad25586f74aab655a15adf9ba07c05b992dac11d7f1ff8cf973e4215ded",
+      "lib/src/platform_specifics/darwin/notification_attachment.dart": "6bc7144530bd5b569c8c8bb9359b4e65295ef1ba50c70f67f8f524734a6a462c",
+      "lib/src/platform_specifics/darwin/mappers.dart": "ee2a0d785a4f8dade4163ad9e796a7a10c70955793ce7a2d64c20f50e9335f62",
+      "lib/src/platform_specifics/darwin/initialization_settings.dart": "88e07a9a8d80d8442e72fcd0fc6f966c77a5f1e2b37dc70b60064fad13f94f6a",
+      "lib/src/platform_specifics/darwin/notification_category_option.dart": "24e5c4e0fad87110ce3b765ba2c2500e86684e456c7337e276dccafa3077d18b",
+      "lib/src/platform_specifics/darwin/notification_enabled_options.dart": "f0f90c3eda1486747e78d36cc8b852f0c16a681f90dae6d470d00ea6dd5d72e4",
+      "lib/src/platform_specifics/darwin/interruption_level.dart": "9299cbcbc6f944e5c0ca69b92fdce56d51f0fa24668a42a1566c3caacee8d20a",
+      "lib/src/platform_specifics/darwin/notification_details.dart": "5197f65eb5a7b9e5f80bde11f7c9c18890b1425001a59351c47ddb4c5b4df5b6",
+      "lib/src/platform_specifics/darwin/notification_action_option.dart": "00897b69a61debb5efebd364ae6fe7d9d15f54182473d481932a31fef906d4ef",
+      "lib/src/platform_specifics/darwin/notification_action_type.dart": "281fd174cf379fc4863beae31f88782974493ea235196e54b281566f1638835a",
+      "lib/src/platform_specifics/darwin/notification_action.dart": "ff65f654a50a2e0a05beb5de1e4c094e916240db8f913154e30db19416012269",
+      "lib/src/platform_specifics/android/styles/big_text_style_information.dart": "6d01d36409dcb093b71472e51ffb782b3b1149a03cf2d62591b4aa1ca6231371",
+      "lib/src/platform_specifics/android/styles/default_style_information.dart": "96ac7e6273fcb5bf4e697633d555a07c61a4ea90c276b48ea7f71db7a92d9c91",
+      "lib/src/platform_specifics/android/styles/media_style_information.dart": "0eea483952f0b6fcc271f2610368fa15cf48b09320f9025df0a3f470df5880b9",
+      "lib/src/platform_specifics/android/styles/style_information.dart": "7d4be64621c4c98165f43357f8f7141e419ad951c4b587cf1f78162378af0a6a",
+      "lib/src/platform_specifics/android/styles/messaging_style_information.dart": "ffd5278e2b5c62ccd2ab49393718d866456a2c1d97d23938b531e2b214d4a4d3",
+      "lib/src/platform_specifics/android/styles/inbox_style_information.dart": "d0e4ad124d5eabc35d86ed88526a5e0cef5bc085c5f865d1a4a2f419c7624825",
+      "lib/src/platform_specifics/android/styles/big_picture_style_information.dart": "38aea31cb02bc7ea28f5edae980d3ddf5048a7a42c3a35226403e8d4d3417d26",
+      "android/build.gradle": "f914ed38e5f5cc06530cb8d8febc2fece6875224b3d7197a9199ba2daca4ea55",
+      "android/gradle.properties": "be1dbf7a83b6fc197a94dcefb225f2286d240a6cf7d3fe987f057213a75ef6be",
+      "android/settings.gradle": "18986982a3dc3c81f9faa531caebc05068e2ac0a88b41ededcb630e6c5e6819f",
+      "android/src/main/AndroidManifest.xml": "2b26cb02e28e4c5bda51026d15f7652a37c607996e58b268e31ad513f59014be",
+      "android/src/test/java/com/dexterous/flutterlocalnotifications/IsolatePreferencesTest.java": "ccb4258d6f160158515be5e809cd3cfd61c9c5b59a913d3fda664e64fd52786f",
+      "android/src/test/java/com/dexterous/flutterlocalnotifications/models/NotificationActionTest.java": "be945d18a4590ff219b5229d2adc4161f8bdbb5fc81049506e42fef35a4256d3",
+      "android/src/main/java/com/dexterous/flutterlocalnotifications/ForegroundService.java": "1fa0aabe56bfa7b8e12c8e6e9c187a5675f98a814db249029ff55cca97b1c857",
+      "android/src/main/java/com/dexterous/flutterlocalnotifications/ScheduledNotificationReceiver.java": "e2037fb296aa0900a1eef65111a78b2331b3c65cddb276b3c54f78c152e3814c",
+      "android/src/main/java/com/dexterous/flutterlocalnotifications/RuntimeTypeAdapterFactory.java": "3c9082f41ab3fe9c7a79a76978425cac34d178738b211995ce48b334deeb5a9a",
+      "android/src/main/java/com/dexterous/flutterlocalnotifications/FlutterLocalNotificationsPlugin.java": "b83632a6de9325c54d9be6c644c6ac2d93135f384cc8ef0beb289ea5e9c6c457",
+      "android/src/main/java/com/dexterous/flutterlocalnotifications/ScheduledNotificationBootReceiver.java": "e2b26a45d141f260906598fa1713517c1e6ec97c797f79e1548c54a8eeeb2ae3",
+      "android/src/main/java/com/dexterous/flutterlocalnotifications/ForegroundServiceStartParameter.java": "e84b9a4064ba37aecabc26cd23a502ca5613d6817338704f6f5f5edbedd27a7d",
+      "android/src/main/java/com/dexterous/flutterlocalnotifications/ActionBroadcastReceiver.java": "885d3cb12138b79bb5ccc44264340130d5c99ff929eb2840edbddc446edb1ae2",
+      "android/src/main/java/com/dexterous/flutterlocalnotifications/isolate/IsolatePreferences.java": "9146fb2db0706aceb1c8de0b3bfacd992de2191e8a44a4fa8a013737de180ebe",
+      "android/src/main/java/com/dexterous/flutterlocalnotifications/utils/StringUtils.java": "54502a6fa3e708e838925012ec7cfa6801d845f72a068693080f3073ce0148c0",
+      "android/src/main/java/com/dexterous/flutterlocalnotifications/utils/LongUtils.java": "050a48164aaa05033218b05760b586c92cb39d2c37d4eda60901b2f367633447",
+      "android/src/main/java/com/dexterous/flutterlocalnotifications/utils/BooleanUtils.java": "7c9ff9fcd88f19540eb457473035c4a75466a422548dce7f738fa2b45ebb267e",
+      "android/src/main/java/com/dexterous/flutterlocalnotifications/models/MessageDetails.java": "021119541361326b22914b6e94689e4595c4ff585856fd3af08f94d4c79dd4b9",
+      "android/src/main/java/com/dexterous/flutterlocalnotifications/models/NotificationChannelDetails.java": "cdce587171ed1d0f5525eda8c85985d2e55399af22521c3209dac0bda4e5e4f0",
+      "android/src/main/java/com/dexterous/flutterlocalnotifications/models/NotificationStyle.java": "5743ac234b30e4444c38619fb7ce083f8a93093ffff64b14fcf388905a1193f9",
+      "android/src/main/java/com/dexterous/flutterlocalnotifications/models/NotificationDetails.java": "5c096b00600d8843f1a95487ab7fad4b8cb3fc97bc97e2326ee1618d940f955c",
+      "android/src/main/java/com/dexterous/flutterlocalnotifications/models/ScheduledNotificationRepeatFrequency.java": "2a314790b8e24308b00373adc357c75a8a51244b43f8ce32c52ba23ad4761440",
+      "android/src/main/java/com/dexterous/flutterlocalnotifications/models/Time.java": "cf00545e1458760a118b308c1adf67d68236ed8b1875ea555b3e8711fd70bc1f",
+      "android/src/main/java/com/dexterous/flutterlocalnotifications/models/NotificationChannelAction.java": "396d0f03371eef2ded2f572c5a0990b20572619ba0b12a9ffa21705d9d387922",
+      "android/src/main/java/com/dexterous/flutterlocalnotifications/models/IconSource.java": "1a65254d8e16b019b72748fbb9875ae599bdf27167dcaa044ba4d4813c0d79b1",
+      "android/src/main/java/com/dexterous/flutterlocalnotifications/models/NotificationAction.java": "b2a3790145eddd703bf747548d2512f40624537b0bb9ef549f0c50e9a365dfb8",
+      "android/src/main/java/com/dexterous/flutterlocalnotifications/models/SoundSource.java": "2fcd12e7350f932c5eef2f81ed01793e8d023a8663b48ea3e96b868de4186f64",
+      "android/src/main/java/com/dexterous/flutterlocalnotifications/models/BitmapSource.java": "99bb63abee9cbcbf529c784fa3c4b8a5089d2c47dba985e7aafefec42508ba79",
+      "android/src/main/java/com/dexterous/flutterlocalnotifications/models/NotificationChannelGroupDetails.java": "c43feca9967729e77352590a94c122f4912c67258ed878cf8886d7cd3b89eb48",
+      "android/src/main/java/com/dexterous/flutterlocalnotifications/models/PersonDetails.java": "1afe4b1bc41b6cd6b4ea8f765585f701ae774033d577bc5eae3fe2b2fc8b4ba0",
+      "android/src/main/java/com/dexterous/flutterlocalnotifications/models/ScheduleMode.java": "2be03adea33a396e7c1f1e14741386564fcf01c9aaa408fe0b81341b2ede79f2",
+      "android/src/main/java/com/dexterous/flutterlocalnotifications/models/DateTimeComponents.java": "8b4dd9d5d2303553491dfe26466d6ad48cb8b733cfe913cd3d6f0353856fdd84",
+      "android/src/main/java/com/dexterous/flutterlocalnotifications/models/RepeatInterval.java": "106719abbbd5dc0710c716a73ff0b522d6302818541ecc2561b32767860f14d3",
+      "android/src/main/java/com/dexterous/flutterlocalnotifications/models/styles/DefaultStyleInformation.java": "188957cf3ff4763e0168a0aa642dc748863a04ead556bb64ed207b4fbf9ce214",
+      "android/src/main/java/com/dexterous/flutterlocalnotifications/models/styles/BigPictureStyleInformation.java": "cf683a8d0498821ae0859da97b978a3a27d733dcd1eb287d8d83e15c7cb0fdc9",
+      "android/src/main/java/com/dexterous/flutterlocalnotifications/models/styles/MessagingStyleInformation.java": "7887c3cec4b35eef45029025f057ada8a589a01eccab9a778d1987a64a0da080",
+      "android/src/main/java/com/dexterous/flutterlocalnotifications/models/styles/BigTextStyleInformation.java": "8ce4565d91262644438dcedd00005dcfddf37d3627758713f7e2ed3b9bbcc0de",
+      "android/src/main/java/com/dexterous/flutterlocalnotifications/models/styles/StyleInformation.java": "2ef3d34e45ac99cda26c171a13bd27a7782d77a5e830d2426ef8735a69656492",
+      "android/src/main/java/com/dexterous/flutterlocalnotifications/models/styles/InboxStyleInformation.java": "4a4dd712312c303066984a17c08c38258bc442cc5560ba59c316229631250443",
+      "ios/flutter_local_notifications.podspec": "2c4b903e7b394d831c0702073e0d36e0fe1141d4e3fca1cadb5ec4fd585389e8",
+      "ios/flutter_local_notifications/Package.swift": "203f1fb8a69b53e336f59972e8837a35948f23ee95fc5227c5fea23c75727986",
+      "ios/flutter_local_notifications/Sources/flutter_local_notifications/FlutterLocalNotificationsPlugin.m": "523bec84eceb13912f26fa1accca76226fbf1d1e33a4670ccb0b81410d4003ef",
+      "ios/flutter_local_notifications/Sources/flutter_local_notifications/FlutterEngineManager.m": "9e384bbe2668854e11b0b7341de2bfd53ee06acaf5a4f04726ef38dc3031086b",
+      "ios/flutter_local_notifications/Sources/flutter_local_notifications/PrivacyInfo.xcprivacy": "8f4cbf3a6f18b7deaabc8646bd255df453f0d100def074ec05e44463437be9d5",
+      "ios/flutter_local_notifications/Sources/flutter_local_notifications/FlutterLocalNotificationsConverters.m": "24ada7e6d40ac913e27c89260d63c85d1a91e5021e4f3d6003e460e6c29e28a0",
+      "ios/flutter_local_notifications/Sources/flutter_local_notifications/ActionEventSink.m": "736233517fa3119cd8cddb9d44b38ff8e31d717932a05a8de1aaef0ee7573b31",
+      "ios/flutter_local_notifications/Sources/flutter_local_notifications/include/flutter_local_notifications/FlutterLocalNotificationsConverters.h": "e62718636dbc54cb132701616cdf12a7669d715aeb7ff0d42e6d03fe64af057a",
+      "ios/flutter_local_notifications/Sources/flutter_local_notifications/include/flutter_local_notifications/ActionEventSink.h": "5851ae68a1a6e13dd5ca48e361482239ad3c61b6e0b6c8de5d9e70801d49a112",
+      "ios/flutter_local_notifications/Sources/flutter_local_notifications/include/flutter_local_notifications/FlutterLocalNotificationsPlugin.h": "05c7efb2b4f8d210bb910823a5d109258a143ef4e9594444f5f33710d196d556",
+      "ios/flutter_local_notifications/Sources/flutter_local_notifications/include/flutter_local_notifications/FlutterEngineManager.h": "44082af1775b476b07fb9f7ef282c214566d6affd02e09843ab5293a305d82ec",
+      "macos/flutter_local_notifications.podspec": "4c4fd6afd0571f76f850988ceea5518810ebc7465b5ae6dc08e7cc41df190172",
+      "macos/flutter_local_notifications/Package.swift": "77fdd37b68e6b8b3e107aeb99e46c61e5eed165bdc38f4c0a0255c85bd331575",
+      "macos/flutter_local_notifications/Sources/flutter_local_notifications/FlutterLocalNotificationsConverters.swift": "f2723862e2a93565cbb3d112522829dd96a84264467c76badff177f2ce5254a5",
+      "macos/flutter_local_notifications/Sources/flutter_local_notifications/PrivacyInfo.xcprivacy": "1d821a83fb0a7583b0b03075050761341e367f37167f8398a631a30376cd6369",
+      "macos/flutter_local_notifications/Sources/flutter_local_notifications/FlutterLocalNotificationsPlugin.swift": "b7372d086c4e063a305a5211fb00fe755f5b04b5649457dfeccd31e983ea88d3",
+      "android/src/test/java/com/dexterous/flutterlocalnotifications/NextFireDateMatchingDateTimeComponentsTest.java": "f11401a02e194f37027431f8746f9f56816a408270d49247d669d5cee135318e"
+    },
+    "patched_files": {
+      "ios/flutter_local_notifications/Package.swift": {
+        "upstream_sha256": "203f1fb8a69b53e336f59972e8837a35948f23ee95fc5227c5fea23c75727986",
+        "patched_sha256": "4212fdcd5cba084f3043233ca112fc1cd3a2371012f2bb16ba0b0582d3060f35",
+        "reason": "Flutter 3.47.8 supplies the framework once through FlutterGeneratedPluginSwiftPackage; preserve the app-owned single-link integration."
+      },
+      "macos/flutter_local_notifications/Package.swift": {
+        "upstream_sha256": "77fdd37b68e6b8b3e107aeb99e46c61e5eed165bdc38f4c0a0255c85bd331575",
+        "patched_sha256": "d980531750ab1eb0ed63584a4452d7ba5cfb16e97c9f7da39c3c14bbf9697d14",
+        "reason": "Flutter 3.47.8 supplies the framework once through FlutterGeneratedPluginSwiftPackage; preserve the app-owned single-link integration."
+      },
+      "ios/flutter_local_notifications/Sources/flutter_local_notifications/FlutterLocalNotificationsPlugin.m": {
+        "upstream_sha256": "523bec84eceb13912f26fa1accca76226fbf1d1e33a4670ccb0b81410d4003ef",
+        "patched_sha256": "f72a6bea9f7292dcc24fa1a7cdfaeef424c85a3647cdf8a19fab8e3341cafb01",
+        "reason": "Declare the existing mutable dictionary result accurately; compile the legacy Alert option only for deployments below iOS 14 while retaining iOS 13 fallback and independent banner/list settings."
+      }
+    }
+  },
+  "permission_handler_apple": {
+    "version": "9.6.4",
+    "archive_url": "https://pub.dev/api/archives/permission_handler_apple-9.6.4.tar.gz",
+    "archive_sha256": "b69e6b8300f9584af5ab81b41cdaa544e1b45e6fca0a30b0f9a9a120d90fc8a5",
+    "implementation_roots": [
+      "ios/permission_handler_apple/Sources/permission_handler_apple"
+    ],
+    "files": {
+      "ios/permission_handler_apple/Sources/permission_handler_apple/PermissionHandlerEnums.h": "9ba5231dfd5a6211701918a676f580409027688dc3a182c1cfd881a49c0db17b",
+      "ios/permission_handler_apple/Sources/permission_handler_apple/PermissionHandlerPlugin.h": "ab0f1157ad4e2385f132945087541341012239b47227780da9e5c0831c4c0fa7",
+      "ios/permission_handler_apple/Sources/permission_handler_apple/PermissionHandlerPlugin.m": "6d3e1530ae668829aa76f9068970713c25ce32c77113918dddc4c62b6f6685bd",
+      "ios/permission_handler_apple/Sources/permission_handler_apple/PermissionManager.h": "609837328fdef1db4edb0421d5b55123c90668cdef84e55f6352ab03324e99d0",
+      "ios/permission_handler_apple/Sources/permission_handler_apple/PermissionManager.m": "b5a7c640b3aef97c41b9d0ad3645b68663cea41ff9c89a2c16c13baf9e730df0",
+      "ios/permission_handler_apple/Sources/permission_handler_apple/PrivacyInfo.xcprivacy": "11365689963a1191e96a22e0b39f62f05b86d0d24abe80405c1a5ceef09a9b1b",
+      "ios/permission_handler_apple/Sources/permission_handler_apple/include/permission_handler_apple/PermissionHandlerPlugin.h": "fddac1eeb4a2acfa228e53af914856017cb25b8e089ce940dcd1e32691c740fe",
+      "ios/permission_handler_apple/Sources/permission_handler_apple/strategies/AppTrackingTransparencyPermissionStrategy.h": "1438aa142ae97157bc07035ed0854676091fc51fc5af88d6d22830ed1cf0e30d",
+      "ios/permission_handler_apple/Sources/permission_handler_apple/strategies/AppTrackingTransparencyPermissionStrategy.m": "2fd372a1341c03d9382e8a95ef82937cff30904b2958c62ca02c02dcdeaba857",
+      "ios/permission_handler_apple/Sources/permission_handler_apple/strategies/AssistantPermissionStrategy.h": "601eb4e415614eb36ca5f2b39e75b3cfcf80635c4fc1dce244b8aaaddb3ab18d",
+      "ios/permission_handler_apple/Sources/permission_handler_apple/strategies/AssistantPermissionStrategy.m": "23bf72d0af60e823f9b8a98db4b43b3d1322ce5a3b0356ece5805e127836c671",
+      "ios/permission_handler_apple/Sources/permission_handler_apple/strategies/AudioVideoPermissionStrategy.h": "144174da605da6773b0ebed0b3416c2b50ec3dc061fc377605b080b93b19ce36",
+      "ios/permission_handler_apple/Sources/permission_handler_apple/strategies/AudioVideoPermissionStrategy.m": "ae8bb6353a30b0ab20526c80c2ad2ea93d311622111f12f509539ba444e2b774",
+      "ios/permission_handler_apple/Sources/permission_handler_apple/strategies/BackgroundRefreshStrategy.h": "52629b7f1d99ef5ef7fcec35245b60f03c3ced78266fdaaa302b32f6a88beec9",
+      "ios/permission_handler_apple/Sources/permission_handler_apple/strategies/BackgroundRefreshStrategy.m": "876e1cee402725a49706cb55a465622a9d09bc8df5400bc77a0f79356108fd7b",
+      "ios/permission_handler_apple/Sources/permission_handler_apple/strategies/BluetoothPermissionStrategy.h": "bd944f803bd14b65dda95d596dfe2b83aa68720f2dad7bcd33d68d15b809424e",
+      "ios/permission_handler_apple/Sources/permission_handler_apple/strategies/BluetoothPermissionStrategy.m": "91df258eead23a0dd0e496d94a639f355267fc0f41a29a38ee2fb7e4d09399fa",
+      "ios/permission_handler_apple/Sources/permission_handler_apple/strategies/ContactPermissionStrategy.h": "abece3c7962f37dcc5bcafa0d0bca6ea2af6ec2ced8f13065807ad4c956be2fe",
+      "ios/permission_handler_apple/Sources/permission_handler_apple/strategies/ContactPermissionStrategy.m": "2ad35e4e43cb69d36d5ffa558d823176784dafb88f2bff85bfba3766668aa745",
+      "ios/permission_handler_apple/Sources/permission_handler_apple/strategies/CriticalAlertsPermissionStrategy.h": "9aca90e76cc155d3e8d9dd7afe4f4a8d425bcb478f207a2545b3f521838c397a",
+      "ios/permission_handler_apple/Sources/permission_handler_apple/strategies/CriticalAlertsPermissionStrategy.m": "7bc40c233413a07c6f29fd29027e2b84412c326e7edcff9b052828b65f1b7dcf",
+      "ios/permission_handler_apple/Sources/permission_handler_apple/strategies/EventPermissionStrategy.h": "46221afa0188bf414740c307e34ddd6cfd77f8214665a93359c5f8bd4465375e",
+      "ios/permission_handler_apple/Sources/permission_handler_apple/strategies/EventPermissionStrategy.m": "1a2e03ad2495446d5667b373f54de13bd7c26a4a909b91bfdbac963026ab7254",
+      "ios/permission_handler_apple/Sources/permission_handler_apple/strategies/LocationPermissionStrategy.h": "2a3050bae7f5356c0cb777098385fa78022783159f95871ec9d36a6689f02f28",
+      "ios/permission_handler_apple/Sources/permission_handler_apple/strategies/LocationPermissionStrategy.m": "ee49a18e8dd1a4ec10d14072a065e6fd3c44069c70215192cb25480075e3f838",
+      "ios/permission_handler_apple/Sources/permission_handler_apple/strategies/MediaLibraryPermissionStrategy.h": "584048df1538ba8b481f9c8b47c47e1bf1f9927a34e6798a96d5bfa7d0b29315",
+      "ios/permission_handler_apple/Sources/permission_handler_apple/strategies/MediaLibraryPermissionStrategy.m": "6df42385679f9bf24b2526d4b74a32ba7c79d3195246e64f5d6b2f397bf03ab1",
+      "ios/permission_handler_apple/Sources/permission_handler_apple/strategies/NotificationPermissionStrategy.h": "15127f3663b6ac9b811b52f62d1d25d7dede5f21abafc374ef878dfed1303856",
+      "ios/permission_handler_apple/Sources/permission_handler_apple/strategies/NotificationPermissionStrategy.m": "6839a7d668f990de821a6d0aeec69e5203da158e1a53ab4a5bacb58722af44eb",
+      "ios/permission_handler_apple/Sources/permission_handler_apple/strategies/PermissionStrategy.h": "b3dad664e29248bbcdc2b86be458705c85dc9b41864e8007b13acf516ce55188",
+      "ios/permission_handler_apple/Sources/permission_handler_apple/strategies/PhonePermissionStrategy.h": "cacb03e89ec9d4d1cb9e827e7bd8ddcbf80292cf39ef6a2bf5103717fb2b6113",
+      "ios/permission_handler_apple/Sources/permission_handler_apple/strategies/PhonePermissionStrategy.m": "c13a221486f5316c60b08b1733c513c0c2d8ac30f45c570f3db3f112552cff99",
+      "ios/permission_handler_apple/Sources/permission_handler_apple/strategies/PhotoPermissionStrategy.h": "8c5527911cee87373585a66d1f8b6b09c3efee99ca8310cea970b7291e0aae36",
+      "ios/permission_handler_apple/Sources/permission_handler_apple/strategies/PhotoPermissionStrategy.m": "08a836cba76201b68d1b807705b370d2756b6375fe416a87920a1015587a640a",
+      "ios/permission_handler_apple/Sources/permission_handler_apple/strategies/SensorPermissionStrategy.h": "e79e6c16b1d91396884a73b1b346ffcbff04680a2ab0a58aa7f46da13a7fd1e1",
+      "ios/permission_handler_apple/Sources/permission_handler_apple/strategies/SensorPermissionStrategy.m": "cf3eb8d49a36561e2183176518acb18d22af6449cf7ae4de372a71d4df6164c0",
+      "ios/permission_handler_apple/Sources/permission_handler_apple/strategies/SpeechPermissionStrategy.h": "92179d3cfd49b582e2f13ad2e3e94a6ceef316d3f57edb186bfa8dc6a4c7bc7f",
+      "ios/permission_handler_apple/Sources/permission_handler_apple/strategies/SpeechPermissionStrategy.m": "61ad17267cc544f7a8d4c0d1957b7b29d805f812a15b4cc24a2a3fc228da8b34",
+      "ios/permission_handler_apple/Sources/permission_handler_apple/strategies/StoragePermissionStrategy.h": "7f35dd49aa7023cecda7da21bc7b5a6eb529229a2f20bff03c795acc7c1c3a45",
+      "ios/permission_handler_apple/Sources/permission_handler_apple/strategies/StoragePermissionStrategy.m": "fc06d74fc664aac8b40d147dc042aba96e35dae5012e48d08893b2f16a76a83b",
+      "ios/permission_handler_apple/Sources/permission_handler_apple/strategies/UnknownPermissionStrategy.h": "b3a42881081578a53feb4ad3f09fb0b58e7bc2e400e28a2cf1518e7b55c2bc03",
+      "ios/permission_handler_apple/Sources/permission_handler_apple/strategies/UnknownPermissionStrategy.m": "c84a85add5a1127def3749790777850cc3da6b3500d28317fa00d212a3f27c2a",
+      "ios/permission_handler_apple/Sources/permission_handler_apple/util/Codec.h": "b94fbee9cf0709d600fd481edc63f0433cbbfdf3a4aaf5421e857f6f164c6994",
+      "ios/permission_handler_apple/Sources/permission_handler_apple/util/Codec.m": "2673ed7d590fb3d7b132528fc1a3c4295f09d864625010d32dd90779d0d0528e"
+    },
+    "patched_files": {
+      "ios/permission_handler_apple/Sources/permission_handler_apple/strategies/PhonePermissionStrategy.m": {
+        "upstream_sha256": "c13a221486f5316c60b08b1733c513c0c2d8ac30f45c570f3db3f112552cff99",
+        "patched_sha256": "b90ee4aab821dfd7559612883fbd7314a68dc6e6a02475c0433d46d13fd07590",
+        "reason": "Use the existing iOS 12+ per-service carrier lookup for all supported OS versions; remove the unreachable pre-iOS-12 deprecated subscriber API fallback."
+      },
+      "ios/permission_handler_apple/Sources/permission_handler_apple/strategies/NotificationPermissionStrategy.m": {
+        "upstream_sha256": "6839a7d668f990de821a6d0aeec69e5203da158e1a53ab4a5bacb58722af44eb",
+        "patched_sha256": "3dd563db476566156469beaa7b13c03d13b415c700d4656262cdf160279c4297",
+        "reason": "Use a standalone availability guard in the shared status mapper while retaining upstream asynchronous status/request callbacks and status values."
+      }
+    }
+  },
+  "flutter_image_compress_common": {
+    "version": "1.1.1",
+    "archive_url": "https://pub.dev/api/archives/flutter_image_compress_common-1.1.1.tar.gz",
+    "archive_sha256": "76869e4d5f3d65f3431e7edff0b2d8ad1eea68b49c6a37772fdb1ae6016da9ed",
+    "implementation_roots": [
+      "lib",
+      "android/src/main",
+      "ios/flutter_image_compress_common/Sources/flutter_image_compress_common"
+    ],
+    "files": {
+      "lib/flutter_image_compress_common.dart": "744f99523db2b47e8256acdc047ee595b0b1a431b3e95cf77a598e6c68c36d6b",
+      "android/src/main/AndroidManifest.xml": "ef8a6802b9ff8f570ff694960a056aa1f74bbb3e77aff51e0ab904c37020c61b",
+      "android/src/main/kotlin/com/fluttercandies/flutter_image_compress/ImageCompressPlugin.kt": "d0b4603b477f80fa01cf0b85eee82a716e7182cb9cb480c4648d4320df9c63ce",
+      "android/src/main/kotlin/com/fluttercandies/flutter_image_compress/core/CompressFileHandler.kt": "678ed69969f328a749b679f68b90f780f33586de67c78e634c061d6c2fc7b00e",
+      "android/src/main/kotlin/com/fluttercandies/flutter_image_compress/core/CompressListHandler.kt": "601dfbaa7a37cefe3de2154ac990c9d8af22d07e1ff432775bc4dec53554daea",
+      "android/src/main/kotlin/com/fluttercandies/flutter_image_compress/core/ResultHandler.kt": "4e36c57a2804c9c3d81afb97f4eab2a68bb6e70198172fbee4b1e222f5d5b706",
+      "android/src/main/kotlin/com/fluttercandies/flutter_image_compress/exception/CompressError.kt": "a65267b163c5150765e60ae81c931429685ecffca71fe43180a1a08995c730ea",
+      "android/src/main/kotlin/com/fluttercandies/flutter_image_compress/exif/Exif.kt": "33389e760653620aba5e1e87404a90e7159f309f8d7bce2187c415dc1bf55520",
+      "android/src/main/kotlin/com/fluttercandies/flutter_image_compress/exif/ExifKeeper.java": "7fc330655bcbd1dd1d9b06bf975d3500547e3cd4f2ec390b1bed5651f2e70f79",
+      "android/src/main/kotlin/com/fluttercandies/flutter_image_compress/ext/BitmapCompressExt.kt": "6656995fa8b913fa3b8939f60c3e7724a11821329f57c0f380f0ece4f6f70465",
+      "android/src/main/kotlin/com/fluttercandies/flutter_image_compress/format/FormatRegister.kt": "d7731e8bfa59f22c4796c82838cd99230d38e29b5d7c8d629bab6bd7cec37976",
+      "android/src/main/kotlin/com/fluttercandies/flutter_image_compress/handle/FormatHandler.kt": "e3cd86f6591eb601fc96e82fbdc7a76bbae011d9f7ab3489ec1ff36e20d7f740",
+      "android/src/main/kotlin/com/fluttercandies/flutter_image_compress/handle/common/CommonHandler.kt": "7485f361fdc803c51f0ca0e44725fdef61a61e0e07bcd42a4b06c49d6a05e703",
+      "android/src/main/kotlin/com/fluttercandies/flutter_image_compress/handle/heif/HeifHandler.kt": "512e60f6d664e1dea50d266a6f414b19549a98deb079147b267b84e6927c4ad7",
+      "android/src/main/kotlin/com/fluttercandies/flutter_image_compress/logger/LogExt.kt": "d439a7fd6f7ff11a0d34a01c2ffb0a9e81032012db664809d88ef758642ef7e3",
+      "android/src/main/kotlin/com/fluttercandies/flutter_image_compress/util/TmpFileUtil.kt": "54084a2fd931e54dddd488f59cbfd83b922951d505a410991e81c8e5c71871e7",
+      "ios/flutter_image_compress_common/Sources/flutter_image_compress_common/CompressFileHandler.m": "d33a0c8ed35035804aee86c3d05db3474e3e10e86b9647ba41c445505f64b00c",
+      "ios/flutter_image_compress_common/Sources/flutter_image_compress_common/CompressHandler.m": "a83154ca25d6fe78031193c75b2b943122d5ea914bded4a068d3db58eb57edb7",
+      "ios/flutter_image_compress_common/Sources/flutter_image_compress_common/CompressListHandler.m": "8a544d860337907b999cb0df795020e95b3077f1fcc4fcfefee487b68e4c4dc9",
+      "ios/flutter_image_compress_common/Sources/flutter_image_compress_common/ImageCompressPlugin.m": "333dd4d6c7f88508052dfdb3c3c5c303de6fb3057802ee1fdabe317f08e0c8d7",
+      "ios/flutter_image_compress_common/Sources/flutter_image_compress_common/UIImage+scale.m": "90b61b9c035f50af65b51b0f376ea04c01d0919e4b54092fa97887ae05098dc7",
+      "ios/flutter_image_compress_common/Sources/flutter_image_compress_common/include/flutter_image_compress_common/CompressFileHandler.h": "cdc9c9ac24bf58bff5010bf23f862eaab03ddeaed16f7aeac2855e9353c95d31",
+      "ios/flutter_image_compress_common/Sources/flutter_image_compress_common/include/flutter_image_compress_common/CompressHandler.h": "b9a61ddcac1b6ad85fc088cb467319cff053ad27912cc9a4382041a0e376d1d4",
+      "ios/flutter_image_compress_common/Sources/flutter_image_compress_common/include/flutter_image_compress_common/CompressListHandler.h": "45183d4ba52f0cd41c597f0cec4a434216436bd5fe65375be5122bbeebc63d2f",
+      "ios/flutter_image_compress_common/Sources/flutter_image_compress_common/include/flutter_image_compress_common/ImageCompressPlugin.h": "b575a26b8166a94c94e8ee500f1cf3113d11314dbe08bf721db81b2aa891933c",
+      "ios/flutter_image_compress_common/Sources/flutter_image_compress_common/include/flutter_image_compress_common/UIImage+scale.h": "7fb25073abc33d6766b730a93a58bcb29411fb37923d83946467ffe47b066fe7"
+    }
+  },
+  "open_file_ios": {
+    "version": "1.1.0",
+    "archive_url": "https://pub.dev/api/archives/open_file_ios-1.1.0.tar.gz",
+    "archive_sha256": "0e3e67dcd12f69888128f533cacc092039627dd4f1d7a95a2826b814ae4ea8aa",
+    "implementation_roots": [
+      "lib",
+      "ios/open_file_ios/Sources/open_file_ios"
+    ],
+    "files": {
+      "lib/open_file_ios.dart": "1b9ccd4d73ce18370c97010355cc2fbb935ea7368bb13d970d8f6fcebfbfaa65",
+      "ios/open_file_ios/Sources/open_file_ios/OpenFilePlugin.m": "5cfc24295303c73d490f002a4876623e7b035a8badcb82bc24e67d45c0871d4c",
+      "ios/open_file_ios/Sources/open_file_ios/include/open_file_ios/OpenFilePlugin.h": "4f6a304248c3b15cb3692c5addc488ad4412fafc092bdf313bebe9c8a756180a"
+    },
+    "patched_files": {
+      "ios/open_file_ios/Sources/open_file_ios/OpenFilePlugin.m": {
+        "upstream_sha256": "5cfc24295303c73d490f002a4876623e7b035a8badcb82bc24e67d45c0871d4c",
+        "patched_sha256": "ebae43bf3687f1af025145c57d9da45ab676c67c041f51b9e370dcf168684197",
+        "reason": "Replace the deprecated idiom wrapper with its equivalent UIDevice userInterfaceIdiom getter, retaining iPad popover anchors and completion behavior."
+      }
+    }
+  },
+  "device_info_plus": {
+    "version": "13.3.0",
+    "archive_url": "https://pub.dev/api/archives/device_info_plus-13.3.0.tar.gz",
+    "archive_sha256": "ade1c36f8355d6284c98e4a47992ea263887ed3d1acb281e37635dd45f04c4aa",
+    "implementation_roots": [
+      "lib",
+      "android/src/main",
+      "android/build.gradle.kts",
+      "ios",
+      "macos"
+    ],
+    "files": {
+      "android/build.gradle.kts": "fc00b2536f167838423eceda17411aee32a6c491b5af370ae4e1f5676246a4e4",
+      "android/src/main/AndroidManifest.xml": "3eb7c97a650161469eb5e1e4060e828d42a053c43afa7726912c0f216e7b5c04",
+      "android/src/main/kotlin/dev/fluttercommunity/plus/device_info/DeviceInfoPlusPlugin.kt": "fc51e8adc58094691370be45f9b1e472b1a57bbc93eda12080799ed81afb9197",
+      "android/src/main/kotlin/dev/fluttercommunity/plus/device_info/MethodCallHandlerImpl.kt": "c07e50e43a273729be963ba41ac513754b35c10965e2999b9b4de44e23d840fc",
+      "ios/device_info_plus.podspec": "6d2ea5f7f1558a876c183e3ac5bb65fc70922f61ea61c8abfe5b6fd28d7f4be6",
+      "ios/device_info_plus/Package.swift": "510e6b8bc445a1152da72bdca2fac36477d43fbffa0662ee68033267bea16920",
+      "ios/device_info_plus/Sources/device_info_plus/DeviceIdentifiers.m": "2bf6e084634c93633fc4645beb5378c790dd643ccb14694722e6c2de7fc42f69",
+      "ios/device_info_plus/Sources/device_info_plus/FPPDeviceInfoPlusPlugin.m": "db8195dc22e137e972c187a9b104be543ce0e82cd6ec10cf496c6ed53c36e800",
+      "ios/device_info_plus/Sources/device_info_plus/PrivacyInfo.xcprivacy": "6d2da0d8d930227d428c1d9363b0ad6e3a12e2c9b68c5ce297158a7412fc8c31",
+      "ios/device_info_plus/Sources/device_info_plus/include/device_info_plus/DeviceIdentifiers.h": "a921b295f443b7d730322015bf2e1397f6d7db0decb71b1ae01192b653180e3a",
+      "ios/device_info_plus/Sources/device_info_plus/include/device_info_plus/FPPDeviceInfoPlusPlugin.h": "e0f726f8fbef1a450d202fa6bb13709700e7db87e6959bc6ee447ef6c31d1e1b",
+      "lib/device_info_plus.dart": "7b99fe889aa56f355a83b04e117bb632471900cdd88292b10e718c6cdad54aca",
+      "lib/src/device_info_plus_linux.dart": "ac4c6966c0be4838b94ef2cc4c148b69ff5b2aa11ea0000a0dbcd809127c3044",
+      "lib/src/device_info_plus_macos.dart": "3fca6f7585a6487be4b6844b14a18471c58befd473cc607d0cd983a28780de77",
+      "lib/src/device_info_plus_web.dart": "1f2e0d10f2cea98cc7d2e74a82dcdfbfa8f819de8955797ac6f9fd57d853dd0e",
+      "lib/src/device_info_plus_windows.dart": "c583c7357739b500713d2753398830ef4369578e43dc2f56ad2e46c0173fb659",
+      "lib/src/model/android_device_info.dart": "1e9c124d815790094b61f15cd4d280e41246405504f1fa2ff32891969a033e72",
+      "lib/src/model/ios_device_info.dart": "ac92e1cce967758458ecc7c296962a25b8ef472257beded31188c4c9600ab72a",
+      "lib/src/model/linux_device_info.dart": "ed01e5c0d4a75e7a02f5bf6416108500d0fbc57f4d33aec9ed2b3fb8e5c0ee9c",
+      "lib/src/model/macos_device_info.dart": "50485205d9ee9730ed750f46f74791a08387c6340db429959f747ad5befdf0af",
+      "lib/src/model/web_browser_info.dart": "bd270fb447c31b7b41df25204d0a05e414b53e1e1d8c5999401d3e3c89db8f58",
+      "lib/src/model/windows_device_info.dart": "4d5117937ef4f3e33548253b3cc6b91ce9420f2fcda352abdbf130b09f00373d",
+      "macos/device_info_plus.podspec": "6a4a8e0d09ed1b7ff5ac63a38283db237810cca542fb03da0c82584fab2a1a7a",
+      "macos/device_info_plus/Package.swift": "9f27c53dd6c005265abfaa354bc5c9d2d6363b01f9ff851697d4cc1d5d5fefb3",
+      "macos/device_info_plus/Sources/device_info_plus/CwlSysctl.swift": "d0dce87394337d4330894b760976af7db144f346edb98c0927f54cd718766350",
+      "macos/device_info_plus/Sources/device_info_plus/DeviceIdentifiers.swift": "ce6bb5d862bff47d69aa7539bb150721a07563eb9904f110924a9b2378e9d1e8",
+      "macos/device_info_plus/Sources/device_info_plus/DeviceInfoPlusMacosPlugin.swift": "820760396f10e9dc70a29bab3a98886e6c7e714cda5c8d1112ef0db27994ac05",
+      "macos/device_info_plus/Sources/device_info_plus/PrivacyInfo.xcprivacy": "204d035a88eab2281b3d914f46c796766ae78e3cb82537711928dca9e28dbbb8",
+      "macos/device_info_plus/Sources/device_info_plus/SystemUUID.swift": "5134806c029eb2f41c0febbc5abc05196abb75122f5c0a3259fc514e5c210e92"
+    },
+    "patched_files": {
+      "lib/src/device_info_plus_windows.dart": {
+        "upstream_sha256": "c583c7357739b500713d2753398830ef4369578e43dc2f56ad2e46c0173fb659",
+        "patched_sha256": "09ee251422c77c412a810df85bcaf3db932481ef50f65e552bad1cf64ff96862",
+        "reason": "Check native NTSTATUS and Win32Result; close registry keys and scope typed buffers on all paths"
+      },
+      "ios/device_info_plus/Package.swift": {
+        "upstream_sha256": "510e6b8bc445a1152da72bdca2fac36477d43fbffa0662ee68033267bea16920",
+        "patched_sha256": "f18c98e6605aa298b4ec046cf6c78ed59dd6d4551a78e9b2f9d06744b2fb72d3",
+        "reason": "Omit sibling FlutterFramework package/product; the app owns the single Flutter link"
+      },
+      "ios/device_info_plus/Sources/device_info_plus/PrivacyInfo.xcprivacy": {
+        "upstream_sha256": "6d2da0d8d930227d428c1d9363b0ad6e3a12e2c9b68c5ce297158a7412fc8c31",
+        "patched_sha256": "4a005841c083bf9907c6ba3b313ea00ab7f22ee0538c54250cd4dfa1fbbebe7d",
+        "reason": "Retain the existing DiskSpace E174.1 required-reason declaration"
+      },
+      "macos/device_info_plus/Package.swift": {
+        "upstream_sha256": "9f27c53dd6c005265abfaa354bc5c9d2d6363b01f9ff851697d4cc1d5d5fefb3",
+        "patched_sha256": "b8ee02f467ecf625fa47a8441a484cf81c9eb09af479c0f4b3db31231344e4cf",
+        "reason": "Omit sibling FlutterFramework package/product; the app owns the single Flutter link"
+      },
+      "macos/device_info_plus/Sources/device_info_plus/PrivacyInfo.xcprivacy": {
+        "upstream_sha256": "204d035a88eab2281b3d914f46c796766ae78e3cb82537711928dca9e28dbbb8",
+        "patched_sha256": "4a005841c083bf9907c6ba3b313ea00ab7f22ee0538c54250cd4dfa1fbbebe7d",
+        "reason": "Retain the existing DiskSpace E174.1 required-reason declaration"
+      },
+      "ios/device_info_plus/Sources/device_info_plus/FPPDeviceInfoPlusPlugin.m": {
+        "upstream_sha256": "db8195dc22e137e972c187a9b104be543ce0e82cd6ec10cf496c6ed53c36e800",
+        "patched_sha256": "d8a882f6b6bb73991154ab278971b1c320e8bc99ee6e074c7a076084bac1a2e3",
+        "reason": "Keep free-memory bytes in uint64_t until conversion to the existing integer MiB result, preventing 32-bit intermediate truncation without changing the API or units."
+      }
+    },
+    "new_files": {
+      "lib/src/windows_registry_info.dart": {
+        "sha256": "bf2720ee2b680b66b4bbda30370ab0a941f2acc2e050b8f1445da615811dbd3b",
+        "reason": "Independent typed registry decoding and deterministic two-key cleanup, covered by synthetic failure regressions"
+      }
+    }
+  },
+  "share_plus": {
+    "version": "13.3.1",
+    "archive_url": "https://pub.dev/api/archives/share_plus-13.3.1.tar.gz",
+    "archive_sha256": "db40767f130189d53f3ae8a6393c217ff4a492da1baff718a9873679c0c00224",
+    "implementation_roots": [
+      "lib",
+      "android/src/main",
+      "android/build.gradle.kts",
+      "ios",
+      "macos",
+      "windows"
+    ],
+    "files": {
+      "android/build.gradle.kts": "0fa45ec1e7442ecdcaebd763c7edfb17f3d4904655bc55423e0d728d4be84145",
+      "android/src/main/AndroidManifest.xml": "3e1c953fd617a2967a2f28fbd7018dc587554fb9d6f7b1e6a56646207aea2c55",
+      "android/src/main/kotlin/dev/fluttercommunity/plus/share/MethodCallHandler.kt": "9bf2dde546be41fefd12a0e58e5c62fd246383e79d476c3c03e644b2a0edc15b",
+      "android/src/main/kotlin/dev/fluttercommunity/plus/share/Share.kt": "8a0251abefaa36b3427a55706b399a646e0c844a9dfa060234d1bd8584d974af",
+      "android/src/main/kotlin/dev/fluttercommunity/plus/share/ShareFileProvider.kt": "6f60b68d6dc542d86ec8b18b5b6f335e573e2a8c54d8cbe5e7ed8e9d7d790085",
+      "android/src/main/kotlin/dev/fluttercommunity/plus/share/SharePlusPendingIntent.kt": "be8f7873b465373af6a3a618c17e2646850d97e9fab9d9163196a4a32b35757a",
+      "android/src/main/kotlin/dev/fluttercommunity/plus/share/SharePlusPlugin.kt": "9e0f3ac12c93180711337c045c7cb368a1d110c0fa9ccded61bf651bba701aaf",
+      "android/src/main/kotlin/dev/fluttercommunity/plus/share/ShareSuccessManager.kt": "0c3dd5e5326929a21c84e7754646d26d61b2a7364f3524990cd75ab545ce5e22",
+      "android/src/main/res/xml/flutter_share_file_paths.xml": "1dd60be35b3e9f61d2bbbf059120d51068cea7431fb142131a38f84bcbd2a708",
+      "ios/share_plus.podspec": "3f5582089b3329f8f63865cc082500640b6255211ba971b29787606ab612ab46",
+      "ios/share_plus/Package.swift": "29b0ec39e3557602fa2c1a831b2f7b5f09a8335bf5b531255fda801f6330e5a2",
+      "ios/share_plus/Sources/share_plus/FPPSharePlusPlugin.m": "75e8baf37e2f7c093390132b8df24d0d1330072afac10bf78a272b063849fa7d",
+      "ios/share_plus/Sources/share_plus/PrivacyInfo.xcprivacy": "6d2da0d8d930227d428c1d9363b0ad6e3a12e2c9b68c5ce297158a7412fc8c31",
+      "ios/share_plus/Sources/share_plus/include/share_plus/FPPSharePlusPlugin.h": "68728308e8997605c9dbc546f34a165e3118ef6a096a93f285fcedbc57c2547d",
+      "lib/share_plus.dart": "f57aa04eb70bcfc0d9b09c74aa022046750c0cd028860d1b350a38ae68a3166e",
+      "lib/src/share_plus_linux.dart": "49b358092b3aeffaf4b22bbe59b228eee480a22abdb43a31fcbd74a34a17f6e2",
+      "lib/src/share_plus_macos.dart": "9848bde3051a6d78b5dd780277cf6d6010e04d783168bb781a9821c6265002be",
+      "lib/src/share_plus_web.dart": "9e16a64a4f0440ce5cbda5f58b23465b7ddb511546fd4a65507d980cbbf1cbdb",
+      "lib/src/share_plus_windows.dart": "961497eaf42e844f102849e2d7f55c42290ab9728bc873c12325353ec46502b8",
+      "lib/src/windows_version_helper.dart": "876fb5bc380a9f5f877068f7e2fa161debffdf928d2dc7d08c79da70cc0b8914",
+      "macos/share_plus.podspec": "685b10419abf09233bfd240a6d5fef92597460862802a6b44be68eb9a5ad640d",
+      "macos/share_plus/Package.swift": "dad5e932d5251bcc3445b64e4690779bfa9aa0212d74299f9dde65cbf6cf3eb6",
+      "macos/share_plus/Sources/share_plus/PrivacyInfo.xcprivacy": "204d035a88eab2281b3d914f46c796766ae78e3cb82537711928dca9e28dbbb8",
+      "macos/share_plus/Sources/share_plus/SharePlusMacosPlugin.swift": "67ed9545c992f9b612a99244e99eec869c7e5f9ccc5e0dc15f1415ec8cc92bf9",
+      "windows/CMakeLists.txt": "65b58d65ab272b2873ffacde510ae7e58113cae64dc4308c8ec21fc6c149ecf2",
+      "windows/include/share_plus/share_plus_windows_plugin_c_api.h": "87319df03dee082198895f8fe9966290288f8a304ea532ba502875ec4d5ce386",
+      "windows/share_plus_plugin.cpp": "694285139f03a27fee13582862dda8a7ac51ca03eba80115817536f710d00385",
+      "windows/share_plus_plugin_c_api.cpp": "2591525d1d22e8246afa916488206f43a3a04d120fb50a334e9a7c15cf5ff537",
+      "windows/share_plus_windows_plugin.h": "5b3b8a55483d3974a69ad11aae810f45185eb31df56234a61cc656cdd8b2c5f4",
+      "windows/vector.h": "f3e44dfc7d7ce5cbfedf605c44ee7523747f19daf667f8e4b66a60517a9b070f"
+    },
+    "patched_files": {
+      "lib/src/windows_version_helper.dart": {
+        "upstream_sha256": "876fb5bc380a9f5f877068f7e2fa161debffdf928d2dc7d08c79da70cc0b8914",
+        "patched_sha256": "4b79ab0a3302bfa82bd36c2f3561346303fc91f1e75889dd037e20010a0580c4",
+        "reason": "Use real RtlGetVersion/NTSTATUS with scoped memory and safe fallback on failure"
+      },
+      "ios/share_plus/Package.swift": {
+        "upstream_sha256": "29b0ec39e3557602fa2c1a831b2f7b5f09a8335bf5b531255fda801f6330e5a2",
+        "patched_sha256": "8c1d816f0a39d7cad56782fb0ecb7b879c4c9e7fededf0ebb100311e3c80c06d",
+        "reason": "Omit sibling FlutterFramework package/product; the app owns the single Flutter link"
+      },
+      "macos/share_plus/Package.swift": {
+        "upstream_sha256": "dad5e932d5251bcc3445b64e4690779bfa9aa0212d74299f9dde65cbf6cf3eb6",
+        "patched_sha256": "b274dcad16bb6e74ca49b1fcc29ab8a0b209d13f2f310885d16767fc240e72fa",
+        "reason": "Omit sibling FlutterFramework package/product; the app owns the single Flutter link"
+      }
+    }
+  },
+  "audio_service": {
+    "version": "0.18.19",
+    "archive_url": "https://pub.dev/api/archives/audio_service-0.18.19.tar.gz",
+    "archive_sha256": "95f3267f3449eb5cf71c8fcf1d556f57af1e898e2dc5815fb168d1843653edb7",
+    "implementation_roots": [
+      "lib",
+      "android/src/main",
+      "android/build.gradle.kts",
+      "darwin/audio_service/Sources",
+      "darwin/audio_service/Package.swift",
+      "darwin/audio_service.podspec"
+    ],
+    "files": {
+      "lib/audio_service.dart": "f0821ecbe718a6cb70cb0af63d537fdcefd3829efbbd864d1238af2d2a65512e",
+      "android/src/main/AndroidManifest.xml": "bfe643676c7bfecf2683b1ad8044a754bc53141c9e4fc6714ad58c1530937b6d",
+      "android/src/main/res/drawable-xhdpi/audio_service_fast_rewind.png": "024b35f62c62e80818b6cfca27b29cd9138b4bea79bb9858c8a520d3a664944b",
+      "android/src/main/res/drawable-xhdpi/audio_service_skip_previous.png": "6c404d7dca1a0bb459b20c50cfd1794b8bd01339c4ab2b529d6ea97e3cf5e737",
+      "android/src/main/res/drawable-xhdpi/audio_service_stop.png": "b1670cb37bc0b2adeb68efd396683883016ff4a25d6c64aaac6950851f26c2e9",
+      "android/src/main/res/drawable-xhdpi/audio_service_play_arrow.png": "1d98d2d7cf0bdd8c1114eccb583eed008878e28fe0a0624fad9aed1b5f6acecd",
+      "android/src/main/res/drawable-xhdpi/audio_service_pause.png": "1f98a50b019309e53d7f604dc0ca454fc3d1bcf44b9c84fa9b142cea06c2b852",
+      "android/src/main/res/drawable-xhdpi/audio_service_fast_forward.png": "282ec622750625727522065f23749c16f8a047fe8b5aeb422fb80947bc9b7bff",
+      "android/src/main/res/drawable-xhdpi/audio_service_skip_next.png": "62f7fe4984dd82205e9c2be8ddd1364f73bcd385ca37b37c0fda9adbf8301227",
+      "android/src/main/res/drawable-xxhdpi/audio_service_fast_rewind.png": "262326542dbb4899b534dd4fba427bd740ff67c3b768922fe7facad884212b06",
+      "android/src/main/res/drawable-xxhdpi/audio_service_skip_previous.png": "1b4df1110917c2a88c9559b1bfd0dcb1b81a9724adbca5073105ae4f0222854c",
+      "android/src/main/res/drawable-xxhdpi/audio_service_stop.png": "ad85bcdb158b5c53eba2a09d87efd0a1781764f5a8e881246842b7e8f7610576",
+      "android/src/main/res/drawable-xxhdpi/audio_service_play_arrow.png": "9dff6cab4e68440772fb1b0802f151ac50b5e98087c62c15f123ac85a0843ce3",
+      "android/src/main/res/drawable-xxhdpi/audio_service_pause.png": "8f3d3f9e819f9e8ad56974609c8947ef2cafecf53a06ee4bcdc5d7622f3bbf2c",
+      "android/src/main/res/drawable-xxhdpi/audio_service_fast_forward.png": "1b5cda8e57fec23f3b6950e0a36075ec69339f729f8604eda5b04e67bf93a8c8",
+      "android/src/main/res/drawable-xxhdpi/audio_service_skip_next.png": "ca7ce674081a4362c4ab73b44dcdbb0f86b5260f6b1d6841b528366607ad73dc",
+      "android/src/main/res/drawable-hdpi/audio_service_fast_rewind.png": "479b3404b26c4850da21741553fbd1049eb1807454102a4ffa4cb23d9120b0c7",
+      "android/src/main/res/drawable-hdpi/audio_service_skip_previous.png": "0c96daf5b300d6e12d6567fbe1448aa4fc866a87633fcae6bd4caa3e718fe023",
+      "android/src/main/res/drawable-hdpi/audio_service_stop.png": "1ff6b6dae3a87e542d28b2f3aebdb18fe16e5ea7c203f715c8c27606da53af66",
+      "android/src/main/res/drawable-hdpi/audio_service_play_arrow.png": "23a4f509b5d428c713cc52417249ccea8ebd519e31b5632639bae1eedc5a36f7",
+      "android/src/main/res/drawable-hdpi/audio_service_pause.png": "863bd248afdb619930952198b7a555a31eb15c749d0e4b0f121bcf88240ebb66",
+      "android/src/main/res/drawable-hdpi/audio_service_fast_forward.png": "35e2bd70cbd4eb81fac0ae26c0d2fadd04a3e909f45c31acf08dc0c089b26afc",
+      "android/src/main/res/drawable-hdpi/audio_service_skip_next.png": "480f567ccb9d0bffeff0476883a99e74aff1f58e4720d0807cb23fb982ee05f5",
+      "android/src/main/res/drawable-mdpi/audio_service_fast_rewind.png": "f940e2ec96e028d09a1dfadf9ecba9883080f14b55593945ef48f850e6d73c53",
+      "android/src/main/res/drawable-mdpi/audio_service_skip_previous.png": "b447a13d27c6297e8b861a6f8a2d7a751859f016143690e6d2734f2134ef5b28",
+      "android/src/main/res/drawable-mdpi/audio_service_stop.png": "cda1351e37680de3d2dc9e44bfbd3240b34bd641cfa314f6dd723311cfc0305d",
+      "android/src/main/res/drawable-mdpi/audio_service_play_arrow.png": "c2ca162726e16546203137a500740f4e38c23438c584c6d771db823143f133f6",
+      "android/src/main/res/drawable-mdpi/audio_service_pause.png": "30c905b7bc1e45850fb11e5d2c8c62084f30321018513e5ca4000bc5de19b680",
+      "android/src/main/res/drawable-mdpi/audio_service_fast_forward.png": "e3cf6310fdb117fd358f7884f40294a622009a91cb8e66a2ae269c740b9d4754",
+      "android/src/main/res/drawable-mdpi/audio_service_skip_next.png": "8efd583b968d92b27ebb034ef0db3a213bbed0982ff05e20875793aafb2fb6e2",
+      "android/src/main/res/drawable-xxxhdpi/audio_service_fast_rewind.png": "ac74a6e154794271feecb9e0508e79197a933250b96eee86f8f261fde60753a3",
+      "android/src/main/res/drawable-xxxhdpi/audio_service_skip_previous.png": "602261a9880406393db4b29b7a6894b5f44a9ab7046fba79b9598e6635feef24",
+      "android/src/main/res/drawable-xxxhdpi/audio_service_stop.png": "971447f07522f9e8b6b0a417aee9f4e54bff19bce592bec045ef3c53a6c048a0",
+      "android/src/main/res/drawable-xxxhdpi/audio_service_play_arrow.png": "930cf4a6b6d33e694c9bfb392106216fcdf99b59737e9f000b343cea72d52607",
+      "android/src/main/res/drawable-xxxhdpi/audio_service_pause.png": "83e76638f27ded9d93a05bda5fc47ee6ac4efb1d6ba00f2de725ec6d0a5d8d73",
+      "android/src/main/res/drawable-xxxhdpi/audio_service_fast_forward.png": "43775750c14aad142df0ad9a2d2fe836a01c9fa29ed738dc1e4ba8a0f46609e6",
+      "android/src/main/res/drawable-xxxhdpi/audio_service_skip_next.png": "85b5ad72aa20313caa77e964c42bc4e3ccbbee01c6dc65eee2917cb14f25006b",
+      "android/src/main/java/com/ryanheise/audioservice/MediaControl.java": "a193bc77b42439cdf749b1298e655339e742d07694b728ee5e8423cbaca0a295",
+      "android/src/main/java/com/ryanheise/audioservice/MediaButtonReceiver.java": "546dc6106f2920129d5e1c6eaaf5cd7856845f56f71028e48a8579dc8280e7e9",
+      "android/src/main/java/com/ryanheise/audioservice/AudioProcessingState.java": "c1deed698e77883fc2b3c1efecdd159894ceb4b72a868d1fc71bb97ce3617377",
+      "android/src/main/java/com/ryanheise/audioservice/AudioServicePlugin.java": "afd40121a51d32ac4aed3b8142897e62460b57524df0ecdd0bfc97313262b1e0",
+      "android/src/main/java/com/ryanheise/audioservice/CustomMediaAction.java": "589709a69ae2ae44718fd5575c71e085e5d3b56584806a5ac7647821855af3e8",
+      "android/src/main/java/com/ryanheise/audioservice/AudioService.java": "538dc027311ea070eea883f6dbf6b0e339c6c609cf6b395d018e359caea36938",
+      "android/src/main/java/com/ryanheise/audioservice/AudioServiceFragmentActivity.java": "80c159e42cdba5077ca4c7d961a79e4dc31cbaf4412910b97682c57ffeb3f7c9",
+      "android/src/main/java/com/ryanheise/audioservice/AudioServiceConfig.java": "85a280bf8ad1507a7228473c3bb1606284f8c17b0ddc91aec7f62982af47c5d9",
+      "android/src/main/java/com/ryanheise/audioservice/MediaButton.java": "9557657688418b02fe2cf633d65b35fd51f163dff2b8ad67d0f8cedd430a7cbf",
+      "android/src/main/java/com/ryanheise/audioservice/AudioServiceActivity.java": "4bf3674ac3484a8d9d9ae5690692849368fd14fbbf4998ee458e6f642ee039f8",
+      "android/build.gradle.kts": "6dbea445b85a3bed8a241823461cb23a6acaca2eeedd5bb5e98d1a9b8d3f1cdc",
+      "darwin/audio_service/Sources/audio_service/AudioServicePlugin.m": "fed592f28065dcdcf1819754c83a34f046f7583a897cd53365d845a8d4920b22",
+      "darwin/audio_service/Sources/audio_service/include/audio_service/AudioServicePlugin.h": "363505b403889eadee46a9a3bdd1222cb684296acb2735905142a19bd9454b26",
+      "darwin/audio_service/Package.swift": "f36dafde68f04eb041a9e99dbc97280df5692d6d39cf4b6bc3882626809b105f",
+      "darwin/audio_service.podspec": "73824ae92f5ad2d005964b1396b082dbb9d682a13a347711f2eab3194fcb9cea"
+    },
+    "patched_files": {
+      "darwin/audio_service/Sources/audio_service/AudioServicePlugin.m": {
+        "upstream_sha256": "fed592f28065dcdcf1819754c83a34f046f7583a897cd53365d845a8d4920b22",
+        "patched_sha256": "93313ddcce71090d202e3a681b8ca93c27c65208f7ba67361fe51782f2bbf5ef",
+        "reason": "Retain the supported MPMediaItemArtwork bounds initializer for current iOS SDKs."
+      }
+    }
+  },
+  "in_app_review": {
+    "version": "2.0.12",
+    "archive_url": "https://pub.dev/api/archives/in_app_review-2.0.12.tar.gz",
+    "archive_sha256": "364db0c160b37fe7fad9cdaa18f968473924b17368869010af902760421b6bf8",
+    "implementation_roots": [
+      "lib",
+      "android/src/main",
+      "android/build.gradle",
+      "ios/in_app_review/Sources",
+      "ios/in_app_review/Package.swift",
+      "ios/in_app_review.podspec",
+      "macos/in_app_review/Sources",
+      "macos/in_app_review/Package.swift",
+      "macos/in_app_review.podspec"
+    ],
+    "files": {
+      "lib/in_app_review.dart": "e4570aeea6fd6de18c213aca374592311317321cdb120190daf0b434933fdf2c",
+      "android/src/main/AndroidManifest.xml": "f349d667c722183b94457a8bddf2ea8043bfa658c0ef3c84e41040f145e6f7d6",
+      "android/src/main/kotlin/dev/britannio/in_app_review/InAppReviewPlugin.kt": "efd175d11712c52cef72db1e53a5d491c71b87f08632b509d63e7708f25cf567",
+      "android/build.gradle": "fd8590d6a241faae5c3961d1ef41e7fb59e3e75fd271d5971224157e23c701e2",
+      "ios/in_app_review/Sources/in_app_review/InAppReviewPlugin.swift": "7fdf22810b5def4198ab71260360731a498699283e98bd904660480adb8d43b7",
+      "ios/in_app_review/Sources/in_app_review/PrivacyInfo.xcprivacy": "6d2da0d8d930227d428c1d9363b0ad6e3a12e2c9b68c5ce297158a7412fc8c31",
+      "ios/in_app_review/Package.swift": "6e162256596c382b06d2a507821d0266ce1025022cf4864e6e5db79bbee898fa",
+      "ios/in_app_review.podspec": "7f7cb46befc1bb3fe9c1dfc751f09236a7144604966cb568b0ea8e0dfa25e073",
+      "macos/in_app_review/Sources/in_app_review/InAppReviewPlugin.swift": "d15c5e2069dcf01161e3fda6a4d01668db916b2cfad6faa861eda77bf6556b94",
+      "macos/in_app_review/Sources/in_app_review/PrivacyInfo.xcprivacy": "204d035a88eab2281b3d914f46c796766ae78e3cb82537711928dca9e28dbbb8",
+      "macos/in_app_review/Package.swift": "73409e3c7a11dc72ac62b42ab9a36e3903fc4853d07ade38a771c296f2cfa91e",
+      "macos/in_app_review.podspec": "6a59086eb34eaf4270c8a08b3dfced1b7c7a1c89f19c86b451a23b545d30331b"
+    },
+    "patched_files": {
+      "ios/in_app_review.podspec": {
+        "upstream_sha256": "7f7cb46befc1bb3fe9c1dfc751f09236a7144604966cb568b0ea8e0dfa25e073",
+        "patched_sha256": "d8b528feea5c1212201e5443c30aa68dc578fbe085885a377a5677c4a227c7fb",
+        "reason": "Retain the project iOS deployment and SwiftPM integration metadata."
+      },
+      "ios/in_app_review/Sources/in_app_review/InAppReviewPlugin.swift": {
+        "upstream_sha256": "7fdf22810b5def4198ab71260360731a498699283e98bd904660480adb8d43b7",
+        "patched_sha256": "f020ff2f9809bedb22a1407f059785745eb52a2502fd72d3d18f64b5419f4a8b",
+        "reason": "Remove the always-true iOS 10.3 availability condition under the existing iOS 12 minimum, retaining the iOS 12-13 fallback and iOS 14/16 paths."
+      }
+    }
+  },
+  "local_auth_darwin": {
+    "version": "2.0.5",
+    "archive_url": "https://pub.dev/api/archives/local_auth_darwin-2.0.5.tar.gz",
+    "archive_sha256": "45a9db01b57082bc9d6115cb25eb8fc0b72f43e5f330819bdd8352ecdae87589",
+    "implementation_roots": [
+      "lib",
+      "darwin/local_auth_darwin/Sources",
+      "darwin/local_auth_darwin/Package.swift",
+      "darwin/local_auth_darwin.podspec",
+      "darwin/Tests"
+    ],
+    "files": {
+      "lib/local_auth_darwin.dart": "6b29ec64fe55a84b9679581d0b6f9e94cdafdd4b6777b94938d8d684fe1d5372",
+      "lib/types/auth_messages_ios.dart": "f62acf40a76c612a6cc9939b8a05a35bf6a2f02530baae5bb3a5e717df779334",
+      "lib/types/auth_messages_macos.dart": "ba834e6ade56b7a471711494e53e155bd898e65ac4511b06584a1532ea64e93b",
+      "lib/src/messages.g.dart": "afd7051ea9b41f5f855148ca33b5889e571a18e0b15ad55673004717049ae04e",
+      "darwin/local_auth_darwin/Sources/local_auth_darwin/messages.g.swift": "ca8b39d354ca6588b4e1b11e7eecda20e2b73c68535d78f42255fc9d04ef8724",
+      "darwin/local_auth_darwin/Sources/local_auth_darwin/SystemWrappers.swift": "a36c2bbb9c50937b42fb9f33b86088d2dd6a52dd54948b84833b8e415f740ba5",
+      "darwin/local_auth_darwin/Sources/local_auth_darwin/LocalAuthPlugin.swift": "0ff299c814ec73342ebab9ad471a29ebd07f0b2ee379bbf43a8595e5929913df",
+      "darwin/local_auth_darwin/Sources/local_auth_darwin/Resources/PrivacyInfo.xcprivacy": "6d2da0d8d930227d428c1d9363b0ad6e3a12e2c9b68c5ce297158a7412fc8c31",
+      "darwin/local_auth_darwin/Package.swift": "a2abc170e74464648f633e6b6d328780b212d949155d803947365c90bfea0841",
+      "darwin/local_auth_darwin.podspec": "fa0f5cb4535bd1b46ed1f3799e5c3f3af224c34ad83b62b8cf0a07b3aadca061",
+      "darwin/Tests/FLALocalAuthPluginTests.swift": "940d0f9ed483749b723d8c3deb1476668a3bc5dc7d64aaf6ab7e69110c37a505"
+    },
+    "patched_files": {
+      "lib/local_auth_darwin.dart": {
+        "upstream_sha256": "6b29ec64fe55a84b9679581d0b6f9e94cdafdd4b6777b94938d8d684fe1d5372",
+        "patched_sha256": "2c2e26d75d4c92e39d6b9389c03c6e4709e1ac7ab18bed968f2256297b03ff10",
+        "reason": "Qualify generated Pigeon message names to retain SDK type-name compatibility."
+      },
+      "darwin/local_auth_darwin/Sources/local_auth_darwin/LocalAuthPlugin.swift": {
+        "upstream_sha256": "0ff299c814ec73342ebab9ad471a29ebd07f0b2ee379bbf43a8595e5929913df",
+        "patched_sha256": "cc3bff2516b6e7674b5f4f62845a56b37e4da104723413e5aeb60e9078765e50",
+        "reason": "Keep auth state main-actor isolated; use checked preconcurrency Objective-C conformances with explicit runtime main-actor preconditions and an actor-isolated Sendable background reply handler."
+      },
+      "darwin/local_auth_darwin/Sources/local_auth_darwin/SystemWrappers.swift": {
+        "upstream_sha256": "a36c2bbb9c50937b42fb9f33b86088d2dd6a52dd54948b84833b8e415f740ba5",
+        "patched_sha256": "48314f7a45daec2a7d083aa11af014402f5533dd340242918501333b85efd814",
+        "reason": "Align AuthContextFactory with the main-actor implementation while retaining the direct LAContext protocol and authentication policy."
+      },
+      "darwin/Tests/FLALocalAuthPluginTests.swift": {
+        "upstream_sha256": "940d0f9ed483749b723d8c3deb1476668a3bc5dc7d64aaf6ab7e69110c37a505",
+        "patched_sha256": "a390ac2cae6a25134d12f21a8f750e94a6829d73b04fb9743167f2e140e14b84",
+        "reason": "Retain upstream policy/error regressions; verify main-actor background replies and synchronous protocol calls without unchecked Sendable test state."
+      },
+      "darwin/local_auth_darwin/Sources/local_auth_darwin/messages.g.swift": {
+        "upstream_sha256": "ca8b39d354ca6588b4e1b11e7eecda20e2b73c68535d78f42255fc9d04ef8724",
+        "patched_sha256": "43ade874f72996ada8f4d7d8488b45e341f72b0eb1ecdeec9b003eceacb949bc",
+        "reason": "Local generated-code patch: align LocalAuthApi and setup with Flutter's default main-thread message queue without changing channels, wire format, signatures or reply timing."
+      }
+    }
+  },
+  "android_file_picker": {
+    "version": "2.1.1",
+    "archive_url": "https://pub.dev/api/archives/android_file_picker-2.1.1.tar.gz",
+    "archive_sha256": "e94229cc41c4bb5fb6a2254146340a8b650664c99b5c93b9001f66c3375d0060",
+    "implementation_roots": [
+      "lib",
+      "android/src/main",
+      "android/build.gradle.kts",
+      "android/src/test"
+    ],
+    "files": {
+      "android/build.gradle.kts": "8b4684f1490e8637de59378d31676bfe9b2c71d50ffceffc4276a8702f724a3f",
+      "android/src/main/AndroidManifest.xml": "462d8fe7e34a80e24230080b759e2f627f7b01b5f15b65c291837cff088f391a",
+      "android/src/main/kotlin/com/mr/flutter/plugin/filepicker/FileInfo.kt": "2d1fc1e16b6e0fbae81c32cbc8c66462d9d54ef52e3bc6d0cc295242a6d49f5e",
+      "android/src/main/kotlin/com/mr/flutter/plugin/filepicker/FilePickerDelegate.kt": "3f322f08050c4898a54cf2183d081df0e99df3030323891b74a6231319e6d211",
+      "android/src/main/kotlin/com/mr/flutter/plugin/filepicker/FilePickerPlugin.kt": "e3b7c9d16571a3daaebef905f5f1d0a79bc974c731b7c79ece06499c38935cd7",
+      "android/src/main/kotlin/com/mr/flutter/plugin/filepicker/FileUtils.kt": "a61146594efd8d6cef05efc3126303a040f9992da7306f72e6ba8e800572bea3",
+      "android/src/main/kotlin/com/mr/flutter/plugin/filepicker/LostDataStore.kt": "c419f0d039ba0a932e7d2e9102c214d7caea63415582c60c40899f39fabfba08",
+      "android/src/main/kotlin/com/mr/flutter/plugin/filepicker/MethodResultWrapper.kt": "16168decfc389023eb2105a6b5616a053e199b25ab7752bf01c1c88984087a2f",
+      "lib/android_file_picker.dart": "fdd8a9e6d8bd0afc399bfa2221de2d342587fe4f8102080a4f3ef84fa1304573",
+      "lib/src/android_platform_file.dart": "d53a172a8f3f006d632c34f74390e1201bc36b8b5abecb69805b139263a37db6",
+      "lib/src/android_saf_handle.dart": "eea327711521fa55ef977438d73c1f44dc0a04bffeacc2fc3332bdf1f99cd4b6",
+      "lib/src/file_picker_android.dart": "93d7225bf673b5ebf10b8406550bea4368217972082d9c971664ee25173c3dbe",
+      "lib/src/file_picker_android_options.dart": "a912ac25005de4ac3e7fccc3e10b4ddab488543d821fc6353c738d58e8846540",
+      "lib/src/lost_file_picker_result.dart": "b4992055f6ed61fccb6da43faa1fde248f16bc4cc12c9b3b0cd2ffafa9b51550"
+    },
+    "patched_files": {
+      "android/src/main/kotlin/com/mr/flutter/plugin/filepicker/FilePickerPlugin.kt": {
+        "upstream_sha256": "e3b7c9d16571a3daaebef905f5f1d0a79bc974c731b7c79ece06499c38935cd7",
+        "patched_sha256": "23c02cc532da3a23b988664622c66654d60f15b48addff0d26b6e30ddd6546a1",
+        "reason": "Restore notification cancelPendingRequest method without changing picker API"
+      },
+      "android/src/main/kotlin/com/mr/flutter/plugin/filepicker/LostDataStore.kt": {
+        "upstream_sha256": "c419f0d039ba0a932e7d2e9102c214d7caea63415582c60c40899f39fabfba08",
+        "patched_sha256": "35055df66e65aeab972d9687994bd208f767927236ecf2bf59e1e02a17a31a9c",
+        "reason": "Match saved request identity, persist cancelled-code tombstones, invalidate common restore token and gate stale publication under the store lock"
+      },
+      "android/src/main/kotlin/com/mr/flutter/plugin/filepicker/FileUtils.kt": {
+        "upstream_sha256": "a61146594efd8d6cef05efc3126303a040f9992da7306f72e6ba8e800572bea3",
+        "patched_sha256": "8cea01eaafcd4c59ec1f1e92de54cd12c0b68a5cb756b72eec201b0144c058b9",
+        "reason": "Capture request generations for IO completion and persist per-launch request codes before opening picker"
+      },
+      "android/src/main/kotlin/com/mr/flutter/plugin/filepicker/FilePickerDelegate.kt": {
+        "upstream_sha256": "3f322f08050c4898a54cf2183d081df0e99df3030323891b74a6231319e6d211",
+        "patched_sha256": "b38565136763a9c6a494d73815df96d31c0936928d36221583d633b1a377b714",
+        "reason": "Correlate activity codes, local IO generations and shared restore tokens; invalidate before cancellation callbacks and reject stale completions"
+      },
+      "android/build.gradle.kts": {
+        "upstream_sha256": "8b4684f1490e8637de59378d31676bfe9b2c71d50ffceffc4276a8702f724a3f",
+        "patched_sha256": "4a60931f88bc20ca011b946dbc21b2bef50f67df568c8fe475687d477b321096",
+        "reason": "Add isolated Robolectric cancellation lifecycle regression dependencies"
+      }
+    },
+    "new_files": {
+      "android/src/test/kotlin/com/mr/flutter/plugin/filepicker/PickerCancellationTest.kt": {
+        "sha256": "959e7dfd59287d0652803e53b7bddc2b7256c08d38468911ea11c84009400768",
+        "reason": "Synthetic Robolectric regression for cancellation, late results/IO, lost recovery and preserved grant state"
+      }
+    }
+  },
+  "audio_session": {
+    "version": "0.2.4",
+    "archive_url": "https://pub.dev/api/archives/audio_session-0.2.4.tar.gz",
+    "archive_sha256": "f9e7711a0e24ca8b40f5d7ac374c3c6e55016f3157912badd18199cdbbca5c4d",
+    "implementation_roots": [
+      "lib",
+      "android",
+      "ios",
+      "macos",
+      "pubspec.yaml",
+      "LICENSE"
+    ],
+    "files": {
+      "ios/audio_session.podspec": "a03e7d8bac7c7286e49bd4bc6f1137365e9ab6d793fab4113ecb5307701954a4",
+      "ios/audio_session/Package.swift": "5cf5ad32e0e56e9e7f46c1a31686f5f187041d3c0954fb1c4629fa9d9eab9679",
+      "ios/audio_session/Sources/audio_session/AudioSessionPlugin.m": "d41d94eb9eee2e41048fa62ecf8201680e3c09fb243d2f6df7403de103fec01a",
+      "ios/audio_session/Sources/audio_session/include/audio_session/AudioSessionPlugin.h": "c781154d0536b85b2dd06ce0e6a90d1180ffdce6bcbbca16c979ea63a14327dd",
+      "ios/audio_session/Sources/audio_session/include/audio_session/DarwinAudioSession.h": "bb175cbc587ea90e6cdc4cb0d9956214a00c0cf75d72eba9fe59f3bec72b9020",
+      "ios/audio_session/Sources/audio_session/DarwinAudioSession.m": "ec98c32b50af93497b89baf051ba496f29d371c178afb289686636701d7ca470",
+      "macos/audio_session.podspec": "dcb532cdf8afac042e3f712db64bbaba1568027b76539c8eb45031d98fc41737",
+      "macos/audio_session/Package.swift": "f30fd77eee7b39412203f106914b4db2fe32107f9f7c0e80d84489a29b52e5cf",
+      "macos/audio_session/Sources/audio_session/AudioSessionPlugin.m": "d213ab66fe4317b8f58e8ce60586be431d8b015a82b2162531666b2c623ba7be",
+      "macos/audio_session/Sources/audio_session/include/audio_session/AudioSessionPlugin.h": "e34e818549a81707ac05dbc1026c913c24d957dd4774b888e095c1e1b98c771d",
+      "LICENSE": "2568490c678ba27cc8a405238637c4ba76adc632232f05dc1c36cbf59381dba4",
+      "pubspec.yaml": "79903e1bbc0beb2437661debdea2f84d8e9cf6e3a6977d7220e4074caee94366",
+      "android/build.gradle.kts": "b3283aaea2e0df2869b7b2785781db77eea31ada04d20dabc48a45c5a846de56",
+      "android/gradle/wrapper/gradle-wrapper.jar": "d3b261c2820e9e3d8d639ed084900f11f4a86050a8f83342ade7b6bc9b0d2bdd",
+      "android/gradle/wrapper/gradle-wrapper.properties": "692cf29d003be8f3a98f15f1f526c87dfa0023bd2e5e89d332405d9179c5efec",
+      "android/src/main/kotlin/com/ryanheise/audio_session/AudioSessionPlugin.kt": "ff4f5906fb82d9fa82459c3541ea391d6778dec26615d1aaf18a75502c71074b",
+      "android/src/main/kotlin/com/ryanheise/audio_session/AndroidAudioManager.kt": "dfab5cd0effd34a3efc7c311a487f79423ff3096c6acb290ce745459479a4d52",
+      "android/src/main/AndroidManifest.xml": "bfe643676c7bfecf2683b1ad8044a754bc53141c9e4fc6714ad58c1530937b6d",
+      "android/settings.gradle.kts": "70156155e4525713c0293c6f3344d7ab8210d6d9165c259bcc8883b01b57964a",
+      "android/gradle.properties": "3c1fc1d9cad8765e2b44821c4774644b590bb58ecab6beb4bae2470ece0175be",
+      "lib/audio_session_web.dart": "e0d7ac61badb0bcde99f0128ab1731fd95868c880c5a5b00b3703c42fcdc7013",
+      "lib/src/util.dart": "3873627743dbdbf37f142396e25c389761d293e224259eb1cb55f1d46c33a4c9",
+      "lib/src/core.dart": "63cd02f3c0951fd0f8aa61223369a77b6362b2e689404a0c318b2c04c651c3a7",
+      "lib/src/android.dart": "fa877654e03a028c4dcbebe4cade9ba463f6c2664c0a0df337660d87b2e2b455",
+      "lib/src/darwin.dart": "a15d69f15fd80283203948092ab213610b71cbfc62f930aa3f965bdb59845d67",
+      "lib/audio_session.dart": "2bcfb945ddf33c985d0e3c51c1d190d88f75d83c7c8fbb657f13395009f954bc"
+    },
+    "patched_files": {
+      "ios/audio_session/Sources/audio_session/DarwinAudioSession.m": {
+        "upstream_sha256": "ec98c32b50af93497b89baf051ba496f29d371c178afb289686636701d7ca470",
+        "patched_sha256": "edfd78f1cba5a6116dce620a0dd1a3382bbe164512d7f0badac278dc704850d7",
+        "reason": "Preserve nullable suspension flags and event shape: legacy key before iOS 14.5, replacement reason in iOS 14.5-15, no suspension notifications in iOS 16+; compile deprecated APIs only for relevant deployment ranges."
+      }
+    }
+  },
+  "SDWebImageWebPCoder": {
+    "version": "0.15.0",
+    "archive_url": "https://codeload.github.com/SDWebImage/SDWebImageWebPCoder/tar.gz/refs/tags/0.15.0",
+    "archive_sha256": "b8689b3874bde692ec45d4dcc7ab551dbabb646dc507206f966c16b3da4754de",
+    "implementation_roots": [
+      "SDWebImageWebPCoder/Classes",
+      "SDWebImageWebPCoder/Private",
+      "SDWebImageWebPCoder/Module/SDWebImageWebPCoder.h",
+      "SDWebImageWebPCoder/Module/SDWebImageWebPCoder.modulemap",
+      "Package.swift",
+      "SDWebImageWebPCoder.podspec",
+      "LICENSE"
+    ],
+    "files": {
+      "LICENSE": "2b4e998db6eb1c4f7fe3533dca578b0951274d24bef5f647f42000df43f5af91",
+      "Package.swift": "787fcc8057cba047c51ee34def9ebe7841da30adcd9d4014f2c0a4f505260909",
+      "SDWebImageWebPCoder.podspec": "cc17bdbb126a146ca26c507c50031d20a2b478e11c295fd97471821ae401c59f",
+      "SDWebImageWebPCoder/Classes/SDImageWebPCoder.h": "d52899a559b784d60ae7ad7caae0e0cd72fc51779ea04bd1317f47f2ad7f079a",
+      "SDWebImageWebPCoder/Classes/SDImageWebPCoder.m": "9f3f8f9ce252f4dcf899be236dd8e78ff0698fa871279d69dcc238df741c5ad4",
+      "SDWebImageWebPCoder/Classes/SDWebImageWebPCoderDefine.h": "565a18842a1b05f921bd289f713e2e6bdd5d9bbe91db8fa1b0f2f126e71e8a73",
+      "SDWebImageWebPCoder/Classes/SDWebImageWebPCoderDefine.m": "82f9e27d22e926ef9e356231b808da7e3e923660df46b5fac8887d2032f6bdea",
+      "SDWebImageWebPCoder/Classes/UIImage+WebP.h": "613228bb40d6df08335c39104fcb50c270eabb76270b50f3e233f112df39b652",
+      "SDWebImageWebPCoder/Classes/UIImage+WebP.m": "5787c9b5b7bde2a1eda0b7da3afbf0c17766684b71ee0a57c9cd3078508d8a32",
+      "SDWebImageWebPCoder/Module/SDWebImageWebPCoder.h": "67b69dfe17cacf6b3cc04da5116ebffe40ca0eaef67fc695d1427ae395502718",
+      "SDWebImageWebPCoder/Module/SDWebImageWebPCoder.modulemap": "7cdf9f82b2dd5b804717cce9c6f91dc77f44b4f6f2169a7d1ec44700a2a2e057",
+      "SDWebImageWebPCoder/Private/SDInternalMacros.h": "517a2779479f5847eca3992583ef0267c8cac89ea95019d3cd436cc8bfa4785d",
+      "SDWebImageWebPCoder/Private/SDmetamacros.h": "c2866e841c869695350d2446a17bdf14d4c69124afa1b2fb932db78cfcc40f16"
+    },
+    "patched_files": {
+      "Package.swift": {
+        "upstream_sha256": "787fcc8057cba047c51ee34def9ebe7841da30adcd9d4014f2c0a4f505260909",
+        "patched_sha256": "683a33c1fc36bbcdc22a2c01b1a9436192d8eac4080143fdd9257f8fed6c45b5",
+        "reason": "Retain existing Flutter SwiftPM integration: tools 5.9, iOS 12, exact SDWebImage 5.21.7 and libwebp 1.5.0 dependencies, source/header paths and SD_WEBP definition."
+      },
+      "SDWebImageWebPCoder.podspec": {
+        "upstream_sha256": "cc17bdbb126a146ca26c507c50031d20a2b478e11c295fd97471821ae401c59f",
+        "patched_sha256": "f34f531e04a4edd78a299f7dc654f5e3bbaef1130f24b52094c0b63165d4dd24",
+        "reason": "Retain existing inherited user header search paths and formatting without changing platform minima or dependency constraints."
+      },
+      "SDWebImageWebPCoder/Classes/SDImageWebPCoder.m": {
+        "upstream_sha256": "9f3f8f9ce252f4dcf899be236dd8e78ff0698fa871279d69dcc238df741c5ad4",
+        "patched_sha256": "40de0b002c7e4c8994c676a42c9e58a5025a454cbb8c916ee4ce99de05a07c97",
+        "reason": "Use ICCData when guaranteed by deployment minimum; retain older podspec runtime fallback, ICC copying, RGB checks, fallback and ownership."
+      }
+    }
+  },
+  "image_picker_ios": {
+    "version": "0.8.13+13",
+    "archive_url": "https://pub.dev/api/archives/image_picker_ios-0.8.13%2B13.tar.gz",
+    "archive_sha256": "57255225702ace8c81b8d92c1de6a04b60ee9befa6dab242b10a7612116886fd",
+    "implementation_roots": [
+      "lib",
+      "ios/image_picker_ios"
+    ],
+    "files": {
+      "ios/image_picker_ios/Package.swift": "b2ab49b07972abb6d3e5ae69515a68988e4424f321c356d6f97ba359d53b7bf8",
+      "ios/image_picker_ios/Sources/image_picker_ios/CameraAvailability.swift": "6ffbaaa98aec18daad6206df83f055d2836d71c9c2c896a412b3b382afafe953",
+      "ios/image_picker_ios/Sources/image_picker_ios/CameraPermissionChecker.swift": "45c6873973957ee0c8601767cac50d1edd659e26ec592995aa972e158a8f4795",
+      "ios/image_picker_ios/Sources/image_picker_ios/ImagePickerPlugin.swift": "c032914d781fb175cd1443187344b9882b2f2bb24769036d59e443753e86bd11",
+      "ios/image_picker_ios/Sources/image_picker_ios/PHPickerCreating.swift": "f9b6171138232968a3a7918d952599a853e2546bf4894ff8b47bb392d619df8a",
+      "ios/image_picker_ios/Sources/image_picker_ios/PhotoLibraryPermissionChecker.swift": "cb1c14d18c6d4fbc1c4b35b9df86a9db60b1a32c06b7598e742f26417c4ff8b3",
+      "ios/image_picker_ios/Sources/image_picker_ios/Resources/PrivacyInfo.xcprivacy": "6d2da0d8d930227d428c1d9363b0ad6e3a12e2c9b68c5ce297158a7412fc8c31",
+      "ios/image_picker_ios/Sources/image_picker_ios_objc/FIPPickerSeams.m": "0b9664f18e289f013e294ff0a830931b8880b0da62a3764743fd5535f3885005",
+      "ios/image_picker_ios/Sources/image_picker_ios_objc/FIPViewProvider.m": "e2a66b6e7f0b9e8656da953504ccc53fbccfc4dc237f1bc21f36ff5ea24d90a6",
+      "ios/image_picker_ios/Sources/image_picker_ios_objc/FLTImagePickerImageUtil.m": "8e4148cf5b0b8adceddc6ec8c4d89b0824a7301cdd2195d7b5c7c1095e2da1c6",
+      "ios/image_picker_ios/Sources/image_picker_ios_objc/FLTImagePickerMetaDataUtil.m": "fe367a23737c73627e691c678a23b14c480f29e44ed63f39e4927843b05cb379",
+      "ios/image_picker_ios/Sources/image_picker_ios_objc/FLTImagePickerPhotoAssetUtil.m": "bb989b98f39d6d1207175bdd7087460275594381811b493f14ed6fe9381c0dfa",
+      "ios/image_picker_ios/Sources/image_picker_ios_objc/FLTPHPickerSaveImageToPathOperation.m": "90c4773cf210114d6556fe7287ac7d39504dbda9963f23803b720b15db740ecb",
+      "ios/image_picker_ios/Sources/image_picker_ios_objc/include/ImagePickerPlugin.modulemap": "40fb38d622afdc129ba610271e8f5d37b8c34a63e25f6d73d8af8fbbd67e4915",
+      "ios/image_picker_ios/Sources/image_picker_ios_objc/include/image_picker_ios.h": "ad40d52f23b1e205cfc14434c439a0e6d6ffbc85953881477616cf8a5ecbc6f9",
+      "ios/image_picker_ios/Sources/image_picker_ios_objc/include/image_picker_ios/FIPPickerSeams.h": "ca500c9f8a45f3b1b73a6a5c62098ff03811851486c35d61cdaee36d77cdf386",
+      "ios/image_picker_ios/Sources/image_picker_ios_objc/include/image_picker_ios/FIPViewProvider.h": "c51f3233e9d76037fabdd4035face7f7ba45a2580058b8eba919a74d9aded343",
+      "ios/image_picker_ios/Sources/image_picker_ios_objc/include/image_picker_ios/FLTImagePickerImageUtil.h": "d86a3f2b2628c5e77803c0259b441e28ad0dfca2dd318d6de5dfe68aae52e2e1",
+      "ios/image_picker_ios/Sources/image_picker_ios_objc/include/image_picker_ios/FLTImagePickerMetaDataUtil.h": "f1e34c0b8cc5dfbabf7b5c3b0150c156be501624e15731a2fedf9d02583708e0",
+      "ios/image_picker_ios/Sources/image_picker_ios_objc/include/image_picker_ios/FLTImagePickerPhotoAssetUtil.h": "747374f7ad54102ab9cf572aa0f3449c5ea851faf6f2d3e8f04f7fd67dbbaae0",
+      "ios/image_picker_ios/Sources/image_picker_ios_objc/include/image_picker_ios/FLTPHPickerSaveImageToPathOperation.h": "909b2763d8ba8d1ec24e583a2b740b52886fbccbca8f3099ff8f3d64208c874d",
+      "ios/image_picker_ios/Sources/image_picker_ios_objc/include/image_picker_ios/messages.g.h": "e8981fbf411c0bb7438a6a9c4b2c988749d7218f43701ba8af12ebe0a49a9111",
+      "ios/image_picker_ios/Sources/image_picker_ios_objc/messages.g.m": "704559ddbad66b9875c63eb207ecd0eddeef105bd4d3798c26de3749db2835a6",
+      "lib/image_picker_ios.dart": "1f9ac9ea970664f23114bb84e38b9b670883e2346dd0bc511da8a93e6733a021",
+      "lib/src/messages.g.dart": "fb0dd8c181a66674d408087f7c5d46d3a5c798089707de6a98784dfb32aff6be"
+    },
+    "patched_files": {
+      "ios/image_picker_ios/Sources/image_picker_ios/ImagePickerPlugin.swift": {
+        "upstream_sha256": "c032914d781fb175cd1443187344b9882b2f2bb24769036d59e443753e86bd11",
+        "patched_sha256": "8a8c8b8098c9e60d851795dced7323a40e2055868be63f5b7bb4a6d2aff78e1b",
+        "reason": "Handle the non-frozen Objective-C FLTSourceCamera enum explicitly in Swift: retain front/rear mappings and choose rear only for unknown future values; do not alter permissions, camera availability, picker behavior or the public API."
+      }
+    }
+  },
+  "objective_c": {
+    "version": "9.6.2",
+    "archive": "https://pub.dev/api/archives/objective_c-9.6.2.tar.gz",
+    "archive_sha256": "5c80c2ad6e2c0397de5db38c6d653e69616a3397e13aa7633bf39eb668f2041b",
+    "implementation_roots": [
+      "lib",
+      "src",
+      "hook",
+      "LICENSE",
+      "README.md",
+      "CHANGELOG.md",
+      "pubspec.yaml",
+      "README.patch"
+    ],
+    "files": {
+      "CHANGELOG.md": "2086ebdc760a64f941206bf86db449313a06d2dbc6a06ebf9c6ccd5d8ddc8249",
+      "LICENSE": "1cda25a8de6880c5338de0b4a06ee89e8537c213eb1379c16a4c035bfd198b5c",
+      "README.md": "5a4aa3bea6ddc990ba3d7b8fdddafcb58ff7e3c8a7a5191d5200c5155c9590c7",
+      "hook/build.dart": "4673d675678e842c83880ef88ef14dc17b3aa89a7df615fbd0a4e5bed4846525",
+      "lib/objective_c.dart": "a1abad9b2255676e77969c19da48c080e0e9895a090d9eef6dfc8a6733ab8a3b",
+      "lib/src/autorelease.dart": "b81894bb2c10c4a13fcbcc8e8d7ecb28e3f1faa1b4d4e532bc198c7c4e6d86b6",
+      "lib/src/block.dart": "981ccaea3acc2a19bd961cb5e8579cde4c4b0ccddabfd4a5bd22d89f8ae28c50",
+      "lib/src/c_bindings_generated.dart": "f940a0bd3191dbbcadac50324ecfaa906004c7ab5da65d6f1befecfee32bc6b2",
+      "lib/src/cf_string.dart": "a310cc791162527023eab34962a51a44c14e1be9b35eaf86be8edbc8c164530f",
+      "lib/src/converter.dart": "d23f0a9019a7a71123293c9dd61a30b11556d4b9ddb09b2c07d6fb672d20c42e",
+      "lib/src/globals.dart": "fbebae1e9c0fc45aa34d6aec9dda72d34531a1e1c3ce153845b160e4e83aff28",
+      "lib/src/internal.dart": "756d47c71ebf6425513c8bef9489a4a2e6dd28ca8ee6650c9170254fc684f1ef",
+      "lib/src/ns_array.dart": "0324f1f0500e9bf63b98102554758519973e16367d043aa3025d785ea8ed9918",
+      "lib/src/ns_data.dart": "dc31c2ed49b65e05a3aae042bd97e4bf08fa08fed0d263523b2b4959ab1e8022",
+      "lib/src/ns_date.dart": "9a8d6b9a06d4410e56e2fd0a2ac465378b9d79aa0cc1e295cdf4befd62113a9f",
+      "lib/src/ns_dictionary.dart": "68bb67704ec7957e61c96bc7ea8ef06c2fa09f9ce0191c231cdf4f1f18809c79",
+      "lib/src/ns_enumerator.dart": "b06e2b0a707a6031fc99b2f317c0656278d80adef0c78bfe1e724d9470704981",
+      "lib/src/ns_input_stream.dart": "e2f1885bfe8b28771735618b513107095ef974ef7dcc5e1f1222f24fcd43a827",
+      "lib/src/ns_mutable_data.dart": "60441aa07113a5fb644666ddd17b9e83cc305361f9e516b841174b030c3f2a0d",
+      "lib/src/ns_number.dart": "ebada22fe1d78eb9be434c6d64fd2d6120681ece6735ffe1780f38edc040ba9a",
+      "lib/src/ns_set.dart": "870dad963abe42b04394fec61892e0bc01644d64820cbed38867bd47d5d46785",
+      "lib/src/ns_string.dart": "c31bfacc5d34c8e1e4b8e01c3c91e40b5ea605146c94a667abf7c2e62d58846a",
+      "lib/src/objective_c_bindings_exported.dart": "d4ebec3ded5de0b77d8b3f1cfbd67be381b7558cadc0b45907066a0f3631cfec",
+      "lib/src/objective_c_bindings_generated.dart": "165c215c32a86eb57c4d530caef3ffc55392be23d964c662eb77353b8a4ffca6",
+      "lib/src/observer.dart": "d20083e305fa53fbbf7881d9d52f3f210d9dc598ae4e245bf92eb5917166d330",
+      "lib/src/os_version.dart": "e2906ea19fbddf54c1075976be206d15a0dc9c916bb18fea1d2beaa7c42483a9",
+      "lib/src/protocol_builder.dart": "9d0f99a5ac3b79dc216c61bd856410fdbaa6da38561ae8fc879aed44a015c373",
+      "lib/src/runtime_bindings_generated.dart": "b72cda733eb3e71b744cdef9fe0e1a00bce0b6d92fd8d53674e2b1965e0be555",
+      "lib/src/selector.dart": "c1099be15022edcdb24257f9898b5f411863d4033ad78600c264dc7d2ef310a0",
+      "lib/src/version_check.dart": "2e46a87eeb24d45d6ed88cf606eaf241803a5ea4e0f118a08b3b9daaef8a1df5",
+      "pubspec.yaml": "f76ae526e42a2eb9a27aec87d77d0dda270bd948f3cd01b77d1ac5877f356069",
+      "src/ffi.h": "2b30296c4407acefecadc8c2c9d412c7a9867f2a6ed31a4afcc18adc758f48eb",
+      "src/foundation.h": "894185a72a52a2dd4de3c0aa58c4bcacaa83540a9b96afc1dc00bbd62273f1ab",
+      "src/include/BUILD.gn": "ab1a439f8d8381706bb57b5c728e66b1f4be9b14685b796dcdafcd58fe07f65d",
+      "src/include/analyze_snapshot_api.h": "d69d90f0df8c62d4e739e15f2e767041b31514c1aef0bd0f889d8591a47a466e",
+      "src/include/bin/dart_io_api.h": "f573093d2e2285ea425bca8031560d61c3733beaf305aaa8b2bc7d839ffab444",
+      "src/include/bin/native_assets_api.h": "e5bbc48db0f50b855b2fd0646c2cb7a099403fb97b93b419a8f25362fb35f09f",
+      "src/include/dart_api.h": "d4ad740c9c1ee738e01c89b316dba2a8b8c18d5b4e398b6ea4ffc3686b7feb50",
+      "src/include/dart_api_dl.c": "23ff1b8b9d84bce314a3bd1010d36f1542bf6b618ab220ee8bea48cc7f8c71e4",
+      "src/include/dart_api_dl.h": "4c511af841eb61754315b6f60056493f5d29a600b9c9e525add6765912b52ba3",
+      "src/include/dart_embedder_api.h": "a40adedec18931e5c6695d8e9acfacd705fa268e9630defaefbf17d148b98c30",
+      "src/include/dart_native_api.h": "13b9236aba0a53a04640d74c3cd22e574503b04441578221ddb732a4054254b1",
+      "src/include/dart_tools_api.h": "5b10b8fb3db7d1d6cd14d164ef5d94fcd86cd21148baf9784db0186947db3658",
+      "src/include/dart_version.h": "3517e5639fdf9ed670f94e0acc6637029798085a8768ce258e6954bfca2582a8",
+      "src/include/internal/dart_api_dl_impl.h": "5b54388565d2e363fa760bdd847b33242cc4d9eb0167fa03fbaa8b2778581c57",
+      "src/input_stream_adapter.h": "0e11cdd2c953459efb4b67ccc62480eb1a99c0a3d4c76a38f7564baba420fa50",
+      "src/input_stream_adapter.m": "f55822ffca052c77198b016503a1b0fdccf3f3a1b6c3530594a0fcb3a8ec79cf",
+      "src/ns_number.h": "96c40de74a7315f1cad273666afb1b9854ab47b8b0992e6ddf62e75be86f3716",
+      "src/ns_number.m": "f2144e54963bf46fd909738efb96f3bd885d4dd15e87829822bddedc3c0d805c",
+      "src/objective_c.c": "f80b2f2a5a2e085ec88679dcbf2a0a33c479724c270a051ce64406819e0a433a",
+      "src/objective_c.h": "c1d422f977bb8580cfbecd565b2f6f885be4947c959871d5939dc243dc3a7a01",
+      "src/objective_c.m": "b7a7bcc065e7275ecbd4931986e33fd40814998b11e5630ee551cfd105e459ba",
+      "src/objective_c_bindings_generated.m": "0f0a5f55a8c6cef10430a9345e0feebd545168daa67166a422909e6babf7c950",
+      "src/objective_c_runtime.h": "1d35b2e8ae0f565d09d0f8750133f2914ff73713296ec87e670283ee2bfefccb",
+      "src/observer.h": "1c179501cae164a37cea09fdf4b9689791f62011b64f9b6eee6044b23020a531",
+      "src/observer.m": "9bc9a35c4fb14d17548d04b2273b577e975f47a67776aaab4a94481d397bf43e",
+      "src/os_version.h": "010ecd0853a65300e51ee21a1c7f8d33fe063ba8039fc85d7fb42c9e682f58dd",
+      "src/protocol.h": "485c8425882b08c000f0bd6699d1377663729e99cc9db330b10af78a5e5f85d4",
+      "src/protocol.m": "fd9d17369f365f56d90ecd7d29926b40d96dc8a088910d1d1bbd8a2f0bbe378c"
+    },
+    "patched_files": {
+      "hook/build.dart": {
+        "upstream_sha256": "4673d675678e842c83880ef88ef14dc17b3aa89a7df615fbd0a4e5bed4846525",
+        "patched_sha256": "edc489d5d66783bed2c2c663c9e2f482b834bf8ad529c56db4aae1097134c975",
+        "reason": "Preserve native line tables while remapping local source/build paths before objective_c dSYM and IPA symbol generation."
+      }
+    },
+    "new_files": {
+      "README.patch": {
+        "sha256": "9a5acb0ae72617b1d9089a946a69e93c0359c78bdac899ad8d01c814fc7165fb",
+        "reason": "Document the narrowly scoped native build-hook privacy patch and its artifact validation."
+      }
+    }
+  }
+}

@@ -1,0 +1,660 @@
+{
+  "settingsCharmImportDescription": "Add categories and charms from a file or text",
+  "settingsCharmExport": "Export charms",
+  "settingsCharmExportDescription": "Save all categories and charms to a JSON file. Assignments to files are not included.",
+  "@@locale": "en",
+  "settingsAdvanced": "Advanced",
+  "settingsMetadataSummary": "Manual save and restore",
+  "settingsTitle": "Settings",
+  "settingsAppearance": "Appearance",
+  "settingsViewerSection": "Viewer",
+  "settingsIconGalleryTitle": "Icon gallery",
+  "settingsIconGallerySubtitle": "Review the icons used for actions",
+  "settingsIconGalleryHint": "Shared library action icon",
+  "settingsTheme": "Theme",
+  "settingsThemeSystemValue": "Auto",
+  "settingsThemeLightValue": "Light",
+  "settingsThemeDarkValue": "Dark",
+  "settingsAnimations": "Animations",
+  "settingsFeedback": "Controls and Notifications",
+  "settingsHaptics": "Vibration",
+  "settingsHapticsSubtitle": "Haptic feedback for button taps and long-press actions",
+  "settingsImportNotification": "Import Notifications",
+  "settingsImportNotificationAllowed": "Allowed",
+  "settingsImportNotificationNotAllowed": "Not allowed",
+  "settingsImportNotificationRestricted": "Restricted",
+  "settingsImportNotificationDescription": "Shows import progress and completion, and lets you return from file selection. Imports work without notifications.",
+  "settingsImportNotificationDialogTitle": "Import Notifications",
+  "settingsImportNotificationDialogIntro": "Notifications help you easily return to CharmShelf during file selection and track import progress.",
+  "settingsImportNotificationFeatureProgressTitle": "Import progress updates",
+  "settingsImportNotificationFeatureProgressBody": "See progress and completion in the notification bar.",
+  "settingsImportNotificationFeatureResumeTitle": "Quick return to app",
+  "settingsImportNotificationFeatureResumeBody": "Tap the notification to return to CharmShelf.",
+  "settingsImportNotificationNotePrivacy": "No ads or unrelated notifications. Notifications are optional.",
+  "settingsImportNotificationEnable": "Allow notifications",
+  "settingsImportNotificationOpenSettings": "Open system settings",
+  "settingsImportNotificationEnabled": "Import notifications enabled",
+  "settingsImportNotificationDenied": "Notifications were not allowed. You can continue importing without them.",
+  "settingsImportNotificationSettingsFailed": "Could not open system settings",
+  "settingsSound": "Sound",
+  "settingsBackup": "Backup",
+  "settingsBackupCreate": "Back Up Charms and Notes",
+  "settingsBackupCreateSubtitle": "Create a password-protected file and save it outside this device",
+  "settingsBackupRestore": "Restore Charms and Notes from a Backup",
+  "settingsBackupRestoreSubtitle": "Add the backup contents while keeping your current data",
+  "settingsBackupRestoreConfirmTitle": "Restore backup?",
+  "settingsBackupRestoreConfirmMessage": "Current data will be overwritten. Are you sure?",
+  "settingsBackupSaved": "Saved: {path}",
+  "@settingsBackupSaved": {
+    "placeholders": {
+      "path": {
+        "type": "String"
+      }
+    }
+  },
+  "settingsBackupCreateFailed": "The backup could not be created. Check available storage and the share destination.",
+  "settingsBackupFileNotSelected": "No file selected",
+  "settingsBackupRestored": "The backup contents were added to your current data. Confirm that the original images and videos can be opened.",
+  "settingsBackupRestoreFailed": "Restore failed. Check the file and password. Current data was not changed.",
+  "settingsBackupInvalidFile": "Invalid backup file format",
+  "settingsBackupPasswordRequired": "Enter the password",
+  "settingsInfo": "Info",
+  "settingsVersion": "Version",
+  "settingsDeveloperOptions": "Developer Options",
+  "settingsModeSection": "App Mode",
+  "settingsModeInternal": "Internal Mode",
+  "settingsModeExternal": "External Mode",
+  "settingsModeInternalSub": "Copy files into app storage to manage them (Recommended)",
+  "settingsModeExternalSub": "Directly browse and manage folders on device",
+  "settingsExternalModePreparing": "Preparing",
+  "settingsCommonSection": "App Settings",
+  "settingsShowHidden": "Show Hidden Files",
+  "settingsClearCache": "Clear Thumbnail Cache",
+  "settingsLanguage": "Language",
+  "settingsAppInfo": "App Info",
+  "settingsLanguageSystem": "System Default",
+  "settingsLanguageJa": "Japanese",
+  "settingsLanguageEn": "English",
+  "settingsViewerPageDirection": "Viewer Page Direction",
+  "settingsViewerPageDirectionShort": "Page direction",
+  "settingsViewerPageDirectionLeftToRight": "Left to right (standard)",
+  "settingsViewerPageDirectionRightToLeft": "Right to left (manga)",
+  "settingsTagPresetSection": "Charms & Presets",
+  "settingsTagPresetImport": "Import Charms",
+  "settingsTagPresetImportSubtitle": "Add charms from a JSON file or text",
+  "settingsTagPresetFileNotSelected": "No file selected",
+  "settingsTagPresetImported": "Imported (Categories: {facetCount}, Charms: {tagCount})",
+  "@settingsTagPresetImported": {
+    "placeholders": {
+      "facetCount": {
+        "type": "int"
+      },
+      "tagCount": {
+        "type": "int"
+      }
+    }
+  },
+  "settingsTagPresetImportType": "Import Method",
+  "settingsTagPresetImportFromFile": "From File",
+  "settingsTagPresetImportFromText": "From Text",
+  "settingsTagPresetImportTextDialogTitle": "Enter JSON",
+  "settingsTagPresetImportTextDialogHint": "Paste JSON here",
+  "settingsTagPresetImportInvalidJson": "Invalid JSON format",
+  "settingsTagPresetImportFromTextTitle": "Import from Text",
+  "settingsTagPresetImportTextHint": "[Category Name]\nCharm Name\n  Sub Charm Name\n\nPlease enter in this format",
+  "settingsTagPresetImportCheck": "Check",
+  "settingsTagPresetImportExecute": "Execute Import",
+  "settingsTagPresetImportFormatError": "Line {line}: {error}",
+  "@settingsTagPresetImportFormatError": {
+    "placeholders": {
+      "line": {
+        "type": "int"
+      },
+      "error": {
+        "type": "String"
+      }
+    }
+  },
+  "settingsTagPresetImportErrorNoFacet": "No Category specified (Use [Category Name] format)",
+  "settingsTagPresetImportErrorEmptyFacet": "Category name is empty",
+  "settingsTagPresetImportErrorInvalidIndent": "Invalid indentation",
+  "settingsLicense": "Licenses",
+  "settingsLicenseSubtitle": "Open source licenses",
+  "settingsLicenseSemanticLabel": "Open open source licenses",
+  "settingsCopyright": "© 2026 Private Shelf Project. CharmShelf code is licensed under MIT. See the list below for each software license.",
+  "settingsDiagnosticsCopy": "Copy Diagnostics",
+  "settingsDiagnosticsCopySubtitle": "Device and app details for support (support may request them when troubleshooting)",
+  "settingsDiagnosticsInfoTitle": "About diagnostics",
+  "settingsDiagnosticsInfoDescription": "When troubleshooting an issue, the operator may ask you to provide diagnostic information as needed. This feature is used for that purpose.",
+  "settingsDiagnosticsCopied": "Diagnostics copied to clipboard",
+  "settingsDiagnosticsCopyFailed": "Failed to copy diagnostics",
+  "settingsTagPresetImportValidating": "Validating input...",
+  "settingsTagPresetImportValid": "Input format is valid",
+  "settingsTagPresetImportNoData": "No input data",
+  "settingsTagPresetImportPreview": "Preview",
+  "settingsTagPresetImportExample": "Insert Example",
+  "settingsAboutApp": "About App",
+  "settingsPrivacyPolicy": "Privacy Policy",
+  "settingsPrivacyPolicySubtitle": "Privacy policy and personal data handling principles",
+  "settingsTermsOfService": "Terms of Service",
+  "settingsTermsOfServiceSubtitle": "Terms and conditions for using this application",
+  "settingsSupport": "Support",
+  "settingsHelp": "Help",
+  "settingsHelpSubtitle": "Basic guide and feature instructions for the app",
+  "settingsExternalLegalPage": "Open external legal page",
+  "settingsExternalLegalPageSubtitle": "View official terms, policies, and support on web browser",
+  "settingsCollectionAlias": "Alias",
+  "settingsCollectionAliasSet": "Alias set",
+  "settingsCollectionAliasNotSet": "Not Set",
+  "settingsCollectionAliasHint": "Enter an alias",
+  "settingsCollectionAliasDescription": "Shown below the file name. The original file name is not changed.",
+  "settingsCollectionTier": "Tier",
+  "settingsCollectionTierCurrent": "Current Tier: {tier}",
+  "@settingsCollectionTierCurrent": {
+    "placeholders": {
+      "tier": {
+        "type": "String"
+      }
+    }
+  },
+  "settingsCollectionTag": "Charms",
+  "settingsCollectionTagNotSet": "No Charms",
+  "settingsCollectionSetupFirst": "Please complete setup",
+  "settingsCollectionFavorite": "Add to Favorites",
+  "settingsCollectionUnfavorite": "Remove from Favorites",
+  "settingsCollectionNotes": "Notes",
+  "settingsCollectionNotesNotSet": "No notes",
+  "settingsCollectionNotesHint": "Enter notes",
+  "settingsCollectionSplitSpread": "Split Spread",
+  "settingsCollectionSplitSpreadHint": "Display 2 pages as 1 page each",
+  "settingsCollectionCatalogify": "Make a catalog",
+  "settingsCollectionCatalogifyHint": "Organize it with charms and favorites.",
+  "settingsCollectionDecatalogify": "Clear catalog organization",
+  "settingsCollectionDecatalogifyConfirmTitle": "Clear this catalog’s organization?",
+  "settingsCollectionDecatalogifyConfirmMessage": "Its charms, tier, pinned state, and cover settings will be cleared. Files will not be deleted.",
+  "settingsCollectionDecatalogifySuccess": "Catalog organization cleared",
+  "settingsCollectionDecatalogifyFailed": "Could not clear catalog organization",
+  "settingsCollectionCatalogifyConfirmTitle": "Make this a catalog?",
+  "settingsCollectionCatalogifyConfirmMessage": "Make this folder a catalog?",
+  "settingsCollectionTitle": "Catalog Info",
+  "settingsCollectionType": "Type",
+  "settingsCollectionTypeExternal": "External Folder",
+  "settingsCollectionTypeInternal": "Internal Folder",
+  "settingsCollectionTypeFile": "File",
+  "settingsCollectionCreatedAt": "Created At",
+  "settingsCollectionUpdatedAt": "Updated At",
+  "settingsCollectionOriginalName": "Original Name",
+  "settingsFileMove": "Move",
+  "settingsFileMoveTitle": "Move Item",
+  "settingsFileMoveRoot": "Move to Root",
+  "settingsFileMoveSuccess": "Moved successfully",
+  "settingsFileMoveFailed": "Failed to move",
+  "settingsFileMoveTargetTitle": "Select Destination",
+  "settingsFileMoveCurrentFolder": "Current Folder",
+  "settingsFileDuplicate": "Duplicate",
+  "settingsFileFolderInfo": "Folder Info",
+  "settingsFileFileInfo": "File Info",
+  "settingsFileRemoveReference": "Remove Reference",
+  "settingsFileRemoveReferenceTitle": "Remove Reference",
+  "settingsFileRemoveReferenceMessage": "Only removes the reference to this item from the database. The actual file will not be deleted.",
+  "settingsFileDeleteConfirmTitle": "Move to Trash",
+  "settingsFileDeleteConfirmMessage": "You can restore it until you empty Trash.",
+  "settingsFileActionRemoveReference": "Remove Reference Only",
+  "settingsFileActionDuplicateSuccess": "Duplicated successfully",
+  "settingsFileActionDuplicateFailed": "Failed to duplicate",
+  "settingsFileName": "Name",
+  "settingsFilePath": "Path",
+  "settingsFileOriginalPath": "Original Path",
+  "settingsFileSize": "Size",
+  "settingsFileAddedAt": "Added At",
+  "settingsFileUpdatedAt": "Updated At",
+  "settingsFileMissingCheckedAt": "Missing Checked At",
+  "settingsFileNotChecked": "Not Checked",
+  "settingsFileSource": "Source",
+  "settingsFileSourceLocal": "Local",
+  "settingsFileSourceExternal": "External Storage",
+  "settingsFileStatus": "Status",
+  "settingsFileStatusMissing": "Missing",
+  "settingsFileStatusNormal": "Normal",
+  "settingsFileActionShow": "Show",
+  "settingsFileActionHide": "Hide",
+  "settingsFileActionShowSuccess": "Set to shown",
+  "settingsFileActionHideSuccess": "Set to hidden",
+  "settingsFileActionShowFailed": "Failed to change",
+  "settingsFileActionHideFailed": "Failed to change",
+  "settingsFileActionArchive": "Archive",
+  "settingsFileActionUnarchive": "Unarchive",
+  "settingsFileActionArchiveSuccess": "Archived successfully",
+  "settingsFileActionUnarchiveSuccess": "Unarchived successfully",
+  "settingsFileActionArchiveFailed": "Failed",
+  "settingsFileActionUnarchiveFailed": "Failed",
+  "settingsFileDeleteSuccess": "Moved to Trash",
+  "settingsFileDeleteFailed": "Failed to delete file",
+  "settingsFileNotAcquired": "Failed to acquire",
+  "settingsCollectionLastViewedAt": "Last Viewed",
+  "settingsCollectionNoHistory": "No History",
+  "settingsCollectionPinned": "Pinned",
+  "settingsFileRemoveReferenceSuccess": "Reference removed",
+  "settingsFileRemoveReferenceCleanupPending": "Reference removed. Device cleanup will finish automatically later",
+  "settingsFileRemoveReferenceFailed": "Failed to remove reference",
+  "settingsCollectionCatalogifyGuideTooltip": "About catalogs",
+  "settingsCollectionCatalogifyGuideTitle": "Make a catalog",
+  "settingsCollectionCatalogifyGuideMessage": "A catalog treats files as one unit. A folder or a single file can be a catalog with charms, favorites, and a tier. Find it again with search and filters.",
+  "settingsCollectionCatalogifyConfirmMessageWithTarget": "You can add charms and favorites to this {target}.",
+  "@settingsCollectionCatalogifyConfirmMessageWithTarget": {
+    "placeholders": {
+      "target": {
+        "type": "String"
+      }
+    }
+  },
+  "settingsTagPresetImporting": "Importing...",
+  "settingsTagPresetImportConfirmTitle": "Import Charms",
+  "settingsTagPresetImportConfirmMessage": "The following content will be imported. Continue?",
+  "settingsTagPresetImportConfirmFacets": "Categories",
+  "settingsTagPresetImportConfirmTags": "Charms",
+  "settingsTagPresetImportConfirmSummary": "Create {createCount}, update {updateCount}, skip {skipCount}",
+  "@settingsTagPresetImportConfirmSummary": {
+    "placeholders": {
+      "createCount": {
+        "type": "int"
+      },
+      "updateCount": {
+        "type": "int"
+      },
+      "skipCount": {
+        "type": "int"
+      }
+    }
+  },
+  "settingsTagPresetOverwriteExisting": "Update settings for matching charms",
+  "settingsTagPresetOverwriteExistingSubtitle": "When off, existing categories and charms are left unchanged",
+  "settingsTagPresetImportCompleted": "Import complete: {createCount} created, {updateCount} updated, {skipCount} unchanged",
+  "@settingsTagPresetImportCompleted": {
+    "placeholders": {
+      "createCount": {
+        "type": "int"
+      },
+      "updateCount": {
+        "type": "int"
+      },
+      "skipCount": {
+        "type": "int"
+      }
+    }
+  },
+  "settingsDataManagementSection": "Data Management",
+  "settingsStorageManagement": "Manage Storage",
+  "settingsStorageSection": "Storage",
+  "settingsStoragePath": "Storage Location",
+  "settingsStoragePathDialogMessage": "Files and management data are stored in the app's private area. On Android, public Documents/CharmShelf is read only when you authorize recovery of legacy data.",
+  "settingsStoragePathDialogMessageIos": "Files and management data are stored in this app's private area on your iPhone. They cannot be opened directly from the Files app. To save data elsewhere, use sharing, export, or backup.",
+  "settingsStoragePathCopy": "Copy Path",
+  "settingsStoragePathCopied": "App storage path copied to clipboard",
+  "settingsStorageSync": "Optimize Library",
+  "settingsStorageSyncSubtitle": "Apply file changes",
+  "settingsStorageSyncInfoMessage": "Checks files imported into the app again and refreshes the library with added, updated, or missing items. Your original files are not deleted.",
+  "settingsBackupGuideTitle": "Protect Your Organization Data",
+  "settingsBackupGuideSubtitle": "Review the steps, then create or restore a backup",
+  "settingsBackupGuideHeading": "Backup and Restore",
+  "settingsBackupGuideDescription": "Save charms, notes, and other organization data in a password-protected file.",
+  "settingsBackupIncludedTitle": "What Is Saved",
+  "settingsBackupIncludedBody": "Charms, notes, catalog names, favorites, sorting, and other organization data.",
+  "settingsBackupExcludedTitle": "What Is Not Saved",
+  "settingsBackupExcludedBody": "Original images, videos, audio, PDFs, Trash contents, App Lock, and general settings. Keep original files separately.",
+  "settingsBackupCreateFlowTitle": "Create a Backup",
+  "settingsBackupCreateFlowSubtitle": "Encrypt your organization data and choose where to save it",
+  "settingsBackupRestoreFlowTitle": "Restore from a Backup",
+  "settingsBackupRestoreFlowSubtitle": "Review a backup, then add its contents to your current data",
+  "settingsBackupStepPosition": "{step} / {total}",
+  "@settingsBackupStepPosition": {
+    "placeholders": {
+      "step": {
+        "type": "int"
+      },
+      "total": {
+        "type": "int"
+      }
+    }
+  },
+  "settingsBackupCreateStep1Title": "What the Backup Includes",
+  "settingsBackupCreateStep1Description": "First, review what will and will not be included in the backup.",
+  "settingsBackupCreateStep1Action": "Choose a Password",
+  "settingsBackupCreateStep2Title": "Protect the Backup",
+  "settingsBackupCreateStep2Description": "Set a password of at least 8 characters. You will need it to restore this backup.",
+  "settingsBackupCreateStep2Action": "Review Contents",
+  "settingsBackupPasswordKeepTitle": "Keep This Password Safe",
+  "settingsBackupPasswordKeepBody": "CharmShelf cannot show or reset this password. Store it somewhere you will remember.",
+  "settingsBackupCreateStep3Title": "Review What Will Be Saved",
+  "settingsBackupCreateStep3Description": "Create a file containing the organization data below, then choose where to save or share it.",
+  "settingsBackupCreateStep3Action": "Choose Save or Share Destination",
+  "settingsBackupCreateSummaryTitle": "Organization Data to Save",
+  "settingsBackupCreateSummary": "{collections} catalogs, {items} items, and {tags} charms",
+  "@settingsBackupCreateSummary": {
+    "placeholders": {
+      "collections": {
+        "type": "int"
+      },
+      "items": {
+        "type": "int"
+      },
+      "tags": {
+        "type": "int"
+      }
+    }
+  },
+  "settingsBackupCreateStep4Title": "Backup Shared",
+  "settingsBackupCreateStep4Description": "The backup file was handed to the app you selected.",
+  "settingsBackupCreateStep4UnverifiedDescription": "The backup file was handed to the share screen. Check the destination to confirm it was saved.",
+  "settingsBackupCreateStep4CheckTitle": "One Last Check",
+  "settingsBackupCreateStep4CheckBody": "Open the destination and confirm that a file beginning with tagshelf_metadata is present.",
+  "settingsBackupShareDismissed": "Saving or sharing was not completed. Choose a destination again.",
+  "settingsBackupNeedsActionTitle": "Backup Not Saved Yet",
+  "settingsBackupErrorTitle": "Please Check",
+  "settingsBackupDoneAction": "Done",
+  "settingsBackupRestoreStep1Title": "Choose a Backup File",
+  "settingsBackupRestoreStep1Description": "Choose a backup file previously created by CharmShelf.",
+  "settingsBackupRestoreStep1Action": "Choose File",
+  "settingsBackupRestoreNoChangeTitle": "Choosing a File Changes Nothing",
+  "settingsBackupRestoreNoChangeBody": "You can inspect the backup first. A final confirmation appears before current data is changed.",
+  "settingsBackupRestoreInvalidFileMessage": "This CharmShelf backup file could not be read. Your current data was not changed.",
+  "settingsBackupRestoreStep2Title": "Enter the Password",
+  "settingsBackupRestoreStep2Description": "Enter the password used when this backup was created.",
+  "settingsBackupRestoreStep2Action": "Review Backup Contents",
+  "settingsBackupSelectedFileTitle": "Selected File",
+  "settingsBackupRestorePasswordOrFileError": "The password may be incorrect or the file may be damaged. Your current data was not changed.",
+  "settingsBackupRestoreStep3Title": "Review What Will Be Added",
+  "settingsBackupRestoreStep3Description": "Your current data will not change until you confirm on this screen.",
+  "settingsBackupRestoreStep3Action": "Add to Current Data",
+  "settingsBackupRestoreCreatedAtTitle": "Backup Created",
+  "settingsBackupRestoreAppVersionTitle": "CharmShelf Version Used to Create It",
+  "settingsBackupRestoreContentsTitle": "Backup Contents",
+  "settingsBackupRestoreOverlapTitle": "Items That Overlap Current Data",
+  "settingsBackupRestoreSkippedTitle": "Items That Cannot Be Restored As-Is",
+  "settingsBackupRestoreSkippedBody": "{count} items refer to files on another device or otherwise need to be added again.",
+  "@settingsBackupRestoreSkippedBody": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "settingsBackupRestoreMergeTitle": "Your Current Data Will Remain",
+  "settingsBackupRestoreMergeBody": "Backup contents are added, and organization data for matching items is updated.",
+  "settingsBackupRestoreStep4Title": "Restore Complete",
+  "settingsBackupRestoreStep4Description": "The backup's organization data was added to your current data.",
+  "settingsBackupRestoreAddedTitle": "Added",
+  "settingsBackupRestoreAddedBody": "{collections} catalogs and {items} items",
+  "@settingsBackupRestoreAddedBody": {
+    "placeholders": {
+      "collections": {
+        "type": "int"
+      },
+      "items": {
+        "type": "int"
+      }
+    }
+  },
+  "settingsBackupRestoreUpdatedTitle": "Updated",
+  "settingsBackupRestoreUpdatedBody": "{collections} catalogs and {items} items",
+  "@settingsBackupRestoreUpdatedBody": {
+    "placeholders": {
+      "collections": {
+        "type": "int"
+      },
+      "items": {
+        "type": "int"
+      }
+    }
+  },
+  "settingsBackupRestoreCheckFilesTitle": "Check Original Files",
+  "settingsBackupRestoreCheckFilesBody": "Confirm that images, videos, and other originals open. Add the original files again for any unavailable items.",
+  "settingsBackupUnknownValue": "Unknown",
+  "settingsBackupFilesExcluded": "Original images, videos, PDFs, and other source files are not included. Export and store those files separately.",
+  "settingsBackupPasswordTitleCreate": "Encrypt Backup",
+  "settingsBackupPasswordTitleRestore": "Decrypt Backup",
+  "settingsBackupPasswordLabel": "Backup password",
+  "settingsBackupPasswordConfirmLabel": "Re-enter password",
+  "settingsBackupPasswordCreateMessage": "Management data will be encrypted with a password of at least 8 characters. This password cannot be recovered, so store it safely. Original files are not included.",
+  "settingsBackupPasswordRestoreMessage": "Enter the password used when the backup was created. The file picker will open next.",
+  "settingsBackupPasswordTooShort": "Enter at least 8 characters",
+  "settingsBackupPasswordMismatch": "Passwords do not match",
+  "settingsBackupShowPassword": "Show password",
+  "settingsBackupHidePassword": "Hide password",
+  "settingsBackupCreateAction": "Create Backup",
+  "settingsBackupSelectAction": "Select File",
+  "settingsBackupCreated": "The encrypted file was created. Confirm that it was saved at the share destination and can be opened.",
+  "settingsBackupRestorePlanTitle": "Add This Backup's Contents?",
+  "settingsBackupRestorePlanSummary": "Keep your current data and add {collections} catalogs and {items} items from the backup.",
+  "@settingsBackupRestorePlanSummary": {
+    "placeholders": {
+      "collections": {
+        "type": "int"
+      },
+      "items": {
+        "type": "int"
+      }
+    }
+  },
+  "settingsBackupRestoreConflictSummary": "{count} records point to locations already used by different data. Existing records at those locations will be updated with the backup data.",
+  "@settingsBackupRestoreConflictSummary": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "settingsBackupRestoreFilesReminder": "Original files are not restored. Entries without files may appear unavailable. External references may need permission again.",
+  "settingsBackupRestoreAction": "Add from Backup",
+  "settingsStorageExportMeta": "Save Settings Data",
+  "settingsStorageExportMetaSubtitle": "Save charms and catalog settings within the app",
+  "settingsStorageSyncSuccess": "Folder sync completed (Added: {added}, Updated: {updated}, Missing: {missing})",
+  "@settingsStorageSyncSuccess": {
+    "placeholders": {
+      "added": {
+        "type": "int"
+      },
+      "updated": {
+        "type": "int"
+      },
+      "missing": {
+        "type": "int"
+      }
+    }
+  },
+  "settingsStorageExportMetaSuccess": "Metadata exported successfully",
+  "settingsStorageSyncFailed": "Failed to sync dedicated folder",
+  "settingsStorageExportMetaFailed": "Failed to export metadata",
+  "settingsStorageExportMetaDialogTitle": "About Exporting Metadata",
+  "settingsStorageExportMetaDialogIntro": "Saves current charms, favorites, and catalog settings in the app's private storage on this device. Nothing is saved off-device.",
+  "settingsStorageExportMetaFeatureTagsTitle": "Charms & Hierarchy",
+  "settingsStorageExportMetaFeatureTagsBody": "Saves your created charms, parent-child structures, and custom color settings.",
+  "settingsStorageExportMetaFeatureSettingsTitle": "Catalog Settings & Tiers",
+  "settingsStorageExportMetaFeatureSettingsBody": "Records aliases, favorites, tiers, notes, and archive statuses.",
+  "settingsStorageExportMetaNoteSafe": "Actual files (images, PDFs, etc.) remain untouched. Only setting metadata is saved in the app's private storage.",
+  "settingsStorageExportMetaExecute": "Export Metadata",
+  "settingsStorageImportMeta": "Restore Settings Data",
+  "settingsStorageImportMetaSubtitle": "Apply saved charms and catalog settings",
+  "settingsStorageImportMetaConfirmTitle": "Import Metadata",
+  "settingsStorageImportMetaConfirmMessage": "Restore and merge charms and favorite settings from saved metadata. Proceed?",
+  "settingsStorageImportMetaDialogTitle": "About Importing Metadata",
+  "settingsStorageImportMetaDialogIntro": "Restores and applies charms and catalog settings from the internal metadata file (metadata.json) stored on this device.",
+  "settingsStorageImportMetaFeatureMergeTitle": "Safe Data Merge",
+  "settingsStorageImportMetaFeatureMergeBody": "Merges and updates charms and settings without modifying the current files.",
+  "settingsStorageImportMetaFeatureRestoreTitle": "Restore Settings",
+  "settingsStorageImportMetaFeatureRestoreBody": "Restores charm assignments, sorting preferences, and tiers for corresponding items.",
+  "settingsStorageImportMetaNoteSafe": "Actual files (images, PDFs, etc.) are not deleted or overwritten. Only settings are applied.",
+  "settingsStorageImportMetaExecute": "Import Metadata",
+  "settingsStorageImportMetaSuccess": "Metadata restored ({count} items)",
+  "@settingsStorageImportMetaSuccess": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "settingsMetadataSection": "Charms and Catalog Settings",
+  "settingsMetadataSectionBadge": "Advanced",
+  "settingsMetadataSectionDescription": "Settings are saved automatically. Here you can manually save or restore settings within the app. This is not an external backup.",
+  "settingsAdvancedGuideSubtitle": "Review what this does, then save or restore settings",
+  "settingsAdvancedGuideHeading": "Manage charm and item settings manually",
+  "settingsAdvancedGuideDescription": "Charms, favorites, and other settings are saved automatically during normal use. Use these tools only when you need to save settings within this device or apply settings saved earlier.",
+  "settingsAdvancedAutomaticTitle": "Settings are normally saved automatically",
+  "settingsAdvancedAutomaticBody": "Charms, catalog aliases, favorites, tiers, notes, and sort order are saved whenever you change them. You do not need to run these actions routinely.",
+  "settingsAdvancedBackupDifferenceTitle": "This is not a backup",
+  "settingsAdvancedBackupDifferenceBody": "Saved settings stay in this app's private area on the same device. Original images, videos, and PDFs are not included, and this does not protect against device failure or app removal.",
+  "settingsAdvancedExportActionDescription": "Save the current charms and item settings in this app's private area on the same device",
+  "settingsAdvancedImportActionDescription": "Merge settings previously saved on this device into the current settings",
+  "settingsStorageMetaDialogAdvancedNote": "Normally, this is managed automatically. Saving within the app does not create an external backup.",
+  "settingsStorageImportMetaFailed": "Failed to import metadata",
+  "settingsStorageImportMetaNotFound": "Metadata file not found",
+  "settingsFolderManagement": "Folder Management",
+  "settingsFolderManagementSubtitle": "Enable creating and managing folder hierarchies in library",
+  "settingsArchiveSubtitle": "View and restore temporarily hidden files and folders",
+  "settingsTrashSubtitle": "View, restore, or permanently delete removed items",
+  "settingsStorageClear": "Clear Storage",
+  "settingsStorageClearSubtitle": "Erase private in-app files and the database",
+  "settingsStorageClearDialogTitle1": "Clear Storage?",
+  "settingsStorageClearDialogIntro1": "In-app files and records will be erased. Original external files are not deleted.",
+  "settingsStorageClearFeatureFilesTitle": "Delete In-App Files",
+  "settingsStorageClearFeatureFilesBody": "Images, PDFs, videos, and other files copied into the app are deleted.",
+  "settingsStorageClearFeatureDbTitle": "Erase Records",
+  "settingsStorageClearFeatureDbBody": "Catalogs, charms, favorites, and history are erased. Settings remain.",
+  "settingsStorageClearNoteWarning": "Erased in-app data cannot be restored.",
+  "settingsStorageClearFinalTitle": "Are You Sure You Want to Clear Storage?",
+  "settingsStorageClearFinalMessage": "In-app data will be erased and cannot be restored.",
+  "settingsStorageClearFinalExecute": "Continue to Erase",
+  "settingsStorageRestoreLegacy": "Move from an Earlier Android Version",
+  "settingsStorageRestoreLegacySubtitle": "Copy files remaining in Documents/CharmShelf",
+  "settingsStorageRestoreLegacyInfoMessage": "Copies files saved by an earlier Android version of CharmShelf in Documents/CharmShelf into the current app. This is separate from restoring a backup file. The original files in Documents/CharmShelf are not deleted.",
+  "settingsStorageClearCountdownTitle": "Preparing to Clear Storage",
+  "settingsStorageClearCountdownSeconds": "Starting deletion in {seconds}s...",
+  "@settingsStorageClearCountdownSeconds": {
+    "placeholders": {
+      "seconds": {
+        "type": "int"
+      }
+    }
+  },
+  "settingsStorageClearCountdownMessage": "You can still cancel right now!",
+  "settingsStorageClearDeletingTitle": "Clearing Storage...",
+  "settingsStorageClearDeletingMessage": "Deleting files and database. Please wait...",
+  "settingsStorageClearCancelNow": "Cancel Immediately",
+  "settingsStorageClearCancelled": "Storage clearing was cancelled",
+  "settingsStorageClearExecute": "Erase",
+  "settingsStorageClearSuccess": "Storage cleared successfully",
+  "settingsStorageClearFailed": "Failed to clear storage",
+  "settingsStorageClearRetryMessage": "Cleanup is not complete yet. Retry until it finishes safely. If you close the app, cleanup will resume automatically on the next launch.",
+  "settingsTip": "Support the Developer",
+  "settingsTipSubtitle": "Buy the developer a juice, coffee, or ramen",
+  "tipPageTitle": "Support the Developer",
+  "tipPageHeading": "Support CharmShelf",
+  "tipPageDescription": "If you enjoy CharmShelf, you can buy the developer a drink or meal to support continued development. Tips do not unlock any features.",
+  "tipJuice": "One Juice",
+  "tipCoffee": "One Coffee",
+  "tipRamen": "One Ramen",
+  "tipConfirmTitle": "Confirm Your Tip",
+  "tipConfirmMessage": "Purchase {item} ({price})?",
+  "@tipConfirmMessage": {
+    "placeholders": {
+      "item": {
+        "type": "String"
+      },
+      "price": {
+        "type": "String"
+      }
+    }
+  },
+  "tipConfirmPurchase": "Continue to Purchase",
+  "tipPurchaseNotice": "Tips are one-time consumable purchases. They do not unlock features or renew automatically. Consumed tips cannot be restored. Check your purchase history and request refunds through the App Store or Google Play.",
+  "tipPurchaseThankYou": "Thank you for your support!",
+  "tipPurchaseCanceled": "Purchase canceled",
+  "tipPurchaseFailed": "The purchase could not be completed",
+  "tipPurchaseUnconfirmed": "The store could not confirm completion. Please check your purchase history.",
+  "tipStoreUnavailable": "Store product information is unavailable. Please try again later.",
+  "tipPriceUnavailable": "Price unavailable",
+  "libraryBackupTitle": "Library backup",
+  "libraryBackupDescription": "Save and restore your files and organization together.",
+  "libraryBackupCoverage": "Includes files, charms and categories, notes, favorites, viewing history, hidden and archived items, and trash. Passcodes and device access permissions are excluded.",
+  "libraryBackupPrivacy": "The backup includes hidden content and is not encrypted. Choose a location you control. Nothing is uploaded automatically.",
+  "libraryBackupCreate": "Save backup",
+  "libraryBackupChoose": "Restore from backup",
+  "libraryBackupCreating": "Creating backup…",
+  "libraryBackupValidating": "Checking backup…",
+  "libraryBackupSaving": "Saving to your chosen location…",
+  "libraryBackupRestoring": "Adding to your library…",
+  "libraryBackupRestorePreview": "Review restore",
+  "libraryBackupRestoreExplanation": "Add the restored library to a dedicated folder named by the backup date. Existing data with the same identity is skipped, and current files and edits are preserved. The original backup is unchanged.",
+  "libraryBackupRestoreConfirm": "Add this backup to my library",
+  "libraryBackupCompleted": "Backup saved",
+  "libraryBackupRestoreCompleted": "Restored. Added {added} items; kept {skipped} existing items.",
+  "libraryBackupSummary": "{files} files · {tags} charms · {size}",
+  "libraryBackupFailed": "Could not finish. Check free space and access to the destination, then try again. Your current library was not overwritten.",
+  "libraryBackupInvalid": "Could not verify the backup. Choose a complete backup created by CharmShelf. Your library has not changed.",
+  "libraryBackupExternal": "Some files still use external references. Copy them into the app before backing up the whole library.",
+  "libraryBackupCancel": "Cancel operation",
+  "libraryBackupCancelPreview": "Return without adding",
+  "libraryBackupChooseDestination": "Choose a backup location",
+  "@libraryBackupRestoreCompleted": {
+    "placeholders": {
+      "added": {
+        "type": "int"
+      },
+      "skipped": {
+        "type": "int"
+      }
+    }
+  },
+  "@libraryBackupSummary": {
+    "placeholders": {
+      "files": {
+        "type": "int"
+      },
+      "tags": {
+        "type": "int"
+      },
+      "size": {
+        "type": "String"
+      }
+    }
+  },
+  "libraryBackupFolderName": "Restored {date}",
+  "@libraryBackupFolderName": {
+    "placeholders": {
+      "date": {
+        "type": "String"
+      }
+    }
+  },
+  "libraryBackupCleanupIncomplete": "Restoration is complete. Temporary files could not be removed. Your saved backup and restored library are ready to use.",
+  "libraryBackupHowItWorks": "How Backup Works",
+  "libraryBackupHowItWorksSubtitle": "Bundle all your app data into a single \".tagshelf\" file to save and safely restore anytime.",
+  "libraryBackupDiagramLibrary": "CharmShelf Library",
+  "libraryBackupDiagramArchive": "Single File (.tagshelf)",
+  "libraryBackupDiagramSave": "Bundle & Save",
+  "libraryBackupDiagramRestore": "Safely Restore",
+  "libraryBackupSaveCardTitle": "Export library",
+  "libraryBackupSaveCardDescription": "Export all your photos, videos, charms, and notes into a single file. Choose a location on your device or external storage to save.",
+  "libraryBackupRestoreCardTitle": "Import library",
+  "libraryBackupRestoreCardDescription": "Choose a previously saved \".tagshelf\" file to add back to your library. Existing files are never overwritten.",
+  "libraryBackupIncludedTitle": "What is included in a backup",
+  "libraryBackupIncludedFilesTitle": "Files & covers",
+  "libraryBackupIncludedFilesSubtitle": "Files, folder structure, covers, and thumbnails",
+  "libraryBackupIncludedCharmsTitle": "Charms & notes",
+  "libraryBackupIncludedCharmsSubtitle": "Charms, categories, titles, notes, and aliases",
+  "libraryBackupIncludedStatusTitle": "Usage state",
+  "libraryBackupIncludedStatusSubtitle": "Favorites, pins, and viewing history",
+  "libraryBackupIncludedHiddenTitle": "Hidden & trash",
+  "libraryBackupIncludedHiddenSubtitle": "Includes hidden, archived, and trashed contents",
+  "libraryBackupExcludedNotice": "※ Passcodes, device permissions, and app settings are excluded.",
+  "libraryBackupSafetyTitle": "Safe by design: No overwriting",
+  "libraryBackupSafetyDescription": "Restoring adds items into a new dedicated folder (e.g. \"Restored Date\"). Current files and edits will never be overwritten or lost.",
+  "libraryBackupNoticeTitle": "Important notes",
+  "libraryBackupNoticeManual": "No automatic cloud sync. Please create backups manually on a regular basis.",
+  "libraryBackupNoticeExternal": "Cannot save if external reference files exist. Please copy them into the app first.",
+  "libraryBackupRestorePreviewSubtitle": "Backup file verified. Ready to add safely to your library.",
+  "libraryBackupMetricFiles": "Files",
+  "libraryBackupMetricCharms": "Charms",
+  "libraryBackupMetricSize": "Size",
+  "libraryBackupMetricDate": "Created"
+}

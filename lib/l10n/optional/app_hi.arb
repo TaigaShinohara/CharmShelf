@@ -1,0 +1,109 @@
+{
+  "@@locale": "hi",
+  "appTitle": "टेम्पलेट ऐप",
+  "homeTitle": "होम",
+  "settingsTitle": "सेटिंग्स",
+  "commonOk": "ठीक है",
+  "commonCancel": "रद्द करें",
+  "commonYes": "हाँ",
+  "commonNo": "नहीं",
+  "commonRetry": "पुनः प्रयास करें",
+  "commonEmptyTitle": "कोई आइटम नहीं",
+  "commonErrorOccurred": "कुछ गलत हो गया",
+  "avatarActionTitle": "प्रोफ़ाइल फ़ोटो",
+  "avatarActionTakePhoto": "फ़ोटो लें",
+  "avatarActionChooseFromLibrary": "लाइब्रेरी से चुनें",
+  "avatarActionRemove": "फ़ोटो हटाएं",
+  "avatarTapToChange": "बदलने के लिए टैप करें",
+  "avatarRemoveTitle": "फ़ोटो हटाएं?",
+  "avatarRemoveMessage": "इससे आपकी प्रोफ़ाइल फ़ोटो हट जाएगी।",
+  "relativeJustNow": "अभी",
+  "relativeMinutesAgo": "{minutes} मिनट पहले",
+  "@relativeMinutesAgo": {
+    "placeholders": {
+      "minutes": {
+        "type": "int"
+      }
+    }
+  },
+  "relativeHoursAgo": "{hours} घंटे पहले",
+  "@relativeHoursAgo": {
+    "placeholders": {
+      "hours": {
+        "type": "int"
+      }
+    }
+  },
+  "relativeDaysAgo": "{days} दिन पहले",
+  "@relativeDaysAgo": {
+    "placeholders": {
+      "days": {
+        "type": "int"
+      }
+    }
+  },
+  "relativeYesterdayAt": "कल {time}",
+  "@relativeYesterdayAt": {
+    "placeholders": {
+      "time": {
+        "type": "String"
+      }
+    }
+  },
+  "validationRequired": "आवश्यक",
+  "validationMinLength": "कम से कम {min} वर्ण होने चाहिए",
+  "@validationMinLength": {
+    "placeholders": {
+      "min": {
+        "type": "int"
+      }
+    }
+  },
+  "validationMaxLength": "अधिकतम {max} वर्ण होने चाहिए",
+  "@validationMaxLength": {
+    "placeholders": {
+      "max": {
+        "type": "int"
+      }
+    }
+  },
+  "validationInvalidEmail": "अमान्य ईमेल पता",
+  "validationInvalidNumber": "अमान्य संख्या",
+  "validationMinValueInt": "{min} या अधिक होना चाहिए",
+  "@validationMinValueInt": {
+    "placeholders": {
+      "min": {
+        "type": "int"
+      }
+    }
+  },
+  "validationMaxValueInt": "{max} या कम होना चाहिए",
+  "@validationMaxValueInt": {
+    "placeholders": {
+      "max": {
+        "type": "int"
+      }
+    }
+  },
+  "validationMinValueDouble": "{min} या अधिक होना चाहिए",
+  "@validationMinValueDouble": {
+    "placeholders": {
+      "min": {
+        "type": "double"
+      }
+    }
+  },
+  "validationMaxValueDouble": "{max} या कम होना चाहिए",
+  "@validationMaxValueDouble": {
+    "placeholders": {
+      "max": {
+        "type": "double"
+      }
+    }
+  },
+  "imageSaveFailed": "छवि सहेजने में विफल",
+  "imageDeleteFailed": "छवि हटाने में विफल",
+  "unsavedDataDialogTitle": "परिवर्तन छोड़ें?",
+  "unsavedDataDialogMessage": "आपके पास सहेजे नहीं गए परिवर्तन हैं। यदि आप अभी छोड़ते हैं, तो आपके परिवर्तन खो जाएंगे।",
+  "unsavedDataDialogDiscard": "छोड़ें"
+}

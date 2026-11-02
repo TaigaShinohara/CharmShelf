@@ -1,0 +1,109 @@
+{
+  "@@locale": "pt",
+  "appTitle": "Aplicativo Modelo",
+  "homeTitle": "Início",
+  "settingsTitle": "Configurações",
+  "commonOk": "OK",
+  "commonCancel": "Cancelar",
+  "commonYes": "Sim",
+  "commonNo": "Não",
+  "commonRetry": "Tentar novamente",
+  "commonEmptyTitle": "Nenhum item",
+  "commonErrorOccurred": "Algo deu errado",
+  "avatarActionTitle": "Foto do perfil",
+  "avatarActionTakePhoto": "Tirar uma foto",
+  "avatarActionChooseFromLibrary": "Escolher da biblioteca",
+  "avatarActionRemove": "Remover foto",
+  "avatarTapToChange": "Toque para alterar",
+  "avatarRemoveTitle": "Remover foto?",
+  "avatarRemoveMessage": "Isso removerá sua foto de perfil.",
+  "relativeJustNow": "agora mesmo",
+  "relativeMinutesAgo": "{minutes, plural, =1{há 1 minuto} other{há {minutes} minutos}}",
+  "@relativeMinutesAgo": {
+    "placeholders": {
+      "minutes": {
+        "type": "int"
+      }
+    }
+  },
+  "relativeHoursAgo": "{hours, plural, =1{há 1 hora} other{há {hours} horas}}",
+  "@relativeHoursAgo": {
+    "placeholders": {
+      "hours": {
+        "type": "int"
+      }
+    }
+  },
+  "relativeDaysAgo": "{days, plural, =1{há 1 dia} other{há {days} dias}}",
+  "@relativeDaysAgo": {
+    "placeholders": {
+      "days": {
+        "type": "int"
+      }
+    }
+  },
+  "relativeYesterdayAt": "Ontem às {time}",
+  "@relativeYesterdayAt": {
+    "placeholders": {
+      "time": {
+        "type": "String"
+      }
+    }
+  },
+  "validationRequired": "Obrigatório",
+  "validationMinLength": "Deve ter pelo menos {min} caracteres",
+  "@validationMinLength": {
+    "placeholders": {
+      "min": {
+        "type": "int"
+      }
+    }
+  },
+  "validationMaxLength": "Deve ter no máximo {max} caracteres",
+  "@validationMaxLength": {
+    "placeholders": {
+      "max": {
+        "type": "int"
+      }
+    }
+  },
+  "validationInvalidEmail": "Endereço de e-mail inválido",
+  "validationInvalidNumber": "Número inválido",
+  "validationMinValueInt": "Deve ser >= {min}",
+  "@validationMinValueInt": {
+    "placeholders": {
+      "min": {
+        "type": "int"
+      }
+    }
+  },
+  "validationMaxValueInt": "Deve ser <= {max}",
+  "@validationMaxValueInt": {
+    "placeholders": {
+      "max": {
+        "type": "int"
+      }
+    }
+  },
+  "validationMinValueDouble": "Deve ser >= {min}",
+  "@validationMinValueDouble": {
+    "placeholders": {
+      "min": {
+        "type": "double"
+      }
+    }
+  },
+  "validationMaxValueDouble": "Deve ser <= {max}",
+  "@validationMaxValueDouble": {
+    "placeholders": {
+      "max": {
+        "type": "double"
+      }
+    }
+  },
+  "imageSaveFailed": "Falha ao salvar a imagem",
+  "imageDeleteFailed": "Falha ao excluir a imagem",
+  "unsavedDataDialogTitle": "Descartar alterações?",
+  "unsavedDataDialogMessage": "Você tem alterações não salvas. Se sair agora, suas alterações serão perdidas.",
+  "unsavedDataDialogDiscard": "Descartar"
+}
