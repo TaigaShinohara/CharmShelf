@@ -1,0 +1,127 @@
+# Miscellaneous
+*.class
+*.log
+*.pyc
+*.swp
+.DS_Store
+.atom/
+.build/
+.buildlog/
+.history
+.svn/
+.swiftpm/
+migrate_working_dir/
+
+# IntelliJ related
+*.iml
+*.ipr
+*.iws
+.idea/
+
+# The .vscode folder contains launch configuration and tasks you configure in
+# VS Code which you may wish to be included in version control, so this line
+# is commented out by default.
+#.vscode/
+
+# Flutter/Dart/Pub related
+**/doc/api/
+**/ios/Flutter/.last_build_id
+.dart_tool/
+.flutter-plugins-dependencies
+.pub-cache/
+.pub/
+/vendor/bundle/
+/.bundle/
+/.fastlane/
+/build/
+/coverage/
+
+# Symbolication related
+app.*.symbols
+
+# Obfuscation related
+app.*.map.json
+
+# Android Studio will place build artifacts here
+/android/app/debug
+/android/app/profile
+/android/app/release
+
+# Secrets / local configs (テンプレ共通で除外)
+**/*.jks
+**/*.keystore
+**/key.properties
+**/.env
+**/.env.*
+fastlane/google_play_service_account.json
+google_play_service_account.json
+
+# iOS
+ios/Pods/
+ios/.symlinks/
+ios/Flutter/ephemeral/
+ios/Runner.xcworkspace/xcuserdata/
+ios/Runner.xcodeproj/xcuserdata/
+ios/Runner.xcodeproj/project.xcworkspace/xcuserdata/
+
+# Android
+android/.gradle/
+android/.kotlin/
+android/local.properties
+android/captures/
+android/.cxx/
+**/.gradle/
+**/build/
+
+# Generated files
+# 依存パッチの公開APIソース。アプリ側のbuild_runnerでは生成されない。
+!patches/image_picker_ios/lib/src/messages.g.dart
+!patches/local_auth_darwin/lib/src/messages.g.dart
+*.mocks.dart
+lib/gen_l10n/
+
+# Isar & Native Binaries
+*.isar
+*.isar.lock
+*.dylib
+*.so
+*.dll
+
+# Analysis reports & logs
+analyze_report*.txt
+analysis_output*.txt
+analyzer_*.txt
+untranslated.json
+
+# macOS
+*.dmg
+*.pkg
+macos/Flutter/ephemeral/
+macos/Pods/
+
+# Test
+coverage/
+
+# IDE
+# Cursorの設定フォルダ全体は基本除外。ただしProject Rules（.cursor/rules）は共有したいので例外扱いにする。
+.cursor/*
+!.cursor/rules/
+!.cursor/rules/**
+!.cursor/skills/
+!.cursor/skills/**
+*.code-workspace
+
+# Local 1Password references.
+auth/*.local.json
+
+# Public snapshot: generated native dependencies must remain redistributable.
+!patches/isar_flutter_libs/**/*.so
+!patches/isar_flutter_libs/**/*.dylib
+!patches/isar_flutter_libs/**/*.dll
+# Never publish private editor/agent state or local verification assets.
+.agents/
+.audit/
+.codex/
+.cursor/
+.kiro/
+.vscode/
