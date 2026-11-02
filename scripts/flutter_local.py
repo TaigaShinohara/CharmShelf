@@ -4,6 +4,29 @@ import argparse, json, os
 from pathlib import Path
 import platform, shutil, subprocess, tempfile
 ROOT=Path(__file__).resolve().parents[1]
+def java_is_usable(home):
+    binary=Path(home)/"bin/java"
+    if not binary.is_file(): return False
+    try:
+        return subprocess.run([str(binary),"-version"],stdout=subprocess.DEVNULL,stderr=subprocess.DEVNULL,timeout=15).returncode==0
+    except (OSError,subprocess.TimeoutExpired):
+        return False
+
+def system_java_home():
+    if platform.system()=="Darwin":
+        result=subprocess.run(["/usr/libexec/java_home","-v","17"],capture_output=True,text=True,timeout=15)
+        return result.stdout.strip() if result.returncode==0 else None
+    binary=shutil.which("java")
+    return str(Path(binary).resolve().parent.parent) if binary else None
+
+def select_java_home(explicit,inherited):
+    if explicit:
+        if not java_is_usable(explicit): raise SystemExit("The explicit JDK cannot execute; choose a compatible --java-home")
+        return str(Path(explicit).resolve())
+    if inherited and java_is_usable(inherited): return str(Path(inherited).resolve())
+    discovered=system_java_home()
+    return str(Path(discovered).resolve()) if discovered and java_is_usable(discovered) else None
+
 def main():
     parser=argparse.ArgumentParser(description=__doc__,allow_abbrev=False)
     parser.add_argument("--java-home")
@@ -17,14 +40,9 @@ def main():
         raise SystemExit("This optional isolated wrapper supports macOS/Linux; use Flutter directly on other hosts")
     if (Path.home()/".flutter_settings").is_file():
         raise SystemExit("Legacy home Flutter settings override process isolation. Review them yourself; this script will not change global settings.")
-    java=args.java_home or os.environ.get("JAVA_HOME")
-    if not java and platform.system()=="Darwin":
-        result=subprocess.run(["/usr/libexec/java_home","-v","17"],capture_output=True,text=True)
-        if result.returncode==0: java=result.stdout.strip()
+    java=select_java_home(args.java_home,os.environ.get("JAVA_HOME"))
     config={}
-    if java:
-        if not (Path(java)/"bin/java").is_file():raise SystemExit("Selected JDK is missing bin/java")
-        config["jdk-dir"]=str(Path(java).resolve())
+    if java: config["jdk-dir"]=java
     android=args.android_sdk or os.environ.get("ANDROID_SDK_ROOT") or os.environ.get("ANDROID_HOME")
     if not android and platform.system()=="Darwin" and (Path.home()/"Library/Android/sdk").is_dir():
         android=str(Path.home()/"Library/Android/sdk")
@@ -34,5 +52,6 @@ def main():
         environment=os.environ.copy();environment["XDG_CONFIG_HOME"]=temporary
         environment["PATH"]=str(Path(executable).parent)+os.pathsep+environment.get("PATH","")
         if java:environment["JAVA_HOME"]=java
+        else:environment.pop("JAVA_HOME",None)
         raise SystemExit(subprocess.run([executable,*command],cwd=ROOT,env=environment).returncode)
 if __name__=="__main__":main()

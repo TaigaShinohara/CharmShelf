@@ -7,7 +7,7 @@ Validated on 2026-11-02 with Flutter 3.47.9 / Dart 3.13.7 on macOS. The checks d
 | Credential-free setup and code generation | Passed with a fresh public workspace and locally provisioned SDK |
 | Flutter static analysis | Passed, no issues |
 | Full Flutter suite, including golden comparisons | 1,965 passed |
-| Python script regression suites | 23 + 67 passed |
+| Python script regression suites | 23 + 70 passed |
 | Audit patterns and architecture boundaries | Passed |
 | Dependency patch / Isar code-generation provenance | Passed |
 | Dependency license reproduction | 382 entries, including native/PDFium/libmdbx notices; removed PDF SDK absent |
@@ -22,7 +22,7 @@ The Android APK check distinguishes 64-bit 16KB requirements from legacy ARMv7's
 
 The iOS dependency server timed out during initial SwiftPM resolution. The official PDFium XCFramework archive was separately downloaded and matched the checksum declared by its upstream package, then reused in the project-local cache. No package source, pinned checksum, signing identity, or global setting was changed to make the build pass.
 
-A local stale Intel JDK setting was bypassed using temporary process settings with an installed ARM JDK 17. The optional `scripts/flutter_local.py` provides this isolated workflow without changing global Flutter settings.
+A local stale Intel JDK setting was bypassed using temporary process settings with an installed ARM JDK 17. An additional 3 regression tests verify automatic fallback from an unusable inherited JDK while preserving an explicit valid choice and the parent environment. The optional `scripts/flutter_local.py` provides this isolated workflow without changing global Flutter settings.
 
 The README previews use actual widgets with synthetic data. They are not physical-device screenshots. Golden baselines were regenerated for the public branding and then passed in the complete test run. Old failed-comparison artifacts are excluded.
 
