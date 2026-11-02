@@ -1,0 +1,135 @@
+# Keep every built-in rule. Narrow suppressions below apply only to the
+# generic heuristic and exact, reviewed public constants or source digests.
+# Changing a value, adding a credential to the same file/line, or matching a
+# provider-specific secret rule is not covered by these exceptions.
+[extend]
+useDefault = true
+
+[[rules]]
+id = "generic-api-key"
+
+[[rules.allowlists]]
+description = "Reviewed secure-storage namespace/algorithm identifiers or synthetic fixture"
+condition = "AND"
+regexTarget = "line"
+paths = ['''(?:^|/)patches/flutter_secure_storage/android/src/main/java/com/it_nomads/fluttersecurestorage/ciphers/StorageCipherImplementationAES23\.java$''']
+regexes = [
+  '''^\s*private static final String KEYSTORE_IV_NAME = "BVGhpcyBpcyB0aGUga2V5IGZvciBhIHNlY3VyZSBzdG9yYWdlIEFFUyBLZXkK";\s*$''',
+]
+
+[[rules.allowlists]]
+description = "Reviewed secure-storage namespace/algorithm identifiers or synthetic fixture"
+condition = "AND"
+regexTarget = "line"
+paths = ['''(?:^|/)patches/flutter_secure_storage/android/src/main/java/com/it_nomads/fluttersecurestorage/UpgradeInspector\.java$''']
+regexes = [
+  '''^\s*private static final String GCM_WRAPPED_KEY = "AESVGhpcyBpcyB0aGUga2V5IGZvciBhIHNlY3VyZSBzdG9yYWdlIEFFUyBLZXkK";\s*$''',
+]
+
+[[rules.allowlists]]
+description = "Reviewed SHA-256 source digests"
+condition = "AND"
+regexTarget = "line"
+paths = ['''(?:^|/)patches/flutter_secure_storage/UPSTREAM_SHA256\.json$''']
+regexes = [
+  '''^\s*"android/src/main/java/com/it_nomads/fluttersecurestorage/ciphers/LegacyNamespaceKeyRecovery\.java": "794f9eefe8216c6469f7bbee91416d77007217b3c4c261e927af0ce9bf1f2ece",\s*$''',
+  '''^\s*"android/src/main/java/com/it_nomads/fluttersecurestorage/ciphers/BiometricNamespaceKeyRecovery\.java": "6677f96c9eb089827b1fa10597276a5b39ed0f46295ecbaefd31f7c3dfa6db35",\s*$''',
+  '''^\s*"android/src/main/java/com/it_nomads/fluttersecurestorage/ciphers/KeyCipherFunction\.java": "78b0ef9bb0822d467f98775f80e02445bbc85b033c0b0c794e12d398750982f2",\s*$''',
+  '''^\s*"android/src/main/java/com/it_nomads/fluttersecurestorage/ciphers/KeyCipherAlgorithm\.java": "d34543f68197d7d55d1b542331dbbd0ff1231e87ecd9e79d1494c4e27ca32009",\s*$''',
+  '''^\s*"android/src/main/java/com/it_nomads/fluttersecurestorage/ciphers/KeyCipher\.java": "93bacae5ab581d30ee021f236b4d012a3a2a6f4d2bae57dd14959b3d0d0822e6",\s*$''',
+]
+
+[[rules.allowlists]]
+description = "Reviewed secure-storage namespace/algorithm identifiers or synthetic fixture"
+condition = "AND"
+regexTarget = "line"
+paths = ['''(?:^|/)patches/flutter_secure_storage/android/src/main/java/com/it_nomads/fluttersecurestorage/ciphers/StorageCipherImplementationGCM\.java$''']
+regexes = [
+  '''^\s*private static final String SHARED_PREFERENCES_KEY = "AESVGhpcyBpcyB0aGUga2V5IGZvciBhIHNlY3VyZSBzdG9yYWdlIEFFUyBLZXkK";\s*$''',
+]
+
+[[rules.allowlists]]
+description = "Reviewed secure-storage namespace/algorithm identifiers or synthetic fixture"
+condition = "AND"
+regexTarget = "line"
+paths = ['''(?:^|/)patches/flutter_secure_storage/android/src/test/java/com/it_nomads/fluttersecurestorage/LegacyStorageMigrationTest\.java$''']
+regexes = [
+  '''^\s*Map<String, Object> oldData = Map\.of\(key, "RSA_ECB_PKCS1Padding"\);\s*$''',
+  '''^\s*Map<String, Object> global = Map\.of\(key, "RSA_ECB_OAEPwithSHA_256andMGF1Padding"\);\s*$''',
+]
+
+[[rules.allowlists]]
+description = "Reviewed secure-storage namespace/algorithm identifiers or synthetic fixture"
+condition = "AND"
+regexTarget = "line"
+paths = ['''(?:^|/)patches/flutter_secure_storage/android/src/test/java/com/it_nomads/fluttersecurestorage/ciphers/LegacyNamespaceKeyRecoveryTest\.java$''']
+regexes = [
+  '''^\s*private static final String KEY_PREFIX = "VGhpcyBpcyB0aGUgcHJlZml4IGZvciBhIHNlY3VyZSBzdG9yYWdlCg";\s*$''',
+  '''^\s*private static final String SAMPLE_KEY_BASE64 = "AAECAwQFBgcICQoLDA0ODw==";\s*$''',
+]
+
+[[rules.allowlists]]
+description = "Reviewed secure-storage namespace/algorithm identifiers or synthetic fixture"
+condition = "AND"
+regexTarget = "line"
+paths = ['''(?:^|/)patches/flutter_secure_storage/android/src/test/java/com/it_nomads/fluttersecurestorage/ciphers/BiometricNamespaceKeyRecoveryTest\.java$''']
+regexes = [
+  '''^\s*private static final String KEY_PREFIX = "VGhpcyBpcyB0aGUgcHJlZml4IGZvciBhIHNlY3VyZSBzdG9yYWdlCg";\s*$''',
+]
+
+[[rules.allowlists]]
+description = "Reviewed secure-storage namespace/algorithm identifiers or synthetic fixture"
+condition = "AND"
+regexTarget = "line"
+paths = ['''(?:^|/)patches/flutter_secure_storage/android/src/main/java/com/it_nomads/fluttersecurestorage/FlutterSecureStorageConfig\.java$''']
+regexes = [
+  '''^\s*private static final String DEFAULT_KEY_PREFIX = "VGhpcyBpcyB0aGUgcHJlZml4IGZvciBhIHNlY3VyZSBzdG9yYWdlCg";\s*$''',
+  '''^\s*private static final String DEFAULT_KEY_CIPHER_ALGORITHM = "RSA_ECB_OAEPwithSHA_256andMGF1Padding";\s*$''',
+]
+
+[[rules.allowlists]]
+description = "Reviewed secure-storage namespace/algorithm identifiers or synthetic fixture"
+condition = "AND"
+regexTarget = "line"
+paths = ['''(?:^|/)patches/flutter_secure_storage/android/src/main/java/com/it_nomads/fluttersecurestorage/LegacyStorageMigration\.java$''']
+regexes = [
+  '''^\s*static final String CBC_WRAPPED_KEY = "VGhpcyBpcyB0aGUga2V5IGZvciBhIHNlY3VyZSBzdG9yYWdlIEFFUyBLZXkK";\s*$''',
+  '''^\s*static final String LEGACY_V9_GCM_WRAPPED_KEY = "VGhpcyBpcyB0aGUga2V5IGZvcihBIHNlY3XyZZBzdG9yYWdlIEFFUyBLZXkK";\s*$''',
+  '''^\s*private static final String CURRENT_KEY = "RSA_ECB_OAEPwithSHA_256andMGF1Padding";\s*$''',
+  '''^\s*if \(keyAlgorithm == null\) keyAlgorithm = "RSA_ECB_PKCS1Padding";\s*$''',
+]
+
+[[rules.allowlists]]
+description = "Reviewed secure-storage namespace/algorithm identifiers or synthetic fixture"
+condition = "AND"
+regexTarget = "line"
+paths = ['''(?:^|/)patches/flutter_secure_storage/android/src/androidTest/java/com/it_nomads/fluttersecurestorage/LegacyStorageMigrationInstrumentedTest\.java$''']
+regexes = [
+  '''^\s*editor\.putString\(KEY_ALGORITHM, "RSA_ECB_PKCS1Padding"\);\s*$''',
+]
+
+[[rules.allowlists]]
+description = "Reviewed SHA-256 source digests"
+condition = "AND"
+regexTarget = "line"
+paths = ['''(?:^|/)scripts/maintenance/path_override_upstream_hashes\.json$''']
+regexes = [
+  '''^\s*"windows/include/share_plus/share_plus_windows_plugin_c_api\.h": "87319df03dee082198895f8fe9966290288f8a304ea532ba502875ec4d5ce386",\s*$''',
+  '''^\s*"windows/share_plus_plugin_c_api\.cpp": "2591525d1d22e8246afa916488206f43a3a04d120fb50a334e9a7c15cf5ff537",\s*$''',
+  '''^\s*"lib/local_auth_darwin\.dart": "6b29ec64fe55a84b9679581d0b6f9e94cdafdd4b6777b94938d8d684fe1d5372",\s*$''',
+  '''^\s*"lib/types/auth_messages_ios\.dart": "f62acf40a76c612a6cc9939b8a05a35bf6a2f02530baae5bb3a5e717df779334",\s*$''',
+  '''^\s*"lib/types/auth_messages_macos\.dart": "ba834e6ade56b7a471711494e53e155bd898e65ac4511b06584a1532ea64e93b",\s*$''',
+  '''^\s*"darwin/local_auth_darwin/Sources/local_auth_darwin/LocalAuthPlugin\.swift": "0ff299c814ec73342ebab9ad471a29ebd07f0b2ee379bbf43a8595e5929913df",\s*$''',
+  '''^\s*"darwin/local_auth_darwin\.podspec": "fa0f5cb4535bd1b46ed1f3799e5c3f3af224c34ad83b62b8cf0a07b3aadca061",\s*$''',
+  '''^\s*"darwin/Tests/FLALocalAuthPluginTests\.swift": "940d0f9ed483749b723d8c3deb1476668a3bc5dc7d64aaf6ab7e69110c37a505"\s*$''',
+  '''^\s*"src/include/analyze_snapshot_api\.h": "d69d90f0df8c62d4e739e15f2e767041b31514c1aef0bd0f889d8591a47a466e",\s*$''',
+  '''^\s*"src/include/bin/dart_io_api\.h": "f573093d2e2285ea425bca8031560d61c3733beaf305aaa8b2bc7d839ffab444",\s*$''',
+  '''^\s*"src/include/bin/native_assets_api\.h": "e5bbc48db0f50b855b2fd0646c2cb7a099403fb97b93b419a8f25362fb35f09f",\s*$''',
+  '''^\s*"src/include/dart_api\.h": "d4ad740c9c1ee738e01c89b316dba2a8b8c18d5b4e398b6ea4ffc3686b7feb50",\s*$''',
+  '''^\s*"src/include/dart_api_dl\.c": "23ff1b8b9d84bce314a3bd1010d36f1542bf6b618ab220ee8bea48cc7f8c71e4",\s*$''',
+  '''^\s*"src/include/dart_api_dl\.h": "4c511af841eb61754315b6f60056493f5d29a600b9c9e525add6765912b52ba3",\s*$''',
+  '''^\s*"src/include/dart_embedder_api\.h": "a40adedec18931e5c6695d8e9acfacd705fa268e9630defaefbf17d148b98c30",\s*$''',
+  '''^\s*"src/include/dart_native_api\.h": "13b9236aba0a53a04640d74c3cd22e574503b04441578221ddb732a4054254b1",\s*$''',
+  '''^\s*"src/include/dart_tools_api\.h": "5b10b8fb3db7d1d6cd14d164ef5d94fcd86cd21148baf9784db0186947db3658",\s*$''',
+  '''^\s*"src/include/internal/dart_api_dl_impl\.h": "5b54388565d2e363fa760bdd847b33242cc4d9eb0167fa03fbaa8b2778581c57",\s*$''',
+]

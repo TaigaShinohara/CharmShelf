@@ -1,0 +1,5 @@
+"NSCameraUsageDescription" = "ライブラリに取り込む写真や動画を直接撮影するためにカメラを使用します。";
+"NSPhotoLibraryUsageDescription" = "ライブラリに取り込む写真や動画を選択するために写真ライブラリにアクセスします。";
+"NSPhotoLibraryAddUsageDescription" = "エクスポートした写真や動画を写真ライブラリに保存するために写真ライブラリへの書き込み権限を使用します。";
+"NSFaceIDUsageDescription" = "アプリのロックを解除するためにFace IDを使用します。";
+"NSMicrophoneUsageDescription" = "ライブラリ用の動画を撮影する際に、動画に音声を含めるためにマイクを使用します。";

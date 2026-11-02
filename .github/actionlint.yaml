@@ -1,0 +1,17 @@
+#
+# actionlint configuration
+#
+# 目的:
+# - GitHub Actions の静的解析で「Context access might be invalid: <SECRET_NAME>」が
+#   誤警告として出るのを抑制する（Secrets名を明示する）
+#
+secrets:
+  - GOOGLE_PLAY_SERVICE_ACCOUNT_JSON
+  - ANDROID_APPLICATION_ID
+  - FIREBASE_APP_ID_ANDROID
+  - FIREBASE_TOKEN
+  - ANDROID_KEYSTORE_BASE64
+  - ANDROID_KEYSTORE_PASSWORD
+  - ANDROID_KEY_ALIAS
+  - ANDROID_KEY_PASSWORD
+

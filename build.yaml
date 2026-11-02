@@ -1,0 +1,45 @@
+targets:
+  $default:
+    builders:
+      riverpod_generator:
+        enabled: true
+        options:
+          # Keep the application's existing *NotifierProvider public names.
+          provider_name_strip_pattern: ''
+        generate_for:
+          include:
+            - lib/**/*.dart
+      
+      freezed:
+        enabled: true
+        generate_for:
+          include:
+            - lib/**/*.dart
+
+      isar_generator:
+        enabled: true
+        generate_for:
+          include:
+            - lib/**/*.dart
+
+      json_serializable:
+        enabled: true
+        generate_for:
+          include:
+            - lib/**/*.dart
+
+    # 全体的なスキャン範囲の制限（不要なディレクトリを除外して高速化）
+    sources:
+      include:
+        - $package$
+        - lib/**
+        - pubspec.yaml
+      exclude:
+        - test/**
+        - assets/**
+        - android/**
+        - ios/**
+        - macos/**
+        - windows/**
+        - web/**
+        - .dart_tool/**

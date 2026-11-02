@@ -1,0 +1,112 @@
+{
+  "@@locale": "ja",
+  "viewerShowInfo": "ファイル情報",
+  "viewerLoadingExternal": "外部ファイルを読み込み中...",
+  "viewerError": "エラーが発生しました: {error}",
+  "@viewerError": {
+    "placeholders": {
+      "error": {
+        "type": "String"
+      }
+    }
+  },
+  "viewerOpenExternal": "外部アプリで開く",
+  "viewerSetThumbnail": "サムネイルに設定",
+  "viewerThumbnailSet": "サムネイルを設定しました",
+  "viewerThumbnailUpdated": "サムネイルを更新しました",
+  "viewerThumbnailReady": "生成完了",
+  "viewerThumbnailFailed": "生成失敗",
+  "viewerUpdateFailed": "更新に失敗しました: {error}",
+  "@viewerUpdateFailed": {
+    "placeholders": {
+      "error": {
+        "type": "String"
+      }
+    }
+  },
+  "viewerDeleteConfirm": "削除の確認",
+  "viewerDeleteMessage": "このファイルを削除しますか？\n(実ファイルも削除されます)",
+  "viewerDeleted": "削除しました",
+  "viewerDeleteFailed": "削除に失敗しました: {error}",
+  "@viewerDeleteFailed": {
+    "placeholders": {
+      "error": {
+        "type": "String"
+      }
+    }
+  },
+  "viewerSetAsFolderCover": "フォルダのカバーに設定",
+  "viewerSetAsFolderCoverSuccess": "カバー画像を設定しました",
+  "viewerRename": "ファイル名を変更",
+  "viewerEditNotes": "メモを一括編集",
+  "viewerNotesSaving": "保存中…",
+  "viewerNotesSaveFailed": "保存できませんでした。入力したメモは残っています。もう一度お試しください。",
+  "mediaViewerLoadingExternal": "外部メディアを読み込み中...",
+  "mediaViewerOpenInExternalApp": "外部アプリで開く",
+  "mediaThumbnailUpdated": "サムネイルを更新しました",
+  "viewerFileNotFound": "ファイルが見つかりません",
+  "viewerUnsupportedFileType": "このファイル形式はアプリ内表示に対応していません",
+  "viewerThumbnailPreviewTitle": "サムネイルのプレビュー",
+  "viewerThumbnailSetConfirm": "この画像をサムネイルに設定しますか？",
+  "viewerRetry": "再試行",
+  "viewerBackToLibrary": "ライブラリへ戻る",
+  "viewerBackToCatalogContents": "カタログ内の一覧へ戻る",
+  "viewerPermissionDenied": "ファイルへのアクセス権限がありません",
+  "viewerDecodeFailed": "ファイルを表示できません",
+  "viewerPlaybackFailed": "メディアを再生できません",
+  "viewerLoadFailed": "ファイルの読み込みに失敗しました",
+  "viewerUnknownFileSize": "不明",
+  "viewerFilePosition": "{current} / {total} ファイル",
+  "@viewerFilePosition": {
+    "placeholders": {
+      "current": {
+        "type": "int"
+      },
+      "total": {
+        "type": "int"
+      }
+    }
+  },
+  "viewerPagePosition": "{current} / {total} ページ",
+  "@viewerPagePosition": {
+    "placeholders": {
+      "current": {
+        "type": "int"
+      },
+      "total": {
+        "type": "int"
+      }
+    }
+  },
+  "viewerLeftPage": "左ページ",
+  "viewerRightPage": "右ページ",
+  "viewerShare": "共有",
+  "viewerFileTooLarge": "ファイルサイズが大きすぎます",
+  "viewerFileTooLargeDesc": "このファイルはサイズが大きいため（{size}）、外部エディタで開くことを推奨します。",
+  "@viewerFileTooLargeDesc": {
+    "placeholders": {
+      "size": {
+        "type": "String"
+      }
+    }
+  },
+  "viewerOpenAnyway": "そのまま開く",
+  "miniPlayerSemanticsLabel": "{title} を再生中。タップして全画面表示",
+  "@miniPlayerSemanticsLabel": {
+    "placeholders": {
+      "title": {
+        "type": "String"
+      }
+    }
+  },
+  "miniPlayerError": "再生エラー: {error}",
+  "@miniPlayerError": {
+    "placeholders": {
+      "error": {
+        "type": "String"
+      }
+    }
+  },
+  "backgroundAudioPlaying": "音声再生中",
+  "viewerMarkdownImageBlocked": "文書内の画像は読み込みません"
+}

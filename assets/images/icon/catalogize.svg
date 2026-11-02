@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none">
+  <!-- Adopted concept 11: solid folder and separate solid charm. -->
+  <path
+    d="M5 5.9H6.1C7 5.9 7.6 6.3 8.1 7.05L10.3 10.65C10.55 11.05 10.95 11.25 11.45 11.25H19.7C21.1 11.25 22 12.15 22 13.55V17.8C22 19.45 20.75 20.75 19.1 20.75H4.75C3.1 20.75 1.75 19.45 1.75 17.8V9.1C1.75 7.25 3.15 5.9 5 5.9Z"
+    fill="#191919"
+  />
+  <!-- The sparkle is a transparent cutout, including when tinted by IconTheme. -->
+  <path
+    d="M13 1.75H18.5A3.5 3.5 0 0 1 18.5 8.75H13A3.5 3.5 0 0 1 13 1.75ZM15.75 3.2C16.0828 4.46075 16.751 4.9876 18.35 5.25C16.751 5.5124 16.0828 6.03925 15.75 7.3C15.4172 6.03925 14.749 5.5124 13.15 5.25C14.749 4.9876 15.4172 4.46075 15.75 3.2Z"
+    fill="#191919"
+    fill-rule="evenodd"
+  />
+</svg>

@@ -1,0 +1,241 @@
+{
+  "@@locale": "ja",
+  "commonMoreCount": "ほか{count}件",
+  "@commonMoreCount": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "appTitle": "CharmShelf",
+  "commonOk": "OK",
+  "commonCancel": "キャンセル",
+  "commonYes": "はい",
+  "commonNo": "いいえ",
+  "commonRetry": "再試行",
+  "commonBack": "戻る",
+  "commonNext": "次へ",
+  "commonNoPages": "ページがありません",
+  "commonSelectedLabel": "{label}、選択中",
+  "@commonSelectedLabel": {
+    "placeholders": {
+      "label": {
+        "type": "String"
+      }
+    }
+  },
+  "commonDoubleTapToSelect": "{label}を選択するにはダブルタップします",
+  "@commonDoubleTapToSelect": {
+    "placeholders": {
+      "label": {
+        "type": "String"
+      }
+    }
+  },
+  "commonDoubleTapToActivate": "操作するにはダブルタップします",
+  "commonEmptyTitle": "項目がありません",
+  "commonErrorOccurred": "エラーが発生しました",
+  "errorNetwork": "通信に失敗しました。接続状況をご確認ください",
+  "errorDatabase": "データの保存や読み込みに失敗しました",
+  "errorAuth": "認証に失敗しました",
+  "errorValidation": "入力内容に誤りがあります",
+  "errorFile": "ファイルの操作に失敗しました",
+  "errorPermission": "必要な権限がありません",
+  "errorSystem": "アプリ内でエラーが発生しました",
+  "errorUi": "画面の表示に失敗しました",
+  "errorUnknown": "予期せぬエラーが発生しました",
+  "commonComingSoon": "近日公開",
+  "commonClose": "閉じる",
+  "commonSave": "保存",
+  "commonDelete": "削除",
+  "commonEdit": "編集",
+  "commonAdd": "追加",
+  "commonUpdate": "更新",
+  "commonCopy": "コピー",
+  "commonShare": "共有",
+  "commonClear": "消去",
+  "networkInspectorCopyAsCurl": "cURLとしてコピー",
+  "crashLogRefresh": "更新",
+  "crashLogExportAll": "全てエクスポート",
+  "crashLogDeleteAll": "全て削除",
+  "crashLogCopy": "コピー",
+  "crashLogShare": "共有",
+  "commonExpand": "展開",
+  "commonCollapse": "折りたたむ",
+  "commonMenu": "メニュー",
+  "tooltipInfo": "情報",
+  "tooltipUnmute": "ミュート解除",
+  "tooltipMute": "ミュート",
+  "tooltipPreviousTrack": "前の曲",
+  "tooltipRewind10": "10秒戻る",
+  "tooltipPause": "一時停止",
+  "tooltipPlay": "再生",
+  "tooltipForward10": "10秒進む",
+  "tooltipNextTrack": "次の曲",
+  "commonApply": "適用",
+  "commonExecute": "実行",
+  "commonPost": "投稿",
+  "commonLoading": "読み込み中...",
+  "startupPreparingStorage": "保存データを安全に準備しています…",
+  "startupPreparingData": "データを安全に確認しています…",
+  "commonSearch": "検索...",
+  "commonRead": "既読",
+  "commonUnread": "未読",
+  "pressBackAgainToExit": "もう一度戻るを押すと終了します",
+  "validationRequired": "必須項目です",
+  "validationMinLength": "{min} 文字以上で入力してください",
+  "@validationMinLength": {
+    "placeholders": {
+      "min": {
+        "type": "int"
+      }
+    }
+  },
+  "validationMaxLength": "{max} 文字以内で入力してください",
+  "@validationMaxLength": {
+    "placeholders": {
+      "max": {
+        "type": "int"
+      }
+    }
+  },
+  "validationInvalidEmail": "有効なメールアドレスを入力してください",
+  "validationInvalidNumber": "有効な数値を入力してください",
+  "validationMinValueInt": "{min} 以上の値を入力してください",
+  "@validationMinValueInt": {
+    "placeholders": {
+      "min": {
+        "type": "int"
+      }
+    }
+  },
+  "validationMaxValueInt": "{max} 以下の値を入力してください",
+  "@validationMaxValueInt": {
+    "placeholders": {
+      "max": {
+        "type": "int"
+      }
+    }
+  },
+  "validationMinValueDouble": "{min} 以上の値を入力してください",
+  "@validationMinValueDouble": {
+    "placeholders": {
+      "min": {
+        "type": "double"
+      }
+    }
+  },
+  "validationMaxValueDouble": "{max} 以下の値を入力してください",
+  "@validationMaxValueDouble": {
+    "placeholders": {
+      "max": {
+        "type": "double"
+      }
+    }
+  },
+  "relativeJustNow": "たった今",
+  "relativeMinutesAgo": "{minutes} 分前",
+  "@relativeMinutesAgo": {
+    "placeholders": {
+      "minutes": {
+        "type": "int"
+      }
+    }
+  },
+  "relativeHoursAgo": "{hours} 時間前",
+  "@relativeHoursAgo": {
+    "placeholders": {
+      "hours": {
+        "type": "int"
+      }
+    }
+  },
+  "relativeDaysAgo": "{days} 日前",
+  "@relativeDaysAgo": {
+    "placeholders": {
+      "days": {
+        "type": "int"
+      }
+    }
+  },
+  "relativeYesterdayAt": "昨日 {time}",
+  "@relativeYesterdayAt": {
+    "placeholders": {
+      "time": {
+        "type": "String"
+      }
+    }
+  },
+  "clipboardCopied": "クリップボードにコピーしました",
+  "clipboardFailed": "コピーに失敗しました",
+  "initializationFailed": "初期化に失敗しました: {error}",
+  "@initializationFailed": {
+    "placeholders": {
+      "error": {
+        "type": "String"
+      }
+    }
+  },
+  "commonUpdatedAt": "更新: {date}",
+  "@commonUpdatedAt": {
+    "placeholders": {
+      "date": {
+        "type": "String"
+      }
+    }
+  },
+  "errorLabel": "エラー",
+  "commonAll": "すべて",
+  "commonConfirm": "確認",
+  "commonCreate": "作成",
+  "commonFile": "ファイル",
+  "commonFilter": "フィルター",
+  "commonFolder": "フォルダ",
+  "commonNotAvailable": "利用不可",
+  "commonNotesHint": "メモを入力...",
+  "commonOff": "オフ",
+  "commonOn": "オン",
+  "commonProcessing": "処理中...",
+  "commonRenameHint": "新しい名前を入力",
+  "commonReset": "リセット",
+  "commonSortByLevel": "階層順",
+  "commonSortByName": "名前順",
+  "commonSortByUpdateDate": "更新日順",
+  "commonSortByUsageCount": "使用数順",
+  "commonSortSettings": "並べ替え設定",
+  "commonCancelling": "キャンセル中...",
+  "commonCopyPath": "パスをコピー",
+  "commonArchive": "アーカイブ",
+  "commonUnarchive": "アーカイブ解除",
+  "commonArchiveSuccess": "アーカイブしました",
+  "commonUnarchiveSuccess": "アーカイブを解除しました",
+  "commonFailedItemsOthers": "...他 {count} 件",
+  "@commonFailedItemsOthers": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "commonUnderstand": "了解",
+  "commonImport": "インポート",
+  "validationFileNameEmpty": "名前を入力してください",
+  "validationFileNameInvalidChars": "次の文字は使用できません: \\ / : * ? \" < > |",
+  "validationFileNameTooLong": "名前が長すぎます（最大255文字）",
+  "validationFileNameReserved": "システム予約名は使用できません",
+  "validationFileNameDuplicate": "同じ名前の項目が既に存在します",
+  "commonUndo": "元に戻す",
+  "commonDuplicate": "カタログの中に複製",
+  "commonDuplicateSuccess": "複製しました",
+  "startupTrashMissingTitle": "ごみ箱のファイルを確認できません",
+  "startupTrashMissingMessage": "削除済みの{count}件の実体が見つかりません。管理情報と復旧記録は保持しています。ほかのデータは利用できますが、見つからないファイルが復元されたわけではありません。アプリの削除やデータ消去をせず、元ファイルを確認してください。",
+  "startupTrashMissingContinue": "確認して続ける",
+  "@startupTrashMissingMessage": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  }
+}

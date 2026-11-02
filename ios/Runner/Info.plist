@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+	<dict>
+		<key>CFBundleDevelopmentRegion</key>
+		<string>$(DEVELOPMENT_LANGUAGE)</string>
+		<key>CFBundleDisplayName</key>
+		<string>CharmShelf</string>
+		<key>CFBundleExecutable</key>
+		<string>$(EXECUTABLE_NAME)</string>
+		<key>CFBundleIdentifier</key>
+		<string>$(PRODUCT_BUNDLE_IDENTIFIER)</string>
+		<key>CFBundleInfoDictionaryVersion</key>
+		<string>6.0</string>
+		<key>CFBundleName</key>
+		<string>private_shelf</string>
+		<key>CFBundlePackageType</key>
+		<string>APPL</string>
+		<key>CFBundleShortVersionString</key>
+		<string>$(FLUTTER_BUILD_NAME)</string>
+		<key>CFBundleSignature</key>
+		<string>????</string>
+		<key>CFBundleVersion</key>
+		<string>$(FLUTTER_BUILD_NUMBER)</string>
+		<key>LSRequiresIPhoneOS</key>
+		<true/>
+		<key>UIApplicationSceneManifest</key>
+		<dict>
+			<key>UIApplicationSupportsMultipleScenes</key>
+			<false/>
+			<key>UISceneConfigurations</key>
+			<dict>
+				<key>UIWindowSceneSessionRoleApplication</key>
+				<array>
+					<dict>
+						<key>UISceneClassName</key>
+						<string>UIWindowScene</string>
+						<key>UISceneConfigurationName</key>
+						<string>flutter</string>
+						<key>UISceneDelegateClassName</key>
+						<string>$(PRODUCT_MODULE_NAME).SceneDelegate</string>
+						<key>UISceneStoryboardFile</key>
+						<string>Main</string>
+					</dict>
+				</array>
+			</dict>
+		</dict>
+		<key>UIRequiresFullScreen</key>
+		<false/>
+		<key>UILaunchStoryboardName</key>
+		<string>LaunchScreen</string>
+		<key>UIMainStoryboardFile</key>
+		<string>Main</string>
+		<key>UIBackgroundModes</key>
+		<array>
+			<string>audio</string>
+		</array>
+		<key>UISupportedInterfaceOrientations</key>
+		<array>
+			<string>UIInterfaceOrientationPortrait</string>
+		</array>
+		<key>UISupportedInterfaceOrientations~ipad</key>
+		<array>
+			<string>UIInterfaceOrientationPortrait</string>
+			<string>UIInterfaceOrientationPortraitUpsideDown</string>
+			<string>UIInterfaceOrientationLandscapeLeft</string>
+			<string>UIInterfaceOrientationLandscapeRight</string>
+		</array>
+		<key>CADisableMinimumFrameDurationOnPhone</key>
+		<true/>
+		<key>UIApplicationSupportsIndirectInputEvents</key>
+		<true/>
+
+		<key>NSCameraUsageDescription</key>
+		<string>CharmShelf uses the camera to take photos and videos for your library.</string>
+		<key>NSMicrophoneUsageDescription</key>
+		<string>Microphone access is used to include audio when recording a video for your library.</string>
+		<key>NSPhotoLibraryUsageDescription</key>
+		<string>CharmShelf accesses your photo library so you can select photos and videos to import.</string>
+		<key>NSPhotoLibraryAddUsageDescription</key>
+		<string>CharmShelf saves photos and videos you export to your photo library.</string>
+		<key>NSFaceIDUsageDescription</key>
+		<string>CharmShelf uses Face ID to unlock the app.</string>
+		<key>FlutterDeepLinkingEnabled</key>
+		<false/>
+		<key>CFBundleURLTypes</key>
+		<array>
+			<dict>
+				<key>CFBundleTypeRole</key>
+				<string>Editor</string>
+				<key>CFBundleURLSchemes</key>
+				<array>
+					<string>charmshelf</string>
+				</array>
+			</dict>
+		</array>
+		<key>LSSupportsOpeningDocumentsInPlace</key>
+		<false/>
+		<key>UIFileSharingEnabled</key>
+		<false/>
+		<!-- The repository includes AES/PBKDF2 backup code. Review the shipped
+		     features, export questionnaire and distribution territories before
+		     asserting an exemption. See docs/release/IOS_RELEASE_READINESS.md. -->
+	</dict>
+</plist>

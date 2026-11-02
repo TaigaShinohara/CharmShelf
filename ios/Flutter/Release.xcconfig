@@ -1,0 +1,7 @@
+#include "Generated.xcconfig"
+// Apple Siliconシミュレータだけを対象にして依存とRunnerの構成を揃える。
+EXCLUDED_ARCHS[sdk=iphonesimulator*]=$(inherited) i386 x86_64
+// IsarのDart FFIはDynamicLibrary.process()でC関数を実行時に解決する。
+// 通常の参照解析では未使用に見えるため、Release/Profileでもシンボルを残す。
+DEAD_CODE_STRIPPING=NO
+STRIP_INSTALLED_PRODUCT=NO

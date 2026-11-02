@@ -1,0 +1,16 @@
+{
+  "lib/src/code_gen/by_index_generator.dart": "d94b00748150b524e621c684589b56ce6a384479273920b3d307e1d1d5327f8b",
+  "lib/src/code_gen/collection_schema_generator.dart": "90f4961e277341225f5318bf88a2ab647f650c282495383594f98db3722fd6d7",
+  "lib/src/code_gen/query_distinct_by_generator.dart": "eea9e91cf9555c7cbc92cf1d88c7709e7794cb78e7c4bec361fe47f34ca4bba5",
+  "lib/src/code_gen/query_filter_generator.dart": "e8a4fa491bcfc9a727a24024881516ce8ff742f36ccc8a5eb783fef5f8f664a9",
+  "lib/src/code_gen/query_filter_length.dart": "79cb0314d0577c7fde599f7a6f837906c2ed93e2a22c653c89251e483cfa0d88",
+  "lib/src/code_gen/query_link_generator.dart": "d01c3e4986ae2f31fa852da261685b047f9363c181a50188a569dafa835ae614",
+  "lib/src/code_gen/query_object_generator.dart": "863254dc07b0b001ad5aac36ac93879177c5818aa7e15b669b36fe8b34244c0a",
+  "lib/src/code_gen/query_property_generator.dart": "71e5eedfd110b72d0343d5a99c7ad21ab4c05c147e782233f1627f779a4b695f",
+  "lib/src/code_gen/query_sort_by_generator.dart": "871a545ba630efe73d2e54960adcc9ed718c57eef1a63d25a78f398ce72cad73",
+  "lib/src/code_gen/query_where_generator.dart": "76ab87c7be8b35ea3c528b744c94493844811e669d0c88d561dac84adc6ce6b6",
+  "lib/src/code_gen/type_adapter_generator.dart": "032dacee0d057f1e7076245bb51f347c088edb300c12bd29dea14bc3dfc9ca02",
+  "lib/src/object_info.dart": "44e7d455fbcdd5f149657992c25322cba066a43853c29f009b2cfde9817afd0b",
+  "lib/isar_generator.dart": "76711556e40fb850e707c11b8024b3e191ab5c943301756c5ac458763dbe7335",
+  "lib/src/collection_generator.dart": "e324db2eeae860116f06d01d87ed9b536507900a30a153f82a7205b1d4617f91"
+}

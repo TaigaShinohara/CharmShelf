@@ -1,0 +1,22 @@
+{
+  "service": "App Store Connect / TagShelf",
+  "environment": "release",
+  "local_auth": {
+    "mode": "service_account_keychain",
+    "keychain_service": "codex.1password.YOUR_TAGSHELF_APP_STORE",
+    "keychain_account": "service-account"
+  },
+  "secret_references": {
+    "APP_STORE_CONNECT_ISSUER_ID": "op://YOUR_VAULT/YOUR_ITEM/APP_STORE_CONNECT_ISSUER_ID",
+    "APP_STORE_CONNECT_API_KEY_ID": "op://YOUR_VAULT/YOUR_ITEM/APP_STORE_CONNECT_API_KEY_ID",
+    "APP_STORE_CONNECT_API_KEY_CONTENT": "op://YOUR_VAULT/YOUR_ITEM/APP_STORE_CONNECT_API_KEY_CONTENT"
+  },
+  "allowed_domains": [
+    "api.appstoreconnect.apple.com"
+  ],
+  "verification": "Read-only GET /v1/apps?filter[bundleId]=com.tsmusic.privateshelf",
+  "cloud": {
+    "status": "not_registered",
+    "reason": "Binary signing files and JWT credentials are not simple HTTPS Network secrets"
+  }
+}

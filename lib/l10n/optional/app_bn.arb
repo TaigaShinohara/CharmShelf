@@ -1,0 +1,109 @@
+{
+  "@@locale": "bn",
+  "appTitle": "টেমপ্লেট অ্যাপ",
+  "homeTitle": "হোম",
+  "settingsTitle": "সেটিংস",
+  "commonOk": "ঠিক আছে",
+  "commonCancel": "বাতিল",
+  "commonYes": "হ্যাঁ",
+  "commonNo": "না",
+  "commonRetry": "পুনরায় চেষ্টা করুন",
+  "commonEmptyTitle": "কোনো আইটেম নেই",
+  "commonErrorOccurred": "কিছু ভুল হয়েছে",
+  "avatarActionTitle": "প্রোফাইল ছবি",
+  "avatarActionTakePhoto": "ছবি তুলুন",
+  "avatarActionChooseFromLibrary": "লাইব্রেরি থেকে বেছে নিন",
+  "avatarActionRemove": "ছবি সরান",
+  "avatarTapToChange": "পরিবর্তন করতে ট্যাপ করুন",
+  "avatarRemoveTitle": "ছবি সরাবেন?",
+  "avatarRemoveMessage": "এটি আপনার প্রোফাইল ছবি সরিয়ে দেবে।",
+  "relativeJustNow": "এইমাত্র",
+  "relativeMinutesAgo": "{minutes} মিনিট আগে",
+  "@relativeMinutesAgo": {
+    "placeholders": {
+      "minutes": {
+        "type": "int"
+      }
+    }
+  },
+  "relativeHoursAgo": "{hours} ঘণ্টা আগে",
+  "@relativeHoursAgo": {
+    "placeholders": {
+      "hours": {
+        "type": "int"
+      }
+    }
+  },
+  "relativeDaysAgo": "{days} দিন আগে",
+  "@relativeDaysAgo": {
+    "placeholders": {
+      "days": {
+        "type": "int"
+      }
+    }
+  },
+  "relativeYesterdayAt": "গতকাল {time}",
+  "@relativeYesterdayAt": {
+    "placeholders": {
+      "time": {
+        "type": "String"
+      }
+    }
+  },
+  "validationRequired": "প্রয়োজনীয়",
+  "validationMinLength": "অন্তত {min} অক্ষর হতে হবে",
+  "@validationMinLength": {
+    "placeholders": {
+      "min": {
+        "type": "int"
+      }
+    }
+  },
+  "validationMaxLength": "সর্বাধিক {max} অক্ষর হতে হবে",
+  "@validationMaxLength": {
+    "placeholders": {
+      "max": {
+        "type": "int"
+      }
+    }
+  },
+  "validationInvalidEmail": "অবৈধ ইমেইল ঠিকানা",
+  "validationInvalidNumber": "অবৈধ সংখ্যা",
+  "validationMinValueInt": "{min} বা তার বেশি হতে হবে",
+  "@validationMinValueInt": {
+    "placeholders": {
+      "min": {
+        "type": "int"
+      }
+    }
+  },
+  "validationMaxValueInt": "{max} বা তার কম হতে হবে",
+  "@validationMaxValueInt": {
+    "placeholders": {
+      "max": {
+        "type": "int"
+      }
+    }
+  },
+  "validationMinValueDouble": "{min} বা তার বেশি হতে হবে",
+  "@validationMinValueDouble": {
+    "placeholders": {
+      "min": {
+        "type": "double"
+      }
+    }
+  },
+  "validationMaxValueDouble": "{max} বা তার কম হতে হবে",
+  "@validationMaxValueDouble": {
+    "placeholders": {
+      "max": {
+        "type": "double"
+      }
+    }
+  },
+  "imageSaveFailed": "ছবি সংরক্ষণ ব্যর্থ হয়েছে",
+  "imageDeleteFailed": "ছবি মুছে ফেলা ব্যর্থ হয়েছে",
+  "unsavedDataDialogTitle": "পরিবর্তন বাতিল করবেন?",
+  "unsavedDataDialogMessage": "আপনার অসংরক্ষিত পরিবর্তন আছে। এখন চলে গেলে পরিবর্তনগুলো হারিয়ে যাবে।",
+  "unsavedDataDialogDiscard": "বাতিল"
+}

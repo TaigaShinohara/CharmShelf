@@ -1,0 +1,199 @@
+version: "1.0.0"
+last_updated: "2026-01-17"
+
+# =====================================
+# Flutter量産テンプレート 設計方針書
+# =====================================
+# - このファイルは「テンプレート全体の方針」を定義します（基本的に固定）
+# - アプリごとの設定（アプリ名、機能ON/OFF、テーマ色など）は template_config.yaml に記載します
+
+meta:
+  name: "Flutter量産テンプレート"
+  goal: "iOS/Android向けに、ローカル専用アプリを量産・保守しやすい土台を提供する"
+  principles:
+    - "ローカルファースト（クラウドなしを基本）"
+    - "変更に強い（機能ON/OFFや差し替えが容易）"
+    - "一貫性のある実装（設計パターンを標準化）"
+    - "AIコーディング前提（ルール・構造が明確）"
+
+tech_stack:
+  framework: "Flutter"
+  platforms: ["iOS", "Android"]
+  state_management: "Riverpod + riverpod_annotation"
+  local_database: "Isar"
+  routing: "go_router"
+  preferences: "shared_preferences"
+  local_auth: "local_auth"
+  audio: "just_audio"
+  i18n: "flutter_localizations + intl"
+  code_generation:
+    - "build_runner"
+    - "riverpod_generator"
+    - "isar_generator"
+
+architecture:
+  # ---------------------------------
+  # レイヤー方針（大枠）
+  # ---------------------------------
+  layers:
+    - name: "コア基盤"
+      description: "全アプリ共通の必須機能"
+      components:
+        - id: "result_type"
+          description: "Success/Failureの2値でエラーハンドリング"
+        - id: "app_error"
+          description: "エラー種類と重大度の統一管理"
+        - id: "error_snackbar"
+          description: "重大度に応じたUI表示ルールを統一"
+        - id: "logger"
+          description: "機能別・レベル別・ビルドモード別ログ"
+        - id: "global_error_handler"
+          description: "3段階エラーキャッチ（runZonedGuarded）"
+
+    - name: "データ層"
+      description: "ローカルデータ永続化（クラウド依存なし）"
+      components:
+        - id: "isar_service"
+          description: "NoSQLデータベース初期化・管理"
+        - id: "repository_pattern"
+          description: "データアクセスの抽象化（Repository）"
+        - id: "app_preferences"
+          description: "SharedPreferencesの型安全ラッパー"
+
+    - name: "UIコンポーネント"
+      description: "再利用可能なUI部品（品質の統一）"
+      components:
+        - id: "theme_system"
+          description: "カラーパレット・タイポグラフィ・ThemeData"
+        - id: "settings_templates"
+          description: "設定画面タイル・セクション・ディバイダー"
+        - id: "state_widgets"
+          description: "Loading/Error/Emptyなどの状態表示"
+        - id: "animations"
+          description: "共通アニメーション（SlideUp等）"
+        - id: "bottom_navigation"
+          description: "ボトムナビ（タブ切替の基本構造）"
+
+    - name: "UX基盤"
+      description: "手触り感の統一（ブランド一貫性）"
+      components:
+        - id: "haptics_service"
+          description: "タップ/成功/エラー時の触覚パターン"
+        - id: "sound_service"
+          description: "効果音再生の仕組み"
+        - id: "feedback_service"
+          description: "ハプティクス + サウンドの統合管理"
+
+    - name: "アプリ構成"
+      description: "アプリ全体の起動・遷移・設定"
+      components:
+        - id: "initialization_flow"
+          description: "起動フローの状態マシン管理"
+        - id: "feature_flags"
+          description: "機能ON/OFF切り替え"
+        - id: "router"
+          description: "画面遷移管理"
+        - id: "system_ui"
+          description: "ステータスバー・画面向き・テキストスケール"
+        - id: "app_info"
+          description: "バージョン/ビルド番号の取得"
+
+state_management:
+  # ---------------------------------
+  # 状態管理の標準パターン
+  # ---------------------------------
+  pattern: "AsyncNotifier + 互換性Provider（ダブルパターン）"
+  description:
+    - "AsyncNotifier: ローディング/エラー状態を扱う必要がある場面で使用"
+    - "互換性Provider: 値だけ必要な場面で使用（デフォルト値込み）"
+  example:
+    async_provider: "xxxAsyncNotifierProvider"
+    compat_provider: "xxxProvider"
+
+preferences_standard:
+  # ---------------------------------
+  # SharedPreferences標準パターン
+  # ---------------------------------
+  pattern: "SettingNotifier<T>（AsyncNotifierベース）"
+  requirements:
+    - "読み込み失敗時はデフォルト値を返す"
+    - "setValueで保存+state更新"
+
+error_handling:
+  # ---------------------------------
+  # エラーハンドリング方針
+  # ---------------------------------
+  global:
+    description: "3段階のエラーキャッチ"
+    levels:
+      - level: 1
+        name: "FlutterError.onError"
+        target: "Flutterフレームワークエラー"
+      - level: 2
+        name: "PlatformDispatcher.instance.onError"
+        target: "プラットフォームエラー"
+      - level: 3
+        name: "runZonedGuarded"
+        target: "Zone内でキャッチされなかった非同期エラー"
+  application:
+    description: "Result<T, AppError>で例外を握りつぶさず統一的に扱う"
+    severity_ui_rules:
+      critical: "ダイアログ（必要ならアプリ継続不可）"
+      warning: "SnackBar"
+      info: "軽い通知（Toast等）"
+
+initialization_flow:
+  # ---------------------------------
+  # 初期化フロー（状態マシン）
+  # ---------------------------------
+  states:
+    - launch
+    - onboarding
+    - permission_request
+    - local_auth
+    - ready
+  requirements:
+    - "AnimatedSwitcher等で滑らかな遷移"
+    - "完了状態を永続化（SharedPreferences）"
+    - "途中中断しても再開可能"
+
+toggleable_features:
+  # ---------------------------------
+  # アプリごとにON/OFFできる機能
+  # ---------------------------------
+  - id: "tab_bar"
+    affects: ["router", "main_tab_page"]
+  - id: "local_auth"
+    affects: ["initialization_flow", "auth_screen", "settings"]
+  - id: "onboarding"
+    affects: ["initialization_flow", "onboarding_screen"]
+  - id: "permissions"
+    affects: ["initialization_flow", "permission_screen"]
+  - id: "dark_mode"
+    affects: ["theme", "settings"]
+  - id: "i18n"
+    affects: ["l10n", "settings"]
+  - id: "haptics"
+    affects: ["feedback_service"]
+  - id: "sound"
+    affects: ["feedback_service"]
+
+ci_cd:
+  platform: "GitHub Actions"
+  workflows:
+    - name: "ci.yml"
+      steps:
+        - "flutter pub get"
+        - "flutter analyze"
+        - "flutter test --coverage"
+    - name: "build.yml"
+      steps:
+        - "flutter build apk --release"
+        - "flutter build ios --release --no-codesign"
+
+documentation:
+  required:
+    - "README.md"
+    - "docs/PRIVACY_POLICY.md"
+    - "docs/TERMS_OF_SERVICE.md"
+    - "docs/ARCHITECTURE.md"

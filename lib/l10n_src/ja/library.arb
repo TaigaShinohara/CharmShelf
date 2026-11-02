@@ -1,0 +1,1115 @@
+{
+  "@@locale": "ja",
+  "importCatalogHint": "カタログにはチャームやお気に入りを設定できます。",
+  "archiveTitle": "アーカイブ",
+  "libraryBulkTag": "一括でチャームを設定",
+  "libraryBulkCatalogify": "それぞれカタログにする",
+  "libraryBulkDecatalogify": "カタログを解除",
+  "libraryBulkCatalogifyConfirmTitle": "選択した項目をそれぞれカタログにしますか？",
+  "libraryBulkDecatalogifyConfirmTitle": "選択したカタログを解除しますか？",
+  "libraryBulkCatalogifyConfirmMessage": "{count}件をそれぞれ別のカタログにし、チャームやお気に入りを設定できるようにします。",
+  "@libraryBulkCatalogifyConfirmMessage": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "libraryBulkDecatalogifyConfirmMessage": "{count}件のカタログを解除します。チャーム、ティア、ピン留め、表紙などの整理情報が削除されます。元のファイルは削除されません。",
+  "@libraryBulkDecatalogifyConfirmMessage": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "libraryBulkCatalogifySuccess": "{count}件をそれぞれカタログにしました",
+  "@libraryBulkCatalogifySuccess": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "libraryBulkDecatalogifySuccess": "{count}件のカタログを解除しました",
+  "@libraryBulkDecatalogifySuccess": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "libraryBulkCatalogPartialResult": "{success}件/{total}件の操作が完了しました",
+  "@libraryBulkCatalogPartialResult": {
+    "placeholders": {
+      "success": {
+        "type": "int"
+      },
+      "total": {
+        "type": "int"
+      }
+    }
+  },
+  "libraryBulkTagMessage": "{count}個の項目に一括でチャームを設定します。",
+  "@libraryBulkTagMessage": {
+    "description": "一括タグ設定の確認メッセージ",
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "librarySelectionCount": "{count}件選択中",
+  "@librarySelectionCount": {
+    "description": "選択中のアイテム数",
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "librarySelectionScope": "{selectedCount}件選択中（表示中 {totalCount}件）",
+  "@librarySelectionScope": {
+    "placeholders": {
+      "selectedCount": {
+        "type": "int"
+      },
+      "totalCount": {
+        "type": "int"
+      }
+    }
+  },
+  "libraryBreadcrumbRoot": "{label}、ルート",
+  "@libraryBreadcrumbRoot": {
+    "placeholders": {
+      "label": {
+        "type": "String"
+      }
+    }
+  },
+  "libraryBreadcrumbNavigateHint": "{label}へ移動",
+  "@libraryBreadcrumbNavigateHint": {
+    "placeholders": {
+      "label": {
+        "type": "String"
+      }
+    }
+  },
+  "libraryBreadcrumbSiblingMenu": "{label}と同じ階層のフォルダを表示",
+  "@libraryBreadcrumbSiblingMenu": {
+    "placeholders": {
+      "label": {
+        "type": "String"
+      }
+    }
+  },
+  "libraryCopyCatalogInfo": "情報をコピー",
+  "libraryCopyFile": "ファイルをコピー",
+  "libraryCatalogType": "種類",
+  "libraryCopyPath": "現在のパスをコピー",
+  "libraryPathCopied": "パスをコピーしました",
+  "libraryErrorMessage": "エラーが発生しました: {error}",
+  "@libraryErrorMessage": {
+    "description": "ライブラリでのエラー表示",
+    "placeholders": {
+      "error": {
+        "type": "String"
+      }
+    }
+  },
+  "librarySyncComplete": "同期が完了しました (追加: {added}, 未検出: {missing})",
+  "@librarySyncComplete": {
+    "description": "同期完了メッセージ",
+    "placeholders": {
+      "added": {
+        "type": "int"
+      },
+      "missing": {
+        "type": "int"
+      }
+    }
+  },
+  "syncStatusScanning": "スキャン中...",
+  "syncStatusProcessing": "{processed}/{total} 件処理中",
+  "@syncStatusProcessing": {
+    "description": "同期処理中の進捗",
+    "placeholders": {
+      "processed": {
+        "type": "int"
+      },
+      "total": {
+        "type": "int"
+      }
+    }
+  },
+  "libraryMenuArchive": "アーカイブ表示",
+  "libraryMenuHiddenItems": "非表示項目",
+  "hiddenItemsTitle": "非表示項目",
+  "hiddenItemsEmpty": "非表示項目はありません",
+  "hiddenItemsUnhide": "非表示を解除",
+  "hiddenItemsUnhideConfirmMessage": "「{name}」の非表示を解除しますか？",
+  "@hiddenItemsUnhideConfirmMessage": {
+    "placeholders": {
+      "name": {
+        "type": "String"
+      }
+    }
+  },
+  "libraryUnarchiveConfirmMessage": "「{name}」のアーカイブを解除しますか？",
+  "@libraryUnarchiveConfirmMessage": {
+    "placeholders": {
+      "name": {
+        "type": "String"
+      }
+    }
+  },
+  "libraryTitle": "ライブラリ",
+  "libraryExternalTitle": "外部参照",
+  "libraryInternalTitle": "内部ストレージ",
+  "librarySearchHint": "名前・チャーム・メモで検索",
+  "librarySearchTarget": "検索の範囲",
+  "libraryFilterVisibility": "表示状態",
+  "libraryFilterVisible": "通常",
+  "libraryFilterHidden": "非表示",
+  "librarySearchCatalogsOnly": "カタログの情報だけを検索",
+  "librarySearchFilesIncluded": "すべてを検索",
+  "librarySearchScopeCurrent": "現在のフォルダ",
+  "librarySearchScopeAll": "ライブラリ全体",
+  "libraryBrowseFolders": "フォルダ",
+  "libraryBrowseCatalogs": "カタログ",
+  "librarySearchAction": "ライブラリを検索",
+  "libraryMoreActions": "管理とその他の操作",
+  "libraryCloseSearch": "検索を閉じる",
+  "libraryActiveSearchQuery": "検索: {query}",
+  "@libraryActiveSearchQuery": {
+    "placeholders": {
+      "query": {
+        "type": "String"
+      }
+    }
+  },
+  "libraryActiveTiers": "ティア: {tiers}",
+  "@libraryActiveTiers": {
+    "placeholders": {
+      "tiers": {
+        "type": "String"
+      }
+    }
+  },
+  "libraryActiveMediaTypes": "種類: {types}",
+  "@libraryActiveMediaTypes": {
+    "placeholders": {
+      "types": {
+        "type": "String"
+      }
+    }
+  },
+  "libraryClearAllConditions": "条件をすべて解除",
+  "librarySearchNoResults": "条件に一致するアイテムがありません",
+  "librarySearchNoResultsGuidance": "表示対象や絞り込みを変えて、もう一度探せます。",
+  "librarySearchNoResultsQueryGuidance": "名前やチャームの表記を確認するか、検索する言葉を短くしてみてください。",
+  "librarySearchNoResultsRelaxGuidance": "検索語を残して、範囲や条件を変えられます。",
+  "librarySearchEntireLibrary": "ライブラリ全体で探す",
+  "libraryShowFilesToo": "ファイルも表示",
+  "libraryClearSearch": "検索を解除",
+  "librarySearchPromptTitle": "検索語を入力してください",
+  "librarySearchPromptDescription": "名前やチャームからライブラリ内のアイテムを探せます。",
+  "libraryClearSearchAndFilters": "検索と絞り込みを解除",
+  "librarySearchTryAllCatalogs": "すべてのカタログも検索",
+  "librarySearchTryCurrentFolder": "現在のフォルダを検索",
+  "librarySortSettings": "並べ替え設定（カタログごとに保存）",
+  "librarySortRecent": "最近見た順",
+  "librarySortNameAsc": "名前順 (昇順)",
+  "librarySortNameDesc": "名前順 (降順)",
+  "librarySortAddedDateDesc": "追加した日 (新しい順)",
+  "librarySortAddedDateAsc": "追加した日 (古い順)",
+  "librarySortUpdatedDateDesc": "更新した日 (新しい順)",
+  "librarySortUpdatedDateAsc": "更新した日 (古い順)",
+  "librarySortDateAsc": "日付順 (昇順)",
+  "librarySortDateDesc": "日付順 (降順)",
+  "librarySortSizeAsc": "サイズ順 (昇順)",
+  "librarySortSizeDesc": "サイズ順 (降順)",
+  "librarySortTierAsc": "ティア順 (昇順)",
+  "librarySortTierDesc": "ティア順 (降順)",
+  "librarySortFavoriteDesc": "お気に入り優先",
+  "librarySetDefaultSort": "現在の並べ替えをデフォルトに設定",
+  "librarySetDefaultSortSuccess": "デフォルトの並べ替えを更新しました",
+  "libraryViewModeGrid": "グリッド表示",
+  "libraryViewModeList": "リスト表示",
+  "librarySimpleDisplayTitle": "コンパクト表示",
+  "librarySimpleDisplayOnDescription": "最低限の情報のみ表示中",
+  "librarySimpleDisplayOffDescription": "詳細情報も表示中",
+  "libraryCatalogDisplayTitle": "カタログのみ表示",
+  "libraryCatalogDisplayOnDescription": "カタログのみ表示中",
+  "libraryCatalogDisplayOffDescription": "すべての項目を表示中",
+  "libraryFilterFavorite": "お気に入り",
+  "libraryFilterFavoriteOnly": "お気に入りのみ表示",
+  "libraryFilterMediaType": "メディアタイプ",
+  "libraryFilterTagStatus": "チャームの状態",
+  "libraryFilterHasTags": "チャームあり",
+  "libraryFilterNoTags": "チャームなし",
+  "libraryFilterByTag": "チャームで絞り込み",
+  "libraryNoTagsAvailable": "チャーム管理で自分の目印を作成し、カタログにつけるとここから絞り込めます",
+  "libraryApplyTagPreset": "チャームプリセットを適用",
+  "libraryPinHome": "上部に固定",
+  "libraryUnpinHome": "上部固定を解除",
+  "libraryPinSuccess": "上部に固定しました",
+  "libraryUnpinSuccess": "上部固定を解除しました",
+  "libraryBulkTagTitle": "一括チャーム設定",
+  "libraryBulkTagNoTagsMessage": "チャームが登録されていません。",
+  "libraryBulkTagDialogTitle": "一括チャーム設定",
+  "libraryDeselect": "選択解除",
+  "libraryDownload": "アプリ外へ保存",
+  "libraryDownloadConfirmTitle": "書き出しの確認",
+  "libraryDownloadConfirmMessage": "選択した項目を端末へ書き出しますか？",
+  "libraryDownloadDestinationLabel": "保存先:",
+  "libraryDownloadDestinationIOS": "ファイルアプリで選択したフォルダ",
+  "libraryDownloadDestinationAndroid": "端末の「ダウンロード」フォルダ",
+  "libraryDownloadDestinationGeneric": "端末のストレージ",
+  "libraryDownloadSuccess": "書き出しました",
+  "libraryDownloadSuccessWithDestination": "書き出しました\n（保存先: {destination}）",
+  "@libraryDownloadSuccessWithDestination": {
+    "placeholders": {
+      "destination": {
+        "type": "String"
+      }
+    }
+  },
+  "libraryDownloadFailed": "書き出しに失敗しました",
+  "imageSaveFailed": "画像の保存に失敗しました",
+  "imageDeleteFailed": "画像の削除に失敗しました",
+  "librarySecretModeOn": "シークレットモードをオン",
+  "librarySecretModeOff": "シークレットモードをオフ",
+  "librarySecretModeSubtitle": "非表示項目を表示します",
+  "libraryNoItems": "項目がありません",
+  "libraryNoFolders": "フォルダがありません",
+  "libraryNoFoldersCreated": "作成されたフォルダはありません",
+  "libraryRoot": "ルート",
+  "librarySelectFolder": "フォルダを選択",
+  "libraryEmptyMessage": "項目がありません",
+  "libraryNewFolder": "新規フォルダ",
+  "libraryCatalogRegistration": "カタログにする",
+  "libraryCatalogFolder": "フォルダをカタログにする",
+  "libraryCatalogFile": "ファイルをカタログにする",
+  "libraryCreateNewFolder": "新規フォルダ作成",
+  "libraryNewFolderHint": "フォルダ名を入力",
+  "libraryCreateFolder": "フォルダを作成",
+  "libraryImportFolder": "フォルダを取り込む",
+  "libraryImportFile": "ファイルを取り込む",
+  "libraryVideoOpenError": "ビデオを開けませんでした",
+  "libraryMoveToParent": "親フォルダへ移動",
+  "libraryNoFoldersToMove": "移動可能なフォルダがありません",
+  "libraryImportGuidanceTitle": "ファイルやフォルダを追加しましょう",
+  "libraryImportGuidanceMessage": "写真、動画、音声、PDFをライブラリに追加できます。",
+  "libraryImportGuidanceAction": "登録を開始",
+  "libraryImportStorageSafeBanner": "CharmShelf内にコピーします。\n[primary]元のファイルは変更しません[/primary]。",
+  "libraryQuickImportButton": "全 {count} 項目をそのまま追加",
+  "@libraryQuickImportButton": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "libraryQuickImportTitle": "クイック追加",
+  "libraryAdvancedImportSettings": "詳細オプション（ツリー選択・除外・カタログ）",
+  "libraryCatalogTooltip": "カタログ: ひとつのまとまりとして扱うファイルです。フォルダも単体ファイルもカタログにできます",
+  "libraryTierSubtitle": "重要度（S / A / B / C）",
+  "libraryMenuArchiveSubtitle": "いつでも戻せる場所へしまう",
+  "libraryMenuHiddenSubtitle": "一覧から外します。鍵は別に設定します",
+  "libraryMenuTrashSubtitle": "削除済みの一時保管",
+  "libraryAddFiles": "ファイルを追加",
+  "libraryAddFolder": "フォルダを追加",
+  "libraryViewSupportedFormats": "対応形式を見る",
+  "libraryOpenCatalogContents": "カタログの中身を表示",
+  "libraryCatalogContentsTitle": "カタログの中身",
+  "librarySupportedFormatsTitle": "対応形式ガイド",
+  "librarySupportedFormatsMessage": "画像: JPG、PNG、GIF、WebP、BMP、HEIC\n動画: MP4、MOV、M4V、WebM、MKV、AVI\n音声: MP3、M4A、AAC、WAV、FLAC、OGG\n文書・アーカイブ: PDF、ZIP、CBZ\n\n端末やOSによっては、一部の形式をプレビューできない場合があります。",
+  "librarySupportedFormatsPage1Title": "画像・動画",
+  "librarySupportedFormatsPage1Content": "[primary]画像形式[/primary]\nJPG, PNG, GIF, WebP, BMP, HEIC\n\n[primary]動画形式[/primary]\nMP4, MOV, M4V, WebM, MKV, AVI",
+  "librarySupportedFormatsPage2Title": "音声・文書",
+  "librarySupportedFormatsPage2Content": "[primary]音声形式[/primary]\nMP3, M4A, AAC, WAV, FLAC, OGG\n\n[primary]文書・アーカイブ[/primary]\nPDF, ZIP, CBZ\n\n※一部の形式は端末環境によってプレビュー制限がある場合があります。",
+  "viewerImageSemanticsLabel": "画像: {name}",
+  "@viewerImageSemanticsLabel": {
+    "placeholders": {
+      "name": {
+        "type": "String"
+      }
+    }
+  },
+  "viewerImageSemanticsLabelLeft": "画像: {name}、左ページ",
+  "@viewerImageSemanticsLabelLeft": {
+    "placeholders": {
+      "name": {
+        "type": "String"
+      }
+    }
+  },
+  "viewerImageSemanticsLabelRight": "画像: {name}、右ページ",
+  "@viewerImageSemanticsLabelRight": {
+    "placeholders": {
+      "name": {
+        "type": "String"
+      }
+    }
+  },
+  "viewerImageSemanticsHint": "ダブルタップで操作ボタンの表示を切り替えます。ピンチ操作で拡大できます",
+  "libraryPickerNotificationTitle": "ファイル / フォルダ登録中",
+  "libraryPickerNotificationBody": "バックグラウンドで処理を行っています",
+  "libraryShowAllCatalogs": "すべてのカタログを表示",
+  "libraryExternalEmptyTitle": "外部フォルダが未登録",
+  "libraryExternalEmptyMessage": "右下のボタンからフォルダまたはファイルを追加してください",
+  "itemMove": "移動",
+  "tierNone": "未設定",
+  "externalAddFolder": "フォルダを登録",
+  "externalAddFile": "ファイルを登録",
+  "externalAddTooltip": "外部ファイル / フォルダを登録",
+  "librarySelectTier": "ティア",
+  "importScanResult": "スキャン結果",
+  "importFolderStructure": "フォルダ構造",
+  "importAsCollection": "カタログにする",
+  "importStart": "取り込む",
+  "importScanning": "追加内容を確認中",
+  "importImporting": "取り込み中...",
+  "importCompleted": "取り込み完了",
+  "importNoNodesSelected": "カタログにする項目が選択されていません",
+  "importExpandAll": "すべて展開",
+  "importCollapseAll": "すべて折りたたむ",
+  "importSelectAll": "すべて選択",
+  "importDeselectAll": "すべて解除",
+  "importFilterAll": "すべて",
+  "importFilterImages": "画像",
+  "importFilterVideos": "動画",
+  "importFilterAudio": "音声",
+  "importFilterDocs": "文書",
+  "importReviewAllFiles": "選択したファイルをすべて確認",
+  "importPreviewTooltip": "タップでプレビューを表示",
+  "importNoMediaFound": "取り込み可能なメディアが見つかりませんでした",
+  "importDescriptionTitle": "取り込みについて",
+  "importDescriptionContent": "選択したフォルダやファイルは端末内にコピーして取り込みます。カタログにすると、チャームや別名をつけて管理できます。親フォルダをカタログにすると、その配下をひとつのまとまりとして扱います。空き容量に余裕があることを確認してください。",
+  "importStepScanning": "スキャン",
+  "importStepConfirming": "確認",
+  "importStepImporting": "実行",
+  "importStepCompleted": "完了",
+  "importSelectionEstimateTitle": "取り込む内容",
+  "importSelectionEstimateItems": "{count}項目",
+  "@importSelectionEstimateItems": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "importSelectionEstimateFiles": "ファイル {count}件",
+  "@importSelectionEstimateFiles": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "importSelectionEstimateSize": "約 {size}",
+  "@importSelectionEstimateSize": {
+    "placeholders": {
+      "size": {
+        "type": "String"
+      }
+    }
+  },
+  "importSummaryAdded": "追加: {count}件",
+  "@importSummaryAdded": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "importSummarySkipped": "スキップ: {count}件",
+  "@importSummarySkipped": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "importSummaryFailed": "失敗: {count}件",
+  "@importSummaryFailed": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "importSummaryCancelled": "キャンセルされました",
+  "importFailedItemsTitle": "失敗した項目と理由",
+  "importFailureCancelled": "キャンセルされました",
+  "importFailureNoSpace": "空き容量が不足しています",
+  "importFailurePermission": "必要な権限がありません",
+  "importFailureDuplicate": "同じ項目がすでに存在します",
+  "importFailureUnsupported": "対応していない形式です",
+  "importFailureCorrupt": "ファイルが破損しているか読み取れません",
+  "importFailureInvalid": "ファイルの内容を確認できません",
+  "importFailureFile": "ファイルを読み込めませんでした",
+  "importFailureDatabase": "登録情報を保存できませんでした",
+  "importFailureNetwork": "通信に失敗しました",
+  "importFailureAuthentication": "認証に失敗しました",
+  "importFailureSystem": "システム処理に失敗しました",
+  "importFailureUi": "画面処理に失敗しました",
+  "importFailureTemporaryCopy": "一時ファイルを作成できませんでした",
+  "importFailureProcessing": "処理を完了できませんでした",
+  "importViewAddedItems": "追加した項目を見る",
+  "libraryCollectionInfoCollapseTooltip": "情報を折りたたむ",
+  "libraryCollectionInfoExpandTooltip": "情報を展開",
+  "libraryTrashEmptyConfirmTitle": "ごみ箱を空にする",
+  "libraryBulkActionPartialDialogTitle": "一括操作の結果",
+  "libraryBulkActionPartialResult": "{total}件中{success}件の操作が完了しました。",
+  "@libraryBulkActionPartialResult": {
+    "placeholders": {
+      "total": {
+        "type": "int"
+      },
+      "success": {
+        "type": "int"
+      }
+    }
+  },
+  "libraryBulkActionPartialFailedItems": "操作できなかった項目:",
+  "importBusyScanningSubtitle": "そのままお待ちください",
+  "importBusyImportingSubtitle": "処理中です。画面を閉じずにお待ちください。",
+  "importBusyBackgroundSuffix": "{base} バックグラウンドでは停止することがあります。復帰したら続けて確認できます。",
+  "@importBusyBackgroundSuffix": {
+    "placeholders": {
+      "base": {
+        "type": "String"
+      }
+    }
+  },
+  "importLifecycleBackgroundWarning": "アプリがバックグラウンドに移行しています。処理が止まる可能性があります。戻ったら内容を確認してください。",
+  "importLifecycleInactiveWarning": "アプリが非アクティブです。処理中は画面を前面に保ってください。",
+  "importLifecycleDetachedWarning": "アプリの終了処理中です。復帰後に再度確認してください。",
+  "importDoNotCloseWarning": "インポート中はこの画面を閉じないでください。",
+  "importCancelConfirmTitle": "取り込みを中止しますか？",
+  "importCancelConfirmMessage": "処理中の追加を中止します。追加が完了した分は残り、確定前の処理は取り消されます。",
+  "importCancelContinueAction": "取り込みを続ける",
+  "importCancelConfirmAction": "中止する",
+  "importRollingBack": "中止処理中... ファイルを元に戻しています",
+  "importCollectionRegisteredLabel": "カタログ",
+  "importCollectionModeNormal": "通常",
+  "importCollectionModeCatalog": "カタログ",
+  "importTotalFolders": "フォルダ: {count}個",
+  "@importTotalFolders": {
+    "description": "インポート対象のフォルダ数を表示",
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "importTotalFiles": "ファイル: {count}個",
+  "@importTotalFiles": {
+    "description": "インポート対象のファイル数を表示",
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "libraryMove": "移動する",
+  "libraryBulkMove": "一括移動",
+  "libraryBulkCopy": "一括複製",
+  "libraryMoveHere": "ここに移動",
+  "libraryCopyHere": "ここに複製",
+  "libraryMoveConfirmTitle": "選択した項目を移動しますか？",
+  "libraryMoveConfirmMessage": "{count}件の項目を移動します。移動先を選択してください。",
+  "@libraryMoveConfirmMessage": {
+    "description": "移動開始前の確認メッセージ",
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "libraryMoveTo": "移動先を選択",
+  "libraryMoveTargetDescription": "アイテムの移動先フォルダを選択してください",
+  "libraryMoveSourceBadge": "移動元",
+  "libraryMoveCurrentLocationBadge": "現在地",
+  "libraryMoveCannotSelectBadge": "選択不可",
+  "libraryCopyTo": "複製先を選択",
+  "libraryMoveSuccess": "移動しました",
+  "libraryCopySuccess": "複製しました",
+  "librarySelect": "選択",
+  "libraryBulkTagUpdateSuccess": "チャームを更新しました",
+  "libraryBulkTierUpdateSuccess": "ティアを更新しました",
+  "libraryMenuTrash": "ごみ箱",
+  "libraryTrashTitle": "ごみ箱",
+  "libraryTrashEmpty": "ごみ箱は空です",
+  "libraryTrashRestore": "元に戻す",
+  "libraryTrashRestoreConfirmMessage": "「{name}」をゴミ箱から元に戻しますか？",
+  "@libraryTrashRestoreConfirmMessage": {
+    "placeholders": {
+      "name": {
+        "type": "String"
+      }
+    }
+  },
+  "libraryTrashRestoreSuccess": "項目を復元しました。",
+  "libraryTrashOriginalLocation": "元の場所: {path}",
+  "@libraryTrashOriginalLocation": {
+    "placeholders": {
+      "path": {
+        "type": "String"
+      }
+    }
+  },
+  "libraryTrashDeletedAt": "削除日時: {date}",
+  "@libraryTrashDeletedAt": {
+    "placeholders": {
+      "date": {
+        "type": "String"
+      }
+    }
+  },
+  "libraryTrashDeletePermanently": "完全に削除",
+  "libraryTrashDeleteConfirmWithCount": "{count}件の項目を完全に削除しますか？この操作は取り消せません。",
+  "@libraryTrashDeleteConfirmWithCount": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "libraryTrashRestoreConflict": "元の場所がすでに使用されているため復元できません。",
+  "libraryTrashEmptyAction": "ごみ箱を空にする",
+  "libraryTrashEmptyConfirm": "ごみ箱内のすべての項目を完全に削除しますか？この操作は取り消せません。",
+  "libraryTrashEmptySuccess": "{count}件を完全に削除しました。",
+  "@libraryTrashEmptySuccess": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "libraryTrashEmptyPartial": "{total}件中{deleted}件を削除しました。残りの項目はごみ箱に保持されています。",
+  "@libraryTrashEmptyPartial": {
+    "placeholders": {
+      "deleted": {
+        "type": "int"
+      },
+      "total": {
+        "type": "int"
+      }
+    }
+  },
+  "libraryTrashEmptyPartialDialogTitle": "一部の項目は削除できませんでした",
+  "libraryTrashEmptyPartialFailedItems": "削除できなかった項目:",
+  "libraryTrashRestoreWithNewName": "名前を変えて復元",
+  "libraryTrashRestoreToAnotherLocation": "別の場所へ復元",
+  "libraryTrashRestoreCancel": "キャンセル",
+  "libraryTrashDeleteTargetFile": "対象: {name} (ファイル)",
+  "@libraryTrashDeleteTargetFile": {
+    "placeholders": {
+      "name": {
+        "type": "String"
+      }
+    }
+  },
+  "libraryTrashDeleteTargetFolder": "対象: {name} (フォルダ)",
+  "@libraryTrashDeleteTargetFolder": {
+    "placeholders": {
+      "name": {
+        "type": "String"
+      }
+    }
+  },
+  "libraryTrashDeleteTargetCatalog": "対象: {name} (カタログ)",
+  "@libraryTrashDeleteTargetCatalog": {
+    "placeholders": {
+      "name": {
+        "type": "String"
+      }
+    }
+  },
+  "libraryTrashDeleteImpactInternal": "チャームやメモなどの関連情報も一緒にごみ箱へ移動します",
+  "libraryTrashDeleteImpactExternal": "影響: アプリ内の参照だけを削除し、元のファイルは残ります",
+  "libraryTrashDeleteUndoHint": "戻す: ごみ箱から復元できます",
+  "libraryTrashEmptyConfirmWithCountAll": "ごみ箱内のすべての項目（{count}件）を完全に削除しますか？この操作は取り消せません。",
+  "@libraryTrashEmptyConfirmWithCountAll": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "importCatalogChildFolderHandlingTitle": "子フォルダの扱い",
+  "importCatalogChildFolderHandlingNormalDesc": "親をカタログにしない場合、子フォルダをそれぞれカタログにできます。",
+  "importCatalogChildFolderHandlingAsContentDesc": "親をカタログにした場合、子フォルダはそのカタログの中身として扱われます。",
+  "importCatalogFolderImportTitle": "フォルダ取り込み",
+  "importCatalogFileImportTitle": "ファイル取り込み",
+  "importCatalogRegisterAsCatalogBtn": "カタログにして\n取り込む",
+  "importCatalogNormalImportBtn": "通常\n取り込み",
+  "importCatalogRegisterAsCatalogDesc": "カタログにすると、チャームをつけて見つけやすくしたり、あとからまとめて管理できます。",
+  "importCatalogNormalImportDesc": "通常取り込みでは、普通の{type}として取り込みます。",
+  "@importCatalogNormalImportDesc": {
+    "placeholders": {
+      "type": {
+        "type": "String"
+      }
+    }
+  },
+  "importCatalogChildFolderSettings": "子フォルダ設定",
+  "importCatalogRegisterChildAsCatalog": "子フォルダをそれぞれカタログにする",
+  "collectionActionMoveToParent": "一つ上のフォルダへ",
+  "collectionActionCurrentLocationFolders": "現在の場所のフォルダ",
+  "collectionActionNoFoldersToMove": "移動可能なフォルダがありません",
+  "libraryTrashRestoreConflictPaths": "競合している場所:",
+  "resumeBannerPrompt": "続きから読みますか？",
+  "resumeBannerAction": "開く",
+  "resumeBannerLastOpenedFile": "最後に開いたファイル",
+  "resumeBannerLastViewedAt": "最終閲覧: {date}",
+  "@resumeBannerLastViewedAt": {
+    "placeholders": {
+      "date": {
+        "type": "String"
+      }
+    }
+  },
+  "resumeBannerReadFailed": "最後に開いたファイルの情報を読み込めませんでした",
+  "resumeBannerOpenFailed": "ファイルを開けませんでした。もう一度お試しください。",
+  "resumeBannerUnavailable": "現在このファイルを開けません",
+  "libraryCollectionAboutCatalog": "このカタログについて",
+  "libraryCollectionFileListHeader": "ファイル ({count})",
+  "@libraryCollectionFileListHeader": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "importSimpleConfirmFolderMessage": "以下をひとつのカタログとして取り込みます",
+  "importCatalogModeTitle": "管理方法",
+  "importCatalogModeFolder": "フォルダ単位",
+  "importCatalogModeFolderDescription": "フォルダをひとつのカタログとして扱います",
+  "importCatalogModeFile": "ファイル単位",
+  "importCatalogModeFileDescription": "中のファイルをそれぞれ別のカタログとして扱います",
+  "importCatalogModeFolderSummary": "フォルダ1件・ファイル{count}件",
+  "importCatalogModeFileSummary": "カタログ{count}件・ファイル{count}件",
+  "importCatalogModeFileWarning": "中の対応ファイルをすべて、それぞれ別のカタログにします",
+  "@importCatalogModeFolderSummary": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "@importCatalogModeFileSummary": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "importSimpleConfirmFileMessage": "このファイルを追加します",
+  "importSimpleConfirmFilesMessage": "選択したファイルを追加します",
+  "importAdvancedSettings": "選択内容を変更",
+  "importSimpleConfirmTitle": "追加内容の確認",
+  "importSimpleConfirmAction": "追加する",
+  "importReturnToLibrary": "ライブラリへ戻る",
+  "importBackToSimple": "シンプル確認に戻る",
+  "libraryNotSyncedYet": "まだ同期されていません",
+  "librarySyncNow": "今すぐ同期",
+  "libraryReturnToTagShelfTitle": "CharmShelf に戻る",
+  "libraryReturnToTagShelfBody": "タップするとファイル選択を中断してアプリに戻ります",
+  "importPickerGuideOriginalsSafeTitle": "ファイルを取り込んで、チャームをつける",
+  "importPickerGuideOriginalsSafeBody": "ファイルやフォルダを取り込んでカタログにすると、チャームをつけて自分らしく、見つけやすく整理できます。元のファイルは削除・移動されず、そのまま残ります。",
+  "importPickerGuideProceed": "ファイルを選ぶ",
+  "libraryUpdatedDate": "更新: {date}",
+  "@libraryUpdatedDate": {
+    "placeholders": {
+      "date": {
+        "type": "String"
+      }
+    }
+  },
+  "libraryTagUncategorized": "未分類",
+  "libraryDisplayTypeCatalog": "カタログ",
+  "libraryDisplayTypeFolder": "フォルダ",
+  "libraryDisplayTypeFile": "ファイル",
+  "libraryItemTypeFolder": "フォルダ",
+  "libraryItemTypeFile": "ファイル",
+  "libraryItemCount": "{count}項目",
+  "@libraryItemCount": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "librarySyncFolderAction": "フォルダを手動同期",
+  "libraryEmptyFolderDesc": "ファイルやフォルダを追加できます。",
+  "libraryRescanFolder": "フォルダを再スキャン",
+  "librarySectionQuickActions": "クイック操作",
+  "librarySectionProperties": "情報・メモ",
+  "librarySectionDisplay": "表示設定",
+  "librarySectionFileOps": "ファイル操作",
+  "librarySectionVisibilityOrganization": "表示と整理",
+  "librarySectionDanger": "危険な操作",
+  "libraryCannotMoveToSelfOrDescendant": "自身またはそのサブフォルダへは移動できません",
+  "libraryCreateFolderSuccess": "フォルダを作成しました",
+  "librarySectionFolders": "フォルダ ({count})",
+  "@librarySectionFolders": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "librarySectionFiles": "ファイル ({count})",
+  "@librarySectionFiles": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "libraryFolderSummary": "{folders}カタログ・{files}ファイル",
+  "@libraryFolderSummary": {
+    "placeholders": {
+      "folders": {
+        "type": "int"
+      },
+      "files": {
+        "type": "int"
+      }
+    }
+  },
+  "libraryFolderSummaryCounts": "{folders}フォルダ {files}ファイル、内{catalogs}カタログ",
+  "@libraryFolderSummaryCounts": {
+    "placeholders": {
+      "folders": {
+        "type": "int"
+      },
+      "files": {
+        "type": "int"
+      },
+      "catalogs": {
+        "type": "int"
+      }
+    }
+  },
+  "libraryFolderSummaryOnlyFiles": "{count}ファイル",
+  "@libraryFolderSummaryOnlyFiles": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "libraryFolderSummaryOnlyFolders": "{count}カタログ",
+  "@libraryFolderSummaryOnlyFolders": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "libraryFolderSummaryEmpty": "空のフォルダ",
+  "libraryEmptyFolder": "空のフォルダ",
+  "libraryParentCatalogLabel": "所属カタログ",
+  "libraryParentCatalogNone": "カタログ未所属",
+  "librarySetAsCatalogCover": "カタログの表紙に設定",
+  "librarySetAsFolderCover": "カタログの表紙に設定",
+  "librarySetAsCatalogCoverSuccess": "カタログの表紙に設定しました",
+  "libraryCatalogifyThisFile": "カタログにする",
+  "libraryCatalogifyThisFolder": "カタログにする",
+  "dataRestoreTitle": "以前のデータを復元",
+  "dataRestoreCompletedTitle": "以前のデータを復元しました",
+  "dataRestoreDescription": "端末内に保存されている以前のCharmShelfデータが見つかりました。データを復元してすぐに利用を再開できます。",
+  "dataRestoreSelectFolder": "以前のデータを戻す",
+  "dataRestorePermissionTitle": "以前のデータを戻しますか？",
+  "dataRestorePermissionDescription": "以前このアプリを使っていた方は、前に使っていた「CharmShelf」フォルダを選ぶと、写真やチャームなどを戻せます。フォルダの中身は消えません。初めて使う方や、以前のデータが不要な方は「このまま」を選んでください。",
+  "dataRestoreCompletedDescription": "端末内に保存されていたデータが見つかったため、自動で復元しました。",
+  "dataRestoreStatMedia": "メディア",
+  "dataRestoreStatTags": "チャーム",
+  "dataRestoreStatCollections": "コレクション",
+  "dataRestoreActionStart": "アプリを始める",
+  "dataRestoreActionContinue": "このまま",
+  "dataRestoreStoragePath": "保存場所",
+  "dataRestoreTagCount": "チャーム {count} 件",
+  "@dataRestoreTagCount": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "dataRestoreCollectionCount": "コレクション {count} 件",
+  "@dataRestoreCollectionCount": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "dataRestoreMediaCount": "メディアファイル {count} 件",
+  "@dataRestoreMediaCount": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "dataRestoreLastExport": "最終保存日時: {date}",
+  "@dataRestoreLastExport": {
+    "placeholders": {
+      "date": {
+        "type": "String"
+      }
+    }
+  },
+  "dataRestoreActionRestore": "データを復元する",
+  "dataRestoreActionSkip": "復元せずに新規で開始",
+  "dataRestoreSkipNote": "※ 復元しなかった場合でも、後から「設定 > ストレージ」でいつでも復元できます。",
+  "dataRestoreInProgress": "データを復元しています...",
+  "dataRestoreSuccess": "データの復元が完了しました",
+  "dataRestoreFailed": "データの復元に失敗しました: {error}",
+  "@dataRestoreFailed": {
+    "placeholders": {
+      "error": {
+        "type": "String"
+      }
+    }
+  },
+  "librarySearchIncludeFiles": "ファイルも探す",
+  "libraryClearFiltersKeepQuery": "絞り込みを外す",
+  "librarySearchTargetFiles": "すべてを検索",
+  "librarySearchTargetCatalogs": "カタログの情報だけを検索中",
+  "importGroupingChange": "まとめ方を変更",
+  "importGroupingFolder": "1つのカタログにまとめる",
+  "importGroupingFiles": "ファイルごとに並べる",
+  "importOpenFile": "追加したファイルを開く",
+  "importOpenCatalog": "追加したカタログを開く",
+  "importOpenResults": "追加できた項目を見る",
+  "importResultsUnavailable": "追加した項目は現在開けません。移動・削除・非表示の状態をライブラリで確認してください。",
+  "importResultsLoadFailed": "追加した項目の情報を読み込めませんでした",
+  "importResultsReload": "再読み込み",
+  "importResultsChecking": "項目の情報を読み込み中",
+  "importRetryUnavailable": "保存状態を確認できないため、再試行を停止しました。ライブラリで追加結果を確認してください。",
+  "importPendingRetry": "保存されなかった項目を再試行",
+  "libraryHideNeedsLockTitle": "鍵がまだありません",
+  "libraryHideNeedsLockMessage": "非表示は一覧から外すだけです。アプリを開ける人には見えます。先に鍵を付けますか。",
+  "libraryHideNeedsLockContinue": "このまま隠す",
+  "libraryHideNeedsLockSet": "先に鍵を付ける",
+  "legacyFoundTitle": "以前のデータが見つかりました",
+  "legacyRecommended": "おすすめ",
+  "legacyFolderTitle": "内部ストレージ → Documents",
+  "legacyFolderBody": "Documentsを開き「このフォルダを使用」を押してください。",
+  "legacyRestoreCleanup": "引き継ぎと確認が終わったら、元の旧データを削除します。",
+  "legacyDiscardHint": "以前のデータが不要な方",
+  "legacyWelcomeTitle": "CharmShelfへようこそ",
+  "legacyWelcomeBody": "ファイルのまとまりをカタログにして、自分の目印となるチャームをつけて整理できます。",
+  "legacyFirstUse": "始める",
+  "legacyTransferTitle": "以前のデータを引き継ぐ",
+  "legacyReturningHint": "以前この端末でCharmShelfを使っていた方",
+  "legacyStartWithoutTransfer": "引き継がずに始める",
+  "legacyLaterHint": "あとから設定で引き継げます。",
+  "legacyStartTitle": "写真やファイルを整理しよう",
+  "legacySaveFailure": "選択を保存できませんでした。もう一度お試しください。",
+  "legacyLater": "あとで",
+  "legacyDecideLater": "あとで決める",
+  "legacyNotFoundTitle": "以前のデータは見つかりませんでした",
+  "legacyNotFoundBody": "この端末のDocumentsに、引き継げるデータはありませんでした。",
+  "legacyRestoredTitle": "データを引き継ぎました",
+  "legacyDeletedTitle": "以前のデータを削除しました",
+  "legacyBackToSettings": "設定に戻る",
+  "legacyReconnect": "Documentsへのアクセスを選び直す",
+  "legacyRecoveryTitle": "引き継ぎの処理が途中です",
+  "legacyOperationBusy": "別のデータ処理が進行中です。完了してからもう一度お試しください。",
+  "legacyRecordFailure": "処理の記録を読み取れませんでした。安全のため操作を止めています。再試行してください。",
+  "legacyTitle": "以前のデータを探す",
+  "legacySelectBody": "この端末に残っているCharmShelfのデータを確認します。\n確認だけではファイルは変更されません。",
+  "legacyChoiceBody": "写真・動画・チャームを取り込みます。\n今のデータは上書きしません。",
+  "legacyDiscardTitle": "以前のデータを削除しますか？",
+  "legacyDiscardWarning": "Documents/CharmShelfの写真・動画・チャームなどを削除します。\n\n削除すると元に戻せません。\n今のアプリ内のデータは残ります。",
+  "legacyDiscardConfirm": "削除する",
+  "legacyCompletedTitle": "確認が完了しました",
+  "legacyCompletedBody": "CharmShelfを使い始められます。",
+  "legacyResumeBody": "データを安全に扱うため、残りの処理を再開してください。\n削除を開始したデータは元に戻せません。",
+  "legacyFailure": "処理を完了できませんでした。Documentsへのアクセスと空き容量を確認して、再試行してください。",
+  "legacyWorking": "データを確認・処理しています。完了までお待ちください。",
+  "legacySelectDocuments": "フォルダを選ぶ",
+  "legacyRestore": "引き継ぐ",
+  "legacyDecline": "引き継がずに削除する",
+  "legacyInspectAgain": "確認し直す",
+  "legacyContinue": "CharmShelfを始める",
+  "legacyInventory": "対象ファイル: {count}件・{size} MB",
+  "@legacyInventory": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      },
+      "size": {
+        "type": "String"
+      }
+    }
+  },
+  "legacyWrongFolder": "内部ストレージのDocumentsフォルダを選んでください。別のフォルダは削除しません。",
+  "legacyUnknownFiles": "旧CharmShelfのデータと確認できないファイルが含まれています。端末のファイル管理アプリで内容を確認し、無関係なファイルを別の場所へ移してから確認し直してください。",
+  "legacySourceChanged": "確認後に旧フォルダの内容が変わりました。削除を停止しました。追加・変更したファイルを別の場所へ保管するか、処理開始前ならフォルダを確認し直してください。",
+  "legacyUnsupportedFiles": "このアプリで復元できない形式のファイルがあります。必要なファイルを別の場所に保管してから確認し直してください。復元せずに削除することもできます。",
+  "legacyInvalidMetadata": "旧データの整理情報を読み取れません。元データは削除していません。修復して再試行するか、復元せずに削除してください。",
+  "legacyLinkedFolder": "この旧フォルダは現在のアプリでも外部フォルダとして使われています。参照中のファイルは削除できません。",
+  "legacyUnlinkTitle": "外部フォルダの登録を確認",
+  "legacyUnlinkBody": "以下の外部フォルダの登録を解除すると、アプリ内の整理情報は削除されます。元のファイルは残ります。解除後にDocumentsを選び直すと、旧データを復元するか削除するかを選べます。",
+  "legacyUnlinkConfirm": "表示した登録を解除する",
+  "legacyCopying": "旧データを取り込んでいます",
+  "legacyVerifying": "取り込んだデータを確認しています",
+  "legacyDeleting": "確認済みの旧データを削除しています",
+  "legacyRestoredCatalog": "以前のCharmShelf",
+  "importSourceTitle": "取り込み元を選ぶ",
+  "importSourceImport": "取り込む",
+  "importSourceIntro": "取り込み元を登録すると、次回からCharmShelf内でファイルを選べます。どの階層からでも「閉じる」や端末の戻る操作で終了できます。",
+  "importSourceAdd": "場所を追加",
+  "importSourcePermissionBody": "端末の画面で、取り込み元にするフォルダを選んでください。登録後はCharmShelf内で選べます。元のファイルは変更されません。",
+  "importSourceReconnect": "場所を選び直す",
+  "importSourceReplaceBody": "別のフォルダが選ばれました。この取り込み元を、新しく選んだ場所へ変更しますか？",
+  "importSourceExisting": "既存の外部フォルダから追加",
+  "importSourceNoExisting": "利用できる外部フォルダがありません。",
+  "importSourceRemove": "登録を解除",
+  "importSourceRemoveBody": "この取り込み元の登録を解除します。元のファイルと、取り込み済みのファイルは残ります。",
+  "importSourceLocations": "取り込み元一覧",
+  "importSourceDiscard": "選択を解除して、取り込み元一覧へ戻りますか？",
+  "importSourceUp": "上のフォルダ",
+  "importSourceSelectFolder": "このフォルダを選ぶ（配下を含む）",
+  "importSourceUnavailable": "この場所を読み込めませんでした。接続やアクセス許可を確認して、もう一度お試しください。",
+  "importSourceRetry": "もう一度読み込む",
+  "importSourceFallback": "端末の画面から今回だけ選ぶ",
+  "importSourceEmpty": "このフォルダは空です。",
+  "importSourceUnsupported": "取り込みに対応していない形式",
+  "importSourceUnselect": "選択を外す",
+  "importSourceReview": "選択内容を確認",
+  "importSourceSelected": "ファイル{files}件・フォルダ{folders}件を選択中",
+  "importSourceContinue": "続ける",
+  "@importSourceSelected": {
+    "placeholders": {
+      "files": {
+        "type": "int"
+      },
+      "folders": {
+        "type": "int"
+      }
+    }
+  },
+  "importSourceNoSupported": "選択した場所に、取り込めるファイルがありません。",
+  "deviceFilesTitle": "端末のファイル",
+  "deviceFilesSubtitle": "標準のファイル画面で開く・取り込む",
+  "deviceOpenFile": "ファイルを開く",
+  "deviceImportFiles": "ファイルを取り込む",
+  "deviceImportFolder": "フォルダを取り込む",
+  "devicePickerError": "ファイルを選択できませんでした。保存場所やアクセスを確認し、もう一度お試しください。",
+  "importSizeUnknown": "容量不明",
+  "deviceAccessExplanation": "端末内から取り込むファイルを探すため、「すべてのファイルへのアクセス」を使用します。取り込みはコピーで行い、元ファイルを変更・削除しません。チャームやカタログは取り込み後に設定します。クラウドや他アプリの専用領域は対象外です。許可せずにシステムのファイル選択を使うこともできます。",
+  "deviceAllowAccess": "アクセスを許可する",
+  "deviceAccessGranted": "端末ファイルへのアクセスは許可済みです",
+  "deviceLater": "あとで・ライブラリへ戻る",
+  "deviceUsePicker": "標準の選択画面・クラウドから取り込む",
+  "deviceLocations": "保存場所",
+  "deviceIndexTitle": "端末内から取り込み候補を探す",
+  "deviceIndexExplanation": "共有ストレージのファイル名・場所・サイズを読み取り、この画面で探すために一時表示します。元ファイルの整理や永続的な索引の作成は行いません。除外した場所は走査しません。途中で停止できます。",
+  "deviceIndexUpdate": "端末全体から探す",
+  "deviceIndexEmpty": "端末全体から取り込み候補を探すこともできます。",
+  "deviceIndexDate": "索引の更新: {date}",
+  "@deviceIndexDate": {
+    "placeholders": {
+      "date": {
+        "type": "String"
+      }
+    }
+  },
+  "deviceSearchAll": "以前の候補から探す",
+  "deviceSearchFolder": "この場所を検索（名前・チャーム・カタログ）",
+  "deviceSavedIndex": "以前の候補（引継ぎ用）",
+  "deviceFavorites": "お気に入り",
+  "deviceType": "ファイルの種類",
+  "deviceAllTypes": "すべての種類",
+  "deviceReadError": "読み取れませんでした。アクセス許可や保存場所を確認して再試行してください。索引の更新に失敗した場合、以前の索引を保持しています。",
+  "deviceChanged": "ファイルが移動・変更されたか、保存できませんでした。場所を開き直して確認してください。",
+  "deviceOrganize": "チャーム・カタログで整理",
+  "deviceLabelsExplanation": "元のファイルは変更しません。この端末ファイル用の整理情報をCharmShelf内に保存します。",
+  "deviceTags": "チャーム（カンマ区切り）",
+  "deviceCatalog": "カタログ名",
+  "deviceExclude": "検索対象から除外",
+  "deviceExcludeExplanation": "この場所を索引作成と保存済み一覧から除外します。ファイルは削除しません。保存場所から直接開くことはできます。",
+  "deviceExclusions": "検索から除外した場所",
+  "deviceInclude": "除外を解除",
+  "deviceNoResults": "表示する項目がありません",
+  "deviceSelectImport": "選択して取り込む",
+  "deviceOneVolume": "一度に取り込めるのは同じストレージ内の項目です",
+  "deviceSelected": "選択した項目: {count}件",
+  "@deviceSelected": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "deviceUnselect": "選択から外す",
+  "deviceSkipped": "アクセスできない項目・対象外の領域: {count}件（一覧・索引に含まれません）",
+  "@deviceSkipped": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "deviceScanning": "確認中: {count}件",
+  "@deviceScanning": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "deviceLabelsChanged": "この場所のファイルは以前の登録時から変わっています。以前の整理情報を表示しています。現在のファイルへ引き継ぐ場合だけ保存してください。",
+  "deviceLegacyExplanation": "端末のファイルを使うためのアクセスを許可すると、以前のCharmShelfデータが残っているかも確認できます。以前のデータがある場合や全体へのアクセスを許可しない場合は、Documentsフォルダを選んで確認してください。確認だけではファイルを変更・削除しません。",
+  "referenceMigrationTitle": "以前の外部参照を取り込む",
+  "referenceMigrationDescription": "ライブラリは取り込んだコピーを管理します。以前の外部参照は、元ファイルを残して取り込めます。チャーム・メモ・履歴を保持し、途中で止めても再開できます。",
+  "referenceMigrationConfirm": "表示されている登録済みファイルをアプリ内にコピーします。元ファイルは変更しません。容量が増えます。未登録のファイルは通常の取り込みから追加してください。",
+  "referenceMigrationSuccess": "処理が完了しました。",
+  "referenceMigrationPaused": "中断しました。完了済みのコピーを保持しています。同じ項目から再開できます。",
+  "referenceMigrationFailure": "処理を完了できませんでした。管理情報と完了済みコピーは保持しています。空き容量と元ファイルへのアクセスを確認して再試行してください。",
+  "referenceMigrationPause": "中断する",
+  "referenceMigrationEmpty": "取り込み待ちの外部参照はありません。",
+  "referenceMigrationCopy": "コピーして取り込む・再開",
+  "referenceMigrationExport": "管理情報を保存・共有",
+  "referenceMigrationReconnect": "元ファイルを選び直す",
+  "referenceMigrationReconnectConfirm": "この項目の元ファイルを1つ選び直します。内容が同じファイルを選んでください。名前だけでは同一性を確認できません。",
+  "referenceMigrationTrash": "ごみ箱内の項目を含みます。取り込み後もごみ箱の状態を保持します。",
+  "referenceMigrationCleanup": "アクセス権の後片付けを再試行",
+  "referenceMigrationCounts": "{count}件・確認済み {bytes} バイト・容量不明 {unknown}件",
+  "@referenceMigrationCounts": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      },
+      "bytes": {
+        "type": "int"
+      },
+      "unknown": {
+        "type": "int"
+      }
+    }
+  },
+  "referenceMigrationRemove": "登録を解除",
+  "referenceMigrationRemoveConfirm": "このグループの登録・チャームとの関連・履歴を解除します。元ファイルは残ります。必要な管理情報は先に保存してください。移行前の退避と途中コピーはアプリ内に保持します。",
+  "referenceMigrationRecoveryPending": "先に未完了の操作を復旧してください。アプリを再起動して復旧結果を確認し、再試行してください。",
+  "referenceMigrationChanged": "管理情報が変更されたため中断しました。最新の情報を保持して計画し直します。同じ項目から再試行してください。",
+  "referenceMigrationStorageFailure": "保存容量を確保または確認できませんでした。端末の空き容量を確認して再試行してください。完了済みコピーは保持しています。",
+  "referenceMigrationSourceFailure": "元ファイルを読み取れないか、内容が変わっています。アクセスを確認するか、元ファイルを選び直してください。管理情報は保持しています。",
+  "legacyReturningEntry": "以前使っていた方へ",
+  "freshStartConfirmTitle": "まっさらな状態で始めますか？",
+  "freshStartConfirmBody": "CharmShelf内のファイル、管理情報、設定をリセットします。元に戻せません。\n外部フォルダの元ファイルやバックアップは削除しません。",
+  "freshStartConfirmAction": "リセットして始める",
+  "freshStartProgress": "まっさらな状態にしています",
+  "freshStartFailure": "初期化を完了できませんでした。再試行すると、続きから処理します。",
+  "freshStartCheckFailure": "開始の準備を完了できませんでした。もう一度お試しください。"
+}

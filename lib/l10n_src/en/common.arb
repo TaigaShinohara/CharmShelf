@@ -1,0 +1,241 @@
+{
+  "@@locale": "en",
+  "commonMoreCount": "{count} more",
+  "@commonMoreCount": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "appTitle": "CharmShelf",
+  "commonOk": "OK",
+  "commonCancel": "Cancel",
+  "commonYes": "Yes",
+  "commonNo": "No",
+  "commonRetry": "Retry",
+  "commonBack": "Back",
+  "commonNext": "Next",
+  "commonNoPages": "No pages available",
+  "commonSelectedLabel": "{label}, selected",
+  "@commonSelectedLabel": {
+    "placeholders": {
+      "label": {
+        "type": "String"
+      }
+    }
+  },
+  "commonDoubleTapToSelect": "Double tap to select {label}",
+  "@commonDoubleTapToSelect": {
+    "placeholders": {
+      "label": {
+        "type": "String"
+      }
+    }
+  },
+  "commonDoubleTapToActivate": "Double tap to activate",
+  "commonEmptyTitle": "No items",
+  "commonErrorOccurred": "An error occurred",
+  "errorNetwork": "Connection failed. Please check your network.",
+  "errorDatabase": "Failed to save or load data.",
+  "errorAuth": "Authentication failed.",
+  "errorValidation": "There is an error in your input.",
+  "errorFile": "Failed to operate on the file.",
+  "errorPermission": "You do not have the required permissions.",
+  "errorSystem": "A system error occurred in the app.",
+  "errorUi": "Failed to display the screen.",
+  "errorUnknown": "An unexpected error occurred.",
+  "commonComingSoon": "Coming soon",
+  "commonClose": "Close",
+  "commonSave": "Save",
+  "commonDelete": "Delete",
+  "commonEdit": "Edit",
+  "commonAdd": "Add",
+  "commonUpdate": "Update",
+  "commonCopy": "Copy",
+  "commonShare": "Share",
+  "commonClear": "Clear",
+  "networkInspectorCopyAsCurl": "Copy as cURL",
+  "crashLogRefresh": "Refresh",
+  "crashLogExportAll": "Export all",
+  "crashLogDeleteAll": "Delete all",
+  "crashLogCopy": "Copy",
+  "crashLogShare": "Share",
+  "commonExpand": "Expand",
+  "commonCollapse": "Collapse",
+  "commonMenu": "Menu",
+  "tooltipInfo": "Info",
+  "tooltipUnmute": "Unmute",
+  "tooltipMute": "Mute",
+  "tooltipPreviousTrack": "Previous Track",
+  "tooltipRewind10": "Rewind 10s",
+  "tooltipPause": "Pause",
+  "tooltipPlay": "Play",
+  "tooltipForward10": "Forward 10s",
+  "tooltipNextTrack": "Next Track",
+  "commonApply": "Apply",
+  "commonExecute": "Execute",
+  "commonPost": "Post",
+  "commonLoading": "Loading...",
+  "startupPreparingStorage": "Preparing your saved data safely…",
+  "startupPreparingData": "Checking your data safely…",
+  "commonSearch": "Search...",
+  "commonRead": "Read",
+  "commonUnread": "Unread",
+  "pressBackAgainToExit": "Press back again to exit",
+  "relativeJustNow": "just now",
+  "relativeMinutesAgo": "{minutes, plural, =1{1 minute ago} other{{minutes} minutes ago}}",
+  "@relativeMinutesAgo": {
+    "placeholders": {
+      "minutes": {
+        "type": "int"
+      }
+    }
+  },
+  "relativeHoursAgo": "{hours, plural, =1{1 hour ago} other{{hours} hours ago}}",
+  "@relativeHoursAgo": {
+    "placeholders": {
+      "hours": {
+        "type": "int"
+      }
+    }
+  },
+  "relativeDaysAgo": "{days, plural, =1{1 day ago} other{{days} days ago}}",
+  "@relativeDaysAgo": {
+    "placeholders": {
+      "days": {
+        "type": "int"
+      }
+    }
+  },
+  "relativeYesterdayAt": "Yesterday {time}",
+  "@relativeYesterdayAt": {
+    "placeholders": {
+      "time": {
+        "type": "String"
+      }
+    }
+  },
+  "validationRequired": "Required",
+  "validationMinLength": "Must be at least {min} characters",
+  "@validationMinLength": {
+    "placeholders": {
+      "min": {
+        "type": "int"
+      }
+    }
+  },
+  "validationMaxLength": "Must be at most {max} characters",
+  "@validationMaxLength": {
+    "placeholders": {
+      "max": {
+        "type": "int"
+      }
+    }
+  },
+  "validationInvalidEmail": "Invalid email address",
+  "validationInvalidNumber": "Invalid number",
+  "validationMinValueInt": "Must be >= {min}",
+  "@validationMinValueInt": {
+    "placeholders": {
+      "min": {
+        "type": "int"
+      }
+    }
+  },
+  "validationMaxValueInt": "Must be <= {max}",
+  "@validationMaxValueInt": {
+    "placeholders": {
+      "max": {
+        "type": "int"
+      }
+    }
+  },
+  "validationMinValueDouble": "Must be >= {min}",
+  "@validationMinValueDouble": {
+    "placeholders": {
+      "min": {
+        "type": "double"
+      }
+    }
+  },
+  "validationMaxValueDouble": "Maximum value must be {max}",
+  "@validationMaxValueDouble": {
+    "placeholders": {
+      "max": {
+        "type": "double"
+      }
+    }
+  },
+  "clipboardCopied": "Copied",
+  "clipboardFailed": "Failed to copy",
+  "initializationFailed": "Initialization failed: {error}",
+  "@initializationFailed": {
+    "placeholders": {
+      "error": {
+        "type": "String"
+      }
+    }
+  },
+  "commonUpdatedAt": "Updated: {date}",
+  "@commonUpdatedAt": {
+    "placeholders": {
+      "date": {
+        "type": "String"
+      }
+    }
+  },
+  "errorLabel": "Error",
+  "commonAll": "All",
+  "commonConfirm": "Confirm",
+  "commonCreate": "Create",
+  "commonFile": "File",
+  "commonFilter": "Filter",
+  "commonFolder": "Folder",
+  "commonNotAvailable": "Not available",
+  "commonNotesHint": "Enter notes...",
+  "commonOff": "Off",
+  "commonOn": "On",
+  "commonProcessing": "Processing...",
+  "commonRenameHint": "Enter new name",
+  "commonReset": "Reset",
+  "commonSortByLevel": "Sort by Level",
+  "commonSortByName": "Sort by Name",
+  "commonSortByUpdateDate": "Sort by Date",
+  "commonSortByUsageCount": "Sort by Usage",
+  "commonSortSettings": "Sort Settings",
+  "commonCancelling": "Cancelling...",
+  "commonCopyPath": "Copy Path",
+  "commonArchive": "Archive",
+  "commonUnarchive": "Unarchive",
+  "commonArchiveSuccess": "Archived successfully",
+  "commonUnarchiveSuccess": "Unarchived successfully",
+  "commonFailedItemsOthers": "...and {count} others",
+  "@commonFailedItemsOthers": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "commonUnderstand": "OK",
+  "commonImport": "Import",
+  "validationFileNameEmpty": "Please enter a name",
+  "validationFileNameInvalidChars": "The following characters cannot be used: \\ / : * ? \" < > |",
+  "validationFileNameTooLong": "Name is too long (max 255 characters)",
+  "validationFileNameReserved": "System reserved names cannot be used",
+  "validationFileNameDuplicate": "An item with the same name already exists",
+  "commonUndo": "Undo",
+  "commonDuplicate": "Duplicate in library",
+  "commonDuplicateSuccess": "Duplicated successfully",
+  "startupTrashMissingTitle": "Some files in Trash are unavailable",
+  "startupTrashMissingMessage": "The stored files for {count} deleted items could not be found. Their records are retained for recovery. You can use other data, but the missing files have not been restored. Keep the app and its data, and check your original files.",
+  "startupTrashMissingContinue": "Continue with this warning",
+  "@startupTrashMissingMessage": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  }
+}

@@ -1,0 +1,109 @@
+{
+  "@@locale": "zh",
+  "appTitle": "模板应用",
+  "homeTitle": "首页",
+  "settingsTitle": "设置",
+  "commonOk": "确定",
+  "commonCancel": "取消",
+  "commonYes": "是",
+  "commonNo": "否",
+  "commonRetry": "重试",
+  "commonEmptyTitle": "暂无内容",
+  "commonErrorOccurred": "发生错误",
+  "avatarActionTitle": "头像",
+  "avatarActionTakePhoto": "拍照",
+  "avatarActionChooseFromLibrary": "从相册选择",
+  "avatarActionRemove": "删除头像",
+  "avatarTapToChange": "点击更换",
+  "avatarRemoveTitle": "删除头像？",
+  "avatarRemoveMessage": "这将删除您的头像。",
+  "relativeJustNow": "刚刚",
+  "relativeMinutesAgo": "{minutes}分钟前",
+  "@relativeMinutesAgo": {
+    "placeholders": {
+      "minutes": {
+        "type": "int"
+      }
+    }
+  },
+  "relativeHoursAgo": "{hours}小时前",
+  "@relativeHoursAgo": {
+    "placeholders": {
+      "hours": {
+        "type": "int"
+      }
+    }
+  },
+  "relativeDaysAgo": "{days}天前",
+  "@relativeDaysAgo": {
+    "placeholders": {
+      "days": {
+        "type": "int"
+      }
+    }
+  },
+  "relativeYesterdayAt": "昨天 {time}",
+  "@relativeYesterdayAt": {
+    "placeholders": {
+      "time": {
+        "type": "String"
+      }
+    }
+  },
+  "validationRequired": "必填",
+  "validationMinLength": "至少需要{min}个字符",
+  "@validationMinLength": {
+    "placeholders": {
+      "min": {
+        "type": "int"
+      }
+    }
+  },
+  "validationMaxLength": "最多{max}个字符",
+  "@validationMaxLength": {
+    "placeholders": {
+      "max": {
+        "type": "int"
+      }
+    }
+  },
+  "validationInvalidEmail": "邮箱格式不正确",
+  "validationInvalidNumber": "请输入有效数字",
+  "validationMinValueInt": "必须大于等于{min}",
+  "@validationMinValueInt": {
+    "placeholders": {
+      "min": {
+        "type": "int"
+      }
+    }
+  },
+  "validationMaxValueInt": "必须小于等于{max}",
+  "@validationMaxValueInt": {
+    "placeholders": {
+      "max": {
+        "type": "int"
+      }
+    }
+  },
+  "validationMinValueDouble": "必须大于等于{min}",
+  "@validationMinValueDouble": {
+    "placeholders": {
+      "min": {
+        "type": "double"
+      }
+    }
+  },
+  "validationMaxValueDouble": "必须小于等于{max}",
+  "@validationMaxValueDouble": {
+    "placeholders": {
+      "max": {
+        "type": "double"
+      }
+    }
+  },
+  "imageSaveFailed": "图片保存失败",
+  "imageDeleteFailed": "图片删除失败",
+  "unsavedDataDialogTitle": "放弃更改？",
+  "unsavedDataDialogMessage": "您有未保存的更改。如果现在离开，更改将丢失。",
+  "unsavedDataDialogDiscard": "放弃"
+}

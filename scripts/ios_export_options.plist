@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>method</key>
+	<string>app-store-connect</string>
+	<key>destination</key>
+	<string>export</string>
+	<key>teamID</key>
+	<string>YOUR_APPLE_TEAM_ID</string>
+	<key>signingStyle</key>
+	<string>manual</string>
+	<key>signingCertificate</key>
+	<string>YOUR_DISTRIBUTION_CERTIFICATE_SHA1</string>
+	<key>provisioningProfiles</key>
+	<dict>
+		<key>org.charmshelf.opensource</key>
+		<string>YOUR_APP_STORE_PROFILE_NAME</string>
+	</dict>
+	<key>manageAppVersionAndBuildNumber</key>
+	<false/>
+	<key>uploadSymbols</key>
+	<true/>
+</dict>
+</plist>

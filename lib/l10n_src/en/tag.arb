@@ -1,0 +1,178 @@
+{
+  "@@locale": "en",
+  "tagAdvancedSettings": "Advanced",
+  "tagParentConfigured": "Parent charm set",
+  "tagFacetEmptyHint": "You can add a category later",
+  "tagNameExample": "e.g. Travel, Unread",
+  "tagListTitle": "Charms",
+  "tagDisplayModeTitle": "Display Mode",
+  "tagDisplayModeNormal": "Normal",
+  "tagDisplayModeHierarchy": "Hierarchy",
+  "tagDisplayModeHybrid": "Hybrid",
+  "tagSortTitle": "Sort",
+  "tagFacetTabTitle": "Categories",
+  "tagFacetLabel": "Category",
+  "tagFacetDeleteConfirmTitle": "Delete Category",
+  "tagFacetDeleteConfirmMessage": "Are you sure you want to delete category \"{facetName}\"?\nAll charms in this category will be uncategorized.",
+  "@tagFacetDeleteConfirmMessage": {
+    "placeholders": {
+      "facetName": {
+        "type": "String"
+      }
+    }
+  },
+  "tagFacetAddTitle": "Add Category",
+  "tagFacetEditTitle": "Edit Category",
+  "tagFacetAddDescription": "Create a new charm category.",
+  "tagFacetEditDescription": "Edit category name.",
+  "tagFacetNameHint": "Category name (e.g., Character, Genre)",
+  "tagFacetNone": "No Category",
+  "tagFacetRequired": "Category is required",
+  "tagFacetNameRequired": "Please enter a category name",
+  "tagCreate": "Create Charm",
+  "tagAddNew": "Add New Charm",
+  "tagManageTitle": "Manage Charms",
+  "tagDeleteConfirm": "Delete Charm",
+  "tagDeleteMessage": "Delete {tagName}?",
+  "@tagDeleteMessage": {
+    "placeholders": {
+      "tagName": {
+        "type": "String"
+      }
+    }
+  },
+  "tagEditDialogTitle": "Edit Charm",
+  "tagEditDialogDescription": "Edit charm details.",
+  "tagParentLabel": "Parent Charm",
+  "tagParentFacetRequired": "Select a category first",
+  "tagParentNotNeeded": "Not Specified",
+  "tagParentNone": "None",
+  "tagLevelLabel": "Level",
+  "tagTitleRequired": "Please enter a charm name",
+  "tagSelectedCount": "{count} selected",
+  "@tagSelectedCount": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "tagSearchHint": "Search Charms",
+  "tagChangeFailed": "Failed to change charm: {error}",
+  "@tagChangeFailed": {
+    "placeholders": {
+      "error": {
+        "type": "String"
+      }
+    }
+  },
+  "tagFilterAllFacets": "All Categories",
+  "tagFilterHint": "Filter",
+  "tagGoToManagement": "Go to Charm Management",
+  "tagNoTagsMessage": "No charms found",
+  "tagCreateFromSearchHint": "Use the search text as the name of a new charm.",
+  "tagCreateFromSearch": "Create with this name",
+  "tagSearchAllCategories": "Search all categories",
+  "tagNewDialogTitle": "Create Charm",
+  "tagNewDialogDescription": "Create and register a new charm.",
+  "tagNewDialogHint": "Charm name",
+  "tagNewChip": "New",
+  "tagColorLabel": "Color",
+  "tagShowAdvancedOptions": "Show Advanced Options",
+  "tagHideAdvancedOptions": "Hide Advanced Options",
+  "tagDisplayModeFlat": "Flat View",
+  "tagDisplayModeTree": "Hierarchy Tree View",
+  "tagImportTabTitle": "Import from File",
+  "tagHiddenLabel": "Hidden",
+  "tagHiddenSubtitle": "Hide this charm from search results",
+  "tagActionAdd": "Add {label}",
+  "@tagActionAdd": {
+    "placeholders": {
+      "label": {
+        "type": "String"
+      }
+    }
+  },
+  "tagActionRemove": "Remove {label}",
+  "@tagActionRemove": {
+    "placeholders": {
+      "label": {
+        "type": "String"
+      }
+    }
+  },
+  "tagMoreActions": "More actions for {label}",
+  "@tagMoreActions": {
+    "placeholders": {
+      "label": {
+        "type": "String"
+      }
+    }
+  },
+  "tagEmptyGuideTitle": "Add Your First Charms",
+  "tagEmptyGuideSubtitle": "Create your own or start with suggested charms.",
+  "tagSetupPresetsAction": "Add Suggested Charms",
+  "tagAllFacets": "All",
+  "tagQuickAdd": "Add Charm",
+  "tagViewChips": "Chip View",
+  "tagViewList": "List View",
+  "tagManageFacets": "Manage Categories",
+  "tagPresetsCreated": "Created {count} charms",
+  "@tagPresetsCreated": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "tagAllCount": "All Charms ({count})",
+  "@tagAllCount": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "tagSetupPresetsConfirmTitle": "Set Up Recommended Charms",
+  "tagSetupPresetsConfirmMessage": "This will add standard categories and about 40 preset charms (Content Types, Genres, Status, Vibes, etc.) to help organize and search your files.\n\n* Your existing charms will not be removed or overwritten. You can freely edit or delete them later.",
+  "tagSetupPresetsConfirmAction": "Set Up",
+  "tagExportAction": "Export to File",
+  "tagExportScopeTitle": "Export Scope",
+  "tagExportAll": "All Charms",
+  "tagExportSelectedFacet": "Charms in \"{facetName}\"",
+  "@tagExportSelectedFacet": {
+    "placeholders": {
+      "facetName": {
+        "type": "String"
+      }
+    }
+  },
+  "tagExportSaveDialogTitle": "Choose Where to Save the Charm File",
+  "tagExportCompleted": "Exported {facetCount} categories and {tagCount} charms",
+  "@tagExportCompleted": {
+    "placeholders": {
+      "facetCount": {
+        "type": "int"
+      },
+      "tagCount": {
+        "type": "int"
+      }
+    }
+  },
+  "tagCreateAndAttach": "Create and attach “{name}”",
+  "@tagCreateAndAttach": {
+    "placeholders": {
+      "name": {
+        "type": "String"
+      }
+    }
+  },
+  "tagAttachCreated": "Attach “{name}” (retry)",
+  "@tagAttachCreated": {
+    "placeholders": {
+      "name": {
+        "type": "String"
+      }
+    }
+  }
+}

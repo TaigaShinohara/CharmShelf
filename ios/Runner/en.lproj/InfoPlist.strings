@@ -1,0 +1,5 @@
+"NSCameraUsageDescription" = "CharmShelf uses the camera to take photos and videos for your library.";
+"NSPhotoLibraryUsageDescription" = "CharmShelf accesses your photo library so you can select photos and videos to import.";
+"NSPhotoLibraryAddUsageDescription" = "CharmShelf saves photos and videos you export to your photo library.";
+"NSFaceIDUsageDescription" = "CharmShelf uses Face ID to unlock the app.";
+"NSMicrophoneUsageDescription" = "Microphone access is used to include audio when recording a video for your library.";

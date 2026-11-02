@@ -1,0 +1,112 @@
+{
+  "@@locale": "en",
+  "viewerShowInfo": "File Info",
+  "viewerLoadingExternal": "Loading external file...",
+  "viewerError": "An error occurred: {error}",
+  "@viewerError": {
+    "placeholders": {
+      "error": {
+        "type": "String"
+      }
+    }
+  },
+  "viewerOpenExternal": "Open in External App",
+  "viewerSetThumbnail": "Set as Thumbnail",
+  "viewerThumbnailSet": "Thumbnail set successfully",
+  "viewerThumbnailUpdated": "Thumbnail updated successfully",
+  "viewerThumbnailReady": "Generated",
+  "viewerThumbnailFailed": "Failed to generate",
+  "viewerUpdateFailed": "Update failed: {error}",
+  "@viewerUpdateFailed": {
+    "placeholders": {
+      "error": {
+        "type": "String"
+      }
+    }
+  },
+  "viewerDeleteConfirm": "Confirm Deletion",
+  "viewerDeleteMessage": "Are you sure you want to delete this file?\n(The actual file will also be deleted)",
+  "viewerDeleted": "Deleted successfully",
+  "viewerDeleteFailed": "Delete failed: {error}",
+  "@viewerDeleteFailed": {
+    "placeholders": {
+      "error": {
+        "type": "String"
+      }
+    }
+  },
+  "viewerSetAsFolderCover": "Set as Folder Cover",
+  "viewerSetAsFolderCoverSuccess": "Set as cover image",
+  "viewerRename": "Rename file",
+  "viewerEditNotes": "Bulk Edit Notes",
+  "viewerNotesSaving": "Saving…",
+  "viewerNotesSaveFailed": "Could not save your notes. Your input is still here. Please try again.",
+  "mediaViewerLoadingExternal": "Loading external media...",
+  "mediaViewerOpenInExternalApp": "Open in External App",
+  "mediaThumbnailUpdated": "Thumbnail updated successfully",
+  "viewerFileNotFound": "File not found",
+  "viewerUnsupportedFileType": "This file type cannot be viewed in the app",
+  "viewerThumbnailPreviewTitle": "Thumbnail Preview",
+  "viewerThumbnailSetConfirm": "Set this image as the thumbnail?",
+  "viewerRetry": "Retry",
+  "viewerBackToLibrary": "Back to Library",
+  "viewerBackToCatalogContents": "Back to Catalog Contents",
+  "viewerPermissionDenied": "You do not have permission to access this file",
+  "viewerDecodeFailed": "This file cannot be displayed",
+  "viewerPlaybackFailed": "This media cannot be played",
+  "viewerLoadFailed": "Failed to load the file",
+  "viewerUnknownFileSize": "Unknown",
+  "viewerFilePosition": "File {current} of {total}",
+  "@viewerFilePosition": {
+    "placeholders": {
+      "current": {
+        "type": "int"
+      },
+      "total": {
+        "type": "int"
+      }
+    }
+  },
+  "viewerPagePosition": "Page {current} of {total}",
+  "@viewerPagePosition": {
+    "placeholders": {
+      "current": {
+        "type": "int"
+      },
+      "total": {
+        "type": "int"
+      }
+    }
+  },
+  "viewerLeftPage": "Left page",
+  "viewerRightPage": "Right page",
+  "viewerShare": "Share",
+  "viewerFileTooLarge": "File size is too large",
+  "viewerFileTooLargeDesc": "This file is very large ({size}). We recommend opening it in an external app.",
+  "@viewerFileTooLargeDesc": {
+    "placeholders": {
+      "size": {
+        "type": "String"
+      }
+    }
+  },
+  "viewerOpenAnyway": "Open Anyway",
+  "miniPlayerSemanticsLabel": "Playing {title}. Tap to expand full screen",
+  "@miniPlayerSemanticsLabel": {
+    "placeholders": {
+      "title": {
+        "type": "String"
+      }
+    }
+  },
+  "miniPlayerError": "Playback error: {error}",
+  "@miniPlayerError": {
+    "placeholders": {
+      "error": {
+        "type": "String"
+      }
+    }
+  },
+  "backgroundAudioPlaying": "Playing Audio",
+  "viewerMarkdownImageBlocked": "Images in this document are not loaded"
+}

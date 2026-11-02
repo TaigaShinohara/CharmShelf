@@ -1,0 +1,21 @@
+{
+  "service": "Android release signing / YOUR_PROJECT",
+  "environment": "release-signing",
+  "local_auth": {
+    "mode": "service_account_keychain",
+    "keychain_service": "codex.1password.YOUR_PROJECT-signing",
+    "keychain_account": "service-account"
+  },
+  "secret_references": {
+    "KEY_PROPERTIES_BASE64": "op://YOUR_VAULT/YOUR_ITEM/KEY_PROPERTIES_BASE64",
+    "KEYSTORE_BASE64": "op://YOUR_VAULT/YOUR_ITEM/KEYSTORE_BASE64"
+  },
+  "allowed_domains": [
+    "my.1password.com"
+  ],
+  "verification": "python3 scripts/android_signing_1password.py --check",
+  "cloud": {
+    "status": "not_registered",
+    "reason": "Binary signing material requires local signing; HTTPS Network secrets are not suitable"
+  }
+}
