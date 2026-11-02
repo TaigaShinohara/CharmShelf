@@ -34,7 +34,7 @@ dependencies:
     sdk: flutter
   flutter_localizations:
     sdk: flutter
-  flutter_svg: ^2.2.1
+  flutter_svg: ^2.3.2
 
   # アニメーション（宣言的に書ける軽量ヘルパー）
   flutter_animate: ^4.5.0
