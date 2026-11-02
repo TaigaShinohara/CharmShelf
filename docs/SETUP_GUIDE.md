@@ -114,3 +114,5 @@ bash scripts/quiet_check.sh flutter analyze
 ## Optional isolated local settings (macOS/Linux)
 
 If a machine has stale global Flutter/JDK settings, use `python3 scripts/flutter_local.py build apk --debug` instead of changing shared configuration. It uses a locally provisioned SDK in `build/toolchains/flutter-3.47.9` when available, otherwise Flutter from PATH; on macOS it can select an installed JDK 17. You may pass `--java-home /path/to/jdk` or `--android-sdk /path/to/sdk` before the Flutter command. Configuration exists only in a temporary process directory. If a legacy home `.flutter_settings` file prevents isolation, the wrapper stops without modifying it. SDKs and generated local settings are not committed.
+
+The optional Python regression suite for the distribution wrappers requires `zsh` (on Ubuntu: install the `zsh` package). Public CI installs it explicitly. This is not a signing credential and normal Flutter app development does not run distribution wrappers.
