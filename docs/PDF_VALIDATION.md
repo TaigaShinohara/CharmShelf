@@ -19,6 +19,13 @@ Do not run this harness over an everyday app installation. The test does not
 start `app.main`, open the library database, import files, or confirm URL launch.
 It creates and removes only its own new temporary fixture directory.
 
+An explicitly authorized physical-device run must use a fresh, separately
+identified QA installation. On Android, the existing Gradle properties
+`tagshelfPerformanceQa=true` and a new numbered `tagshelfQaInstance` provide
+that separation. Check the actual APK application ID and the absence of that
+package on the specified device before installation. Keep the ordinary app's
+data, existing QA packages and screen protection intact.
+
 ```sh
 flutter devices
 flutter test integration_test/pdf_viewer_smoke_test.dart -d SIMULATOR_ID --no-pub --reporter expanded
@@ -44,23 +51,46 @@ The assertions cover:
 - The app's link callbacks with annotations decoded by PDFium: external
   confirmation/cancellation without launch, and internal navigation to page 2.
   Annotation hit testing and external-app handoff remain separate checks.
-- Decryption of the fixture by PDFium. The app currently has no password input
-  UI, so opening this protected file must show a retryable failure panel and
-  must not report content ready. Password-protected PDFs are not yet supported
-  for in-app reading merely because engine decryption succeeds.
+- The app's password-entry flow: incorrect-password feedback, correct entry
+  followed by rendering, cancellation without content-ready, and retry with a
+  fresh prompt. Switching the document or removing the reader closes its old
+  prompt without affecting another route. New loads do not retain the input.
 - Invalid-document failure, replacing only the synthetic fixture, retrying
-  successfully, and preserving the original fixture's bytes.
+  successfully, and preserving both original plain/encrypted fixture bytes.
+
+Password entry is requested only when PDFium cannot open a PDF without one.
+The input is obscured, with keyboard suggestions, personalized learning and
+autofill disabled. Values are passed unchanged (including whitespace) to the
+document loader and are not persisted or logged by the app. A cancelled load
+returns to the existing retry/external-open/share panel. The UI is localized in
+Japanese and English. This does not establish support for every PDF encryption
+algorithm or document restriction; the native fixture uses revision 2 only.
 
 ## Recorded run
 
 On 2026-11-03, the native smoke test passed on a newly created, dedicated
 iPhone 17 / iOS 27.0 Simulator using Flutter 3.47.9 / Dart 3.13.7. The test
-completed all assertions above, including the expected password-required and
-invalid-format failures followed by successful document recovery. No app
+completed the initial smoke scenarios, before password-entry support was
+added, including password-required and invalid-format failures followed by
+successful document recovery. No app
 database, personal files or physical device was used. This was one automated
 integration test with multiple assertions, not a human touch-interaction review.
 The optional settled-zoom checkpoint was also run successfully; its Simulator
 screenshot was inspected separately from the moving/zooming frame capture.
+
+The password-entry extension was subsequently checked on an explicitly
+authorized Pixel 10 Pro / Android 17 (API 37) with a fresh isolated QA package.
+The actual APK ID and the absence of that package were checked before install.
+The full native test passed, including incorrect/correct input, cancellation
+and retry, switching files, removing/reopening the reader, and original-file
+hashes. Host coverage also passed (14 PDF/prompt/link tests), including English
+large-text/keyboard layout and guarding against duplicate submit/navigation.
+The same extended native test also passed on the dedicated iPhone 17 / iOS
+27.0 Simulator. This includes document switching while a prompt is open and
+closing/reopening the same encrypted file without retaining its input.
+The device uses 4KB pages, so it does not establish 16KB-device execution.
+Android's existing `FLAG_SECURE` was retained. These automated assertions do
+not establish human password-entry usability or full import-to-reader flows.
 
 ## Remaining checks, in priority order
 
@@ -68,7 +98,7 @@ screenshot was inspected separately from the moving/zooming frame capture.
 | --- | --- | --- |
 | 1 | PDF touch zoom, long-press selection/handles, scroll and back navigation | Dedicated Android/iOS device or isolated app installation, identified before use; synthetic files first |
 | 1 | PDF annotation hit testing, link cancellation/confirmed handoff, missing/unreadable files | Same target, with OS handoff observed; never use personal document links as fixtures |
-| 1 | Password input and cancellation/retry UX; additional encryption formats | Plan a focused reader change before claiming support; current app shows failure and external-open/share alternatives |
+| 1 | Password-entry usability, additional encryption formats and document restrictions | Automated coverage uses a synthetic revision-2 PDF; verify representative files and actual keyboard/gesture behavior separately |
 | 2 | Background audio, interruption/resume, permissions, OS pickers and sharing | Confirm device, application ID, allowed permissions and synthetic media before operations |
 | 2 | Backup and restoration, cancellation/partial failure, existing-data preservation | Disposable library and explicit source/destination; keep ordinary data and originals untouched |
 | 3 | Linux, Windows, macOS and Web runtime | Separate available environment and scoped scenarios; project files alone are not runtime validation |
