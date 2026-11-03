@@ -14,7 +14,8 @@ import 'package:private_shelf/features/library/presentation/widgets/viewer_state
 import '../test/helpers/test_helpers.dart';
 import 'support/pdf_fixture.dart';
 
-/// Run only on a dedicated, empty Simulator/emulator. This entry point never
+/// Use a dedicated Simulator/emulator or an explicitly verified, fresh QA
+/// package on a physical device. This entry point never
 /// starts app.main, opens the app database, imports files, or launches URLs.
 void main() {
   IntegrationTestWidgetsFlutterBinding.ensureInitialized();
@@ -33,6 +34,7 @@ void main() {
     final broken = await File('${directory.path}/broken.pdf')
         .writeAsString('synthetic invalid PDF');
     final originalHash = sha256.convert(await plain.readAsBytes());
+    final protectedHash = sha256.convert(await protected.readAsBytes());
     addTearDown(() async {
       await tester.pumpWidget(const SizedBox.shrink());
       // Only this test's newly created temporary directory is removed.
@@ -117,33 +119,114 @@ void main() {
     await tester.pumpAndSettle();
     expect(controller.pageNumber, 2);
 
-    // The engine can decrypt the fixture, but the app currently has no password
-    // prompt. Verify it exits loading with a retryable failure rather than hangs.
-    final decrypted = await pdfrx.PdfDocument.openFile(
-      protected.path,
-      passwordProvider: () => 'qa-reader',
-    );
-    expect(decrypted.pages, hasLength(2));
-    await decrypted.dispose();
     await show(protected);
+    await _enterPassword(tester, 'wrong-synthetic');
+    await _until(
+      tester,
+      () => find.text('パスワードが違います。もう一度入力してください。').evaluate().isNotEmpty,
+    );
+    expect(ready, 1);
+    await _enterPassword(tester, 'qa-reader');
+    await _until(tester, () => ready == 2);
+
+    // A new document load must ask again, with no retained password or error.
+    await show(plain);
+    await _until(tester, () => ready == 3);
+    await show(protected);
+    await _until(tester, () => find.text('PDFのパスワード').evaluate().isNotEmpty);
+    await tester.pump(const Duration(milliseconds: 400));
+    expect(
+      tester.widget<TextField>(find.byType(TextField)).controller!.text,
+      isEmpty,
+    );
+    expect(find.text('パスワードが違います。もう一度入力してください。'), findsNothing);
+    await tester.tap(find.text('キャンセル'));
     await _until(
       tester,
       () => find.byType(ViewerStatePanel).evaluate().isNotEmpty,
     );
-    expect(ready, 1, reason: 'Encrypted failure must not report content ready');
+    expect(ready, 3, reason: 'Cancel must not report content ready');
+    await tester.pump(const Duration(milliseconds: 400));
+    await tester.tap(find.text('再試行'));
+    await _enterPassword(tester, 'qa-reader');
+    await _until(tester, () => ready == 4);
+
+    // Switching files while the dialog is open must discard the old request.
+    await show(plain);
+    await _until(tester, () => ready == 5);
+    await show(protected);
+    await _until(tester, () => find.text('PDFのパスワード').evaluate().isNotEmpty);
+    await show(plain);
+    await _until(
+      tester,
+      () => ready == 6 && find.byType(TextField).evaluate().isEmpty,
+    );
+    expect(find.byType(ViewerStatePanel), findsNothing);
+
+    // Remove only the reader, retaining the Navigator containing its dialog.
+    await show(protected);
+    await _until(tester, () => find.text('PDFのパスワード').evaluate().isNotEmpty);
+    await tester.pumpWidget(
+      createProviderApp(
+        const SizedBox.shrink(),
+        overrides: [
+          appDocumentsPathSyncProvider.overrideWith((ref) => directory.path),
+        ],
+      ),
+    );
+    await _until(tester, () => find.byType(TextField).evaluate().isEmpty);
+    expect(tester.takeException(), isNull);
+
+    // Closing and reopening the same file gets a new loader/UI owner too.
+    await show(protected);
+    await _enterPassword(tester, 'qa-reader');
+    await _until(tester, () => ready == 7);
+    await tester.pumpWidget(
+      createProviderApp(
+        const SizedBox.shrink(),
+        overrides: [
+          appDocumentsPathSyncProvider.overrideWith((ref) => directory.path),
+        ],
+      ),
+    );
+    await tester.pump();
+    await show(protected);
+    await _until(tester, () => find.text('PDFのパスワード').evaluate().isNotEmpty);
+    await tester.pump(const Duration(milliseconds: 400));
+    expect(
+      tester.widget<TextField>(find.byType(TextField)).controller!.text,
+      isEmpty,
+    );
+    await tester.tap(find.text('キャンセル'));
+    await _until(
+      tester,
+      () => find.byType(ViewerStatePanel).evaluate().isNotEmpty,
+    );
+
     await show(broken);
     await _until(
       tester,
       () => find.byType(ViewerStatePanel).evaluate().isNotEmpty,
     );
-    expect(ready, 1);
+    expect(ready, 7);
     await broken.writeAsBytes(pdfFixture());
     await tester.tap(find.text('再試行'));
-    await _until(tester, () => ready == 2);
+    await _until(tester, () => ready == 8);
     expect(find.byType(ViewerStatePanel), findsNothing);
     expect(sha256.convert(await plain.readAsBytes()), originalHash);
+    expect(sha256.convert(await protected.readAsBytes()), protectedHash);
     expect(tester.takeException(), isNull);
   }, timeout: const Timeout(Duration(minutes: 3)));
+}
+
+Future<void> _enterPassword(WidgetTester tester, String value) async {
+  await _until(tester, () => find.text('PDFのパスワード').evaluate().isNotEmpty);
+  // The document's loading spinner continues behind the dialog; do not use
+  // pumpAndSettle here. Let outgoing/incoming dialog transitions finish.
+  await tester.pump(const Duration(milliseconds: 400));
+  await tester.enterText(find.byType(TextField), value);
+  await tester.pump();
+  await tester.tap(find.text('開く'));
 }
 
 Future<void> _until(WidgetTester tester, bool Function() condition) async {

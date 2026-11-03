@@ -1,6 +1,8 @@
 import 'dart:async';
 import 'dart:io';
+
 import 'viewer/content_ready.dart';
+
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:path/path.dart' as p;
@@ -14,6 +16,7 @@ import 'package:private_shelf/core/providers/path_provider.dart';
 import 'package:private_shelf/features/library/domain/models/media_item.dart';
 import 'package:private_shelf/features/library/presentation/helpers/external_file_action_helper.dart';
 import 'package:private_shelf/features/library/presentation/helpers/pdf_external_link_helper.dart';
+import 'package:private_shelf/features/library/presentation/helpers/pdf_password_prompt.dart';
 import 'package:private_shelf/features/library/presentation/providers/external_file_preview_provider.dart';
 import 'package:private_shelf/features/library/presentation/widgets/viewer_state_panel.dart';
 import 'package:private_shelf/gen_l10n/app_localizations.dart';
@@ -40,24 +43,54 @@ class _PdfViewerState extends ConsumerState<PdfViewer> {
   int _loadGeneration = 0;
   bool _loadFailed = false;
   String? _errorMessage;
+  PdfPasswordPrompt? _passwordPrompt;
+  String? _passwordFilePath;
+
+  void _cancelPasswordPrompt() {
+    _passwordPrompt?.cancel();
+    _passwordPrompt = null;
+    _passwordFilePath = null;
+  }
+
+  PdfPasswordPrompt _passwordPromptForFile(String path) {
+    if (_passwordPrompt == null || _passwordFilePath != path) {
+      _cancelPasswordPrompt();
+      _passwordFilePath = path;
+      _passwordPrompt = PdfPasswordPrompt();
+    }
+    return _passwordPrompt!;
+  }
+
+  @override
+  void dispose() {
+    _cancelPasswordPrompt();
+    super.dispose();
+  }
 
   @override
   void didUpdateWidget(covariant PdfViewer oldWidget) {
     super.didUpdateWidget(oldWidget);
     if (oldWidget.item.path != widget.item.path) {
+      _cancelPasswordPrompt();
       _loadFailed = false;
       _errorMessage = null;
       _loadGeneration++;
     }
   }
 
-  void _onLoadFailed(Object error, String path, int generation) {
+  void _onLoadFailed(
+    Object error,
+    String path,
+    int generation,
+    PdfPasswordPrompt prompt,
+  ) {
     // The viewer can finish loading while its parent is building or switching
     // files. Never apply an old document's failure to the current document.
     WidgetsBinding.instance.addPostFrameCallback((_) {
       if (!mounted ||
           widget.item.path != path ||
-          _loadGeneration != generation) {
+          _loadGeneration != generation ||
+          !identical(_passwordPrompt, prompt)) {
         return;
       }
       AppLogger.e(LogTag.app, 'PDF読み込みエラー', error);
@@ -69,6 +102,7 @@ class _PdfViewerState extends ConsumerState<PdfViewer> {
   }
 
   void _retry() {
+    _cancelPasswordPrompt();
     setState(() {
       _loadFailed = false;
       _errorMessage = null;
@@ -84,6 +118,7 @@ class _PdfViewerState extends ConsumerState<PdfViewer> {
     final l10n = AppLocalizations.of(context)!;
 
     if (_loadFailed) {
+      _cancelPasswordPrompt();
       return ViewerStatePanel(
         kind: ViewerFailureKind.decodeFailed,
         message: _errorMessage != null
@@ -111,6 +146,7 @@ class _PdfViewerState extends ConsumerState<PdfViewer> {
             final file = File(tempPath);
             return _buildFileViewer(context, file);
           }
+          _cancelPasswordPrompt();
           return ViewerStatePanel(
             kind: ViewerFailureKind.missing,
             onRetry: _retry,
@@ -126,28 +162,35 @@ class _PdfViewerState extends ConsumerState<PdfViewer> {
             ),
           );
         },
-        loading: () => const Center(child: CircularProgressIndicator()),
-        error: (err, _) => ViewerStatePanel(
-          kind: ViewerFailureKind.unknown,
-          message: userSafeErrorMessage(err, l10n),
-          onRetry: _retry,
-          onOpenExternal: () => ExternalFileActionHelper.openWithExternalApp(
-            context: context,
-            ref: ref,
-            item: widget.item,
-          ),
-          onShare: () => ExternalFileActionHelper.shareFile(
-            context: context,
-            ref: ref,
-            item: widget.item,
-          ),
-        ),
+        loading: () {
+          _cancelPasswordPrompt();
+          return const Center(child: CircularProgressIndicator());
+        },
+        error: (err, _) {
+          _cancelPasswordPrompt();
+          return ViewerStatePanel(
+            kind: ViewerFailureKind.unknown,
+            message: userSafeErrorMessage(err, l10n),
+            onRetry: _retry,
+            onOpenExternal: () => ExternalFileActionHelper.openWithExternalApp(
+              context: context,
+              ref: ref,
+              item: widget.item,
+            ),
+            onShare: () => ExternalFileActionHelper.shareFile(
+              context: context,
+              ref: ref,
+              item: widget.item,
+            ),
+          );
+        },
       );
     }
 
     final docsPath = ref.watch(appDocumentsPathSyncProvider);
     final file = File(p.join(docsPath, widget.item.path));
     if (!file.existsSync()) {
+      _cancelPasswordPrompt();
       return ViewerStatePanel(
         kind: ViewerFailureKind.missing,
         onRetry: _retry,
@@ -172,12 +215,15 @@ class _PdfViewerState extends ConsumerState<PdfViewer> {
     final theme = Theme.of(context);
     final itemPath = widget.item.path;
     final generation = _loadGeneration;
+    final passwordPrompt = _passwordPromptForFile(file.path);
     // The file renderer owns its document handle. The existing preview provider
     // owns external copies; do not create another PDF copy or delete the source.
     final viewer = pdfrx.PdfViewer(
       pdfrx.PdfDocumentRefFile(
         file.path,
-        key: pdfrx.PdfDocumentRefKey(file.path, [generation]),
+        // A cached reference must never borrow another viewer's UI callback.
+        key: pdfrx.PdfDocumentRefKey(file.path, [generation, passwordPrompt]),
+        passwordProvider: () => passwordPrompt.request(context),
       ),
       key: ValueKey((file.path, generation)),
       controller: _pdfViewerController,
@@ -190,10 +236,12 @@ class _PdfViewerState extends ConsumerState<PdfViewer> {
                   const FormatException('PDF could not be loaded'),
               itemPath,
               generation,
+              passwordPrompt,
             );
           } else if (mounted &&
               widget.item.path == itemPath &&
-              _loadGeneration == generation) {
+              _loadGeneration == generation &&
+              identical(_passwordPrompt, passwordPrompt)) {
             // pdfrx waits for the initial page image before reporting success.
             reportViewerContentReady(context, widget.onContentReady);
           }
