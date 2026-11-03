@@ -96,8 +96,9 @@ not establish human password-entry usability or full import-to-reader flows.
 
 The 2026-11-03 physical review found that the enclosing media viewer could
 claim PDF drags to dismiss the preview, and reported an internal link that did
-not navigate. PDF content now owns both drag axes: the enclosing dismiss gesture
-and file-page swipe are disabled while a PDF is active. Import previews have an
+not navigate. The initial correction disabled the enclosing dismiss and file-page
+gestures. The file-routing correction below restores permitted horizontal file
+swipes; vertical PDF dismissal remains disabled. Import previews have an
 explicit close button in a reserved top area, including on devices without a
 system Back button. It does not cover the document or selection endpoints.
 Library viewers retain their close and file-position controls. PDF-classified content
@@ -123,6 +124,37 @@ These automated touch events are distinct from the owner's next review of the
 updated markers and finger interaction on the retained manual QA app. The owner
 confirmed the previous external-link and password-entry behavior; those flows
 remain covered by regression checks.
+
+## File swipes and link feedback
+
+The owner subsequently confirmed scrolling, selection endpoints, internal links
+and password visibility, but found that the first correction also disabled
+swiping to the next file. A single-finger horizontal drag now uses the existing
+file-page controller when a PDF fits its viewport width and has no selected
+range. Permission is checked at pointer-down, not after the debounced selection
+notification. Zoomed PDFs retain horizontal panning, selected ranges retain
+their handles, and vertical scroll, long press and two-finger pinch remain with
+the PDF. Loading and failure content can also be left with a file swipe.
+The file controller retains the user's reading direction and page settling.
+
+The horizontal recognizer is registered before the PDF pan recognizer without
+excluding child hit testing. This covers coarse first-move events as well as
+normal swipes, without letting a second pointer start file paging. Unrelated
+image and other media gestures retain their existing handling.
+
+Link taps briefly strengthen the annotation fill and border and request a light
+selection haptic through the existing user/feature-setting gate. Internal
+navigation also shows the destination page position briefly. External links
+still require confirmation, and cancelling never launches them. Link targets
+and passwords are not added to logs.
+
+Related host coverage passed (49 tests). The isolated Pixel native suite also
+passed, including swiping forward and back between two PDF files, retaining
+document interactions while zoomed or selected, a real two-finger pinch,
+visible link-feedback pixels, destination-page feedback, and the existing
+password/recovery/original-file checks. This extends the earlier single-file
+gesture validation; the updated file-switching feel and haptics still need an
+owner review on the retained QA installation.
 
 ## Remaining checks, in priority order
 

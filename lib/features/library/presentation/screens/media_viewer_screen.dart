@@ -699,7 +699,11 @@ class _MediaViewerScreenState extends ConsumerState<MediaViewerScreen> {
                       reverse: pageDirection == ViewerPageDirection.rightToLeft,
                       allowImplicitScrolling: true,
                       physics: activeItem.isPdf
-                          ? const NeverScrollableScrollPhysics()
+                          ? const NeverScrollableScrollPhysics(
+                              parent: LightSwipePageScrollPhysics(
+                                parent: BouncingScrollPhysics(),
+                              ),
+                            )
                           : const LightSwipePageScrollPhysics(
                               parent: BouncingScrollPhysics(),
                             ),
@@ -804,6 +808,18 @@ class _MediaViewerScreenState extends ConsumerState<MediaViewerScreen> {
                                   item: item,
                                   onTap: _toggleControls,
                                   onContentReady: onContentReady,
+                                  onUnscaledHorizontalDragStart: totalPages > 1
+                                      ? _startForwardedPageDrag
+                                      : null,
+                                  onUnscaledHorizontalDragUpdate: totalPages > 1
+                                      ? _updateForwardedPageDrag
+                                      : null,
+                                  onUnscaledHorizontalDragEnd: totalPages > 1
+                                      ? _endForwardedPageDrag
+                                      : null,
+                                  onUnscaledHorizontalDragCancel: totalPages > 1
+                                      ? _cancelForwardedPageDrag
+                                      : null,
                                 );
                               }
 
@@ -1042,6 +1058,18 @@ class _MediaViewerScreenState extends ConsumerState<MediaViewerScreen> {
             item: item,
             onTap: _toggleControls,
             onContentReady: onContentReady,
+            onUnscaledHorizontalDragStart: _sessionPages.length > 1
+                ? _startForwardedPageDrag
+                : null,
+            onUnscaledHorizontalDragUpdate: _sessionPages.length > 1
+                ? _updateForwardedPageDrag
+                : null,
+            onUnscaledHorizontalDragEnd: _sessionPages.length > 1
+                ? _endForwardedPageDrag
+                : null,
+            onUnscaledHorizontalDragCancel: _sessionPages.length > 1
+                ? _cancelForwardedPageDrag
+                : null,
           );
         }
 

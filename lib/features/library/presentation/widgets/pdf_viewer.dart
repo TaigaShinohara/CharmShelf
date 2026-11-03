@@ -10,6 +10,7 @@ import 'package:material_ui/material_ui.dart' as mui;
 import 'package:pdfrx/pdfrx.dart' as pdfrx;
 
 import 'package:private_shelf/core/error/user_safe_error_message.dart';
+import 'package:private_shelf/core/feedback/haptics_service.dart';
 import 'package:private_shelf/core/logger/app_logger.dart';
 import 'package:private_shelf/core/logger/log_tag.dart';
 import 'package:private_shelf/core/providers/path_provider.dart';
@@ -20,6 +21,7 @@ import 'package:private_shelf/features/library/presentation/helpers/pdf_password
 import 'package:private_shelf/features/library/presentation/providers/external_file_preview_provider.dart';
 import 'package:private_shelf/features/library/presentation/widgets/viewer_state_panel.dart';
 import 'package:private_shelf/features/library/presentation/widgets/viewer/pdf_selection_handle.dart';
+import 'package:private_shelf/features/library/presentation/widgets/viewer/pdf_file_swipe_region.dart';
 import 'package:private_shelf/gen_l10n/app_localizations.dart';
 
 /// PDFファイルのプレビュー表示ウィジェット
@@ -27,12 +29,20 @@ class PdfViewer extends ConsumerStatefulWidget {
   final MediaItem item;
   final VoidCallback? onTap;
   final VoidCallback? onContentReady;
+  final GestureDragStartCallback? onUnscaledHorizontalDragStart;
+  final GestureDragUpdateCallback? onUnscaledHorizontalDragUpdate;
+  final GestureDragEndCallback? onUnscaledHorizontalDragEnd;
+  final GestureDragCancelCallback? onUnscaledHorizontalDragCancel;
 
   const PdfViewer({
     super.key,
     required this.item,
     this.onTap,
     this.onContentReady,
+    this.onUnscaledHorizontalDragStart,
+    this.onUnscaledHorizontalDragUpdate,
+    this.onUnscaledHorizontalDragEnd,
+    this.onUnscaledHorizontalDragCancel,
   });
 
   @override
@@ -46,8 +56,81 @@ class _PdfViewerState extends ConsumerState<PdfViewer> {
   String? _errorMessage;
   PdfPasswordPrompt? _passwordPrompt;
   String? _passwordFilePath;
+  bool _rendered = false;
+  pdfrx.PdfLink? _pressedLink;
+  Timer? _linkFeedbackTimer;
+
+  bool _canStartFileSwipe() {
+    if (!_pdfViewerController.isReady) return true;
+    if (_pdfViewerController.textSelectionDelegate.textSelectionPointRange !=
+        null) {
+      return false;
+    }
+    if (!_rendered) return true;
+    final fit = _pdfViewerController.calcMatrixFitWidthForPage(
+      pageNumber: _pdfViewerController.pageNumber ?? 1,
+    );
+    return fit != null &&
+        _pdfViewerController.currentZoom <= fit.getMaxScaleOnAxis() * 1.01;
+  }
+
+  void _clearLinkFeedback() {
+    _linkFeedbackTimer?.cancel();
+    _linkFeedbackTimer = null;
+    _pressedLink = null;
+  }
+
+  void _flashLink(pdfrx.PdfLink link) {
+    _clearLinkFeedback();
+    setState(() => _pressedLink = link);
+    unawaited(HapticsService.selectionClick());
+    _linkFeedbackTimer = Timer(const Duration(milliseconds: 350), () {
+      if (mounted) setState(() => _pressedLink = null);
+    });
+  }
+
+  Future<void> _handleLinkTap(pdfrx.PdfLink link) async {
+    final destination = link.dest;
+    if (destination != null && _pdfViewerController.isReady) {
+      _flashLink(link);
+      final generation = _loadGeneration;
+      final prompt = _passwordPrompt;
+      var succeeded = false;
+      try {
+        succeeded = await _pdfViewerController.goToDest(destination);
+      } catch (_) {
+        // Do not put document destinations or URLs into logs.
+      }
+      if (!mounted ||
+          generation != _loadGeneration ||
+          !identical(prompt, _passwordPrompt)) {
+        return;
+      }
+      final l10n = AppLocalizations.of(context)!;
+      ScaffoldMessenger.maybeOf(context)?.showSnackBar(
+        SnackBar(
+          duration: const Duration(milliseconds: 1200),
+          content: Text(
+            succeeded
+                ? l10n.viewerPagePosition(
+                    destination.pageNumber,
+                    _pdfViewerController.pageCount,
+                  )
+                : l10n.commonErrorOccurred,
+          ),
+        ),
+      );
+      return;
+    }
+    final uri = link.url;
+    if (uri != null && isAllowedPdfExternalLink(uri)) {
+      _flashLink(link);
+      await openPdfExternalLink(context, uri);
+    }
+  }
 
   void _cancelPasswordPrompt() {
+    _rendered = false;
     _passwordPrompt?.cancel();
     _passwordPrompt = null;
     _passwordFilePath = null;
@@ -64,6 +147,7 @@ class _PdfViewerState extends ConsumerState<PdfViewer> {
 
   @override
   void dispose() {
+    _clearLinkFeedback();
     _cancelPasswordPrompt();
     super.dispose();
   }
@@ -72,6 +156,7 @@ class _PdfViewerState extends ConsumerState<PdfViewer> {
   void didUpdateWidget(covariant PdfViewer oldWidget) {
     super.didUpdateWidget(oldWidget);
     if (oldWidget.item.path != widget.item.path) {
+      _clearLinkFeedback();
       _cancelPasswordPrompt();
       _loadFailed = false;
       _errorMessage = null;
@@ -103,6 +188,7 @@ class _PdfViewerState extends ConsumerState<PdfViewer> {
   }
 
   void _retry() {
+    _clearLinkFeedback();
     _cancelPasswordPrompt();
     setState(() {
       _loadFailed = false;
@@ -119,10 +205,24 @@ class _PdfViewerState extends ConsumerState<PdfViewer> {
     // The native PDF owns annotation/selection taps while it is rendered. This
     // fallback restores toolbar access on loading and failure panels as well;
     // their action buttons still win their own tap gestures.
-    return GestureDetector(
+    final content = GestureDetector(
       behavior: HitTestBehavior.translucent,
       onTap: widget.onTap,
       child: _buildContent(context),
+    );
+    if (widget.onUnscaledHorizontalDragStart == null ||
+        widget.onUnscaledHorizontalDragUpdate == null ||
+        widget.onUnscaledHorizontalDragEnd == null ||
+        widget.onUnscaledHorizontalDragCancel == null) {
+      return content;
+    }
+    return PdfFileSwipeRegion(
+      canStart: _canStartFileSwipe,
+      onStart: widget.onUnscaledHorizontalDragStart!,
+      onUpdate: widget.onUnscaledHorizontalDragUpdate!,
+      onEnd: widget.onUnscaledHorizontalDragEnd!,
+      onCancel: widget.onUnscaledHorizontalDragCancel!,
+      child: content,
     );
   }
 
@@ -262,6 +362,7 @@ class _PdfViewerState extends ConsumerState<PdfViewer> {
               _loadGeneration == generation &&
               identical(_passwordPrompt, passwordPrompt)) {
             // pdfrx waits for the initial page image before reporting success.
+            _rendered = true;
             reportViewerContentReady(context, widget.onContentReady);
           }
         },
@@ -274,14 +375,33 @@ class _PdfViewerState extends ConsumerState<PdfViewer> {
         },
         linkHandlerParams: pdfrx.PdfLinkHandlerParams(
           enableAutoLinkDetection: false,
-          onLinkTap: (link) {
-            final destination = link.dest;
-            if (destination != null && _pdfViewerController.isReady) {
-              unawaited(_pdfViewerController.goToDest(destination));
-              return;
+          onLinkTap: (link) => unawaited(_handleLinkTap(link)),
+          customPainter: (canvas, pageRect, page, links) {
+            for (final link in links) {
+              final pressed = identical(link, _pressedLink);
+              for (final rect in link.rects) {
+                final bounds = RRect.fromRectAndRadius(
+                  rect.toRectInDocument(page: page, pageRect: pageRect),
+                  const Radius.circular(3),
+                );
+                canvas.drawRRect(
+                  bounds,
+                  Paint()
+                    ..color = pressed
+                        ? theme.colorScheme.primary.withValues(alpha: 0.35)
+                        : Colors.blue.withValues(alpha: 0.2),
+                );
+                if (pressed) {
+                  canvas.drawRRect(
+                    bounds,
+                    Paint()
+                      ..color = theme.colorScheme.primary
+                      ..style = PaintingStyle.stroke
+                      ..strokeWidth = 2,
+                  );
+                }
+              }
             }
-            final uri = link.url;
-            if (uri != null) unawaited(openPdfExternalLink(context, uri));
           },
         ),
       ),

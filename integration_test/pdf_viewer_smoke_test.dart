@@ -1,4 +1,5 @@
 import 'dart:io';
+import 'dart:ui' as ui;
 
 import 'package:crypto/crypto.dart';
 import 'package:flutter/material.dart';
@@ -8,6 +9,7 @@ import 'package:path_provider/path_provider.dart';
 import 'package:pdfrx/pdfrx.dart' as pdfrx;
 import 'package:private_shelf/core/providers/path_provider.dart';
 import 'package:private_shelf/features/library/domain/models/media_item.dart';
+import 'package:private_shelf/features/library/domain/models/viewer_source_context.dart';
 import 'package:private_shelf/features/library/domain/models/collection.dart';
 import 'package:private_shelf/features/library/presentation/providers/collection_provider.dart';
 import 'package:private_shelf/features/library/presentation/providers/media_viewer_view_model.dart';
@@ -40,16 +42,31 @@ void main() {
       ..originalPath = 'touch.pdf'
       ..isImportPreview = true
       ..mimeType = 'application/pdf';
+    final nextFile = await File('${directory.path}/next.pdf')
+        .writeAsBytes(pdfFixture());
+    final nextItem = MediaItem()
+      ..id = -918275
+      ..path = nextFile.uri.toString()
+      ..originalPath = 'next.pdf'
+      ..isImportPreview = true
+      ..mimeType = 'application/pdf';
     addTearDown(() async {
       await tester.pumpWidget(const SizedBox.shrink());
       await directory.delete(recursive: true);
     });
     await tester.pumpWidget(
       createProviderApp(
-        MediaViewerScreen(initialItem: item),
+        MediaViewerScreen(
+          initialItem: item,
+          sourceContext: ViewerSourceContext.customList([item, nextItem]),
+        ),
         overrides: [
           appDocumentsPathSyncProvider.overrideWith((ref) => directory.path),
           externalFilePreviewProvider(item).overrideWith((ref) => file.path),
+          externalFilePreviewProvider(nextItem)
+              .overrideWith((ref) => nextFile.path),
+          collectionNotifierProvider(nextItem.path)
+              .overrideWith(_PreviewCollection.new),
           collectionNotifierProvider(item.path)
               .overrideWith(_PreviewCollection.new),
           mediaViewerViewModelProvider.overrideWith(_PreviewViewModel.new),
@@ -101,6 +118,7 @@ void main() {
       2,
       reason: 'An actual annotation tap must navigate inside the preview',
     );
+    expect(find.text('2 / 2 ページ'), findsOneWidget);
     await controller.goToPage(pageNumber: 1, duration: Duration.zero);
     await tester.pumpAndSettle();
     final text = (await controller.pages.first.loadText())!;
@@ -156,6 +174,13 @@ void main() {
       await controller.textSelectionDelegate.getSelectedText(),
       isNot(afterEndDrag),
     );
+    // A selected range must also protect horizontal drags on the page itself.
+    await tester.drag(find.byType(pdfrx.PdfViewer), const Offset(-150, 0));
+    await tester.pumpAndSettle();
+    expect(
+      tester.widget<PdfViewer>(find.byType(PdfViewer)).item.path,
+      item.path,
+    );
     await controller.textSelectionDelegate.clearTextSelection();
     await tester.pumpAndSettle();
     final dismissible = find.byKey(const Key('media_viewer_dismissible'));
@@ -185,6 +210,83 @@ void main() {
     );
     await gesture.up();
     await tester.pumpAndSettle();
+    await controller.goToPage(pageNumber: 1, duration: Duration.zero);
+    await tester.pumpAndSettle();
+    final zoomBefore = controller.currentZoom;
+    final center = tester.getCenter(find.byType(pdfrx.PdfViewer));
+    final a = await tester.startGesture(
+      center - const Offset(30, 0),
+      pointer: 31,
+    );
+    final b = await tester.startGesture(
+      center + const Offset(30, 0),
+      pointer: 32,
+    );
+    await a.moveBy(const Offset(-100, 0));
+    await b.moveBy(const Offset(100, 0));
+    await tester.pump();
+    await a.up();
+    await b.up();
+    await tester.pumpAndSettle();
+    expect(controller.currentZoom, greaterThan(zoomBefore));
+    await tester.drag(find.byType(pdfrx.PdfViewer), const Offset(-180, 0));
+    await tester.pumpAndSettle();
+    expect(
+      tester.widget<PdfViewer>(find.byType(PdfViewer)).item.path,
+      item.path,
+      reason: 'A zoomed PDF must pan rather than change files',
+    );
+    controller.value = controller.calcMatrixFitWidthForPage(pageNumber: 1)!;
+    await tester.pumpAndSettle();
+    await tester.timedDrag(
+      find.byType(pdfrx.PdfViewer),
+      const Offset(-230, 0),
+      const Duration(milliseconds: 400),
+    );
+    await tester.pumpAndSettle();
+    await _until(
+      tester,
+      () => find
+          .byType(PdfViewer)
+          .evaluate()
+          .any(
+            (element) =>
+                (element.widget as PdfViewer).item.path == nextItem.path,
+          ),
+    );
+    await _until(
+      tester,
+      () =>
+          find.byType(pdfrx.PdfViewer).evaluate().isNotEmpty &&
+          tester
+              .widget<pdfrx.PdfViewer>(find.byType(pdfrx.PdfViewer))
+              .controller!
+              .isReady,
+    );
+    await tester.pumpAndSettle();
+    expect(
+      tester.widget<PdfViewer>(find.byType(PdfViewer)).item.path,
+      nextItem.path,
+    );
+    await tester.timedDrag(
+      find.byType(pdfrx.PdfViewer),
+      const Offset(230, 0),
+      const Duration(milliseconds: 400),
+    );
+    await tester.pumpAndSettle();
+    await _until(
+      tester,
+      () => find
+          .byType(PdfViewer)
+          .evaluate()
+          .any(
+            (element) => (element.widget as PdfViewer).item.path == item.path,
+          ),
+    );
+    expect(
+      tester.widget<PdfViewer>(find.byType(PdfViewer)).item.path,
+      item.path,
+    );
     expect(tester.takeException(), isNull);
   }, timeout: const Timeout(Duration(minutes: 2)));
 
@@ -270,8 +372,14 @@ void main() {
     );
     expect(links, hasLength(2));
     // Exercise the app callback with the real PDFium-decoded annotation.
-    viewer.params.linkHandlerParams!.onLinkTap(
-      links.singleWhere((link) => link.url != null),
+    final externalLink = links.singleWhere((link) => link.url != null);
+    final beforeInk = await _linkInkAlpha(viewer, externalLink);
+    viewer.params.linkHandlerParams!.onLinkTap(externalLink);
+    final pressedInk = await _linkInkAlpha(viewer, externalLink);
+    expect(
+      pressedInk,
+      greaterThan(beforeInk),
+      reason: 'Tapping a link must visibly highlight its annotation',
     );
     await tester.pumpAndSettle();
     expect(
@@ -385,6 +493,28 @@ void main() {
     expect(sha256.convert(await protected.readAsBytes()), protectedHash);
     expect(tester.takeException(), isNull);
   }, timeout: const Timeout(Duration(minutes: 3)));
+}
+
+Future<int> _linkInkAlpha(pdfrx.PdfViewer viewer, pdfrx.PdfLink link) async {
+  final recorder = ui.PictureRecorder();
+  final canvas = Canvas(recorder);
+  final page = viewer.controller!.pages.first;
+  final pageRect = Rect.fromLTWH(0, 0, page.width, page.height);
+  viewer.params.linkHandlerParams!.customPainter!(canvas, pageRect, page, [
+    link,
+  ]);
+  final picture = recorder.endRecording();
+  final image = await picture.toImage(page.width.ceil(), page.height.ceil());
+  final pixels = (await image.toByteData(format: ui.ImageByteFormat.rawRgba))!;
+  final center = link.rects.first
+      .toRectInDocument(page: page, pageRect: pageRect)
+      .center;
+  final alpha = pixels.getUint8(
+    (center.dy.floor() * image.width + center.dx.floor()) * 4 + 3,
+  );
+  image.dispose();
+  picture.dispose();
+  return alpha;
 }
 
 // The full preview gesture test exercises the real screen without opening a
