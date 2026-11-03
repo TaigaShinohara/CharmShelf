@@ -88,7 +88,7 @@ large-text/keyboard layout and guarding against duplicate submit/navigation.
 The same extended native test also passed on the dedicated iPhone 17 / iOS
 27.0 Simulator. This includes document switching while a prompt is open and
 closing/reopening the same encrypted file without retaining its input.
-The device uses 4KB pages, so it does not establish 16KB-device execution.
+The Pixel uses 4KB pages, so it does not establish 16KB-device execution.
 Android's existing `FLAG_SECURE` was retained. These automated assertions do
 not establish human password-entry usability or full import-to-reader flows.
 
