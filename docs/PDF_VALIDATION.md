@@ -137,11 +137,19 @@ their handles, and vertical scroll, long press and two-finger pinch remain with
 the PDF. Loading and failure content can also be left with a file swipe.
 The file controller retains the user's reading direction and page settling.
 
-The horizontal recognizer is registered before the PDF pan recognizer without
-excluding child hit testing. This covers coarse first-move events as well as
+The horizontal recognizer is registered before the PDF pan recognizer while
+preserving normal child hit testing. This covers coarse first-move events as well as
 normal swipes, without letting a second pointer start file paging. Vertical
 intent releases this recognizer at touch slop rather than delaying native pan.
-The initial accepted move is preserved instead of consumed by recognition. Unrelated
+The initial accepted move is preserved instead of consumed by recognition.
+If a second finger joins an already accepted file drag, the file controller
+returns to the starting file, even past the halfway point. The overlay owns
+the additional pointer, including outside the moving PDF hit area, and forwards
+both touches through pdfrx's public pan/zoom API, because the native PDF
+recognizer has already lost the first touch's arena.
+Viewport-local positions are rebased after the file snap to avoid shifting the
+pinch pivot. Either finger can lift first; the remaining finger can keep panning.
+Ordinary two-finger pinches continue through the native PDF recognizer. Unrelated
 image and other media gestures retain their existing handling.
 
 Link taps briefly strengthen the annotation fill and border and request a light
@@ -150,9 +158,10 @@ navigation also shows the destination page position briefly. External links
 still require confirmation, and cancelling never launches them. Link targets
 and passwords are not added to logs.
 
-Related host coverage passed (50 tests). The isolated Pixel native suite also
+Related host coverage passed (53 tests). The isolated Pixel native suite also
 passed, including swiping forward and back between two PDF files, retaining
 document interactions while zoomed or selected, a real two-finger pinch,
+a late second finger after dragging beyond the file-page midpoint,
 visible link-feedback pixels, destination-page feedback, and the existing
 password/recovery/original-file checks. This extends the earlier single-file
 gesture validation; the updated file-switching feel and haptics still need an

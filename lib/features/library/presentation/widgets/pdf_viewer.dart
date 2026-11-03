@@ -222,6 +222,16 @@ class _PdfViewerState extends ConsumerState<PdfViewer> {
       onUpdate: widget.onUnscaledHorizontalDragUpdate!,
       onEnd: widget.onUnscaledHorizontalDragEnd!,
       onCancel: widget.onUnscaledHorizontalDragCancel!,
+      onPinchEvent: (event) {
+        if (!_pdfViewerController.isReady) return;
+        final position = _pdfViewerController.localToGlobal(event.position);
+        if (position == null) return;
+        // Rebase after the enclosing file page snaps back. Using the original
+        // global touch position here would shift the pinch pivot by that snap.
+        _pdfViewerController.handlePointerPanZoomEvent(
+          event.copyWith(position: position),
+        );
+      },
       child: content,
     );
   }

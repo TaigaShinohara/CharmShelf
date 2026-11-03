@@ -262,6 +262,39 @@ void main() {
     );
     controller.value = controller.calcMatrixFitWidthForPage(pageNumber: 1)!;
     await tester.pumpAndSettle();
+    final beforeLatePinch = controller.currentZoom;
+    final lateCenter = tester.getCenter(find.byType(pdfrx.PdfViewer));
+    final lateA = await tester.startGesture(
+      lateCenter + const Offset(70, 0),
+      pointer: 41,
+    );
+    await lateA.moveBy(
+      Offset(-tester.getSize(find.byType(pdfrx.PdfViewer)).width * .6, 0),
+    );
+    await tester.pump();
+    final lateB = await tester.startGesture(
+      lateCenter + const Offset(120, 0),
+      pointer: 42,
+    );
+    await tester.pump();
+    await lateA.moveBy(const Offset(-60, 0));
+    await lateB.moveBy(const Offset(60, 0));
+    await tester.pump();
+    await lateA.up();
+    await lateB.up();
+    await tester.pumpAndSettle();
+    expect(
+      controller.currentZoom,
+      greaterThan(beforeLatePinch),
+      reason: 'A second finger added after a file drag must still zoom',
+    );
+    expect(
+      tester.widget<PdfViewer>(find.byType(PdfViewer)).item.path,
+      item.path,
+      reason: 'Changing to pinch must restore the original file past halfway',
+    );
+    controller.value = controller.calcMatrixFitWidthForPage(pageNumber: 1)!;
+    await tester.pumpAndSettle();
     await tester.timedDrag(
       find.byType(pdfrx.PdfViewer),
       const Offset(-230, 0),
