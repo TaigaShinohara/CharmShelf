@@ -20,6 +20,41 @@ void main() {
   TestWidgetsFlutterBinding.ensureInitialized();
 
   group('画像ビューワーのジェスチャー調停', () {
+    testWidgets('PDF取り込みプレビューを明示的な閉じるボタンで戻れる', (tester) async {
+      final fixture = _ViewerFixture.create(
+        firstPdf: true,
+        externalReference: true,
+      );
+      _registerFixtureTearDown(tester, fixture);
+      await tester.pumpWidget(
+        UncontrolledProviderScope(
+          container: fixture.container,
+          child: MaterialApp(
+            localizationsDelegates: AppLocalizations.localizationsDelegates,
+            supportedLocales: AppLocalizations.supportedLocales,
+            home: Builder(
+              builder: (context) => TextButton(
+                onPressed: () => Navigator.of(context).push(
+                  MaterialPageRoute<void>(
+                    builder: (_) =>
+                        MediaViewerScreen(initialItem: fixture.items.first),
+                  ),
+                ),
+                child: const Text('Open preview'),
+              ),
+            ),
+          ),
+        ),
+      );
+      await tester.tap(find.text('Open preview'));
+      await tester.pumpAndSettle();
+      expect(find.byType(MediaViewerScreen), findsOneWidget);
+      await tester.tap(find.byKey(const Key('media_viewer_pdf_preview_close')));
+      await tester.pumpAndSettle();
+      expect(find.byType(MediaViewerScreen), findsNothing);
+      expect(find.text('Open preview'), findsOneWidget);
+    });
+
     testWidgets('PDFの本文ドラッグは画面を動かさず、画像へ切替後は通常のジェスチャーへ戻る', (tester) async {
       final fixture = _ViewerFixture.create(firstPdf: true);
       _registerFixtureTearDown(tester, fixture);
@@ -44,7 +79,7 @@ void main() {
       await tester.pumpAndSettle();
       _pageController(tester).jumpToPage(1);
       await tester.pumpAndSettle();
-        await _expectCommittedItem(tester, fixture, 1);
+      await _expectCommittedItem(tester, fixture, 1);
       expect(
         tester.widget<Dismissible>(dismissible).direction,
         DismissDirection.down,

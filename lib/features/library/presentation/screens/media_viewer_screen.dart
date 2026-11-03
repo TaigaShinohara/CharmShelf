@@ -801,6 +801,22 @@ class _MediaViewerScreenState extends ConsumerState<MediaViewerScreen> {
                 ),
               ),
               // コントロール・オーバーレイ群
+              // Import previews have no library toolbar. Keep an explicit exit
+              // when PDF drags cannot dismiss, including on devices without Back.
+              if (widget.previewOnly && activeItem.isPdf)
+                Positioned(
+                  top: 0,
+                  left: 0,
+                  child: SafeArea(
+                    minimum: const EdgeInsets.all(8),
+                    child: IconButton.filledTonal(
+                      key: const Key('media_viewer_pdf_preview_close'),
+                      tooltip: l10n.commonClose,
+                      onPressed: _handleClosePressed,
+                      icon: const Icon(Icons.close),
+                    ),
+                  ),
+                ),
               if (showControls && !widget.previewOnly)
                 Positioned.fill(
                   child: Stack(

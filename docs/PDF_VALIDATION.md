@@ -97,8 +97,9 @@ not establish human password-entry usability or full import-to-reader flows.
 The 2026-11-03 physical review found that the enclosing media viewer could
 claim PDF drags to dismiss the preview, and reported an internal link that did
 not navigate. PDF content now owns both drag axes: the enclosing dismiss gesture
-and file-page swipe are disabled while a PDF is active. System Back, the close
-control and the file-position control remain available. PDF-classified content
+and file-page swipe are disabled while a PDF is active. Import previews have an
+explicit close button, including on devices without a system Back button.
+Library viewers retain their close and file-position controls. PDF-classified content
 taps control the toolbar; raw pointer-up observation no longer also handles
 annotation taps.
 
@@ -112,7 +113,8 @@ internal annotations, long-press word selection, dragging a selection endpoint
 to extend the selected text without panning the PDF, scrolling the document and
 dragging downward without moving or dismissing the preview. The password,
 failure/recovery and original-file checks also passed. Related host coverage
-passed (42 tests), including restoring normal image gestures after leaving a
+passed (43 tests), including closing an import preview without a swipe,
+restoring normal image gestures after leaving a
 PDF and retaining password privacy settings while toggling visibility.
 
 These automated touch events are distinct from the owner's next review of the
