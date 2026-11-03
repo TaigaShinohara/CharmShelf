@@ -94,6 +94,7 @@ class MediaViewerScreen extends ConsumerStatefulWidget {
 class _MediaViewerScreenState extends ConsumerState<MediaViewerScreen> {
   PageController? _pageController;
   Drag? _forwardedPageDrag;
+  int? _pdfDragOriginPage;
   late int _currentIndex;
   late int _pendingPageIndex;
   MediaItem? _currentItem;
@@ -699,7 +700,11 @@ class _MediaViewerScreenState extends ConsumerState<MediaViewerScreen> {
                       reverse: pageDirection == ViewerPageDirection.rightToLeft,
                       allowImplicitScrolling: true,
                       physics: activeItem.isPdf
-                          ? const NeverScrollableScrollPhysics()
+                          ? const NeverScrollableScrollPhysics(
+                              parent: LightSwipePageScrollPhysics(
+                                parent: BouncingScrollPhysics(),
+                              ),
+                            )
                           : const LightSwipePageScrollPhysics(
                               parent: BouncingScrollPhysics(),
                             ),
@@ -804,6 +809,18 @@ class _MediaViewerScreenState extends ConsumerState<MediaViewerScreen> {
                                   item: item,
                                   onTap: _toggleControls,
                                   onContentReady: onContentReady,
+                                  onUnscaledHorizontalDragStart: totalPages > 1
+                                      ? _startPdfFileDrag
+                                      : null,
+                                  onUnscaledHorizontalDragUpdate: totalPages > 1
+                                      ? _updateForwardedPageDrag
+                                      : null,
+                                  onUnscaledHorizontalDragEnd: totalPages > 1
+                                      ? _endForwardedPageDrag
+                                      : null,
+                                  onUnscaledHorizontalDragCancel: totalPages > 1
+                                      ? _cancelPdfFileDrag
+                                      : null,
                                 );
                               }
 
@@ -1042,6 +1059,18 @@ class _MediaViewerScreenState extends ConsumerState<MediaViewerScreen> {
             item: item,
             onTap: _toggleControls,
             onContentReady: onContentReady,
+            onUnscaledHorizontalDragStart: _sessionPages.length > 1
+                ? _startPdfFileDrag
+                : null,
+            onUnscaledHorizontalDragUpdate: _sessionPages.length > 1
+                ? _updateForwardedPageDrag
+                : null,
+            onUnscaledHorizontalDragEnd: _sessionPages.length > 1
+                ? _endForwardedPageDrag
+                : null,
+            onUnscaledHorizontalDragCancel: _sessionPages.length > 1
+                ? _cancelPdfFileDrag
+                : null,
           );
         }
 
@@ -1329,6 +1358,26 @@ class _MediaViewerScreenState extends ConsumerState<MediaViewerScreen> {
       }
     });
     _forwardedPageDrag = drag;
+  }
+
+  void _startPdfFileDrag(DragStartDetails details) {
+    final controller = _pageController;
+    _pdfDragOriginPage = controller != null && controller.hasClients
+        ? controller.page?.round()
+        : null;
+    _startForwardedPageDrag(details);
+  }
+
+  void _cancelPdfFileDrag() {
+    _cancelForwardedPageDrag();
+    final page = _pdfDragOriginPage;
+    _pdfDragOriginPage = null;
+    final controller = _pageController;
+    if (page != null && controller != null && controller.hasClients) {
+      // A second finger changes this gesture into a PDF pinch even if the
+      // first finger has already dragged past the file page's midpoint.
+      controller.jumpToPage(page);
+    }
   }
 
   void _updateForwardedPageDrag(DragUpdateDetails details) {
