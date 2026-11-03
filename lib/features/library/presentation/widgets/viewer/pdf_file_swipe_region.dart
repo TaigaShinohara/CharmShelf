@@ -39,6 +39,7 @@ class _PdfFileSwipeRegionState extends State<PdfFileSwipeRegion> {
   @override
   Widget build(BuildContext context) {
     _recognizer
+      ..dragStartBehavior = DragStartBehavior.down
       ..canStart = widget.canStart
       ..onStart = widget.onStart
       ..onUpdate = widget.onUpdate
@@ -98,6 +99,8 @@ class _PdfFileSwipeRecognizer extends HorizontalDragGestureRecognizer {
 
   late bool Function() canStart;
   final _pointers = <int>{};
+  Offset? _origin;
+  bool _accepted = false;
 
   @override
   bool isPointerAllowed(PointerEvent event) =>
@@ -105,6 +108,10 @@ class _PdfFileSwipeRecognizer extends HorizontalDragGestureRecognizer {
 
   @override
   void addAllowedPointer(PointerDownEvent event) {
+    if (_pointers.isEmpty) {
+      _origin = event.position;
+      _accepted = false;
+    }
     _pointers.add(event.pointer);
     super.addAllowedPointer(event);
     if (_pointers.length > 1) {
@@ -116,10 +123,27 @@ class _PdfFileSwipeRecognizer extends HorizontalDragGestureRecognizer {
 
   @override
   void handleEvent(PointerEvent event) {
+    final origin = _origin;
+    if (!_accepted && event is PointerMoveEvent && origin != null) {
+      final delta = event.position - origin;
+      if (delta.dy.abs() > (gestureSettings?.touchSlop ?? kTouchSlop) &&
+          delta.dy.abs() > delta.dx.abs()) {
+        // A pending horizontal recognizer must not force native scale/pan to
+        // wait for its larger pan slop before a vertical scroll can start.
+        resolve(GestureDisposition.rejected);
+        return;
+      }
+    }
     super.handleEvent(event);
     if (event is PointerUpEvent || event is PointerCancelEvent) {
       _pointers.remove(event.pointer);
     }
+  }
+
+  @override
+  void acceptGesture(int pointer) {
+    _accepted = true;
+    super.acceptGesture(pointer);
   }
 
   @override

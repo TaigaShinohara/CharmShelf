@@ -175,7 +175,11 @@ void main() {
       isNot(afterEndDrag),
     );
     // A selected range must also protect horizontal drags on the page itself.
-    await tester.drag(find.byType(pdfrx.PdfViewer), const Offset(-150, 0));
+    await tester.timedDrag(
+      find.byType(pdfrx.PdfViewer),
+      const Offset(-150, 0),
+      const Duration(milliseconds: 400),
+    );
     await tester.pumpAndSettle();
     expect(
       tester.widget<PdfViewer>(find.byType(PdfViewer)).item.path,
@@ -190,7 +194,17 @@ void main() {
     );
     final origin = tester.getTopLeft(find.byType(pdfrx.PdfViewer));
     final beforeScroll = controller.value.clone();
-    await tester.drag(find.byType(pdfrx.PdfViewer), const Offset(0, -180));
+    expect(
+      controller.documentSize.height * controller.currentZoom,
+      greaterThan(controller.viewSize.height),
+    );
+    // Emit continued moves after the platform's scale/pan slop. A two-move,
+    // zero-time drag may end just as the iOS pan recognizer accepts it.
+    await tester.timedDrag(
+      find.byType(pdfrx.PdfViewer),
+      const Offset(0, -180),
+      const Duration(milliseconds: 400),
+    );
     await tester.pumpAndSettle();
     expect(
       controller.value,
@@ -229,8 +243,18 @@ void main() {
     await b.up();
     await tester.pumpAndSettle();
     expect(controller.currentZoom, greaterThan(zoomBefore));
-    await tester.drag(find.byType(pdfrx.PdfViewer), const Offset(-180, 0));
+    final beforeZoomedPan = controller.value.clone();
+    await tester.timedDrag(
+      find.byType(pdfrx.PdfViewer),
+      const Offset(-180, 0),
+      const Duration(milliseconds: 400),
+    );
     await tester.pumpAndSettle();
+    expect(
+      controller.value,
+      isNot(beforeZoomedPan),
+      reason: 'A zoomed PDF must actually pan',
+    );
     expect(
       tester.widget<PdfViewer>(find.byType(PdfViewer)).item.path,
       item.path,

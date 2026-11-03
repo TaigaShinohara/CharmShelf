@@ -6,16 +6,57 @@ import 'package:private_shelf/features/library/presentation/widgets/viewer/pdf_f
 import '../../../../../helpers/test_helpers.dart';
 
 void main() {
+  testWidgets('vertical intent releases the PDF before the larger pan slop', (
+    tester,
+  ) async {
+    var nativeStarts = 0;
+    var forwarded = 0;
+    await tester.pumpWidget(
+      createLocalizedApp(
+        MediaQuery(
+          data: const MediaQueryData(
+            gestureSettings: DeviceGestureSettings(touchSlop: 18),
+          ),
+          child: PdfFileSwipeRegion(
+            canStart: () => true,
+            onStart: (_) => forwarded++,
+            onUpdate: (_) {},
+            onEnd: (_) {},
+            onCancel: () {},
+            child: GestureDetector(
+              onScaleStart: (_) => nativeStarts++,
+              child: const ColoredBox(
+                color: Colors.white,
+                child: SizedBox.expand(),
+              ),
+            ),
+          ),
+        ),
+      ),
+    );
+    final gesture = await tester.startGesture(
+      tester.getCenter(find.byType(PdfFileSwipeRegion)),
+    );
+    await gesture.moveBy(const Offset(0, -20));
+    await tester.pump();
+    expect(nativeStarts, 1);
+    expect(forwarded, 0);
+    await gesture.moveBy(const Offset(0, -80));
+    await gesture.up();
+    await tester.pumpAndSettle();
+  });
+
   testWidgets(
     'a coarse first horizontal move still beats the PDF pan recognizer',
     (tester) async {
       var forwarded = 0;
+      var horizontalDistance = 0.0;
       await tester.pumpWidget(
         createLocalizedApp(
           PdfFileSwipeRegion(
             canStart: () => true,
             onStart: (_) => forwarded++,
-            onUpdate: (_) {},
+            onUpdate: (details) => horizontalDistance += details.delta.dx,
             onEnd: (_) {},
             onCancel: () {},
             child: GestureDetector(
@@ -36,6 +77,11 @@ void main() {
       await gesture.up();
       await tester.pumpAndSettle();
       expect(forwarded, 1);
+      expect(
+        horizontalDistance,
+        -180,
+        reason: 'The accepted first move must also move the file page',
+      );
     },
   );
 

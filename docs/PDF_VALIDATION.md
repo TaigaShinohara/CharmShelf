@@ -139,7 +139,9 @@ The file controller retains the user's reading direction and page settling.
 
 The horizontal recognizer is registered before the PDF pan recognizer without
 excluding child hit testing. This covers coarse first-move events as well as
-normal swipes, without letting a second pointer start file paging. Unrelated
+normal swipes, without letting a second pointer start file paging. Vertical
+intent releases this recognizer at touch slop rather than delaying native pan.
+The initial accepted move is preserved instead of consumed by recognition. Unrelated
 image and other media gestures retain their existing handling.
 
 Link taps briefly strengthen the annotation fill and border and request a light
@@ -148,7 +150,7 @@ navigation also shows the destination page position briefly. External links
 still require confirmation, and cancelling never launches them. Link targets
 and passwords are not added to logs.
 
-Related host coverage passed (49 tests). The isolated Pixel native suite also
+Related host coverage passed (50 tests). The isolated Pixel native suite also
 passed, including swiping forward and back between two PDF files, retaining
 document interactions while zoomed or selected, a real two-finger pinch,
 visible link-feedback pixels, destination-page feedback, and the existing
