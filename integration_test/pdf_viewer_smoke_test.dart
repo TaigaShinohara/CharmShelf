@@ -69,20 +69,23 @@ void main() {
       enableAutoLinkDetection: false,
     );
     final internal = links.singleWhere((link) => link.dest != null);
-      final external = links.singleWhere((link) => link.url != null);
-      final box = tester.renderObject<RenderBox>(find.byType(pdfrx.PdfViewer));
-      final externalRect = controller.calcRectForRectInsidePage(
-        pageNumber: 1,
-        rect: external.rects.first,
-      );
-      await tester.tapAt(
-        box.localToGlobal(controller.documentToLocal(externalRect.center)),
-      );
-      await tester.pump(const Duration(milliseconds: 400));
-      await tester.pumpAndSettle();
-      expect(find.text('https://example.invalid/charmshelf-pdf-qa'), findsOneWidget);
-      await tester.tap(find.text('キャンセル'));
-      await tester.pumpAndSettle();
+    final external = links.singleWhere((link) => link.url != null);
+    final box = tester.renderObject<RenderBox>(find.byType(pdfrx.PdfViewer));
+    final externalRect = controller.calcRectForRectInsidePage(
+      pageNumber: 1,
+      rect: external.rects.first,
+    );
+    await tester.tapAt(
+      box.localToGlobal(controller.documentToLocal(externalRect.center)),
+    );
+    await tester.pump(const Duration(milliseconds: 400));
+    await tester.pumpAndSettle();
+    expect(
+      find.text('https://example.invalid/charmshelf-pdf-qa'),
+      findsOneWidget,
+    );
+    await tester.tap(find.text('キャンセル'));
+    await tester.pumpAndSettle();
     final rect = controller.calcRectForRectInsidePage(
       pageNumber: 1,
       rect: internal.rects.first,
@@ -90,8 +93,8 @@ void main() {
     await tester.tapAt(
       box.localToGlobal(controller.documentToLocal(rect.center)),
     );
-      // pdfrx also recognizes double taps; let a single tap be dispatched.
-      await tester.pump(const Duration(milliseconds: 400));
+    // pdfrx also recognizes double taps; let a single tap be dispatched.
+    await tester.pump(const Duration(milliseconds: 400));
     await tester.pumpAndSettle();
     expect(
       controller.pageNumber,
@@ -113,10 +116,10 @@ void main() {
     final selected = await controller.textSelectionDelegate.getSelectedText();
     expect(selected, contains('Selectable'));
     expect(find.byType(PdfSelectionHandle), findsNWidgets(2));
-      if (const bool.fromEnvironment('CHARMSHELF_PDF_QA_VISUAL_PAUSE')) {
-        debugPrint('CHARMSHELF_PDF_QA_SELECTION_READY');
-        await tester.pump(const Duration(seconds: 30));
-      }
+    if (const bool.fromEnvironment('CHARMSHELF_PDF_QA_VISUAL_PAUSE')) {
+      debugPrint('CHARMSHELF_PDF_QA_SELECTION_READY');
+      await tester.pump(const Duration(seconds: 30));
+    }
     final before = controller.value.clone();
     final handle = find.byWidgetPredicate(
       (widget) => widget is PdfSelectionHandle && !widget.isStart,
@@ -129,8 +132,29 @@ void main() {
       reason: 'Dragging a selection handle must not pan the PDF',
     );
     expect(
-        (await controller.textSelectionDelegate.getSelectedText()).length,
-        greaterThan(selected.length),
+      (await controller.textSelectionDelegate.getSelectedText()).length,
+      greaterThan(selected.length),
+    );
+    final afterEndDrag = await controller.textSelectionDelegate
+        .getSelectedText();
+    final startHandle = find.byWidgetPredicate(
+      (widget) => widget is PdfSelectionHandle && widget.isStart,
+    );
+    final close = find.byKey(const Key('media_viewer_pdf_preview_close'));
+    expect(
+      tester.getRect(close).overlaps(tester.getRect(startHandle)),
+      isFalse,
+    );
+    await tester.drag(startHandle, const Offset(40, 0));
+    await tester.pumpAndSettle();
+    expect(
+      controller.value,
+      before,
+      reason: 'The start handle must not pan the PDF either',
+    );
+    expect(
+      await controller.textSelectionDelegate.getSelectedText(),
+      isNot(afterEndDrag),
     );
     await controller.textSelectionDelegate.clearTextSelection();
     await tester.pumpAndSettle();
@@ -140,11 +164,15 @@ void main() {
       DismissDirection.none,
     );
     final origin = tester.getTopLeft(find.byType(pdfrx.PdfViewer));
-      final beforeScroll = controller.value.clone();
-      await tester.drag(find.byType(pdfrx.PdfViewer), const Offset(0, -180));
-      await tester.pumpAndSettle();
-      expect(controller.value, isNot(beforeScroll), reason: 'The PDF itself must still scroll');
-      expect(tester.getTopLeft(find.byType(pdfrx.PdfViewer)), origin);
+    final beforeScroll = controller.value.clone();
+    await tester.drag(find.byType(pdfrx.PdfViewer), const Offset(0, -180));
+    await tester.pumpAndSettle();
+    expect(
+      controller.value,
+      isNot(beforeScroll),
+      reason: 'The PDF itself must still scroll',
+    );
+    expect(tester.getTopLeft(find.byType(pdfrx.PdfViewer)), origin);
     final gesture = await tester.startGesture(
       tester.getCenter(find.byType(pdfrx.PdfViewer)),
     );

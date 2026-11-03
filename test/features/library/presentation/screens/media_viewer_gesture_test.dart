@@ -20,6 +20,26 @@ void main() {
   TestWidgetsFlutterBinding.ensureInitialized();
 
   group('画像ビューワーのジェスチャー調停', () {
+    testWidgets('PDFの読み込み失敗中もタップで隠れた操作バーへ戻れる', (tester) async {
+      final fixture = _ViewerFixture.create(firstPdf: true);
+      _registerFixtureTearDown(tester, fixture);
+      await _showViewer(tester, fixture);
+      fixture.container
+          .read(mediaViewerViewModelProvider.notifier)
+          .setControlsVisible(false);
+      await tester.pumpAndSettle();
+      expect(find.byType(AppBar), findsNothing);
+      await tester.tapAt(
+        tester.getTopLeft(find.byKey(_pageViewKey)) + const Offset(20, 20),
+      );
+      await tester.pumpAndSettle();
+      expect(find.byType(AppBar), findsOneWidget);
+      expect(
+        fixture.container.read(mediaViewerViewModelProvider).showControls,
+        isTrue,
+      );
+    });
+
     testWidgets('PDF取り込みプレビューを明示的な閉じるボタンで戻れる', (tester) async {
       final fixture = _ViewerFixture.create(
         firstPdf: true,

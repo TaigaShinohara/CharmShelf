@@ -116,6 +116,17 @@ class _PdfViewerState extends ConsumerState<PdfViewer> {
 
   @override
   Widget build(BuildContext context) {
+    // The native PDF owns annotation/selection taps while it is rendered. This
+    // fallback restores toolbar access on loading and failure panels as well;
+    // their action buttons still win their own tap gestures.
+    return GestureDetector(
+      behavior: HitTestBehavior.translucent,
+      onTap: widget.onTap,
+      child: _buildContent(context),
+    );
+  }
+
+  Widget _buildContent(BuildContext context) {
     final l10n = AppLocalizations.of(context)!;
 
     if (_loadFailed) {

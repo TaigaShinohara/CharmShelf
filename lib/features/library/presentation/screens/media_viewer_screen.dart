@@ -1,10 +1,15 @@
 import 'package:private_shelf/core/performance/interaction_trace.dart';
+
 import 'dart:io';
 import 'dart:async';
+
 import '../providers/catalog_viewer_items_provider.dart';
+
 import 'package:private_shelf/shared/widgets/feedback/deferred_progress_bar.dart';
+
 import '../helpers/viewer_history_gate.dart';
 import '../providers/viewing_history_provider.dart';
+
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
@@ -676,127 +681,138 @@ class _MediaViewerScreenState extends ConsumerState<MediaViewerScreen> {
                 dismissThresholds: const {DismissDirection.down: 0.25},
                 resizeDuration: null,
                 onDismissed: (_) => _handleClosePressed(),
-                child: NotificationListener<ScrollNotification>(
-                  onNotification: (notification) =>
-                      _handlePageScrollNotification(viewerPages, notification),
-                  child: PageView.builder(
-                    key: const Key('media_viewer_page_view'),
-                    controller: _pageController,
-                    reverse: pageDirection == ViewerPageDirection.rightToLeft,
-                    allowImplicitScrolling: true,
-                    physics: activeItem.isPdf
-                        ? const NeverScrollableScrollPhysics()
-                        : const LightSwipePageScrollPhysics(
-                            parent: BouncingScrollPhysics(),
-                          ),
-                    itemCount: totalPages,
-                    onPageChanged: (index) =>
-                        _activatePageAt(viewerPages, index),
-                    itemBuilder: (context, index) {
-                      final page = viewerPages[index];
-                      final item = page.item;
-                      final isInitialItem =
-                          (widget.initialItem?.id ?? widget.initialItemId) ==
-                          item.id;
-                      final renderHeavyContent =
-                          _lastSettledSessionGeneration == _sessionGeneration &&
-                          _lastSettledIndex == index;
-                      final historyGeneration = _sessionGeneration;
-                      void onContentReady() {
-                        if (!mounted || widget.previewOnly) return;
-                        if (index == _currentIndex && !_isPageScrolling) {
-                          InteractionTrace.finish('catalog_first_content');
-                        }
-                        _historyGate.loaded(
-                          item,
-                          generation: historyGeneration,
-                        );
-                      }
-
-                      final pageKey = ValueKey(
-                        'viewer-page-${item.id}-${page.splitSide?.name ?? 'full'}',
-                      );
-
-                      return RepaintBoundary(
-                        key: pageKey,
-                        child: Builder(
-                          builder: (context) {
-                            if (item.requiresSourceAccess) {
-                              return _buildExternalFileView(
-                                context,
-                                item,
-                                isInitialItem: isInitialItem,
-                                renderHeavyContent: renderHeavyContent,
-                                onContentReady: onContentReady,
-                              );
-                            }
-
-                            final file = File(p.join(docsPath, item.path));
-                            if (!renderHeavyContent &&
-                                (item.isVideo || item.isAudio)) {
-                              return ColoredBox(
-                                color: Theme.of(context).appColors.overlay,
-                              );
-                            }
-
-                            if (item.isDirectlyViewableImage) {
-                              return MediaImageViewer(
-                                file: file,
-                                item: item,
-                                splitSide: page.splitSide,
-                                onContentReady: onContentReady,
-                                isInitialHero:
-                                    isInitialItem && _currentIndex == index,
-                                onTap: () {},
-                                onUnscaledHorizontalDragStart:
-                                    _startForwardedPageDrag,
-                                onUnscaledHorizontalDragUpdate:
-                                    _updateForwardedPageDrag,
-                                onUnscaledHorizontalDragEnd:
-                                    _endForwardedPageDrag,
-                                onUnscaledHorizontalDragCancel:
-                                    _cancelForwardedPageDrag,
-                              );
-                            }
-
-                            if (!renderHeavyContent) {
-                              return ColoredBox(
-                                color: Theme.of(context).appColors.overlay,
-                              );
-                            } else if (item.isVideo) {
-                              return VideoPlayerView(
-                                item: item,
-                                onContentReady: onContentReady,
-                                onClosePressed: _handleClosePressed,
-                              );
-                            } else if (item.isAudio) {
-                              return AudioPlayerView(
-                                item: item,
-                                onContentReady: onContentReady,
-                                onClosePressed: _handleClosePressed,
-                              );
-                            } else if (item.isText) {
-                              return TextViewer(
-                                item: item,
-                                renderContent: renderHeavyContent,
-                                onContentReady: onContentReady,
-                              );
-                            } else if (item.isPdf) {
-                              if (!renderHeavyContent) {
-                                return const ColoredBox(color: Colors.black);
-                              }
-                              return PdfViewer(
-                                item: item,
-                                onTap: _toggleControls,
-                                onContentReady: onContentReady,
-                              );
-                            }
-
-                            return _buildUnsupportedFileView(context, item);
-                          },
+                child: Padding(
+                  padding: EdgeInsets.only(
+                    top: widget.previewOnly && activeItem.isPdf
+                        ? MediaQuery.paddingOf(context).top + kToolbarHeight
+                        : 0,
+                  ),
+                  child: NotificationListener<ScrollNotification>(
+                    onNotification: (notification) =>
+                        _handlePageScrollNotification(
+                          viewerPages,
+                          notification,
                         ),
-                      );
-                    },
+                    child: PageView.builder(
+                      key: const Key('media_viewer_page_view'),
+                      controller: _pageController,
+                      reverse: pageDirection == ViewerPageDirection.rightToLeft,
+                      allowImplicitScrolling: true,
+                      physics: activeItem.isPdf
+                          ? const NeverScrollableScrollPhysics()
+                          : const LightSwipePageScrollPhysics(
+                              parent: BouncingScrollPhysics(),
+                            ),
+                      itemCount: totalPages,
+                      onPageChanged: (index) =>
+                          _activatePageAt(viewerPages, index),
+                      itemBuilder: (context, index) {
+                        final page = viewerPages[index];
+                        final item = page.item;
+                        final isInitialItem =
+                            (widget.initialItem?.id ?? widget.initialItemId) ==
+                            item.id;
+                        final renderHeavyContent =
+                            _lastSettledSessionGeneration ==
+                                _sessionGeneration &&
+                            _lastSettledIndex == index;
+                        final historyGeneration = _sessionGeneration;
+                        void onContentReady() {
+                          if (!mounted || widget.previewOnly) return;
+                          if (index == _currentIndex && !_isPageScrolling) {
+                            InteractionTrace.finish('catalog_first_content');
+                          }
+                          _historyGate.loaded(
+                            item,
+                            generation: historyGeneration,
+                          );
+                        }
+
+                        final pageKey = ValueKey(
+                          'viewer-page-${item.id}-${page.splitSide?.name ?? 'full'}',
+                        );
+
+                        return RepaintBoundary(
+                          key: pageKey,
+                          child: Builder(
+                            builder: (context) {
+                              if (item.requiresSourceAccess) {
+                                return _buildExternalFileView(
+                                  context,
+                                  item,
+                                  isInitialItem: isInitialItem,
+                                  renderHeavyContent: renderHeavyContent,
+                                  onContentReady: onContentReady,
+                                );
+                              }
+
+                              final file = File(p.join(docsPath, item.path));
+                              if (!renderHeavyContent &&
+                                  (item.isVideo || item.isAudio)) {
+                                return ColoredBox(
+                                  color: Theme.of(context).appColors.overlay,
+                                );
+                              }
+
+                              if (item.isDirectlyViewableImage) {
+                                return MediaImageViewer(
+                                  file: file,
+                                  item: item,
+                                  splitSide: page.splitSide,
+                                  onContentReady: onContentReady,
+                                  isInitialHero:
+                                      isInitialItem && _currentIndex == index,
+                                  onTap: () {},
+                                  onUnscaledHorizontalDragStart:
+                                      _startForwardedPageDrag,
+                                  onUnscaledHorizontalDragUpdate:
+                                      _updateForwardedPageDrag,
+                                  onUnscaledHorizontalDragEnd:
+                                      _endForwardedPageDrag,
+                                  onUnscaledHorizontalDragCancel:
+                                      _cancelForwardedPageDrag,
+                                );
+                              }
+
+                              if (!renderHeavyContent) {
+                                return ColoredBox(
+                                  color: Theme.of(context).appColors.overlay,
+                                );
+                              } else if (item.isVideo) {
+                                return VideoPlayerView(
+                                  item: item,
+                                  onContentReady: onContentReady,
+                                  onClosePressed: _handleClosePressed,
+                                );
+                              } else if (item.isAudio) {
+                                return AudioPlayerView(
+                                  item: item,
+                                  onContentReady: onContentReady,
+                                  onClosePressed: _handleClosePressed,
+                                );
+                              } else if (item.isText) {
+                                return TextViewer(
+                                  item: item,
+                                  renderContent: renderHeavyContent,
+                                  onContentReady: onContentReady,
+                                );
+                              } else if (item.isPdf) {
+                                if (!renderHeavyContent) {
+                                  return const ColoredBox(color: Colors.black);
+                                }
+                                return PdfViewer(
+                                  item: item,
+                                  onTap: _toggleControls,
+                                  onContentReady: onContentReady,
+                                );
+                              }
+
+                              return _buildUnsupportedFileView(context, item);
+                            },
+                          ),
+                        );
+                      },
+                    ),
                   ),
                 ),
               ),
@@ -827,9 +843,8 @@ class _MediaViewerScreenState extends ConsumerState<MediaViewerScreen> {
                         right: 0,
                         child: Container(
                           decoration: BoxDecoration(
-                            color: Theme.of(
-                              context,
-                            ).appColors.overlay.withValues(alpha: 0.85),
+                            color: Theme.of(context).appColors.overlay
+                                .withValues(alpha: 0.85),
                           ),
                           child: SafeArea(
                             bottom: false,
@@ -842,14 +857,14 @@ class _MediaViewerScreenState extends ConsumerState<MediaViewerScreen> {
                                   elevation: 0,
                                   surfaceTintColor: Colors.transparent,
                                   iconTheme: IconThemeData(
-                                    color: Theme.of(
-                                      context,
-                                    ).colorScheme.onSurface,
+                                    color: Theme.of(context)
+                                        .colorScheme
+                                        .onSurface,
                                   ),
                                   actionsIconTheme: IconThemeData(
-                                    color: Theme.of(
-                                      context,
-                                    ).colorScheme.onSurface,
+                                    color: Theme.of(context)
+                                        .colorScheme
+                                        .onSurface,
                                   ),
                                   leading: IconButton(
                                     tooltip: l10n.commonClose,
@@ -865,9 +880,9 @@ class _MediaViewerScreenState extends ConsumerState<MediaViewerScreen> {
                                       : Text(
                                           title,
                                           style: TextStyle(
-                                            color: Theme.of(
-                                              context,
-                                            ).colorScheme.onSurface,
+                                            color: Theme.of(context)
+                                                .colorScheme
+                                                .onSurface,
                                             fontSize: 16,
                                             fontWeight: FontWeight.bold,
                                           ),
