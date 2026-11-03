@@ -221,12 +221,19 @@ class _MediaViewerScreenState extends ConsumerState<MediaViewerScreen> {
     }
   }
 
-  void _handlePointerUp(PointerUpEvent event, {required bool isImage}) {
+  void _handlePointerUp(
+    PointerUpEvent event, {
+    required bool isImage,
+    bool handlesOwnTaps = false,
+  }) {
     _activePointerCount = (_activePointerCount - 1).clamp(0, 99);
     final downPos = _pointerDownPosition;
     final downTime = _pointerDownTime;
     _pointerDownPosition = null;
     _pointerDownTime = null;
+    // PDF links and selection have their own tap classification. Observing the
+    // raw pointer here would also toggle controls for a consumed annotation tap.
+    if (handlesOwnTaps) return;
 
     if (downPos != null && downTime != null && _activePointerCount == 0) {
       final elapsed = DateTime.now().difference(downTime);
@@ -646,7 +653,11 @@ class _MediaViewerScreenState extends ConsumerState<MediaViewerScreen> {
           behavior: HitTestBehavior.translucent,
           onPointerDown: _handlePointerDown,
           onPointerMove: _handlePointerMove,
-          onPointerUp: (e) => _handlePointerUp(e, isImage: activeItem.isImage),
+          onPointerUp: (e) => _handlePointerUp(
+            e,
+            isImage: activeItem.isImage,
+            handlesOwnTaps: activeItem.isPdf,
+          ),
           onPointerCancel: _handlePointerCancel,
           child: Stack(
             children: [
@@ -657,7 +668,9 @@ class _MediaViewerScreenState extends ConsumerState<MediaViewerScreen> {
                 // 誤クローズを防ぐ。
                 // プレイヤー展開中（embeddedInOverlay）は、コンテンツ側の
                 // 下スワイプ閉じとの競合を避けるために無効化する。
-                direction: widget.embeddedInOverlay
+                // PDF scrolling and selection handles must own both drag axes.
+                // Close PDFs with the close button or the system Back action.
+                direction: widget.embeddedInOverlay || activeItem.isPdf
                     ? DismissDirection.none
                     : DismissDirection.down,
                 dismissThresholds: const {DismissDirection.down: 0.25},
@@ -671,9 +684,11 @@ class _MediaViewerScreenState extends ConsumerState<MediaViewerScreen> {
                     controller: _pageController,
                     reverse: pageDirection == ViewerPageDirection.rightToLeft,
                     allowImplicitScrolling: true,
-                    physics: const LightSwipePageScrollPhysics(
-                      parent: BouncingScrollPhysics(),
-                    ),
+                    physics: activeItem.isPdf
+                        ? const NeverScrollableScrollPhysics()
+                        : const LightSwipePageScrollPhysics(
+                            parent: BouncingScrollPhysics(),
+                          ),
                     itemCount: totalPages,
                     onPageChanged: (index) =>
                         _activatePageAt(viewerPages, index),
@@ -772,6 +787,7 @@ class _MediaViewerScreenState extends ConsumerState<MediaViewerScreen> {
                               }
                               return PdfViewer(
                                 item: item,
+                                onTap: _toggleControls,
                                 onContentReady: onContentReady,
                               );
                             }
@@ -991,7 +1007,11 @@ class _MediaViewerScreenState extends ConsumerState<MediaViewerScreen> {
         } else if (item.isText) {
           return TextViewer(item: item, onContentReady: onContentReady);
         } else if (item.isPdf) {
-          return PdfViewer(item: item, onContentReady: onContentReady);
+          return PdfViewer(
+            item: item,
+            onTap: _toggleControls,
+            onContentReady: onContentReady,
+          );
         }
 
         return _buildUnsupportedFileView(context, item);

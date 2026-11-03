@@ -92,6 +92,34 @@ The Pixel uses 4KB pages, so it does not establish 16KB-device execution.
 Android's existing `FLAG_SECURE` was retained. These automated assertions do
 not establish human password-entry usability or full import-to-reader flows.
 
+## Touch interaction corrections after physical QA
+
+The 2026-11-03 physical review found that the enclosing media viewer could
+claim PDF drags to dismiss the preview, and reported an internal link that did
+not navigate. PDF content now owns both drag axes: the enclosing dismiss gesture
+and file-page swipe are disabled while a PDF is active. System Back, the close
+control and the file-position control remain available. PDF-classified content
+taps control the toolbar; raw pointer-up observation no longer also handles
+annotation taps.
+
+The large triangular selection markers are replaced by 14dp round markers with
+48dp finger targets. Password entry now offers localized show/hide controls,
+starts obscured on every new prompt and preserves the input when toggling.
+
+The extended native suite passed on the isolated Pixel 10 Pro installation.
+It now includes the real media-preview screen, actual taps on external and
+internal annotations, long-press word selection, dragging a selection endpoint
+to extend the selected text without panning the PDF, scrolling the document and
+dragging downward without moving or dismissing the preview. The password,
+failure/recovery and original-file checks also passed. Related host coverage
+passed (42 tests), including restoring normal image gestures after leaving a
+PDF and retaining password privacy settings while toggling visibility.
+
+These automated touch events are distinct from the owner's next review of the
+updated markers and finger interaction on the retained manual QA app. The owner
+confirmed the previous external-link and password-entry behavior; those flows
+remain covered by regression checks.
+
 ## Remaining checks, in priority order
 
 | Priority | Check | Environment / restart condition |
