@@ -28,6 +28,9 @@ The README previews use actual widgets with synthetic data. They are not physica
 
 ## Scope still requiring manual or platform-specific validation
 
+The post-publication PDF smoke test, its limits, and the ordered remaining
+checks are described in [PDF_VALIDATION.md](PDF_VALIDATION.md).
+
 - Physical Android/iOS devices, PDF zoom/selection/password-protected files, background audio, permissions and OS-specific file pickers.
 - Store purchases, official release signing, store submission, and signed binary distribution. Public builds keep purchases and store-review prompts disabled by default.
 - Linux, Windows, macOS and Web runtime behavior. The source files and upstream libraries are retained with provenance; their presence does not establish full support.
