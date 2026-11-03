@@ -112,5 +112,7 @@
     }
   },
   "backgroundAudioPlaying": "Playing Audio",
-  "viewerMarkdownImageBlocked": "Images in this document are not loaded"
+  "viewerMarkdownImageBlocked": "Images in this document are not loaded",
+  "viewerPdfShowPassword": "Show password",
+  "viewerPdfHidePassword": "Hide password"
 }

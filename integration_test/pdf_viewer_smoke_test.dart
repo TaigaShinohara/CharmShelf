@@ -8,8 +8,14 @@ import 'package:path_provider/path_provider.dart';
 import 'package:pdfrx/pdfrx.dart' as pdfrx;
 import 'package:private_shelf/core/providers/path_provider.dart';
 import 'package:private_shelf/features/library/domain/models/media_item.dart';
+import 'package:private_shelf/features/library/domain/models/collection.dart';
+import 'package:private_shelf/features/library/presentation/providers/collection_provider.dart';
+import 'package:private_shelf/features/library/presentation/providers/media_viewer_view_model.dart';
+import 'package:private_shelf/features/library/presentation/providers/external_file_preview_provider.dart';
+import 'package:private_shelf/features/library/presentation/screens/media_viewer_screen.dart';
 import 'package:private_shelf/features/library/presentation/widgets/pdf_viewer.dart';
 import 'package:private_shelf/features/library/presentation/widgets/viewer_state_panel.dart';
+import 'package:private_shelf/features/library/presentation/widgets/viewer/pdf_selection_handle.dart';
 
 import '../test/helpers/test_helpers.dart';
 import 'support/pdf_fixture.dart';
@@ -19,6 +25,168 @@ import 'support/pdf_fixture.dart';
 /// starts app.main, opens the app database, imports files, or launches URLs.
 void main() {
   IntegrationTestWidgetsFlutterBinding.ensureInitialized();
+
+  testWidgets('PDF touch interaction inside the full preview route', (
+    tester,
+  ) async {
+    final directory = await (await getTemporaryDirectory()).createTemp(
+      'pdf-touch-qa-',
+    );
+    final file = await File('${directory.path}/touch.pdf')
+        .writeAsBytes(pdfFixture());
+    final item = MediaItem()
+      ..id = -918274
+      ..path = file.uri.toString()
+      ..originalPath = 'touch.pdf'
+      ..isImportPreview = true
+      ..mimeType = 'application/pdf';
+    addTearDown(() async {
+      await tester.pumpWidget(const SizedBox.shrink());
+      await directory.delete(recursive: true);
+    });
+    await tester.pumpWidget(
+      createProviderApp(
+        MediaViewerScreen(initialItem: item),
+        overrides: [
+          appDocumentsPathSyncProvider.overrideWith((ref) => directory.path),
+          externalFilePreviewProvider(item).overrideWith((ref) => file.path),
+          collectionNotifierProvider(item.path)
+              .overrideWith(_PreviewCollection.new),
+          mediaViewerViewModelProvider.overrideWith(_PreviewViewModel.new),
+        ],
+      ),
+    );
+    await _until(tester, () {
+      final widgets = find.byType(pdfrx.PdfViewer).evaluate();
+      return widgets.isNotEmpty &&
+          (widgets.single.widget as pdfrx.PdfViewer).controller!.isReady;
+    });
+    await tester.pumpAndSettle();
+    final controller = tester
+        .widget<pdfrx.PdfViewer>(find.byType(pdfrx.PdfViewer))
+        .controller!;
+    final links = await controller.pages.first.loadLinks(
+      enableAutoLinkDetection: false,
+    );
+    final internal = links.singleWhere((link) => link.dest != null);
+    final external = links.singleWhere((link) => link.url != null);
+    final box = tester.renderObject<RenderBox>(find.byType(pdfrx.PdfViewer));
+    final externalRect = controller.calcRectForRectInsidePage(
+      pageNumber: 1,
+      rect: external.rects.first,
+    );
+    await tester.tapAt(
+      box.localToGlobal(controller.documentToLocal(externalRect.center)),
+    );
+    await tester.pump(const Duration(milliseconds: 400));
+    await tester.pumpAndSettle();
+    expect(
+      find.text('https://example.invalid/charmshelf-pdf-qa'),
+      findsOneWidget,
+    );
+    await tester.tap(find.text('キャンセル'));
+    await tester.pumpAndSettle();
+    final rect = controller.calcRectForRectInsidePage(
+      pageNumber: 1,
+      rect: internal.rects.first,
+    );
+    await tester.tapAt(
+      box.localToGlobal(controller.documentToLocal(rect.center)),
+    );
+    // pdfrx also recognizes double taps; let a single tap be dispatched.
+    await tester.pump(const Duration(milliseconds: 400));
+    await tester.pumpAndSettle();
+    expect(
+      controller.pageNumber,
+      2,
+      reason: 'An actual annotation tap must navigate inside the preview',
+    );
+    await controller.goToPage(pageNumber: 1, duration: Duration.zero);
+    await tester.pumpAndSettle();
+    final text = (await controller.pages.first.loadText())!;
+    final character = text.charRects[text.fullText.indexOf('Selectable') + 2];
+    final textRect = controller.calcRectForRectInsidePage(
+      pageNumber: 1,
+      rect: character,
+    );
+    await tester.longPressAt(
+      box.localToGlobal(controller.documentToLocal(textRect.center)),
+    );
+    await tester.pumpAndSettle();
+    final selected = await controller.textSelectionDelegate.getSelectedText();
+    expect(selected, contains('Selectable'));
+    expect(find.byType(PdfSelectionHandle), findsNWidgets(2));
+    if (const bool.fromEnvironment('CHARMSHELF_PDF_QA_VISUAL_PAUSE')) {
+      debugPrint('CHARMSHELF_PDF_QA_SELECTION_READY');
+      await tester.pump(const Duration(seconds: 30));
+    }
+    final before = controller.value.clone();
+    final handle = find.byWidgetPredicate(
+      (widget) => widget is PdfSelectionHandle && !widget.isStart,
+    );
+    await tester.drag(handle, const Offset(70, 0));
+    await tester.pumpAndSettle();
+    expect(
+      controller.value,
+      before,
+      reason: 'Dragging a selection handle must not pan the PDF',
+    );
+    expect(
+      (await controller.textSelectionDelegate.getSelectedText()).length,
+      greaterThan(selected.length),
+    );
+    final afterEndDrag = await controller.textSelectionDelegate
+        .getSelectedText();
+    final startHandle = find.byWidgetPredicate(
+      (widget) => widget is PdfSelectionHandle && widget.isStart,
+    );
+    final close = find.byKey(const Key('media_viewer_pdf_preview_close'));
+    expect(
+      tester.getRect(close).overlaps(tester.getRect(startHandle)),
+      isFalse,
+    );
+    await tester.drag(startHandle, const Offset(40, 0));
+    await tester.pumpAndSettle();
+    expect(
+      controller.value,
+      before,
+      reason: 'The start handle must not pan the PDF either',
+    );
+    expect(
+      await controller.textSelectionDelegate.getSelectedText(),
+      isNot(afterEndDrag),
+    );
+    await controller.textSelectionDelegate.clearTextSelection();
+    await tester.pumpAndSettle();
+    final dismissible = find.byKey(const Key('media_viewer_dismissible'));
+    expect(
+      tester.widget<Dismissible>(dismissible).direction,
+      DismissDirection.none,
+    );
+    final origin = tester.getTopLeft(find.byType(pdfrx.PdfViewer));
+    final beforeScroll = controller.value.clone();
+    await tester.drag(find.byType(pdfrx.PdfViewer), const Offset(0, -180));
+    await tester.pumpAndSettle();
+    expect(
+      controller.value,
+      isNot(beforeScroll),
+      reason: 'The PDF itself must still scroll',
+    );
+    expect(tester.getTopLeft(find.byType(pdfrx.PdfViewer)), origin);
+    final gesture = await tester.startGesture(
+      tester.getCenter(find.byType(pdfrx.PdfViewer)),
+    );
+    await gesture.moveBy(const Offset(0, 80));
+    await tester.pump();
+    expect(
+      tester.getTopLeft(find.byType(pdfrx.PdfViewer)),
+      origin,
+      reason: 'Dragging the PDF must not move the preview route',
+    );
+    await gesture.up();
+    await tester.pumpAndSettle();
+    expect(tester.takeException(), isNull);
+  }, timeout: const Timeout(Duration(minutes: 2)));
 
   testWidgets('native PDF rendering, selection, links and failure recovery', (
     tester,
@@ -217,6 +385,18 @@ void main() {
     expect(sha256.convert(await protected.readAsBytes()), protectedHash);
     expect(tester.takeException(), isNull);
   }, timeout: const Timeout(Duration(minutes: 3)));
+}
+
+// The full preview gesture test exercises the real screen without opening a
+// library database or writing viewing history.
+class _PreviewViewModel extends MediaViewerViewModel {
+  @override
+  MediaViewerState build() => const MediaViewerState();
+}
+
+class _PreviewCollection extends CollectionNotifier {
+  @override
+  Future<MediaCollection?> build(String path) async => null;
 }
 
 Future<void> _enterPassword(WidgetTester tester, String value) async {

@@ -61,6 +61,7 @@ class _PdfPasswordDialog extends StatefulWidget {
 class _PdfPasswordDialogState extends State<_PdfPasswordDialog> {
   final _controller = TextEditingController();
   bool _finished = false;
+  bool _obscured = true;
 
   @override
   void dispose() {
@@ -90,7 +91,7 @@ class _PdfPasswordDialogState extends State<_PdfPasswordDialog> {
       content: TextField(
         controller: _controller,
         autofocus: true,
-        obscureText: true,
+        obscureText: _obscured,
         autocorrect: false,
         enableSuggestions: false,
         enableIMEPersonalizedLearning: false,
@@ -100,6 +101,13 @@ class _PdfPasswordDialogState extends State<_PdfPasswordDialog> {
           labelText: l10n.viewerPdfPasswordLabel,
           errorText: widget.incorrect ? l10n.viewerPdfPasswordIncorrect : null,
           errorMaxLines: 3,
+          suffixIcon: IconButton(
+            tooltip: _obscured
+                ? l10n.viewerPdfShowPassword
+                : l10n.viewerPdfHidePassword,
+            onPressed: () => setState(() => _obscured = !_obscured),
+            icon: Icon(_obscured ? Icons.visibility : Icons.visibility_off),
+          ),
         ),
         onChanged: (_) => setState(() {}),
         onSubmitted: (_) => _submit(),

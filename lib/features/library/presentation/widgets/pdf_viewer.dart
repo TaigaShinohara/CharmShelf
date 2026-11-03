@@ -19,6 +19,7 @@ import 'package:private_shelf/features/library/presentation/helpers/pdf_external
 import 'package:private_shelf/features/library/presentation/helpers/pdf_password_prompt.dart';
 import 'package:private_shelf/features/library/presentation/providers/external_file_preview_provider.dart';
 import 'package:private_shelf/features/library/presentation/widgets/viewer_state_panel.dart';
+import 'package:private_shelf/features/library/presentation/widgets/viewer/pdf_selection_handle.dart';
 import 'package:private_shelf/gen_l10n/app_localizations.dart';
 
 /// PDFファイルのプレビュー表示ウィジェット
@@ -115,6 +116,17 @@ class _PdfViewerState extends ConsumerState<PdfViewer> {
 
   @override
   Widget build(BuildContext context) {
+    // The native PDF owns annotation/selection taps while it is rendered. This
+    // fallback restores toolbar access on loading and failure panels as well;
+    // their action buttons still win their own tap gestures.
+    return GestureDetector(
+      behavior: HitTestBehavior.translucent,
+      onTap: widget.onTap,
+      child: _buildContent(context),
+    );
+  }
+
+  Widget _buildContent(BuildContext context) {
     final l10n = AppLocalizations.of(context)!;
 
     if (_loadFailed) {
@@ -229,6 +241,13 @@ class _PdfViewerState extends ConsumerState<PdfViewer> {
       controller: _pdfViewerController,
       params: pdfrx.PdfViewerParams(
         backgroundColor: theme.colorScheme.surface,
+        textSelectionParams: pdfrx.PdfTextSelectionParams(
+          buildSelectionHandle: (_, anchor, _) => PdfSelectionHandle(
+            isStart: anchor.type == pdfrx.PdfTextSelectionAnchorType.a,
+            color: theme.colorScheme.primary,
+          ),
+          calcSelectionHandleOffset: PdfSelectionHandle.offset,
+        ),
         onDocumentLoadFinished: (documentRef, succeeded) {
           if (!succeeded) {
             _onLoadFailed(

@@ -20,6 +20,48 @@ Future<BuildContext> reader(WidgetTester tester) async {
 }
 
 void main() {
+  testWidgets(
+    'visibility toggle preserves input and resets for the next prompt',
+    (tester) async {
+      final context = await reader(tester);
+      final prompt = PdfPasswordPrompt();
+      final first = prompt.request(context);
+      await tester.pumpAndSettle();
+      await tester.enterText(find.byType(TextField), '  synthetic password  ');
+      final selection = tester
+          .widget<TextField>(find.byType(TextField))
+          .controller!
+          .selection;
+      await tester.tap(find.byTooltip('パスワードを表示'));
+      await tester.pump();
+      var field = tester.widget<TextField>(find.byType(TextField));
+      expect(field.obscureText, isFalse);
+      expect(field.controller!.text, '  synthetic password  ');
+      expect(field.controller!.selection, selection);
+      expect(field.enableSuggestions, isFalse);
+      expect(field.enableIMEPersonalizedLearning, isFalse);
+      expect(field.autofillHints, isNull);
+      await tester.tap(find.byTooltip('パスワードを隠す'));
+      await tester.pump();
+      expect(
+        tester.widget<TextField>(find.byType(TextField)).obscureText,
+        isTrue,
+      );
+      await tester.tap(find.byTooltip('パスワードを表示'));
+      await tester.tap(find.text('開く'));
+      await tester.pumpAndSettle();
+      expect(await first, '  synthetic password  ');
+      final second = prompt.request(context);
+      await tester.pumpAndSettle();
+      field = tester.widget<TextField>(find.byType(TextField));
+      expect(field.obscureText, isTrue);
+      expect(field.controller!.text, isEmpty);
+      await tester.tap(find.text('キャンセル'));
+      await tester.pumpAndSettle();
+      expect(await second, isNull);
+    },
+  );
+
   testWidgets('duplicate submit never closes the underlying reader route', (
     tester,
   ) async {

@@ -112,5 +112,7 @@
     }
   },
   "backgroundAudioPlaying": "音声再生中",
-  "viewerMarkdownImageBlocked": "文書内の画像は読み込みません"
+  "viewerMarkdownImageBlocked": "文書内の画像は読み込みません",
+  "viewerPdfShowPassword": "パスワードを表示",
+  "viewerPdfHidePassword": "パスワードを隠す"
 }

@@ -20,6 +20,96 @@ void main() {
   TestWidgetsFlutterBinding.ensureInitialized();
 
   group('画像ビューワーのジェスチャー調停', () {
+    testWidgets('PDFの読み込み失敗中もタップで隠れた操作バーへ戻れる', (tester) async {
+      final fixture = _ViewerFixture.create(firstPdf: true);
+      _registerFixtureTearDown(tester, fixture);
+      await _showViewer(tester, fixture);
+      fixture.container
+          .read(mediaViewerViewModelProvider.notifier)
+          .setControlsVisible(false);
+      await tester.pumpAndSettle();
+      expect(find.byType(AppBar), findsNothing);
+      await tester.tapAt(
+        tester.getTopLeft(find.byKey(_pageViewKey)) + const Offset(20, 20),
+      );
+      await tester.pumpAndSettle();
+      expect(find.byType(AppBar), findsOneWidget);
+      expect(
+        fixture.container.read(mediaViewerViewModelProvider).showControls,
+        isTrue,
+      );
+    });
+
+    testWidgets('PDF取り込みプレビューを明示的な閉じるボタンで戻れる', (tester) async {
+      final fixture = _ViewerFixture.create(
+        firstPdf: true,
+        externalReference: true,
+      );
+      _registerFixtureTearDown(tester, fixture);
+      await tester.pumpWidget(
+        UncontrolledProviderScope(
+          container: fixture.container,
+          child: MaterialApp(
+            localizationsDelegates: AppLocalizations.localizationsDelegates,
+            supportedLocales: AppLocalizations.supportedLocales,
+            home: Builder(
+              builder: (context) => TextButton(
+                onPressed: () => Navigator.of(context).push(
+                  MaterialPageRoute<void>(
+                    builder: (_) =>
+                        MediaViewerScreen(initialItem: fixture.items.first),
+                  ),
+                ),
+                child: const Text('Open preview'),
+              ),
+            ),
+          ),
+        ),
+      );
+      await tester.tap(find.text('Open preview'));
+      await tester.pumpAndSettle();
+      expect(find.byType(MediaViewerScreen), findsOneWidget);
+      await tester.tap(find.byKey(const Key('media_viewer_pdf_preview_close')));
+      await tester.pumpAndSettle();
+      expect(find.byType(MediaViewerScreen), findsNothing);
+      expect(find.text('Open preview'), findsOneWidget);
+    });
+
+    testWidgets('PDFの本文ドラッグは画面を動かさず、画像へ切替後は通常のジェスチャーへ戻る', (tester) async {
+      final fixture = _ViewerFixture.create(firstPdf: true);
+      _registerFixtureTearDown(tester, fixture);
+      await _showViewer(tester, fixture);
+      final dismissible = find.byKey(const Key('media_viewer_dismissible'));
+      expect(
+        tester.widget<Dismissible>(dismissible).direction,
+        DismissDirection.none,
+      );
+      expect(
+        tester.widget<PageView>(find.byKey(_pageViewKey)).physics,
+        isA<NeverScrollableScrollPhysics>(),
+      );
+      final start = tester.getTopLeft(find.byKey(_pageViewKey));
+      final gesture = await tester.startGesture(
+        tester.getCenter(find.byKey(_pageViewKey)),
+      );
+      await gesture.moveBy(const Offset(0, 100));
+      await tester.pump();
+      expect(tester.getTopLeft(find.byKey(_pageViewKey)), start);
+      await gesture.up();
+      await tester.pumpAndSettle();
+      _pageController(tester).jumpToPage(1);
+      await tester.pumpAndSettle();
+      await _expectCommittedItem(tester, fixture, 1);
+      expect(
+        tester.widget<Dismissible>(dismissible).direction,
+        DismissDirection.down,
+      );
+      expect(
+        tester.widget<PageView>(find.byKey(_pageViewKey)).physics,
+        isNot(isA<NeverScrollableScrollPhysics>()),
+      );
+    });
+
     for (final frequency in <double>[60, 90, 120, 180, 240]) {
       testWidgets('MOVE頻度${frequency.toInt()}Hzの高速横スワイプでページ移動する', (
         tester,
@@ -411,6 +501,7 @@ class _ViewerFixture {
   static _ViewerFixture create({
     bool splitSpread = false,
     bool externalReference = false,
+    bool firstPdf = false,
   }) {
     final directory = Directory.systemTemp.createTempSync(
       'private-shelf-viewer-gesture-',
@@ -426,16 +517,17 @@ class _ViewerFixture {
         ? (MediaCollection()..splitSpreadView = true)
         : null;
     for (var index = 0; index < 3; index++) {
-      final path = '$index.png';
+      final pdf = firstPdf && index == 0;
+      final path = '$index.${pdf ? 'pdf' : 'png'}';
       final physicalPath = '${directory.path}/$path';
-      File(physicalPath).writeAsBytesSync(bytes);
+      if (!pdf) File(physicalPath).writeAsBytesSync(bytes);
       physicalPaths.add(physicalPath);
       final item = MediaItem()
         ..id = 9000 + index
         ..path = externalReference ? 'content://viewer/$path' : path
         ..originalPath = path
         ..type = MediaType.file
-        ..mimeType = 'image/png'
+        ..mimeType = pdf ? 'application/pdf' : 'image/png'
         ..isImportPreview = externalReference
         ..sourceType = MediaSourceType.localCopy;
       if (collection != null) {
@@ -451,9 +543,8 @@ class _ViewerFixture {
         appDocumentsPathSyncProvider.overrideWithValue(directory.path),
         for (final item in items) ...[
           mediaItemProvider(item.id).overrideWith((ref) => item),
-          collectionNotifierProvider(
-            item.path,
-          ).overrideWith(_NullCollectionNotifier.new),
+          collectionNotifierProvider(item.path)
+              .overrideWith(_NullCollectionNotifier.new),
           if (externalReference)
             externalFilePreviewProvider(item).overrideWith((ref) {
               final index = items.indexOf(item);
