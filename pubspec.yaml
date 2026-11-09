@@ -155,7 +155,7 @@ dev_dependencies:
   riverpod_generator: ^4.0.9
   json_serializable: ^6.15.2
   flutter_launcher_icons: ^0.14.4
-  go_router_builder: ^4.5.2
+  go_router_builder: ^4.5.3
   mocktail: ^1.0.4
   # Windows API回帰は移植を確認した6.0.1で解決し、後続6系もCIで検証する。
   win32: ^6.0.1
