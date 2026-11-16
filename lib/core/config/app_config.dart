@@ -10,7 +10,7 @@ class AppConfig {
   static const String appName = 'CharmShelf';
   static const String packageName = 'com.tsmusic.privateshelf.opensource';
   static const int minAge = 0;
-  static const String externalLegalUrl = '';
+  static const String externalLegalUrl = 'https://github.com/TaigaShinohara/CharmShelf/blob/main/docs/PRIVACY_POLICY.md';
 
   static const Features features = Features(
     webEnabled: false,

@@ -3,7 +3,7 @@ app:
   package_name: "com.tsmusic.privateshelf.opensource"
   version: "1.0.12"
   min_age: 0 # 年齢制限なし（未成年利用可）
-  external_legal_url: ""
+  external_legal_url: "https://github.com/TaigaShinohara/CharmShelf/blob/main/docs/PRIVACY_POLICY.md"
 
 company:
   name: "Private Shelf Project"
