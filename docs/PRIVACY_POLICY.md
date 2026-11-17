@@ -6,7 +6,7 @@
 CharmShelf（以下「本アプリ」）は、データをまず端末上で扱うローカルファースト設計です。本アプリがライブラリデータを開発者運営のサーバーへ自動アップロードすることはありません。
 
 - **運営主体**: Private Shelf Project（CharmShelf 開発チーム）
-- **お問い合わせ窓口**: deeple+charmshelfstaff@inkboxmail.com
+- **お問い合わせ窓口**: support-charmshelf@dobulab.com
 
 ## 2. 収集・保存する情報
 本アプリは、機能提供のために以下の情報を主にお客様の端末内で扱います。共有・書き出し・サポート送付を選ぶと、選択したデータが指定した相手やサービスへ渡ります。これらの情報が開発者のサーバー等へ自動送信されることはありません。
@@ -68,4 +68,4 @@ CharmShelf（以下「本アプリ」）は、データをまず端末上で扱�
 ## 10. お問い合わせ
 プライバシーに関するご質問やご意見は、以下のお問い合わせ窓口までご連絡ください。
 - 担当: CharmShelf 開発チーム
-- メール: deeple+charmshelfstaff@inkboxmail.com
+- メール: support-charmshelf@dobulab.com

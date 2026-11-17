@@ -65,4 +65,4 @@
 本規約は日本語を正本とします。他の言語版との間に解釈の相違がある場合は日本語版が優先されます。
 
 ## 13. お問い合わせ
-CharmShelf 開発チーム: [deeple+charmshelfstaff@inkboxmail.com](mailto:deeple+charmshelfstaff@inkboxmail.com)
+CharmShelf 開発チーム: [support-charmshelf@dobulab.com](mailto:support-charmshelf@dobulab.com)
