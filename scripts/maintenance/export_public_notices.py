@@ -149,7 +149,9 @@ def ios_entries(roots: dict[str, Path]) -> list[dict]:
         files = [path for path in candidates if path.is_file()]
         if not files:
             raise FileNotFoundError(f"No iOS plugin license: {name}")
-        result.append({"package": name, "text": read_license(files[0])[0]})
+        # Match export_ios_licenses.py universal-newline normalization.
+        text = read_license(files[0])[0].replace("\r\n", "\n").replace("\r", "\n")
+        result.append({"package": name, "text": text})
     for entry in previous:
         if entry["package"] in SWIFT_EXTRA_NAMES:
             result.append({"package": entry["package"], "text": entry["text"]})
