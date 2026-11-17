@@ -14,7 +14,7 @@
   - READ_MEDIA_IMAGES / READ_MEDIA_VIDEO は**要求していない**（取り込みは SAF / ピッカー）。MANAGE_EXTERNAL_STORAGE は除去宣言済み。
   - targetSdk 36 / minSdk 24 / 64bit ネイティブライブラリ 16KB アライン確認済み（check_android_bundle 合格）。
 - iOS: 権限の理由文（カメラ・マイク・写真・Face ID）あり、PrivacyInfo.xcprivacy 同梱あり、deployment target iOS 15.0。
-- プライバシーポリシー: 原稿が `docs/PRIVACY_POLICY.md` にある（最終更新 2026-10-02、ただし「公開前の更新案」表記）。運営主体 Private Shelf Project、窓口 deeple+charmshelfstaff@inkboxmail.com。**公開URLはまだ無い**。
+- プライバシーポリシー: 原稿が `docs/PRIVACY_POLICY.md` にある（最終更新 2026-10-02、ただし「公開前の更新案」表記）。運営主体 Private Shelf Project、窓口 support-charmshelf@dobulab.com。**公開URLはまだ無い**。
 - リリース署名: リポジトリ設計では Mac + 1Password スクリプト（`scripts/android_signing_1password.py`）経由が必須。このVMで作ったAPKはデバッグ署名で提出には使えない。
 
 ## Google Play 判定: 直せば提出可能

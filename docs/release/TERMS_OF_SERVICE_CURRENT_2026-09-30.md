@@ -69,7 +69,7 @@
 本規約は日本語を正本とします。他の言語版との間に解釈の相違がある場合は日本語版が優先されます。
 
 ## 13. お問い合わせ
-CharmShelf 開発チーム: [deeple+charmshelfstaff@inkboxmail.com](mailto:deeple+charmshelfstaff@inkboxmail.com)
+CharmShelf 開発チーム: [support-charmshelf@dobulab.com](mailto:support-charmshelf@dobulab.com)
 
 ## English
 
@@ -138,4 +138,4 @@ Users represent and warrant that they do not belong to anti-social forces (organ
 The Japanese version of these Terms is the official and controlling version. Any translated version is provided for reference only, and the Japanese version prevails in case of conflict.
 
 ## 13. Contact
-CharmShelf Development Team: [deeple+charmshelfstaff@inkboxmail.com](mailto:deeple+charmshelfstaff@inkboxmail.com)
+CharmShelf Development Team: [support-charmshelf@dobulab.com](mailto:support-charmshelf@dobulab.com)
