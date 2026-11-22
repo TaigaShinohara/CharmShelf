@@ -105,7 +105,7 @@ Regenerate after dependency resolution with `python3 scripts/maintenance/export_
 | flutter_secure_storage_windows | 4.2.2 | dart | [source](https://pub.dev/packages/flutter_secure_storage_windows/versions/4.2.2) |
 | flutter_shaders | 0.1.5 | dart | [source](https://pub.dev/packages/flutter_shaders/versions/0.1.5) |
 | flutter_slidable | 4.0.3 | dart | [source](https://pub.dev/packages/flutter_slidable/versions/4.0.3) |
-| flutter_svg | 2.3.0 | dart | [source](https://pub.dev/packages/flutter_svg/versions/2.3.0) |
+| flutter_svg | 2.3.2 | dart | [source](https://pub.dev/packages/flutter_svg/versions/2.3.2) |
 | flutter_test | Flutter 3.47.9 | dart | [source](https://github.com/flutter/flutter/tree/3.47.9) |
 | flutter_timezone | 5.1.1 | dart | [source](https://pub.dev/packages/flutter_timezone/versions/5.1.1) |
 | flutter_web_plugins | Flutter 3.47.9 | dart | [source](https://github.com/flutter/flutter/tree/3.47.9) |
@@ -113,8 +113,8 @@ Regenerate after dependency resolution with `python3 scripts/maintenance/export_
 | freezed_annotation | 3.1.0 | dart | [source](https://pub.dev/packages/freezed_annotation/versions/3.1.0) |
 | fuchsia_remote_debug_protocol | Flutter 3.47.9 | dart | [source](https://github.com/flutter/flutter/tree/3.47.9) |
 | glob | 2.2.0 | dart | [source](https://pub.dev/packages/glob/versions/2.2.0) |
-| go_router | 18.1.1 | dart | [source](https://pub.dev/packages/go_router/versions/18.1.1) |
-| go_router_builder | 4.5.2 | dart | [source](https://pub.dev/packages/go_router_builder/versions/4.5.2) |
+| go_router | 18.1.2 | dart | [source](https://pub.dev/packages/go_router/versions/18.1.2) |
+| go_router_builder | 4.5.3 | dart | [source](https://pub.dev/packages/go_router_builder/versions/4.5.3) |
 | graphs | 2.3.2 | dart | [source](https://pub.dev/packages/graphs/versions/2.3.2) |
 | hooks | 2.2.0 | dart | [source](https://pub.dev/packages/hooks/versions/2.2.0) |
 | html | 0.15.7 | dart | [source](https://pub.dev/packages/html/versions/0.15.7) |
@@ -133,7 +133,7 @@ Regenerate after dependency resolution with `python3 scripts/maintenance/export_
 | in_app_purchase | 3.3.1 | dart | [source](https://pub.dev/packages/in_app_purchase/versions/3.3.1) |
 | in_app_purchase_android | 0.5.5 | dart | [source](https://pub.dev/packages/in_app_purchase_android/versions/0.5.5) |
 | in_app_purchase_platform_interface | 1.4.1 | dart | [source](https://pub.dev/packages/in_app_purchase_platform_interface/versions/1.4.1) |
-| in_app_purchase_storekit | 0.4.15 | dart | [source](https://pub.dev/packages/in_app_purchase_storekit/versions/0.4.15) |
+| in_app_purchase_storekit | 0.4.17 | dart | [source](https://pub.dev/packages/in_app_purchase_storekit/versions/0.4.17) |
 | in_app_review | 2.0.12 | dart | [source](https://pub.dev/packages/in_app_review/versions/2.0.12) |
 | in_app_review_platform_interface | 2.0.5 | dart | [source](https://pub.dev/packages/in_app_review_platform_interface/versions/2.0.5) |
 | integration_test | Flutter 3.47.9 | dart | [source](https://github.com/flutter/flutter/tree/3.47.9) |
@@ -166,7 +166,7 @@ Regenerate after dependency resolution with `python3 scripts/maintenance/export_
 | markdown | 7.3.1 | dart | [source](https://pub.dev/packages/markdown/versions/7.3.1) |
 | matcher | 0.12.20 | dart | [source](https://pub.dev/packages/matcher/versions/0.12.20) |
 | material_color_utilities | 0.13.0 | dart | [source](https://pub.dev/packages/material_color_utilities/versions/0.13.0) |
-| material_ui | 1.1.0 | dart | [source](https://pub.dev/packages/material_ui/versions/1.1.0) |
+| material_ui | 1.9.0 | dart | [source](https://pub.dev/packages/material_ui/versions/1.9.0) |
 | meta | 1.19.0 | dart | [source](https://pub.dev/packages/meta/versions/1.19.0) |
 | mime | 2.1.0 | dart | [source](https://pub.dev/packages/mime/versions/2.1.0) |
 | mockito | 5.8.1 | dart | [source](https://pub.dev/packages/mockito/versions/5.8.1) |

@@ -26,6 +26,13 @@ Future<void> main() async {
     inspector: false,
   );
   final date = DateTime(2026, 8, 31, 9, 41);
+  // First-party procedural artwork; see docs/ASSET_LICENSES.md.
+  const coverAssets = [
+    'assets/images/samples/photo_book/spring_trip_coast.png',
+    'assets/images/samples/illustration_collection/moonlit_reader.png',
+    'assets/images/samples/illustration_collection/botanical_atelier.png',
+    'assets/images/samples/illustration_collection/starlight_observatory.png',
+  ];
   final facet = TagFacet()
     ..name = 'テーマ'
     ..createdAt = date;
@@ -83,6 +90,8 @@ Future<void> main() async {
       final (title, tagName, color, documents) = samples[i];
       final folder = 'library/$title';
       await Directory('${root.path}/$folder').create(recursive: true);
+      final coverPath = '$folder/cover.png';
+      await File(coverAssets[i]).copy('${root.path}/$coverPath');
       final tag = Tag()
         ..name = tagName
         ..key = Tag.buildKey(facet.id, tagName)
@@ -119,6 +128,7 @@ Future<void> main() async {
         ..title = title
         ..path = folder
         ..isCatalog = true
+        ..coverImagePath = coverPath
         ..createdAt = date.subtract(Duration(minutes: i))
         ..updatedAt = date
         ..isPinned = true
