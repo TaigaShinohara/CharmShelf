@@ -731,10 +731,10 @@ packages:
     dependency: "direct main"
     description:
       name: flutter_svg
-      sha256: "35882981abcbfb8c15b286f0cd690ff25bac12d95eff3e25ee207f37d4c42e7f"
+      sha256: "100c19dcc4ff60083e95a44a6f44f3a1bb887d353c5d86f6a9b688aa3cb46236"
       url: "https://pub.dev"
     source: hosted
-    version: "2.3.0"
+    version: "2.3.2"
   flutter_test:
     dependency: "direct dev"
     description: flutter
@@ -786,18 +786,18 @@ packages:
     dependency: "direct main"
     description:
       name: go_router
-      sha256: "07089be6dc124eb9596a51b5e359c657f30a59929287f11b126c2cd13eaaece0"
+      sha256: f1c2d3c2b0b2096b435d7af033dd4e586fa31f51d988c5985e64495cd926d872
       url: "https://pub.dev"
     source: hosted
-    version: "18.1.1"
+    version: "18.1.2"
   go_router_builder:
     dependency: "direct dev"
     description:
       name: go_router_builder
-      sha256: "13200a45ad9bba22e3f3630f0f0f7e7ff8002ca7375f3b514c98f591259f457f"
+      sha256: "95a17e1614b808a627eebe9c4e6dbdd25e6afbdd9476baf58ff5e08081af782a"
       url: "https://pub.dev"
     source: hosted
-    version: "4.5.2"
+    version: "4.5.3"
   graphs:
     dependency: transitive
     description:
@@ -945,10 +945,10 @@ packages:
     dependency: "direct main"
     description:
       name: in_app_purchase_storekit
-      sha256: de4f86b7bed848cd60a32c93affad868ba06a5276c007e23878855558094ff43
+      sha256: e9278eb778170ce65a9e2d17672924f41b0f2f3ad958cd9f6ea7ffc0826efa29
       url: "https://pub.dev"
     source: hosted
-    version: "0.4.15"
+    version: "0.4.17"
   in_app_review:
     dependency: "direct main"
     description:
@@ -1202,10 +1202,10 @@ packages:
     dependency: "direct main"
     description:
       name: material_ui
-      sha256: "7ba1ca315d50a004791dbab290417c52a61466d56db2822fe3c5c2994903110c"
+      sha256: feb289df1e5f9ed9522f9fe3d909432a7f7bc76943f16abad09f80a16cd25196
       url: "https://pub.dev"
     source: hosted
-    version: "1.1.0"
+    version: "1.9.0"
   meta:
     dependency: transitive
     description:
