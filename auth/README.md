@@ -21,4 +21,6 @@ The Google Play upload guard deliberately blocks `internal`, `beta`, and `releas
 
 The Android release helper expects the distributor's own signing-certificate fingerprint. iOS export options must refer to the distributor's own team, certificate, and provisioning profile. Placeholder export options are not a usable signing configuration. Do not use an existing TagShelf signature or store identity for a fork.
 
+For a local iOS export, pass `--export-options <plist>` to `scripts/build_ios_release_candidate.zsh` with `--export`. Keep the configured plist outside tracked files. Add `--installed-signing` if the matching Apple Distribution identity and App Store profile are already installed on this Mac. The script checks the configured identity before building and uses the same plist to export and verify the IPA. The default signing path uses the optional 1Password launcher.
+
 Signing checks, local build checks, upload permission, and actual publication are distinct results. Never publish, grant permissions, purchase services, or remove credentials merely as part of setting up a Debug build.
