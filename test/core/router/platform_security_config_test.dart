@@ -23,6 +23,16 @@ void main() {
     );
   });
 
+  test('標準ビルドはアプリ固有のURLスキームを登録しない', () {
+    final android = File('android/app/src/main/AndroidManifest.xml')
+        .readAsStringSync();
+    final ios = File('ios/Runner/Info.plist').readAsStringSync();
+
+    expect(android, isNot(contains('android:scheme="charmshelf"')));
+    expect(ios, isNot(contains('<key>CFBundleURLTypes</key>')));
+    expect(android, contains('android:scheme="https"'));
+  });
+
   test('iOS Documentsのファイル共有を無効化している', () {
     final ios = File('ios/Runner/Info.plist').readAsStringSync();
 
