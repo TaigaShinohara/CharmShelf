@@ -1121,7 +1121,7 @@ Future<void> _patchAndroidManifest(Directory dest) async {
   }
 
   // 3. Deep link（custom scheme）を追加（MainActivityの</activity>直前）
-  final scheme = _readDeepLinkScheme(dest);
+  final scheme = readEnabledDeepLinkScheme(dest);
   final activityRe = RegExp(
     r'<activity[^>]*android:name="[^"]*MainActivity"[^>]*>',
   );
@@ -1136,7 +1136,7 @@ Future<void> _patchAndroidManifest(Directory dest) async {
         '${content.substring(0, activityMatch.end)}\n$deepLinkOptOut${content.substring(activityMatch.end)}';
     changed = true;
   }
-  if (!content.contains('android:scheme="$scheme"')) {
+  if (scheme != null && !content.contains('android:scheme="$scheme"')) {
     final m = activityRe.firstMatch(content);
     if (m != null) {
       final close = content.indexOf('</activity>', m.end);
@@ -1220,8 +1220,8 @@ Future<void> _patchInfoPlist(Directory dest) async {
   }
 
   // URL scheme（ディープリンク）
-  final scheme = _readDeepLinkScheme(dest);
-  if (!content.contains('<key>CFBundleURLTypes</key>')) {
+  final scheme = readEnabledDeepLinkScheme(dest);
+  if (scheme != null && !content.contains('<key>CFBundleURLTypes</key>')) {
     final urlTypes =
         '''
 	<key>CFBundleURLTypes</key>
@@ -1238,7 +1238,7 @@ Future<void> _patchInfoPlist(Directory dest) async {
 ''';
     content = insertBeforeRootPlistDictEnd(content, urlTypes);
     changed = true;
-  } else if (!content.contains('<string>$scheme</string>')) {
+  } else if (scheme != null && !content.contains('<string>$scheme</string>')) {
     // 既存のURLSchemes配列に scheme を追加（最初の1箇所のみ）
     final schemesArrayRe = RegExp(
       r'(<key>CFBundleURLSchemes</key>\s*<array>)([\s\S]*?)(</array>)',
@@ -1387,24 +1387,23 @@ Future<void> _updateL10nYaml(Directory dest) async {
   }
 }
 
-String _readDeepLinkScheme(Directory dest) {
+String? readEnabledDeepLinkScheme(Directory dest) {
   try {
     final configFile = File('${dest.path}/template_config.yaml');
-    if (!configFile.existsSync()) return 'myapp';
-    final yamlText = configFile.readAsStringSync();
-    final dynamic root = loadYaml(yamlText);
-    if (root is! YamlMap) return 'myapp';
+    if (!configFile.existsSync()) return null;
+    final dynamic root = loadYaml(configFile.readAsStringSync());
+    if (root is! YamlMap) return null;
+    if (!_boolAt(root, ['features', 'deep_link', 'enabled'], def: false)) {
+      return null;
+    }
     final scheme = _stringAt(root, [
       'features',
       'deep_link',
       'scheme',
-    ], def: 'myapp');
-    // URL schemeは [a-zA-Z][a-zA-Z0-9+.-]* が基本
-    final normalized = scheme.trim();
-    if (normalized.isEmpty) return 'myapp';
-    return normalized;
+    ], def: 'myapp').trim();
+    return scheme.isEmpty ? 'myapp' : scheme;
   } catch (_) {
-    return 'myapp';
+    return null;
   }
 }
 
