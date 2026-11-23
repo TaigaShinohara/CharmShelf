@@ -28,7 +28,7 @@ import 'package:video_player/video_player.dart';
 // Native playback and lifecycle assertions do not establish visual/audio quality.
 void main() {
   final binding = IntegrationTestWidgetsFlutterBinding.ensureInitialized();
-  const allowedPackage = 'com.tsmusic.privateshelf.opensource.performanceqa26102605';
+  const allowedPackage = 'org.charmshelf.opensource.performanceqa26102605';
   const sourceHash = String.fromEnvironment(
     'TAGSHELF_DEPENDENCY_QA_SOURCE_HASH',
   );

@@ -54,7 +54,7 @@ void main() {
     expect(kProfileMode, isTrue, reason: 'Use one isolated Profile QA APK');
     expect(
       RegExp(
-        r'^com\.tsmusic\.privateshelf\.opensource\.performanceqa[0-9]{1,8}$',
+        r'^org\.charmshelf\.opensource\.performanceqa[0-9]{1,8}$',
       ).hasMatch(expectedPackage),
       isTrue,
     );

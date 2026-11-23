@@ -8,7 +8,7 @@ import 'package:flutter/widgets.dart';
 /// 量産時の「切り替えスイッチ」は template_config.yaml です。
 class AppConfig {
   static const String appName = 'CharmShelf';
-  static const String packageName = 'com.tsmusic.privateshelf.opensource';
+  static const String packageName = 'org.charmshelf.opensource';
   static const int minAge = 0;
   static const String externalLegalUrl = 'https://github.com/TaigaShinohara/CharmShelf/blob/main/docs/PRIVACY_POLICY.md';
 

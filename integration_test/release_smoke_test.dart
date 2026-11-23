@@ -34,7 +34,7 @@ void main() {
     final info = await PackageInfo.fromPlatform();
     expect(
       RegExp(
-        r'^com\.tsmusic\.privateshelf\.opensource\.performanceqa(?:[0-9]{1,8})?$',
+        r'^org\.charmshelf\.opensource\.performanceqa(?:[0-9]{1,8})?$',
       ).hasMatch(info.packageName),
       isTrue,
       reason: 'Only isolated QA packages may initialize this fixture library',

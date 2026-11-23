@@ -3,7 +3,7 @@ require "tempfile"
 default_platform(:ios)
 
 def android_application_id
-  ENV["ANDROID_APPLICATION_ID"].to_s.empty? ? "com.tsmusic.privateshelf.opensource" : ENV["ANDROID_APPLICATION_ID"]
+  ENV["ANDROID_APPLICATION_ID"].to_s.empty? ? "org.charmshelf.opensource" : ENV["ANDROID_APPLICATION_ID"]
 end
 
 def with_google_play_service_account
