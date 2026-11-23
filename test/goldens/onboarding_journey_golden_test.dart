@@ -144,11 +144,9 @@ Future<void> _capture(WidgetTester tester, String name) async {
 }
 
 void main() {
-  if (Platform.isLinux) {
-    // macOSで生成されたゴールデンとLinux環境のフォント/レンダリング差異が大きいため、
-    // Linux上ではゴールデンテストをスキップする。
-    return;
-  }
+  // Baselines are platform-specific: Linux runs compare against the
+  // `goldens/goldens/linux/` baselines (see flutter_test_config.dart), so the
+  // golden check also runs in the Linux development VM before delivery.
   TestWidgetsFlutterBinding.ensureInitialized();
   setUpAll(() async {
     for (final (family, path) in [

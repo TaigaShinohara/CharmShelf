@@ -11,23 +11,41 @@ Future<void> testExecutable(FutureOr<void> Function() testMain) async {
   await testMain();
 }
 
+/// Golden baselines are host-dependent (font rasterization differs between
+/// macOS and Linux), so Linux runs use baselines under a `linux/` subfolder
+/// next to the macOS ones. This keeps the pre-delivery golden check runnable
+/// in the Linux development VM instead of skipping it there.
+Uri _platformGolden(Uri golden) {
+  if (!Platform.isLinux) return golden;
+  const prefix = 'goldens/goldens/';
+  final path = golden.path;
+  if (!path.startsWith(prefix)) return golden;
+  return Uri.parse('goldens/goldens/linux/${path.substring(prefix.length)}');
+}
+
 class _TolerantFileComparator extends LocalFileComparator {
   _TolerantFileComparator(super.basedir);
 
   @override
+  Future<void> update(Uri testName, Uint8List imageBytes) {
+    return super.update(_platformGolden(testName), imageBytes);
+  }
+
+  @override
   Future<bool> compare(Uint8List imageBytes, Uri golden) async {
-    final goldenFullUri = basedir.resolveUri(golden);
+    final effectiveGolden = _platformGolden(golden);
+    final goldenFullUri = basedir.resolveUri(effectiveGolden);
     debugPrint('Comparing against (resolved): $goldenFullUri');
 
     if (!await File.fromUri(goldenFullUri).exists()) {
       debugPrint('Golden file does NOT exist at: $goldenFullUri');
       // Fallback to default behavior to let it throw the standard error
-      return super.compare(imageBytes, golden);
+      return super.compare(imageBytes, effectiveGolden);
     }
 
     final result = await GoldenFileComparator.compareLists(
       imageBytes,
-      await getGoldenBytes(golden),
+      await getGoldenBytes(effectiveGolden),
     );
 
     if (result.passed) {
