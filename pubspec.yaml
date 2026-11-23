@@ -41,8 +41,8 @@ dependencies:
 
   # 状態管理（標準）
   # Previous-data compatibility uses two documented internal APIs in this exact runtime.
-  flutter_riverpod: 3.4.3
-  riverpod_annotation: ^4.0.7
+  flutter_riverpod: 3.5.0
+  riverpod_annotation: ^4.0.8
 
   # ルーティング
   go_router: ^18.1.2
@@ -152,7 +152,7 @@ dev_dependencies:
   freezed: ^4.0.3
   isar_generator:
     path: patches/isar_generator
-  riverpod_generator: ^4.0.9
+  riverpod_generator: ^4.0.10
   json_serializable: ^6.15.2
   flutter_launcher_icons: ^0.14.4
   go_router_builder: ^4.5.3
@@ -167,7 +167,7 @@ dev_dependencies:
   windows_file_picker: ^2.0.1
 
   # Direct test imports share the pinned Riverpod runtime.
-  riverpod: 3.4.3
+  riverpod: 3.5.0
   shared_preferences_platform_interface: ^2.4.1
 
 # Android/iOSの現行ビルド互換に必要なプラグインはローカルパッチ版を使用
