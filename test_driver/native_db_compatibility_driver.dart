@@ -20,7 +20,7 @@ Future<void> main() async {
   final output = Directory(_required('OUTPUT'));
   if (!_stages.contains(expectedStage) ||
       !RegExp(
-        r'^com\.tsmusic\.privateshelf\.opensource\.performanceqa[0-9]{1,8}$',
+        r'^org\.charmshelf\.opensource\.performanceqa[0-9]{1,8}$',
       ).hasMatch(package) ||
       baselineHash == candidateHash ||
       !await apk.exists()) {

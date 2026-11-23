@@ -35,7 +35,7 @@ def main() -> None:
     if not re.fullmatch(r'tagshelf_dependency_qa_[A-Za-z0-9_]+', args.avd_name):
         parser.error('AVD name must start with tagshelf_dependency_qa_')
     if not re.fullmatch(
-        r'com\.tsmusic\.privateshelf\.opensource\.performanceqa[0-9]{1,8}', args.package
+        r'org\.charmshelf\.opensource\.performanceqa[0-9]{1,8}', args.package
     ):
         parser.error('A numbered TagShelf performance QA package is required')
     if not re.fullmatch(r'[a-fA-F0-9]{64}', args.source_hash):

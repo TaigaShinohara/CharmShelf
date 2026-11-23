@@ -3,7 +3,7 @@ import 'package:flutter_test/flutter_test.dart';
 import '../../tool/performance_qa_package.dart';
 
 void main() {
-  const qaPackage = 'com.tsmusic.privateshelf.opensource.performanceqa';
+  const qaPackage = 'org.charmshelf.opensource.performanceqa';
 
   group('isolated performance QA packages', () {
     for (var length = 0; length <= 8; length++) {
@@ -29,7 +29,9 @@ void main() {
   group('packages that must never receive fixtures', () {
     final invalidPackages = <String, String>{
       'former QA app': 'com.tsmusic.privateshelf.performanceqa',
-      'normal app': 'com.tsmusic.privateshelf',
+      'former open-source QA app':
+          'com.tsmusic.privateshelf.opensource.performanceqa123',
+      'normal app': 'org.charmshelf.opensource',
       'debug app': 'com.tsmusic.privateshelf.debug',
       'other app': 'com.example.other',
       'other app with QA suffix': 'com.example.other.performanceqa123',
@@ -38,7 +40,7 @@ void main() {
       'QA suffix only': 'performanceqa123',
       'partial QA suffix': 'com.tsmusic.privateshelf.performanceq',
       'prefixed ID': 'other.$qaPackage',
-      'unescaped separators': 'comXtsmusicXprivateshelfXperformanceqa1',
+      'unescaped separators': 'orgXcharmshelfXopensourceXperformanceqa1',
       'extra package segment': '$qaPackage.1',
       'extra trailing suffix': '${qaPackage}1.debug',
       'nine digits': '${qaPackage}123456789',

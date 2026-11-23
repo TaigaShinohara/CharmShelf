@@ -33,7 +33,7 @@ void main() {
     packageName = (await PackageInfo.fromPlatform()).packageName;
     expect(
       RegExp(
-        r'^com\.tsmusic\.privateshelf\.opensource\.performanceqa[0-9]{1,8}$',
+        r'^org\.charmshelf\.opensource\.performanceqa[0-9]{1,8}$',
       ).hasMatch(packageName),
       isTrue,
       reason: 'Only a numbered, isolated QA application may write fixtures',

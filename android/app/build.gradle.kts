@@ -68,8 +68,7 @@ android {
     }
 
     defaultConfig {
-        // TODO: Specify your own unique Application ID (https://developer.android.com/studio/build/application-id.html).
-        applicationId = "com.tsmusic.privateshelf.opensource"
+        applicationId = "org.charmshelf.opensource"
         // Opt-in isolated package for reproducible performance QA; production
         // builds keep their existing identifier and label.
         val performanceQa = providers.gradleProperty("tagshelfPerformanceQa").orNull == "true"

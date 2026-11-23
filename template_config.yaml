@@ -1,6 +1,6 @@
 app:
   name: "CharmShelf"
-  package_name: "com.tsmusic.privateshelf.opensource"
+  package_name: "org.charmshelf.opensource"
   version: "1.0.12"
   min_age: 0 # 年齢制限なし（未成年利用可）
   external_legal_url: "https://github.com/TaigaShinohara/CharmShelf/blob/main/docs/PRIVACY_POLICY.md"
