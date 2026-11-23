@@ -97,6 +97,11 @@ timed_step archive xcodebuild -workspace ios/Runner.xcworkspace -scheme Runner \
   "PERFORMANCE_MEASUREMENT_FILE=$candidate_dir/flutter-performance.json" \
   archive CODE_SIGNING_ALLOWED=NO
 
+# Apple TN3181 requires empty accessed-API arrays to be omitted. Export signs the
+# normalized app. Embedded code and nonempty declarations are left for their SDK owners.
+timed_step privacy-manifests python3 scripts/maintenance/normalize_ios_privacy_manifests.py \
+  "$candidate_dir/Runner.xcarchive"
+
 resolved="$repo_root/ios/Runner.xcodeproj/project.xcworkspace/xcshareddata/swiftpm/Package.resolved"
 python3 scripts/maintenance/check_ios_swift_packages.py --resolved "$resolved"
 python3 scripts/maintenance/export_ios_licenses.py --check \

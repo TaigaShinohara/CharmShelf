@@ -83,7 +83,13 @@ def inspect_app(app: Path) -> dict:
     if not (app / "PrivacyInfo.xcprivacy").is_file():
         raise ValueError("Missing app privacy manifest")
     for manifest in manifests:
-        plistlib.loads(manifest.read_bytes())
+        values = plistlib.loads(manifest.read_bytes())
+        if not isinstance(values, dict):
+            raise ValueError(f"Invalid privacy manifest root: {manifest.relative_to(app)}")
+        if "NSPrivacyAccessedAPITypes" in values and (
+            not isinstance(values["NSPrivacyAccessedAPITypes"], list) or not values["NSPrivacyAccessedAPITypes"]
+        ):
+            raise ValueError(f"Invalid accessed API types in privacy manifest: {manifest.relative_to(app)}")
     license_path = "assets/licenses/ios_native_licenses.json"
     bundled_licenses = json.loads(
         (app / "Frameworks/App.framework/flutter_assets" / license_path).read_text()
