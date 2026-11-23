@@ -6,7 +6,9 @@ tagshelf_project_root="${tagshelf_script_dir:h}"
 tagshelf_flutter_bin="${FLUTTER_BIN:-${commands[flutter]:-}}"
 
 cd "${tagshelf_project_root}"
-python3 scripts/check_distribution_config.py android
+tagshelf_expected_fingerprint_path="${CHARMSHELF_ANDROID_UPLOAD_CERTIFICATE:-android/upload_certificate.sha256}"
+python3 scripts/check_distribution_config.py android --android-upload-certificate "${tagshelf_expected_fingerprint_path}"
+tagshelf_expected_fingerprint="$(tr -d '[:space:]' < "${tagshelf_expected_fingerprint_path}")"
 FLUTTER_BIN="${tagshelf_flutter_bin}" bash scripts/maintenance/check_flutter_version.sh
 
 # Re-enter under the project-specific 1Password profile. The shared runner
@@ -37,7 +39,6 @@ if [[ "${tagshelf_lock_hash_before}" != "${tagshelf_lock_hash_after}" ]]; then
 fi
 
 tagshelf_aab_path="build/app/outputs/bundle/release/app-release.aab"
-tagshelf_expected_fingerprint_path="android/upload_certificate.sha256"
 if ! tagshelf_jarsigner_output="$(jarsigner -verify "${tagshelf_aab_path}" 2>&1)"; then
   print -u2 -- "${tagshelf_jarsigner_output}"
   exit 1
@@ -68,7 +69,6 @@ if [[ "${tagshelf_certificate}" == *'Android Debug'* ]]; then
   exit 1
 fi
 
-tagshelf_expected_fingerprint="$(tr -d '[:space:]' < "${tagshelf_expected_fingerprint_path}")"
 if [[ "${tagshelf_actual_fingerprints[1]}" != "${tagshelf_expected_fingerprint}" ]]; then
   print -u2 'Release bundle was signed by an unexpected certificate'
   exit 1

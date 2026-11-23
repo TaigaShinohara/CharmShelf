@@ -13,7 +13,7 @@ ROOT = Path(__file__).resolve().parents[1]
 
 
 class SigningEntrypointTests(unittest.TestCase):
-    def run_entry(self, kind):
+    def run_entry(self, kind, *, local_fingerprint=None):
         with tempfile.TemporaryDirectory() as directory:
             folder = Path(directory)
             scripts = folder / 'scripts'
@@ -40,6 +40,10 @@ class SigningEntrypointTests(unittest.TestCase):
                               'os.execv(sys.executable,[sys.executable,*sys.argv[1:]])\n')
             python.chmod(0o700)
             env = {'PATH': str(folder) + ':/usr/bin:/bin', 'HOME': str(folder), 'FLUTTER_BIN': str(flutter), 'PYTHONDONTWRITEBYTECODE': '1'}
+            if local_fingerprint is not None:
+                local_certificate = folder / 'Local upload certificate.sha256'
+                local_certificate.write_text(local_fingerprint)
+                env['CHARMSHELF_ANDROID_UPLOAD_CERTIFICATE'] = str(local_certificate)
             material = folder / 'key.properties'
             material.touch()
             if kind != 'absent':
@@ -80,6 +84,17 @@ class SigningEntrypointTests(unittest.TestCase):
         self.assertEqual(result.returncode, 91, result.stderr)
         self.assertIn('BUILD_STUB_REACHED', result.stdout)
         self.assertNotIn('SIGNING_DISPATCH=', result.stdout)
+
+    def test_local_certificate_is_validated_instead_of_repository_default(self):
+        configured = self.run_entry('unconfigured', local_fingerprint=':'.join(['CD'] * 32))
+        self.assertEqual(configured.returncode, 7, configured.stderr)
+        self.assertIn('SIGNING_DISPATCH=', configured.stdout)
+
+        invalid = self.run_entry('matching', local_fingerprint='not-a-certificate')
+        self.assertEqual(invalid.returncode, 1, invalid.stderr)
+        self.assertIn('DISTRIBUTION_NOT_CONFIGURED', invalid.stderr)
+        self.assertNotIn('BUILD_STUB_REACHED', invalid.stdout)
+        self.assertNotIn('SIGNING_DISPATCH=', invalid.stdout)
 
 
 if __name__ == '__main__':

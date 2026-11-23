@@ -14,13 +14,15 @@ def require_distribution_config(
     platform: str,
     root: Path | None = None,
     *,
+    android_upload_certificate: Path | None = None,
     ios_export_options: Path | None = None,
     check_installed_signing: bool = False,
 ) -> None:
     root = root or ROOT
     try:
         if platform == "android":
-            fingerprint = (root / "android/upload_certificate.sha256").read_text().strip()
+            certificate_path = root / (android_upload_certificate or "android/upload_certificate.sha256")
+            fingerprint = certificate_path.read_text().strip()
             if not re.fullmatch(r"(?:[0-9A-F]{2}:){31}[0-9A-F]{2}", fingerprint):
                 raise ValueError()
         elif platform == "ios":
@@ -70,13 +72,17 @@ def require_installed_ios_identity(certificate: str) -> None:
 def main() -> None:
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("platform", choices=("android", "ios"))
+    parser.add_argument("--android-upload-certificate", type=Path)
     parser.add_argument("--ios-export-options", type=Path)
     parser.add_argument("--check-installed-signing", action="store_true")
     args = parser.parse_args()
+    if args.platform != "android" and args.android_upload_certificate:
+        parser.error("--android-upload-certificate requires the android platform")
     if args.platform != "ios" and (args.ios_export_options or args.check_installed_signing):
         parser.error("iOS signing options require the ios platform")
     require_distribution_config(
         args.platform, ios_export_options=args.ios_export_options,
+        android_upload_certificate=args.android_upload_certificate,
         check_installed_signing=args.check_installed_signing,
     )
     if args.check_installed_signing:
