@@ -67,6 +67,13 @@ if (( export_ipa == 1 && installed_signing == 0 )) && [[ -z "${CODEX_IOS_KEYCHAI
 fi
 flutter_bin="${FLUTTER_BIN:-${commands[flutter]:-}}"
 FLUTTER_BIN="$flutter_bin" bash scripts/maintenance/check_flutter_version.sh
+# Build serialization (hub rule, 2026-11-23): on the dev VM, run the heavy
+# build steps under the VM-wide build lock so only one build runs at a time
+# across projects. Machines without the wrapper (e.g. this Mac) build directly.
+build_lock=()
+if [[ -x "$HOME/workspace/tools/with-build-lock.sh" ]] && (( ${+commands[flock]} )); then
+  build_lock=("$HOME/workspace/tools/with-build-lock.sh")
+fi
 python3 scripts/maintenance/check_private_content.py --sources-only
 derived_data_dir="$repo_root/build/ios-release-derived-data"
 sdk_version="$(xcrun --sdk iphoneos --show-sdk-version)"
@@ -105,10 +112,10 @@ timed_step() {
 # `--config-only` では App.framework が既存キャッシュにだけ残っている場合があり、
 # クリーンな状態の archive が Flutter アプリ本体を見つけられない。提出候補は
 # 事前生成物に依存させず、未署名の Release 本体まで必ず作成してから archive する。
-timed_step flutter-build "$flutter_bin" build ios --release --no-codesign "${pub_args[@]}" \
+timed_step flutter-build "${build_lock[@]}" "$flutter_bin" build ios --release --no-codesign "${pub_args[@]}" \
   --dart-define=ENV=production \
   --build-name="$release_name" --build-number="$release_number"
-timed_step archive xcodebuild -workspace ios/Runner.xcworkspace -scheme Runner \
+timed_step archive "${build_lock[@]}" xcodebuild -workspace ios/Runner.xcworkspace -scheme Runner \
   -configuration Release -destination 'generic/platform=iOS' \
   -archivePath "$candidate_dir/Runner.xcarchive" \
   -derivedDataPath "$derived_data_dir" \
@@ -163,7 +170,7 @@ if (( export_ipa == 0 )); then
 fi
 
 # 既存の配布証明書・プロファイルのみを使う。自動発行やアップロードは許可しない。
-if ! timed_step export xcodebuild -exportArchive -archivePath "$candidate_dir/Runner.xcarchive" \
+if ! timed_step export "${build_lock[@]}" xcodebuild -exportArchive -archivePath "$candidate_dir/Runner.xcarchive" \
   -exportOptionsPlist "$export_options" \
   -exportPath "$candidate_dir/export"; then
   print -u2 "IPA書き出しに失敗しました。アーカイブは保持済みです: $candidate_dir"
