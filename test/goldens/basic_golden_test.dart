@@ -1,4 +1,3 @@
-import 'dart:io';
 import 'package:flutter/material.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
@@ -43,11 +42,9 @@ Widget _wrap(
 }
 
 void main() {
-  if (Platform.isLinux) {
-    // macOSで生成されたゴールデンとLinux環境のフォント/レンダリング差異が大きいため、
-    // Linux上ではゴールデンテストをスキップする。
-    return;
-  }
+  // Baselines are platform-specific: Linux runs compare against the
+  // `goldens/goldens/linux/` baselines (see flutter_test_config.dart), so the
+  // golden check also runs in the Linux development VM before delivery.
   setUp(() {
     SharedPreferences.setMockInitialValues({});
   });

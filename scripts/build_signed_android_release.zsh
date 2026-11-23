@@ -31,7 +31,14 @@ for tagshelf_argument in "$@"; do
   fi
 done
 tagshelf_lock_hash_before="$(shasum -a 256 pubspec.lock | awk '{print $1}')"
-"${tagshelf_flutter_bin}" build appbundle --release --dart-define=ENV=production "${tagshelf_build_arguments[@]}"
+# Build serialization (hub rule, 2026-11-23): on the dev VM, run the heavy
+# build under the VM-wide build lock so only one build runs at a time across
+# projects. Machines without the wrapper (e.g. the release Mac) build directly.
+tagshelf_build_lock=()
+if [[ -x "$HOME/workspace/tools/with-build-lock.sh" ]] && (( ${+commands[flock]} )); then
+  tagshelf_build_lock=("$HOME/workspace/tools/with-build-lock.sh")
+fi
+"${tagshelf_build_lock[@]}" "${tagshelf_flutter_bin}" build appbundle --release --dart-define=ENV=production "${tagshelf_build_arguments[@]}"
 tagshelf_lock_hash_after="$(shasum -a 256 pubspec.lock | awk '{print $1}')"
 if [[ "${tagshelf_lock_hash_before}" != "${tagshelf_lock_hash_after}" ]]; then
   print -u2 '依存lockが変化しました。このAABをリリース候補として使用しないでください。'
