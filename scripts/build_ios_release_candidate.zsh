@@ -5,24 +5,39 @@ umask 077
 zmodload zsh/datetime
 
 if (( $# < 2 )); then
-  print -u2 'Usage: zsh scripts/build_ios_release_candidate.zsh <version> <build-number> [--export] [--no-pub]'
+  print -u2 'Usage: zsh scripts/build_ios_release_candidate.zsh <version> <build-number> [--export [--export-options <plist>] [--installed-signing]] [--no-pub]'
   print -u2 '提出用の番号はApp Store Connectの既存ビルドと照合してください。'
   exit 2
 fi
 
-original_args=("$@")
 release_name="$1"
 release_number="$2"
 shift 2
 export_ipa=0
+installed_signing=0
+options_file=""
 pub_args=()
-for option in "$@"; do
-  case "$option" in
+while (( $# )); do
+  case "$1" in
     --export) export_ipa=1 ;;
+    --export-options)
+      if (( $# < 2 )) || [[ -z "$2" || "$2" == --* ]]; then
+        print -u2 '--export-optionsにはローカルのplistを指定してください。'
+        exit 2
+      fi
+      options_file="${2:A}"
+      shift
+      ;;
+    --installed-signing) installed_signing=1 ;;
     --no-pub) pub_args=(--no-pub) ;;
-    *) print -u2 "不明なオプション: $option"; exit 2 ;;
+    *) print -u2 "不明なオプション: $1"; exit 2 ;;
   esac
+  shift
 done
+if (( export_ipa == 0 )) && { [[ -n "$options_file" ]] || (( installed_signing == 1 )); }; then
+  print -u2 '署名オプションには--exportが必要です。'
+  exit 2
+fi
 # 比較計測時だけNOにする。グローバル設定・Pods生成物は変更しない。
 compile_cache="${IOS_COMPILATION_CACHE:-YES}"
 if [[ "$compile_cache" != YES && "$compile_cache" != NO ]]; then
@@ -35,13 +50,20 @@ if [[ ! "$release_name" =~ '^[0-9]+\.[0-9]+\.[0-9]+$' ]] || \
   exit 2
 fi
 
-repo_root="${0:A:h:h}"
+script_path="${0:A}"
+repo_root="${script_path:h:h}"
 cd "$repo_root"
+export_options="${options_file:-$repo_root/scripts/ios_export_options.plist}"
 if (( export_ipa == 1 )); then
-  python3 scripts/check_distribution_config.py ios
+  signing_check=(ios --ios-export-options "$export_options")
+  if (( installed_signing == 1 )); then
+    signing_check+=(--check-installed-signing)
+  fi
+  python3 scripts/check_distribution_config.py "${signing_check[@]}"
 fi
-if (( export_ipa == 1 )) && [[ -z "${CODEX_IOS_KEYCHAIN_PATH:-}" ]]; then
-  exec python3 scripts/ios_signing_1password.py -- zsh "$0" "${original_args[@]}"
+if (( export_ipa == 1 && installed_signing == 0 )) && [[ -z "${CODEX_IOS_KEYCHAIN_PATH:-}" ]]; then
+  exec python3 scripts/ios_signing_1password.py -- zsh "$script_path" "$release_name" "$release_number" \
+    --export --export-options "$export_options" "${pub_args[@]}"
 fi
 flutter_bin="${FLUTTER_BIN:-${commands[flutter]:-}}"
 FLUTTER_BIN="$flutter_bin" bash scripts/maintenance/check_flutter_version.sh
@@ -142,7 +164,7 @@ fi
 
 # 既存の配布証明書・プロファイルのみを使う。自動発行やアップロードは許可しない。
 if ! timed_step export xcodebuild -exportArchive -archivePath "$candidate_dir/Runner.xcarchive" \
-  -exportOptionsPlist scripts/ios_export_options.plist \
+  -exportOptionsPlist "$export_options" \
   -exportPath "$candidate_dir/export"; then
   print -u2 "IPA書き出しに失敗しました。アーカイブは保持済みです: $candidate_dir"
   print -u2 "署名資産の整合とexport.logを確認してください。"
@@ -158,6 +180,7 @@ unzip -tq "$ipa_files[1]"
 python3 scripts/maintenance/check_private_content.py --archive "$ipa_files[1]"
 python3 scripts/maintenance/check_ios_ipa.py "$ipa_files[1]" \
   --archive "$candidate_dir/Runner.xcarchive" \
+  --export-options "$export_options" \
   --report "$candidate_dir/ipa-verification.json"
 shasum -a 256 "$ipa_files[1]" > "$candidate_dir/ipa.sha256"
 cat "$candidate_dir/timing.tsv"

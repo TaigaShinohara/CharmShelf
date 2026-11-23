@@ -16,6 +16,41 @@ ROOT = Path(__file__).resolve().parents[1]
 
 
 class DistributionBoundaryTests(unittest.TestCase):
+    def test_local_export_options_check_the_exact_installed_distribution_identity(self):
+        certificate = 'A' * 40
+        with tempfile.TemporaryDirectory() as directory:
+            root = Path(directory)
+            options = root / 'Local Export Options.plist'
+            options.write_bytes(plistlib.dumps({
+                'method': 'app-store-connect',
+                'destination': 'export',
+                'signingStyle': 'manual',
+                'teamID': 'TESTTEAM01',
+                'signingCertificate': certificate,
+                'provisioningProfiles': {'org.charmshelf.opensource': 'CharmShelf Distribution'},
+            }))
+            with patch.object(config.subprocess, 'run') as security:
+                config.require_distribution_config('ios', root, ios_export_options=options)
+                security.assert_not_called()
+                security.return_value.stdout = (
+                    f'  1) {certificate} "Apple Distribution: Test Team (TESTTEAM01)"\n'
+                )
+                config.require_distribution_config(
+                    'ios', root, ios_export_options=options, check_installed_signing=True,
+                )
+                security.assert_called_once_with(
+                    ['security', 'find-identity', '-v', '-p', 'codesigning'],
+                    check=True, capture_output=True, text=True, timeout=20,
+                )
+                security.return_value.stdout = (
+                    f'  1) {certificate} "Apple Development: Test Team (TESTTEAM01)"\n'
+                    f'  2) {"B" * 40} "Apple Distribution: Test Team (TESTTEAM01)"\n'
+                )
+                with self.assertRaisesRegex(SystemExit, 'IOS_DISTRIBUTION_IDENTITY_UNAVAILABLE'):
+                    config.require_distribution_config(
+                        'ios', root, ios_export_options=options, check_installed_signing=True,
+                    )
+
     def test_placeholder_ios_launcher_does_not_resolve_credentials(self):
         entry = ROOT / 'scripts/fastlane_ios_1password.py'
         with tempfile.TemporaryDirectory() as directory:
