@@ -2,6 +2,7 @@ import 'dart:io';
 import 'dart:ui' as ui;
 
 import 'package:crypto/crypto.dart';
+import 'package:flutter/gestures.dart' show computePanSlop;
 import 'package:flutter/material.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:integration_test/integration_test.dart';
@@ -122,14 +123,19 @@ void main() {
     await controller.goToPage(pageNumber: 1, duration: Duration.zero);
     await tester.pumpAndSettle();
     final text = (await controller.pages.first.loadText())!;
-    final character = text.charRects[text.fullText.indexOf('Selectable') + 2];
-    final textRect = controller.calcRectForRectInsidePage(
-      pageNumber: 1,
-      rect: character,
-    );
-    await tester.longPressAt(
-      box.localToGlobal(controller.documentToLocal(textRect.center)),
-    );
+    final wordStart = text.fullText.indexOf('Selectable');
+    final wordEnd = wordStart + 'Selectable'.length - 1;
+    final nextWordEnd =
+        text.fullText.indexOf('synthetic') + 'synthetic'.length - 1;
+    Offset characterCenter(int index) {
+      final rect = controller.calcRectForRectInsidePage(
+        pageNumber: 1,
+        rect: text.charRects[index],
+      );
+      return box.localToGlobal(controller.documentToLocal(rect.center));
+    }
+
+    await tester.longPressAt(characterCenter(wordStart + 2));
     await tester.pumpAndSettle();
     final selected = await controller.textSelectionDelegate.getSelectedText();
     expect(selected, contains('Selectable'));
@@ -142,8 +148,11 @@ void main() {
     final handle = find.byWidgetPredicate(
       (widget) => widget is PdfSelectionHandle && !widget.isStart,
     );
-    await tester.drag(handle, const Offset(70, 0));
-    await tester.pumpAndSettle();
+    await _dragSelectionHandle(
+      tester,
+      handle,
+      characterCenter(nextWordEnd).dx - characterCenter(wordEnd).dx,
+    );
     expect(
       controller.value,
       before,
@@ -163,16 +172,20 @@ void main() {
       tester.getRect(close).overlaps(tester.getRect(startHandle)),
       isFalse,
     );
-    await tester.drag(startHandle, const Offset(40, 0));
-    await tester.pumpAndSettle();
+    await _dragSelectionHandle(
+      tester,
+      startHandle,
+      characterCenter(wordStart + 4).dx - characterCenter(wordStart).dx,
+    );
     expect(
       controller.value,
       before,
       reason: 'The start handle must not pan the PDF either',
     );
     expect(
-      await controller.textSelectionDelegate.getSelectedText(),
-      isNot(afterEndDrag),
+      (await controller.textSelectionDelegate.getSelectedText()).length,
+      lessThan(afterEndDrag.length),
+      reason: 'Dragging the start handle right must shorten the selection',
     );
     // A selected range must also protect horizontal drags on the page itself.
     await tester.timedDrag(
@@ -550,6 +563,27 @@ void main() {
     expect(sha256.convert(await protected.readAsBytes()), protectedHash);
     expect(tester.takeException(), isNull);
   }, timeout: const Timeout(Duration(minutes: 3)));
+}
+
+Future<void> _dragSelectionHandle(
+  WidgetTester tester,
+  Finder handle,
+  double textDistance,
+) async {
+  final panSlop = computePanSlop(
+    ui.PointerDeviceKind.touch,
+    MediaQuery.gestureSettingsOf(tester.element(handle)),
+  );
+  final gesture = await tester.startGesture(
+    tester.getCenter(handle, warnIfMissed: true),
+  );
+  // pdfrx records the character anchor when the pan is recognized.
+  await gesture.moveBy(Offset(panSlop + 1, 0));
+  await tester.pump();
+  await gesture.moveBy(Offset(textDistance, 0));
+  await tester.pump();
+  await gesture.up();
+  await tester.pumpAndSettle();
 }
 
 Future<int> _linkInkAlpha(pdfrx.PdfViewer viewer, pdfrx.PdfLink link) async {
