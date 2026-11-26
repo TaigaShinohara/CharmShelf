@@ -164,7 +164,7 @@ dev_dependencies:
   plugin_platform_interface: ^2.1.8
   # Native picker regression tests use the official federated implementations.
   file_picker_linux: ^2.0.2
-  windows_file_picker: ^2.0.1
+  windows_file_picker: ^2.0.2
 
   # Direct test imports share the pinned Riverpod runtime.
   riverpod: 3.4.3
